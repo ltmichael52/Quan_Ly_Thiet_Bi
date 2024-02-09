@@ -22,4 +22,5 @@ public partial class Sinhvien
     public string? Diachi { get; set; }
 
     public virtual ICollection<Phieumuon> Phieumuons { get; set; } = new List<Phieumuon>();
+    public virtual Account? Account {  get; set; }
 }

@@ -1,0 +1,89 @@
+﻿@using ThietBiDienTu_2.Models;
+@{
+    ViewData["Title"] = "UserEmployee";
+}
+
+@model List<Nhanvien>
+
+
+@section naviheader{
+    <div class="header-divider"></div>
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Admin/HomeAdmin/Index">Home</a></li>
+                <li class="breadcrumb-item"><a href="/Admin/UserEmployee/Index">Danh sách nhân viên</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Thêm nhân viên</li>
+            </ol>
+        </nav>
+    </div>
+}
+
+<!-- Content Header (Page header) -->
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col">
+                <h3 class="card-title">Danh sách nhân viên</h3>
+            </div>
+            <div class="col-auto">
+                <div class="card-tools">
+                    <a href="/Admin/UserEmployee/Create" class="btn btn-primary btn-sm">
+                        <svg class="icon icon-lg">
+                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-plus")"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body ">
+        <div class="bs-stepper linear">
+            <div class="bs-stepper-content">
+               
+    <table class="table table-striped">
+         <thead>
+        <tr>
+            <th>Mã</th>
+            <th>Tên</th>
+            <th>Ngày sinh</th>
+            <th>Số điện thoại</th>
+            <th>Email</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Nhanvien nv in Model)
+        {
+            var formattedDate = ((DateTime)nv.Ngaysinh).ToString("dd/MM/yyyy");
+            <tr>
+                <td>@nv.Tennv</td>
+                <td>@nv.Manv</td>
+                <td>@formattedDate</td>
+                <td>@nv.Sdt</td>
+                <td>@nv.Email</td>
+                <td>
+                    <a href="/admin/userEmployee/Update/@nv.Manv" class="btn btn-info btn-sm rounded">
+                        <svg class="icon icon-lg">
+                        <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-pen")"></use>
+                    </svg>
+                    </a>
+                    <form asp-action="Delete" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-danger rounded btn-sm">
+                            <svg class="icon icon-lg">
+                        <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
+                    </svg>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="footer"></div>

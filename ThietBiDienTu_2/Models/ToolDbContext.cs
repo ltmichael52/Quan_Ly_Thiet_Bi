@@ -28,6 +28,7 @@ public partial class ToolDbContext : DbContext
     public virtual DbSet<Sinhvien> Sinhviens { get; set; }
 
     public virtual DbSet<Thietbi> Thietbis { get; set; }
+    public virtual DbSet<Account> Accounts { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
@@ -76,7 +77,10 @@ public partial class ToolDbContext : DbContext
 
             entity.ToTable("NHANVIEN");
 
-            entity.Property(e => e.Manv).HasColumnName("MANV");
+            entity.Property(e => e.Manv)
+                .ValueGeneratedNever()
+                .HasColumnName("MANV");
+
             entity.Property(e => e.Diachi)
                 .HasMaxLength(255)
                 .HasColumnName("DIACHI");
@@ -199,7 +203,32 @@ public partial class ToolDbContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__THIETBI__MAP__403A8C7D");
         });
+        modelBuilder.Entity<Account>(entity =>
+        {
+            entity.HasKey(e => e.Username).HasName("PK__ACCOUNT__6029121DD1D4BE32");
+            entity.ToTable("ACCOUNT");
 
+            entity.Property(e=>e.Username)
+            .ValueGeneratedNever()
+            .HasColumnName("USERNAME");
+
+            entity.Property(e => e.Password)
+            .HasMaxLength (255)
+            .HasColumnName("PASSWORD");
+
+            entity.Property(e => e.LoaiUser)
+            .HasColumnName("LOAIUSER");
+
+            entity.HasOne(d => d.ManvNavigation).WithOne(p => p.Account)
+                .HasForeignKey<Nhanvien>(d=>d.Manv)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__ACCOUNT__NV");
+
+            entity.HasOne(d => d.MasvNavigation).WithOne(p => p.Account)
+                .HasForeignKey<Sinhvien>(d => d.Masv)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__ACCOUNT__SV");
+        });
         OnModelCreatingPartial(modelBuilder);
     }
 

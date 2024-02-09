@@ -22,6 +22,28 @@ namespace ThietBiDienTu_2.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("ThietBiDienTu_2.Models.Account", b =>
+                {
+                    b.Property<int>("Username")
+                        .HasColumnType("int")
+                        .HasColumnName("USERNAME");
+
+                    b.Property<short>("LoaiUser")
+                        .HasColumnType("smallint")
+                        .HasColumnName("LOAIUSER");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("PASSWORD");
+
+                    b.HasKey("Username")
+                        .HasName("PK__ACCOUNT__6029121DD1D4BE32");
+
+                    b.ToTable("ACCOUNT", (string)null);
+                });
+
             modelBuilder.Entity("ThietBiDienTu_2.Models.Chitietphieumuon", b =>
                 {
                     b.Property<int>("Mactpm")
@@ -75,11 +97,8 @@ namespace ThietBiDienTu_2.Migrations
             modelBuilder.Entity("ThietBiDienTu_2.Models.Nhanvien", b =>
                 {
                     b.Property<int>("Manv")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("MANV");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Manv"));
 
                     b.Property<string>("Diachi")
                         .HasMaxLength(255)
@@ -285,6 +304,17 @@ namespace ThietBiDienTu_2.Migrations
                     b.Navigation("MatbNavigation");
                 });
 
+            modelBuilder.Entity("ThietBiDienTu_2.Models.Nhanvien", b =>
+                {
+                    b.HasOne("ThietBiDienTu_2.Models.Account", "Account")
+                        .WithOne("ManvNavigation")
+                        .HasForeignKey("ThietBiDienTu_2.Models.Nhanvien", "Manv")
+                        .IsRequired()
+                        .HasConstraintName("FK__ACCOUNT__NV");
+
+                    b.Navigation("Account");
+                });
+
             modelBuilder.Entity("ThietBiDienTu_2.Models.Phieumuon", b =>
                 {
                     b.HasOne("ThietBiDienTu_2.Models.Nhanvien", "ManvNavigation")
@@ -314,6 +344,17 @@ namespace ThietBiDienTu_2.Migrations
                     b.Navigation("MacsNavigation");
                 });
 
+            modelBuilder.Entity("ThietBiDienTu_2.Models.Sinhvien", b =>
+                {
+                    b.HasOne("ThietBiDienTu_2.Models.Account", "Account")
+                        .WithOne("MasvNavigation")
+                        .HasForeignKey("ThietBiDienTu_2.Models.Sinhvien", "Masv")
+                        .IsRequired()
+                        .HasConstraintName("FK__ACCOUNT__SV");
+
+                    b.Navigation("Account");
+                });
+
             modelBuilder.Entity("ThietBiDienTu_2.Models.Thietbi", b =>
                 {
                     b.HasOne("ThietBiDienTu_2.Models.Phong", "MapNavigation")
@@ -323,6 +364,13 @@ namespace ThietBiDienTu_2.Migrations
                         .HasConstraintName("FK__THIETBI__MAP__403A8C7D");
 
                     b.Navigation("MapNavigation");
+                });
+
+            modelBuilder.Entity("ThietBiDienTu_2.Models.Account", b =>
+                {
+                    b.Navigation("ManvNavigation");
+
+                    b.Navigation("MasvNavigation");
                 });
 
             modelBuilder.Entity("ThietBiDienTu_2.Models.Coso", b =>

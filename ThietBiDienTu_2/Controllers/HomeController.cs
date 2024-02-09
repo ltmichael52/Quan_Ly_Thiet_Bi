@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using ThietBiDienTu_2.Models;
+using ThietBiDienTu_2.Models.Authentication;
 
 namespace ThietBiDienTu_2.Controllers
 {
@@ -12,7 +13,7 @@ namespace ThietBiDienTu_2.Controllers
         {
             _logger = logger;
         }
-
+        [AuthenticationCustomer]
         public IActionResult Index()
         {
             return View();
