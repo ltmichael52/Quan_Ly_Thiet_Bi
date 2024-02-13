@@ -60,15 +60,17 @@
                             @Html.ValidationMessageFor(x => x.Diachi, null, new { @class = "text-danger" })
                         </div>
                         <div class="form-group mb-2">
-                            <label for="Phai"><strong>Giới tính<span class="text-danger"> *</span></strong></label>
-                            @Html.RadioButtonFor(x => x.Phai, "Nam") Nam   @Html.RadioButtonFor(x => x.Phai, "Nữ") Nữ
-                            @Html.ValidationMessageFor(x => x.Phai, null, new { @class = "text-danger" })
+                            <label for="Gioitinh"><strong>Giới tính<span class="text-danger"> *  </span></strong></label>
+                            @Html.RadioButtonFor(x => x.Gioitinh, "Nam") Nam @Html.RadioButtonFor(x => x.Gioitinh, "Nữ") Nữ
+                            <div class="text-danger">
+                                @Html.ValidationMessageFor(x => x.Gioitinh, null, new { @class = "text-danger" })
+                            </div>
                         </div>
                         <div class="form-group mb-2">
                             <label for="Ngaysinh" class="mb-2"><strong>Ngày sinh<span class="text-danger"> *</span></strong></label>
-                            @Html.EditorFor(x => x.Ngaysinh, new { htmlAttributes = new { @class = "form-control form-input" } })
+                            @Html.TextBoxFor(x => x.Ngaysinh, new { @class = "form-control",placeholder="DD/MM/YYYY" })
                             @Html.ValidationMessageFor(x => x.Ngaysinh, null, new { @class = "text-danger" })
-                        </div>
+                        </div>                   
                         <div class="form-group mt-3">
                             <a href="/Admin/UserEmployee/Index" class="btn btn-danger">Quay lại</a>
                             <button type="submit" class="btn btn-primary">Tạo mới</button>

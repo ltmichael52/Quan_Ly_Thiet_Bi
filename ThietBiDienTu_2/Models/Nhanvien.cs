@@ -12,7 +12,7 @@ public partial class Nhanvien
 
     public string Sdt { get; set; } = null!;
 
-    public string Phai { get; set; } = null!;
+    public string Gioitinh { get; set; } = null!;
 
     [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
     [DataType(DataType.Date, ErrorMessage = "Ngày sinh không hợp lệ")]

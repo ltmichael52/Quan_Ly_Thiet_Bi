@@ -128,7 +128,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="base/breadcrumb.html">
+                            <a class="nav-link" href="@Url.Action("Index","UserStudent")">
                                 <svg class="nav-icon">
                                     <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-user-plus")"></use>
                                 </svg>Sinh viên
@@ -182,30 +182,45 @@
                         <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-menu")"></use>
                     </svg>
                 </button>
+                @RenderSection("searchArea",required:false)
+                <ul class="header-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            <svg class="icon icon-lg">
+                                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-bell")"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            <svg class="icon icon-lg">
+                                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-list-rich")"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            <svg class="icon icon-lg">
+                                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-envelope-open")"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
                 <ul class="header-nav ms-3">
                     <li class="nav-item dropdown">
                         <a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                             <div class="avatar avatar-md"><img class="avatar-img" src="@Url.Content("~/LayoutAdmin/dist/assets/img/avatars/8.jpg")" alt="user@email.com"></div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end pt-0">
-                            <div class="dropdown-header bg-light py-2">
-                                <div class="fw-semibold">Settings</div>
-                            </div>
-                            <a class="dropdown-item" href="#">
-                                <svg class="icon me-2">
-                                    <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-user")"></use>
-                                </svg> Profile
-                            </a>
                             <a class="dropdown-item" href="#">
                                 <svg class="icon me-2">
                                     <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-settings")"></use>
-                                </svg> Settings
+                                </svg> Tài khoản
                             </a>
-                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="@Url.Action("LogoutAdmin","AccessAdmin")">
                                 <svg class="icon me-2">
                                     <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-account-logout")"></use>
-                                </svg> Logout
+                                </svg> Đăng xuất
                             </a>
                         </div>
                     </li>
@@ -213,6 +228,7 @@
             </div>
             @RenderSection("naviheader",required:false)
         </header>
+
         <div class="body flex-grow-1 px-3">
             <div class="container-lg">
                 @RenderBody()

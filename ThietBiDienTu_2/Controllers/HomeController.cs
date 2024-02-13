@@ -5,6 +5,7 @@ using ThietBiDienTu_2.Models.Authentication;
 
 namespace ThietBiDienTu_2.Controllers
 {
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -13,7 +14,7 @@ namespace ThietBiDienTu_2.Controllers
         {
             _logger = logger;
         }
-        [AuthenticationCustomer]
+        
         public IActionResult Index()
         {
             return View();

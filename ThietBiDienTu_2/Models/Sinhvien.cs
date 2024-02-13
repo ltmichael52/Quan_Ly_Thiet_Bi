@@ -17,6 +17,8 @@ public partial class Sinhvien
 
     public string Sdt { get; set; } = null!;
 
+    public string Gioitinh {  get; set; } = null!;
+
     public DateTime Ngaysinh { get; set; }
 
     public string? Diachi { get; set; }

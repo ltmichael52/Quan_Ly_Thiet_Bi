@@ -111,15 +111,15 @@ namespace ThietBiDienTu_2.Migrations
                         .HasColumnType("nvarchar(255)")
                         .HasColumnName("EMAIL");
 
-                    b.Property<DateTime>("Ngaysinh")
-                        .HasColumnType("datetime")
-                        .HasColumnName("NGAYSINH");
-
-                    b.Property<string>("Phai")
+                    b.Property<string>("Gioitinh")
                         .IsRequired()
                         .HasMaxLength(3)
                         .HasColumnType("nvarchar(3)")
-                        .HasColumnName("PHAI");
+                        .HasColumnName("GIOITINH");
+
+                    b.Property<DateTime>("Ngaysinh")
+                        .HasColumnType("datetime")
+                        .HasColumnName("NGAYSINH");
 
                     b.Property<string>("Sdt")
                         .IsRequired()
@@ -217,6 +217,12 @@ namespace ThietBiDienTu_2.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)")
                         .HasColumnName("EMAIL");
+
+                    b.Property<string>("Gioitinh")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)")
+                        .HasColumnName("GIOITINH");
 
                     b.Property<string>("Khoa")
                         .IsRequired()

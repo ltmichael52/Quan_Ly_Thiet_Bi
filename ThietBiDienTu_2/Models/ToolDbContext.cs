@@ -90,9 +90,9 @@ public partial class ToolDbContext : DbContext
             entity.Property(e => e.Ngaysinh)
                 .HasColumnType("datetime")
                 .HasColumnName("NGAYSINH");
-            entity.Property(e => e.Phai)
+            entity.Property(e => e.Gioitinh)
                 .HasMaxLength(3)
-                .HasColumnName("PHAI");
+                .HasColumnName("GIOITINH");
             entity.Property(e => e.Sdt)
                 .HasMaxLength(255)
                 .HasColumnName("SDT");
@@ -168,6 +168,9 @@ public partial class ToolDbContext : DbContext
             entity.Property(e => e.Nganh)
                 .HasMaxLength(255)
                 .HasColumnName("NGANH");
+            entity.Property(e => e.Gioitinh)
+                .HasMaxLength(3)
+                .HasColumnName("GIOITINH");
             entity.Property(e => e.Ngaysinh)
                 .HasColumnType("datetime")
                 .HasColumnName("NGAYSINH");
