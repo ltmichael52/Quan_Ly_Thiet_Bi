@@ -8,27 +8,19 @@ namespace ThietBiDienTu_2.Controllers
 
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-        
-        public IActionResult Index()
-        {
-            return View();
-        }
+		private readonly ToolDbContext _dataContext;
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+		public HomeController( ToolDbContext context)
+		{
+			_dataContext = context;
+		}
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-    }
+		public IActionResult Index()
+		{
+			var product = _dataContext.Thietbis.ToList(); //hien thi them trang thai cua thiet bi
+			return View(product);
+		}
+
+	}
 }

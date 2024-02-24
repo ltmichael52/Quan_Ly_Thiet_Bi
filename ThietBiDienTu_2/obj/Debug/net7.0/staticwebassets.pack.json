@@ -9653,6 +9653,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\Uni\\KTPM\\Quan_Ly_Thiet_Bi\\ThietBiDienTu_2\\wwwroot\\images\\1.jpg",
+      "PackagePath": "staticwebassets\\images\\1.jpg"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\Quan_Ly_Thiet_Bi\\ThietBiDienTu_2\\wwwroot\\images\\2.jpg",
+      "PackagePath": "staticwebassets\\images\\2.jpg"
+    },
+    {
       "Id": "D:\\Uni\\KTPM\\Quan_Ly_Thiet_Bi\\ThietBiDienTu_2\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

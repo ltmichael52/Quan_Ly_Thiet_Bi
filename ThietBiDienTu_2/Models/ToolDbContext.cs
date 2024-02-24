@@ -200,8 +200,10 @@ public partial class ToolDbContext : DbContext
             entity.Property(e => e.Trangthai)
                 .HasMaxLength(10)
                 .HasColumnName("TRANGTHAI");
-
-            entity.HasOne(d => d.MapNavigation).WithMany(p => p.Thietbis)
+			entity.Property(e => e.Hinhanh)
+				.HasMaxLength(255)
+				.HasColumnName("HINHANH");
+			entity.HasOne(d => d.MapNavigation).WithMany(p => p.Thietbis)
                 .HasForeignKey(d => d.Map)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__THIETBI__MAP__403A8C7D");
