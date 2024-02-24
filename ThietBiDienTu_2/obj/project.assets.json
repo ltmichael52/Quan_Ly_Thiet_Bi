@@ -11709,19 +11709,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hi\\.nuget\\packages\\": {}
+    "C:\\Users\\HP\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C#\\QLTB\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj",
+      "projectUniqueName": "D:\\Uni\\KTPM\\HungBranch\\Quan_Ly_Thiet_Bi\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj",
       "projectName": "ThietBiDienTu_2",
-      "projectPath": "D:\\C#\\QLTB\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj",
-      "packagesPath": "C:\\Users\\hi\\.nuget\\packages\\",
-      "outputPath": "D:\\C#\\QLTB\\ThietBiDienTu_2\\obj\\",
+      "projectPath": "D:\\Uni\\KTPM\\HungBranch\\Quan_Ly_Thiet_Bi\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "D:\\Uni\\KTPM\\HungBranch\\Quan_Ly_Thiet_Bi\\ThietBiDienTu_2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\hi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11807,7 +11807,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.406\\RuntimeIdentifierGraph.json"
       }
     }
   }
