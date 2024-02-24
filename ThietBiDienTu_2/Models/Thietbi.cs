@@ -13,6 +13,8 @@ public partial class Thietbi
 
     public string Trangthai { get; set; } = null!;
 
+    public string Hinhanh {  get; set; } = null!;
+
     public virtual ICollection<Chitietphieumuon> Chitietphieumuons { get; set; } = new List<Chitietphieumuon>();
 
     public virtual Phong MapNavigation { get; set; } = null!;

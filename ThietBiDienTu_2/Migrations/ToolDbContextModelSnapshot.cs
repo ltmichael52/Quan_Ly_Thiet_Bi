@@ -265,6 +265,10 @@ namespace ThietBiDienTu_2.Migrations
                         .HasColumnType("nvarchar(255)")
                         .HasColumnName("MATB");
 
+                    b.Property<string>("Hinhanh")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Map")
                         .IsRequired()
                         .HasMaxLength(30)

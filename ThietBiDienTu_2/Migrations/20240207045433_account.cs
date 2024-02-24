@@ -45,7 +45,6 @@ namespace ThietBiDienTu_2.Migrations
                 principalTable: "ACCOUNT",
                 principalColumn: "USERNAME");
         }
-
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
