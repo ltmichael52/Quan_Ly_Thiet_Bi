@@ -35,7 +35,7 @@
                                     <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                                         <!-- Data -->
                                         <p><strong>@item.Tendongtb</strong></p>
-                                        <a class="btn btn-danger btn-sm me-1 mb-2" data-mdb-toggle="tooltip" asp-action="Delete" asp-route-Matb="@item.Madongtb"
+                                        <a class="btn btn-danger btn-sm me-1 mb-2" asp-action="Delete" asp-route-Madongtb="@item.Madongtb"
                                            title="Remove item">
                                             <svg class="icon icon-lg">
                                                 <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
@@ -123,7 +123,7 @@
                                     Xóa tất cả
                                 </a>
                             </div>
-                            
+
 
                             <div class="row">
                                 <div class="col-md-6">
@@ -137,11 +137,11 @@
                                 </div>
                                 <div class="col-md-6">
                                     <a asp-action="Details" asp-controller="Cart">
-                                    <div class="pt-5 text-end">
-                                        <button type="submit" class="btn btn-dark btn-lg" data-mdb-ripple-color="dark">
-                                            Xác nhận
-                                        </button> 
-                                    </div>
+                                        <div class="pt-5 text-end">
+                                            <button type="submit" class="btn btn-dark btn-lg" data-mdb-ripple-color="dark">
+                                                Xác nhận
+                                            </button>
+                                        </div>
                                     </a>
                                 </div>
                             </div>
@@ -151,7 +151,7 @@
             }
         </div>
     </div>
-  
+
 </body>
 
 </html>

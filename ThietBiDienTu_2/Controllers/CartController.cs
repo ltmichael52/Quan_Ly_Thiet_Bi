@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using ThietBiDienTu_2.Migrations;
 using ThietBiDienTu_2.Models;
 using ThietBiDienTu_2.Models.ViewModels;
 using ThietBiDienTu_2.Repository;
@@ -121,7 +122,10 @@ namespace ThietBiDienTu_2.Controllers
             {
                 CartItems = cartItems,
                 Sv = _dataContext.Sinhviens.Find(HttpContext.Session.GetInt32("UserName")),
-
+                Phieumuon = new Phieumuon()
+                {
+                    Ngaylap = DateTime.Now,
+                }
 
             };
 
@@ -130,7 +134,7 @@ namespace ThietBiDienTu_2.Controllers
         [HttpPost]
         public IActionResult Details(CartItemViewModel cartVM)
         {
-            if (ModelState.IsValid) // Kiểm tra xem dữ liệu gửi lên có hợp lệ không
+            if (cartVM.Phieumuon.Lydomuon != null) // Kiểm tra xem dữ liệu gửi lên có hợp lệ không
             {
                 // Lấy dữ liệu từ form
                 string lyDoMuon = cartVM.Phieumuon.Lydomuon;
@@ -142,7 +146,9 @@ namespace ThietBiDienTu_2.Controllers
                 {
                     Lydomuon = lyDoMuon,
                     Ngaymuon = ngayMuon,
-                    Masv = maSv
+                    Ngaylap = DateTime.Now,
+                    Masv = maSv,
+
                 };
 
                 // Lưu đối tượng Phieumuon vào cơ sở dữ liệu
@@ -154,6 +160,15 @@ namespace ThietBiDienTu_2.Controllers
             }
             else
             {
+                List<CartItemModel> cartItems = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>(); // neu co du lieu thi hien thi con khong se tao moi 1 list 
+                cartVM = new()
+                {
+                    CartItems = cartItems,
+                    Sv = _dataContext.Sinhviens.Find(HttpContext.Session.GetInt32("UserName")),
+
+
+                };
+
                 return View(cartVM);
             }
         }
