@@ -6,8 +6,6 @@
     <link rel="stylesheet" href="~/css/style.css">
 </head>
 <body>
-
-
     <div class="container py-5">
         <div class="row d-flex justify-content-center my-4">
             <div class="col-md-8">
@@ -19,61 +17,62 @@
                         <!-- Single item -->
                         @if (Model.CartItems.Count > 0)
                         { //neu gio hang >0 thi moi chay vao cart
-                        @foreach (var item in Model.CartItems)
+                            @foreach (var item in Model.CartItems)
                             {
-                            <div class="row">
-                                <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                                    <!-- Image -->
-                                    <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                                        <img src="~/images/@item.Hinhanh"
-                                             class="w-100" alt="@item.Tenthietbi" />
-                                        <a href="#!">
-                                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
-                                        </a>
-                                    </div>
-                                    <!-- Image -->
-                                </div>
-
-                                <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                                    <!-- Data -->
-                                    <p><strong>@item.Tenthietbi</strong></p>
-                                    <a class="btn btn-danger btn-sm me-1 mb-2" data-mdb-toggle="tooltip" asp-action="Delete" asp-route-Matb="@item.Matb"
-                                       title="Remove item">
-                                        <svg class="icon icon-lg">
-                                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
-                                        </svg>
-                                    </a>
-                                    
-
-                                    <!-- Data -->
-                                </div>
-
-                                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                                    <!-- Quantity -->
-                                    <div class="d-flex mb-4" style="max-width: 300px">
-                                        <a class="btn btn-primary px-3 me-2 btn-sm" asp-action="Decrease" asp-route-id="@item.Matb"
-                                           onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                            <svg class="icon icon-lg">
-                                                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-minus")"></use>
-                                            </svg>
-                                        </a>
-
-                                        <div class="form-outline">
-                                            <input id="form1" min="0" name="quantity" value="@item.Soluong" type="number" class="form-control" />
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                                        <!-- Image -->
+                                        <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                                            <img src="~/images/@item.Hinhanh"
+                                                 class="w-100" alt="@item.Tendongtb" />
+                                            <a href="#!">
+                                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                            </a>
                                         </div>
+                                        <!-- Image -->
+                                    </div>
 
-                                        <a class="btn btn-primary px-3 ms-2 btn-sm" asp-action ="Increase" asp-route-id="@item.Matb"
-                                           onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                    <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                                        <!-- Data -->
+                                        <p><strong>@item.Tendongtb</strong></p>
+                                        <a class="btn btn-danger btn-sm me-1 mb-2" data-mdb-toggle="tooltip" asp-action="Delete" asp-route-Matb="@item.Madongtb"
+                                           title="Remove item">
                                             <svg class="icon icon-lg">
-                                                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-plus")"></use>
+                                                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
                                             </svg>
                                         </a>
+
+
+                                        <!-- Data -->
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                        <!-- Quantity -->
+                                        <div class="d-flex mb-4" style="max-width: 300px">
+                                            <a class="btn btn-primary px-3 me-2 btn-sm" asp-action="Decrease" asp-route-id="@item.Madongtb"
+                                               onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                                <svg class="icon icon-lg">
+                                                    <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-minus")"></use>
+                                                </svg>
+                                            </a>
+
+                                            <div class="form-outline">
+                                                <input id="form1" min="0" name="quantity" value="@item.Soluong" type="number" class="form-control" readonly />
+                                            </div>
+
+
+                                            <a class="btn btn-primary px-3 ms-2 btn-sm" asp-action="Increase" asp-route-id="@item.Madongtb"
+                                               onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                                <svg class="icon icon-lg">
+                                                    <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-plus")"></use>
+                                                </svg>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- Single item -->
+                                <!-- Single item -->
 
-                            <hr class="my-4" />
+                                <hr class="my-4" />
                             }
                         }
                         else
@@ -110,7 +109,7 @@
                                         @foreach (var item in Model.CartItems)
                                         {
                                             <li class="list-group-item">
-                                                <h5 class="mb-0">@item.Tenthietbi</h5>
+                                                <h5 class="mb-0">@item.Tendongtb (@item.Soluong)</h5>
                                             </li>
                                         }
                                         <li class="list-group-item">
@@ -124,6 +123,8 @@
                                     Xóa tất cả
                                 </a>
                             </div>
+                            
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="pt-5">
@@ -135,11 +136,13 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
+                                    <a asp-action="Details" asp-controller="Cart">
                                     <div class="pt-5 text-end">
-                                        <button type="button" class="btn btn-dark btn-lg" data-mdb-ripple-color="dark">
+                                        <button type="submit" class="btn btn-dark btn-lg" data-mdb-ripple-color="dark">
                                             Xác nhận
-                                        </button>
+                                        </button> 
                                     </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -148,7 +151,7 @@
             }
         </div>
     </div>
-
+  
 </body>
 
 </html>

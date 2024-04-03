@@ -72,7 +72,7 @@
                 </a>
                 <ul class="nav-group-items">
                     <li class="nav-item">
-                        <a class="nav-link" href="base/accordion.html">
+                        <a class="nav-link" asp-action="Index" asp-controller="Borrow">
                             <svg class="nav-icon">
                                 <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-note-add")"></use>
                             </svg>Phiếu mượn
@@ -100,41 +100,35 @@
                         <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-menu")"></use>
                     </svg>
                 </button>
+                @RenderSection("searchArea",required:false)
+
                 <ul class="header-nav ms-3">
+                    <li style="margin-right: 10px;">
+                        <a asp-action="Index" asp-controller="Cart">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-cart" viewBox="0 0 16 16" style="margin-left: -5px; margin-right: 5px;">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                            </svg>
+                        </a>
+                    </li>
                     <li class="nav-item dropdown">
-                        <li style="margin-right: 10px;">
-                            <a asp-action="Index" asp-controller="Cart">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-cart" viewBox="0 0 16 16" style="margin-left: -5px; margin-right: 5px;">
-                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                                </svg>
-                            </a>
-                        </li>
                         <a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                             <div class="avatar avatar-md"><img class="avatar-img" src="@Url.Content("~/LayoutAdmin/dist/assets/img/avatars/8.jpg")" alt="user@email.com"></div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end pt-0">
-                            <div class="dropdown-header bg-light py-2">
-                                <div class="fw-semibold">Settings</div>
-                            </div>
-                            <a class="dropdown-item" href="#">
-                                <svg class="icon me-2">
-                                    <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-user")"></use>
-                                </svg> Profile
-                            </a>
                             <a class="dropdown-item" href="#">
                                 <svg class="icon me-2">
                                     <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-settings")"></use>
-                                </svg> Settings
+                                </svg> Tài khoản
                             </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" asp-action="Logout" asp-controller="Access">
+                            <a class="dropdown-item" asp-action="Logout" asp-area="" asp-controller="Access">
                                 <svg class="icon me-2">
                                     <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-account-logout")"></use>
-                                </svg> Logout
+                                </svg> Đăng xuất
                             </a>
                         </div>
                     </li>
                 </ul>
+                @RenderSection("naviheader",required:false)
             </div>
 
         </header>

@@ -28,12 +28,30 @@
     <link rel="icon" type="image/png" sizes="96x96" href="@Url.Content("~/LayoutAdmin/dist/assets/favicon/favicon-96x96.png")">
     <link rel="icon" type="image/png" sizes="16x16" href="@Url.Content("~/LayoutAdmin/dist/assets/favicon/favicon-16x16.png")">
     <link rel="manifest" href="@Url.Content("~/LayoutAdmin/dist/assets/favicon/manifest.json")">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="~/calendar-20/calendar-20/fonts/icomoon/style.css">
+
+    <link href='~/calendar-20/calendar-20/fullcalendar/packages/core/main.css' rel='stylesheet' />
+    <link href='~/calendar-20/calendar-20/fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/calendar-20/calendar-20/css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="~/calendar-20/calendar-20/css/style.css">
+    <link rel="stylesheet" href="~/css/styles.css">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="LayoutAdmin/dist/assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <!-- Vendors styles-->
     <link rel="stylesheet" href="@Url.Content("~/LayoutAdmin/dist/vendors/simplebar/css/simplebar.css")">
     <link rel="stylesheet" href="@Url.Content("~/LayoutAdmin/dist/css/vendors/simplebar.css")">
+    @* <link rel="stylesheet" href="@Url.Content("~/css/style.css")"> *@
     <!-- Main styles for this application-->
     <link href="@Url.Content("~/LayoutAdmin/dist/css/style.css")" rel="stylesheet">
     <!-- We use those styles to show code examples, you should remove them in your application.-->
@@ -65,40 +83,17 @@
                 </a>
                 <ul class="nav-group-items">
                     <li class="nav-item">
-                        <a class="nav-link" href="base/accordion.html">
+                        <a class="nav-link" asp-action="Index" asp-controller="DongThietBi">
                             <svg class="nav-icon">
                                 <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-laptop")"></use>
-                            </svg>Danh sách thiết bị
+                            </svg>Dòng thiết bị
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-action="ToolDetailList" asp-controller="ToolDetail" asp-area="Admin">
+                        <a class="nav-link" onclick="getUrl()">
                             <svg class="nav-icon">
                                 <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-laptop")"></use>
-                            </svg>Danh sách chi tiết thiết bị
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-group">
-                <a class="nav-link nav-group-toggle" href="#">
-                    <svg class="nav-icon">
-                        <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-battery-alert")"></use>
-                    </svg> Sửa thanh lý thiết bị
-                </a>
-                <ul class="nav-group-items">
-                    <li class="nav-item">
-                        <a class="nav-link" href="base/accordion.html">
-                            <svg class="nav-icon">
-                                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-battery-slash")"></use>
-                            </svg>Thiết bị sửa
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="base/breadcrumb.html">
-                            <svg class="nav-icon">
-                                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-battery-slash")"></use>
-                            </svg>Thiết bị thanh lý
+                            </svg>Thiết bị trong phòng
                         </a>
                     </li>
                 </ul>
@@ -107,21 +102,21 @@
                 <a class="nav-link nav-group-toggle" href="#">
                     <svg class="nav-icon">
                         <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-notes")"></use>
-                    </svg> Mượn trả thiết bị
+                    </svg> Mượn và sửa thiết bị
                 </a>
                 <ul class="nav-group-items">
                     <li class="nav-item">
-                        <a class="nav-link" href="base/accordion.html">
+                        <a class="nav-link" asp-action="LichsuMuon" asp-controller="PhieuMuonAdmin">
                             <svg class="nav-icon">
                                 <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-note-add")"></use>
-                            </svg>Phiếu mượn
+                            </svg>Lịch sử phiếu mượn
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="base/breadcrumb.html">
+                        <a class="nav-link" asp-action="LichsuMuon" asp-controller="PhieuMuonAdmin">
                             <svg class="nav-icon">
                                 <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-note-add")"></use>
-                            </svg>Phiếu trả
+                            </svg>Lịch sử phiếu sửa
                         </a>
                     </li>
                 </ul>
@@ -179,12 +174,42 @@
             </li>
             @if (HttpContextAccessor.HttpContext.Session.GetInt32("TypeAccount") == 2)
             {
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                <li class="nav-group">
+                    <a class="nav-link nav-group-toggle" href="#">
                         <svg class="nav-icon">
-                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-apps-settings")"></use>
-                        </svg>Thay đổi qui định
+                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-user")"></use>
+                        </svg>Cài đặt
                     </a>
+                    <ul class="nav-group-items">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="Index" asp-controller="Coso">
+                                <svg class="nav-icon">
+                                    <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-user-plus")"></use>
+                                </svg>Cơ sở 
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="Index" asp-controller="Phong">
+                                <svg class="nav-icon">
+                                    <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-user-plus")"></use>
+                                </svg>Phòng
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="Index" asp-controller="Khoa">
+                                <svg class="nav-icon">
+                                    <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-user-plus")"></use>
+                                </svg>Khóa
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="Index" asp-controller="Nganh">
+                                <svg class="nav-icon">
+                                    <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-user-plus")"></use>
+                                </svg>Ngành
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             }
         </ul>
@@ -258,7 +283,30 @@
     <!-- CoreUI and necessary plugins-->
     <script src="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/coreui/js/coreui.bundle.min.js")"></script>
     <script src="@Url.Content("~/LayoutAdmin/dist/vendors/simplebar/js/simplebar.min.js")"></script>
+    <script>
+        var searchStringThietBi = encodeURIComponent(localStorage.getItem('savedsearchStringThietBi'));
+        var coso = encodeURIComponent(localStorage.getItem('savedCoso'));
+        var phong = encodeURIComponent(localStorage.getItem('savedPhong'));
+        var loaiphong = encodeURIComponent(localStorage.getItem('savedLoaiPhong'));
+        var trangthai = encodeURIComponent(localStorage.getItem('savedTrangthai'));
 
+        var urlA = "/Admin/ThietBi/ThietBiList?searchStringThietBi=" + searchStringThietBi + "&Coso=" + coso + "&Phong=" + phong + "&LoaiPhong=" + loaiphong + "&Trangthai=" + trangthai;;
+
+        function getUrl() {
+            window.location.href = urlA;
+        }
+    </script>
+    <script src="~/calendar-20/calendar-20/js/main.js"></script>
+
+    <script src="~/calendar-20/calendar-20/js/jquery-3.3.1.min.js"></script>
+    <script src="~/calendar-20/calendar-20/js/popper.min.js"></script>
+    <script src="~/calendar-20/calendar-20/js/bootstrap.min.js"></script>
+
+    <script src='~/calendar-20/calendar-20/fullcalendar/packages/core/main.js'></script>
+    <script src='~/calendar-20/calendar-20/fullcalendar/packages/interaction/main.js'></script>
+    <script src='~/calendar-20/calendar-20/fullcalendar/packages/daygrid/main.js'></script>
+    <script src='~/calendar-20/calendar-20/fullcalendar/packages/timegrid/main.js'></script>
+    <script src='~/calendar-20/calendar-20/fullcalendar/packages/list/main.js'></script>
 
 </body>
 </html>

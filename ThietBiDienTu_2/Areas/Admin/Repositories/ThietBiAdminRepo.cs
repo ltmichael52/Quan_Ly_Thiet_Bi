@@ -1,20 +1,77 @@
-﻿using ThietBiDienTu_2.Areas.Admin.InterfaceRepositories;
+﻿using System.Diagnostics;
+using ThietBiDienTu_2.Areas.Admin.InterfaceRepositories;
+using ThietBiDienTu_2.Areas.Admin.ViewModels;
 using ThietBiDienTu_2.Models;
 
 namespace ThietBiDienTu_2.Areas.Admin.Repositories
 {
-    public class ThietBiAdminRepo : IThietBiAdmin
+    public class ThietBiAdminRepo :IThietBiAdmin
     {
         ToolDbContext context;
         public ThietBiAdminRepo(ToolDbContext _context)
         {
-            this.context = _context;
+            context = _context;
         }
 
-        public List<Thietbi> GetAllThietBi()
+        public List<Thietbi> GetTBList()
         {
-            List<Thietbi> tbList = context.Thietbis.ToList();
+            List<Thietbi> tbList = context.Thietbis.Select(x=>new Thietbi
+            {
+                Matb = x.Matb,
+                Seri = x.Seri,
+                Map = x.Map,
+                Madongtb = x.Madongtb,
+                Trangthai = x.Trangthai,
+                MapNavigation = context.Phongs.FirstOrDefault(y=>y.Map ==x.Map),               
+                MadongtbNavigation = context.Dongthietbis.FirstOrDefault(y=>y.Madongtb == x.Madongtb),
+            }).ToList();
+              
             return tbList;
+        }
+
+        public Thietbi GetTBById(int _Matb)
+        {
+            Thietbi tb = context.Thietbis.FirstOrDefault(x => x.Matb == _Matb);
+            if (tb != null)
+            {
+                tb.MapNavigation = context.Phongs.FirstOrDefault(y => y.Map == tb.Map);
+                tb.MadongtbNavigation = context.Dongthietbis.FirstOrDefault(y => y.Madongtb == tb.Madongtb);
+            }
+            
+
+            return tb;
+        }
+
+        public Thietbi CheckSeriExist(string seri, int maDongTb, string oldSeri)
+        {
+            Thietbi tb = context.Thietbis.FirstOrDefault(x => x.Seri == seri && x.Seri != oldSeri && x.Madongtb == maDongTb);
+            return tb;
+        }
+        public void AddTB(Thietbi tb)
+        {
+            context.Thietbis.Add(tb);
+            context.SaveChanges();
+        }
+
+        public void UpdateTB(ThietBiViewAdmin ThietBiView)
+        {
+            Thietbi tb = context.Thietbis.FirstOrDefault(x => x.Matb == ThietBiView.Matb);
+            tb.Seri = ThietBiView.Seri;
+            tb.Map = ThietBiView.MaP;
+            tb.Trangthai = ThietBiView.TrangThai;
+            context.Thietbis.Update(tb);
+            context.SaveChanges();
+
+        }
+
+        public void DeleteTB(int MaTB)
+        {
+            Thietbi tb = context.Thietbis.FirstOrDefault(x => x.Matb == MaTB);
+            List<Chitietphieumuon> ctpm = context.Chitietphieumuons.Where(x => x.Matb == tb.Matb).ToList();
+            context.Chitietphieumuons.RemoveRange(ctpm);
+
+            context.Thietbis.Remove(tb);
+            context.SaveChanges();
         }
     }
 }

@@ -5,19 +5,21 @@ namespace ThietBiDienTu_2.Models;
 
 public partial class Thietbi
 {
-    public string Matb { get; set; } = null!;
+    public int Matb { get; set; }
 
-    public string Tenthietbi { get; set; } = null!;
+    public string Seri { get; set; } = null!;
 
-    public string Hinhanh { get; set; } = null!;
+    public string Map { get; set; } = null!;
 
-    public string? Maloai { get; set; }
+    public int Madongtb { get; set; }
 
-    public int Soluong { get; set; }
+    public string? Trangthai { get; set; }
 
-    public string? Mota { get; set; }
+    public virtual ICollection<Chitietphieumuon> Chitietphieumuons { get; set; } = new List<Chitietphieumuon>();
 
-    public virtual ICollection<Chitietthietbi> Chitietthietbis { get; set; } = new List<Chitietthietbi>();
+    public virtual Dongthietbi MadongtbNavigation { get; set; } = null!;
 
-    public virtual Loaithietbi? MaloaiNavigation { get; set; }
+    public virtual Phong MapNavigation { get; set; } = null!;
+
+    public virtual ICollection<Phieusua> Phieusuas { get; set; } = new List<Phieusua>();
 }

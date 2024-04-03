@@ -11,7 +11,18 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 /*Thêm đoạn CSS này để điều chỉnh vị trí của các phần tử trong card*/
+.imgProduct {
+    max-height: 60px;
+    max-width: 60px;
+}
+.linktag {
+    color: #321fdb;
+    text-decoration: underline;
+}
 
+    .linktag:hover {
+        color: #2819af;
+    }
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;

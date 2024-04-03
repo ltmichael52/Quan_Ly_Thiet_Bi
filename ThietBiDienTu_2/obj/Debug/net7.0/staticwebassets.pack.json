@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\ThietBiDienTu_2.bundle.scp.css"
     },
     {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\Contents\\img\\af98fa1d-4338-49e4-ade8-c116a91720e3-5bfa9815-80e7-4bb4-acef-6e94324c7451_85844507-5c23-4d48-9999-874f4cdd7c59_95c544e4-00bf-4f77-ae04-920c2a9604fb_886e73bf-7bef-4df5-9233-544b25798bd0_46d1eb79-a1d0-4cd0-b03f-b0ea0c3af149.jpg",
+      "PackagePath": "staticwebassets\\Contents\\img\\af98fa1d-4338-49e4-ade8-c116a91720e3-5bfa9815-80e7-4bb4-acef-6e94324c7451_85844507-5c23-4d48-9999-874f4cdd7c59_95c544e4-00bf-4f77-ae04-920c2a9604fb_886e73bf-7bef-4df5-9233-544b25798bd0_46d1eb79-a1d0-4cd0-b03f-b0ea0c3af149.jpg"
+    },
+    {
       "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\LayoutAdmin\\.babelrc.js",
       "PackagePath": "staticwebassets\\LayoutAdmin\\.babelrc.js"
     },
@@ -9645,6 +9649,2314 @@
       "PackagePath": "staticwebassets\\LayoutAdmin\\src\\views\\widgets.html"
     },
     {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\._calendar-20",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\._calendar-20"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\._.DS_Store",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\._.DS_Store"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\._css",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\._css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\._fonts",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\._fonts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\._fullcalendar",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\._fullcalendar"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\._images",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\._images"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\._index.html",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\._index.html"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\._js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\._js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\._main.html",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\._main.html"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\._scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\._scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\css\\._.DS_Store",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\css\\._.DS_Store"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\css\\._bootstrap",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\css\\._bootstrap"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\css\\._bootstrap.min.css",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\css\\._bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\css\\._bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\css\\._bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\css\\._owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\css\\._owl.carousel.min.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\css\\._rome.css",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\css\\._rome.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\css\\._style.css",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\css\\._style.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\css\\bootstrap\\._mixins",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\css\\bootstrap\\._mixins"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\css\\bootstrap\\mixins\\.__buttons.css",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\css\\bootstrap\\mixins\\.__buttons.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\css\\bootstrap\\mixins\\.__grid.css",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\css\\bootstrap\\mixins\\.__grid.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\css\\bootstrap\\mixins\\.__resize.css",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\css\\bootstrap\\mixins\\.__resize.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fonts\\._.DS_Store",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fonts\\._.DS_Store"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fonts\\._icomoon",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fonts\\._icomoon"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\._Read Me.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\._Read Me.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\._demo-files",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\._demo-files"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\._demo.html",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\._demo.html"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\._fonts",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\._fonts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\._selection.json",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\._selection.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\._style.css",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\._style.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\demo-files\\._demo.css",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\demo-files\\._demo.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\demo-files\\._demo.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\demo-files\\._demo.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\fonts\\._icomoon.eot",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\fonts\\._icomoon.eot"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\fonts\\._icomoon.svg",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\fonts\\._icomoon.svg"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\fonts\\._icomoon.ttf",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\fonts\\._icomoon.ttf"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\fonts\\._icomoon.woff",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fonts\\icomoon\\fonts\\._icomoon.woff"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\._packages",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\._packages"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._bootstrap",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._bootstrap"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._core",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._core"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._daygrid",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._daygrid"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._google-calendar",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._google-calendar"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._interaction",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._interaction"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._list",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._list"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._luxon",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._luxon"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._moment",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._moment"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._moment-timezone",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._moment-timezone"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._rrule",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._rrule"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._timegrid",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\._timegrid"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\bootstrap\\._LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\bootstrap\\._LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\bootstrap\\._README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\bootstrap\\._README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\bootstrap\\._main.css",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\bootstrap\\._main.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\bootstrap\\._main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\bootstrap\\._main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\bootstrap\\._main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\bootstrap\\._main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\bootstrap\\._main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\bootstrap\\._main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\bootstrap\\._main.min.css",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\bootstrap\\._main.min.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\bootstrap\\._main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\bootstrap\\._main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\bootstrap\\._package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\bootstrap\\._package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._locales",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._locales"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._locales-all.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._locales-all.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._locales-all.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._locales-all.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._main.css",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._main.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._main.min.css",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._main.min.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\._package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._af.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._af.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ar-dz.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ar-dz.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ar-kw.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ar-kw.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ar-ly.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ar-ly.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ar-ma.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ar-ma.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ar-sa.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ar-sa.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ar-tn.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ar-tn.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ar.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ar.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._bg.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._bg.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._bs.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._bs.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ca.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ca.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._cs.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._cs.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._da.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._da.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._de.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._de.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._el.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._el.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._en-au.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._en-au.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._en-gb.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._en-gb.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._en-nz.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._en-nz.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._es-us.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._es-us.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._es.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._es.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._et.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._et.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._eu.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._eu.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._fa.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._fa.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._fi.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._fi.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._fr-ca.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._fr-ca.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._fr-ch.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._fr-ch.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._fr.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._fr.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._gl.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._gl.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._he.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._he.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._hi.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._hi.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._hr.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._hr.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._hu.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._hu.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._id.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._id.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._is.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._is.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._it.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._it.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ja.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ja.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ka.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ka.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._kk.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._kk.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ko.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ko.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._lb.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._lb.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._lt.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._lt.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._lv.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._lv.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._mk.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._mk.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ms.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ms.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._nb.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._nb.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._nl.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._nl.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._nn.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._nn.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._pl.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._pl.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._pt-br.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._pt-br.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._pt.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._pt.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ro.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ro.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ru.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._ru.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._sk.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._sk.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._sl.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._sl.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._sq.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._sq.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._sr-cyrl.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._sr-cyrl.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._sr.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._sr.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._sv.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._sv.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._th.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._th.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._tr.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._tr.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._uk.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._uk.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._vi.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._vi.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._zh-cn.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._zh-cn.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._zh-tw.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\core\\locales\\._zh-tw.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\daygrid\\._LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\daygrid\\._LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\daygrid\\._README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\daygrid\\._README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\daygrid\\._main.css",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\daygrid\\._main.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\daygrid\\._main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\daygrid\\._main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\daygrid\\._main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\daygrid\\._main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\daygrid\\._main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\daygrid\\._main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\daygrid\\._main.min.css",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\daygrid\\._main.min.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\daygrid\\._main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\daygrid\\._main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\daygrid\\._package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\daygrid\\._package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\google-calendar\\._LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\google-calendar\\._LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\google-calendar\\._README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\google-calendar\\._README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\google-calendar\\._main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\google-calendar\\._main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\google-calendar\\._main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\google-calendar\\._main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\google-calendar\\._main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\google-calendar\\._main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\google-calendar\\._main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\google-calendar\\._main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\google-calendar\\._package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\google-calendar\\._package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\interaction\\._LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\interaction\\._LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\interaction\\._README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\interaction\\._README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\interaction\\._main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\interaction\\._main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\interaction\\._main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\interaction\\._main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\interaction\\._main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\interaction\\._main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\interaction\\._main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\interaction\\._main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\interaction\\._package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\interaction\\._package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\list\\._LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\list\\._LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\list\\._README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\list\\._README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\list\\._main.css",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\list\\._main.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\list\\._main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\list\\._main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\list\\._main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\list\\._main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\list\\._main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\list\\._main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\list\\._main.min.css",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\list\\._main.min.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\list\\._main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\list\\._main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\list\\._package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\list\\._package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\luxon\\._LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\luxon\\._LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\luxon\\._README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\luxon\\._README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\luxon\\._main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\luxon\\._main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\luxon\\._main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\luxon\\._main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\luxon\\._main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\luxon\\._main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\luxon\\._main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\luxon\\._main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\luxon\\._package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\luxon\\._package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment-timezone\\._LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment-timezone\\._LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment-timezone\\._README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment-timezone\\._README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment-timezone\\._main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment-timezone\\._main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment-timezone\\._main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment-timezone\\._main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment-timezone\\._main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment-timezone\\._main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment-timezone\\._main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment-timezone\\._main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment-timezone\\._package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment-timezone\\._package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment\\._LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment\\._LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment\\._README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment\\._README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment\\._main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment\\._main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment\\._main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment\\._main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment\\._main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment\\._main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment\\._main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment\\._main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment\\._package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\moment\\._package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\rrule\\._LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\rrule\\._LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\rrule\\._README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\rrule\\._README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\rrule\\._main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\rrule\\._main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\rrule\\._main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\rrule\\._main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\rrule\\._main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\rrule\\._main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\rrule\\._main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\rrule\\._main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\rrule\\._package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\rrule\\._package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\timegrid\\._LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\timegrid\\._LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\timegrid\\._README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\timegrid\\._README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\timegrid\\._main.css",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\timegrid\\._main.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\timegrid\\._main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\timegrid\\._main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\timegrid\\._main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\timegrid\\._main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\timegrid\\._main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\timegrid\\._main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\timegrid\\._main.min.css",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\timegrid\\._main.min.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\timegrid\\._main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\timegrid\\._main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\timegrid\\._package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\fullcalendar\\packages\\timegrid\\._package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\images\\._.DS_Store",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\images\\._.DS_Store"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\js\\._.DS_Store",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\js\\._.DS_Store"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\js\\._bootstrap.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\js\\._bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\js\\._jquery-3.3.1.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\js\\._jquery-3.3.1.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\js\\._main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\js\\._main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\js\\._owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\js\\._owl.carousel.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\js\\._popper.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\js\\._popper.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\._.DS_Store",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\._.DS_Store"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\._bootstrap",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\._bootstrap"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\._style.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\._style.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__alert.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__alert.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__badge.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__badge.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__breadcrumb.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__breadcrumb.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__button-group.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__button-group.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__buttons.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__buttons.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__card.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__card.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__carousel.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__carousel.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__close.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__close.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__code.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__code.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__custom-forms.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__custom-forms.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__dropdown.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__dropdown.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__forms.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__forms.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__functions.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__functions.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__grid.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__grid.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__images.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__images.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__input-group.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__input-group.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__jumbotron.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__jumbotron.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__list-group.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__list-group.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__media.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__media.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__mixins.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__mixins.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__modal.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__modal.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__nav.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__nav.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__navbar.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__navbar.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__pagination.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__pagination.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__popover.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__popover.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__print.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__print.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__progress.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__progress.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__reboot.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__reboot.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__root.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__root.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__spinners.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__spinners.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__tables.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__tables.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__toasts.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__toasts.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__tooltip.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__tooltip.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__transitions.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__transitions.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__type.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__type.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__utilities.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__utilities.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__variables.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\.__variables.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\._bootstrap-grid.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\._bootstrap-grid.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\._bootstrap-reboot.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\._bootstrap-reboot.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\._bootstrap.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\._bootstrap.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\._mixins",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\._mixins"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\._utilities",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\._utilities"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\._vendor",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\._vendor"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__alert.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__alert.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__background-variant.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__background-variant.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__badge.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__badge.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__border-radius.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__border-radius.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__box-shadow.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__box-shadow.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__breakpoints.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__breakpoints.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__buttons.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__buttons.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__caret.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__caret.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__clearfix.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__clearfix.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__deprecate.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__deprecate.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__float.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__float.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__forms.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__forms.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__gradients.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__gradients.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__grid-framework.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__grid-framework.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__grid.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__grid.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__hover.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__hover.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__image.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__image.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__list-group.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__list-group.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__lists.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__lists.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__nav-divider.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__nav-divider.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__pagination.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__pagination.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__reset-text.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__reset-text.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__resize.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__resize.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__screen-reader.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__screen-reader.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__size.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__size.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__table-row.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__table-row.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__text-emphasis.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__text-emphasis.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__text-hide.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__text-hide.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__text-truncate.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__text-truncate.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__transition.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__transition.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__visibility.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\mixins\\.__visibility.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__align.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__align.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__background.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__background.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__borders.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__borders.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__clearfix.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__clearfix.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__display.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__display.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__embed.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__embed.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__flex.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__flex.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__float.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__float.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__overflow.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__overflow.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__position.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__position.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__screenreaders.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__screenreaders.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__shadows.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__shadows.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__sizing.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__sizing.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__spacing.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__spacing.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__stretched-link.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__stretched-link.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__text.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__text.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__visibility.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\utilities\\.__visibility.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\vendor\\.__rfs.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\__MACOSX\\calendar-20\\scss\\bootstrap\\vendor\\.__rfs.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\.DS_Store",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\.DS_Store"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\css\\.DS_Store",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\css\\.DS_Store"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\css\\bootstrap\\mixins\\_buttons.css",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\css\\bootstrap\\mixins\\_buttons.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\css\\bootstrap\\mixins\\_grid.css",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\css\\bootstrap\\mixins\\_grid.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\css\\bootstrap\\mixins\\_resize.css",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\css\\bootstrap\\mixins\\_resize.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\css\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\css\\owl.carousel.min.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\css\\rome.css",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\css\\rome.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\css\\style.css",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\css\\style.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fonts\\.DS_Store",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fonts\\.DS_Store"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fonts\\icomoon\\Read Me.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fonts\\icomoon\\Read Me.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fonts\\icomoon\\demo-files\\demo.css",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fonts\\icomoon\\demo-files\\demo.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fonts\\icomoon\\demo-files\\demo.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fonts\\icomoon\\demo-files\\demo.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fonts\\icomoon\\demo.html",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fonts\\icomoon\\demo.html"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fonts\\icomoon\\fonts\\icomoon.eot",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fonts\\icomoon\\fonts\\icomoon.eot"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fonts\\icomoon\\fonts\\icomoon.svg",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fonts\\icomoon\\fonts\\icomoon.svg"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fonts\\icomoon\\fonts\\icomoon.ttf",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fonts\\icomoon\\fonts\\icomoon.ttf"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fonts\\icomoon\\fonts\\icomoon.woff",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fonts\\icomoon\\fonts\\icomoon.woff"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fonts\\icomoon\\selection.json",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fonts\\icomoon\\selection.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fonts\\icomoon\\style.css",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fonts\\icomoon\\style.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\bootstrap\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\bootstrap\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\bootstrap\\README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\bootstrap\\README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\bootstrap\\main.css",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\bootstrap\\main.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\bootstrap\\main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\bootstrap\\main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\bootstrap\\main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\bootstrap\\main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\bootstrap\\main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\bootstrap\\main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\bootstrap\\main.min.css",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\bootstrap\\main.min.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\bootstrap\\main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\bootstrap\\main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\bootstrap\\package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\bootstrap\\package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales-all.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales-all.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales-all.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales-all.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\af.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\af.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ar-dz.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ar-dz.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ar-kw.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ar-kw.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ar-ly.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ar-ly.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ar-ma.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ar-ma.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ar-sa.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ar-sa.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ar-tn.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ar-tn.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ar.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ar.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\bg.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\bg.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\bs.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\bs.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ca.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ca.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\cs.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\cs.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\da.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\da.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\de.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\de.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\el.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\el.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\en-au.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\en-au.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\en-gb.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\en-gb.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\en-nz.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\en-nz.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\es-us.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\es-us.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\es.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\es.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\et.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\et.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\eu.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\eu.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\fa.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\fa.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\fi.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\fi.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\fr-ca.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\fr-ca.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\fr-ch.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\fr-ch.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\fr.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\fr.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\gl.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\gl.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\he.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\he.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\hi.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\hi.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\hr.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\hr.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\hu.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\hu.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\id.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\id.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\is.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\is.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\it.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\it.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ja.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ja.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ka.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ka.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\kk.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\kk.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ko.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ko.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\lb.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\lb.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\lt.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\lt.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\lv.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\lv.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\mk.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\mk.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ms.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ms.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\nb.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\nb.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\nl.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\nl.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\nn.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\nn.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\pl.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\pl.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\pt-br.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\pt-br.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\pt.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\pt.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ro.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ro.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ru.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\ru.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\sk.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\sk.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\sl.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\sl.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\sq.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\sq.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\sr-cyrl.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\sr-cyrl.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\sr.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\sr.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\sv.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\sv.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\th.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\th.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\tr.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\tr.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\uk.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\uk.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\vi.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\vi.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\zh-cn.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\zh-cn.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\zh-tw.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\locales\\zh-tw.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\main.css",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\main.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\main.min.css",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\main.min.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\core\\package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\daygrid\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\daygrid\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\daygrid\\README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\daygrid\\README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\daygrid\\main.css",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\daygrid\\main.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\daygrid\\main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\daygrid\\main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\daygrid\\main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\daygrid\\main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\daygrid\\main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\daygrid\\main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\daygrid\\main.min.css",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\daygrid\\main.min.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\daygrid\\main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\daygrid\\main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\daygrid\\package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\daygrid\\package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\google-calendar\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\google-calendar\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\google-calendar\\README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\google-calendar\\README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\google-calendar\\main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\google-calendar\\main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\google-calendar\\main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\google-calendar\\main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\google-calendar\\main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\google-calendar\\main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\google-calendar\\main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\google-calendar\\main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\google-calendar\\package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\google-calendar\\package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\interaction\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\interaction\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\interaction\\README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\interaction\\README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\interaction\\main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\interaction\\main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\interaction\\main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\interaction\\main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\interaction\\main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\interaction\\main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\interaction\\main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\interaction\\main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\interaction\\package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\interaction\\package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\list\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\list\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\list\\README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\list\\README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\list\\main.css",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\list\\main.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\list\\main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\list\\main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\list\\main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\list\\main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\list\\main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\list\\main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\list\\main.min.css",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\list\\main.min.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\list\\main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\list\\main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\list\\package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\list\\package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\luxon\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\luxon\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\luxon\\README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\luxon\\README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\luxon\\main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\luxon\\main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\luxon\\main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\luxon\\main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\luxon\\main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\luxon\\main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\luxon\\main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\luxon\\main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\luxon\\package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\luxon\\package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment-timezone\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment-timezone\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment-timezone\\README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment-timezone\\README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment-timezone\\main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment-timezone\\main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment-timezone\\main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment-timezone\\main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment-timezone\\main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment-timezone\\main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment-timezone\\main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment-timezone\\main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment-timezone\\package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment-timezone\\package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment\\README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment\\README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment\\main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment\\main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment\\main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment\\main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment\\main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment\\main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment\\main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment\\main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment\\package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\moment\\package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\rrule\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\rrule\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\rrule\\README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\rrule\\README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\rrule\\main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\rrule\\main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\rrule\\main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\rrule\\main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\rrule\\main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\rrule\\main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\rrule\\main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\rrule\\main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\rrule\\package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\rrule\\package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\timegrid\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\timegrid\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\timegrid\\README.md",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\timegrid\\README.md"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\timegrid\\main.css",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\timegrid\\main.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\timegrid\\main.d.ts",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\timegrid\\main.d.ts"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\timegrid\\main.esm.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\timegrid\\main.esm.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\timegrid\\main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\timegrid\\main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\timegrid\\main.min.css",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\timegrid\\main.min.css"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\timegrid\\main.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\timegrid\\main.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\fullcalendar\\packages\\timegrid\\package.json",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\fullcalendar\\packages\\timegrid\\package.json"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\images\\.DS_Store",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\images\\.DS_Store"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\index.html",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\index.html"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\js\\.DS_Store",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\js\\.DS_Store"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\js\\jquery-3.3.1.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\js\\jquery-3.3.1.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\js\\main.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\js\\main.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\js\\owl.carousel.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\js\\popper.min.js",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\js\\popper.min.js"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\main.html",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\main.html"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\.DS_Store",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\.DS_Store"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_alert.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_alert.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_badge.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_badge.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_breadcrumb.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_button-group.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_button-group.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_buttons.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_card.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_card.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_carousel.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_carousel.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_close.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_close.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_code.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_code.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_custom-forms.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_custom-forms.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_dropdown.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_forms.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_forms.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_functions.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_functions.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_grid.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_grid.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_images.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_images.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_input-group.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_input-group.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_jumbotron.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_jumbotron.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_list-group.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_list-group.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_media.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_media.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_mixins.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_mixins.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_modal.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_modal.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_nav.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_nav.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_navbar.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_navbar.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_pagination.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_pagination.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_popover.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_popover.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_print.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_print.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_progress.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_progress.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_reboot.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_reboot.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_root.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_root.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_spinners.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_spinners.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_tables.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_tables.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_toasts.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_toasts.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_tooltip.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_tooltip.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_transitions.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_transitions.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_type.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_type.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_utilities.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_utilities.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\_variables.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\_variables.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\bootstrap-grid.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\bootstrap-grid.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\bootstrap-reboot.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\bootstrap-reboot.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\bootstrap.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_alert.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_alert.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_background-variant.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_background-variant.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_badge.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_badge.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_border-radius.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_border-radius.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_box-shadow.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_box-shadow.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_breakpoints.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_breakpoints.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_caret.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_caret.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_clearfix.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_deprecate.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_deprecate.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_float.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_float.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_forms.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_forms.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_gradients.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_gradients.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_grid-framework.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_grid-framework.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_grid.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_grid.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_hover.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_hover.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_image.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_image.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_list-group.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_list-group.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_lists.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_lists.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_nav-divider.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_nav-divider.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_pagination.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_pagination.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_reset-text.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_reset-text.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_resize.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_resize.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_screen-reader.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_screen-reader.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_size.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_size.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_table-row.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_table-row.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_text-emphasis.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_text-emphasis.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_text-hide.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_text-hide.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_text-truncate.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_text-truncate.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_transition.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_transition.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_visibility.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\mixins\\_visibility.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_align.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_align.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_background.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_background.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_borders.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_borders.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_clearfix.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_display.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_display.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_embed.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_embed.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_flex.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_flex.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_float.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_float.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_overflow.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_overflow.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_position.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_position.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_screenreaders.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_screenreaders.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_shadows.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_shadows.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_sizing.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_sizing.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_spacing.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_spacing.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_stretched-link.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_stretched-link.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_text.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_text.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_visibility.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\utilities\\_visibility.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\bootstrap\\vendor\\_rfs.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\bootstrap\\vendor\\_rfs.scss"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\calendar-20\\calendar-20\\scss\\style.scss",
+      "PackagePath": "staticwebassets\\calendar-20\\calendar-20\\scss\\style.scss"
+    },
+    {
       "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\css\\styles.css",
       "PackagePath": "staticwebassets\\css\\styles.css"
     },
@@ -9657,8 +11969,76 @@
       "PackagePath": "staticwebassets\\images\\1.jpg"
     },
     {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\1acad73a-f826-4254-a015-14ecf202fdbd-download (1).jpg",
+      "PackagePath": "staticwebassets\\images\\1acad73a-f826-4254-a015-14ecf202fdbd-download (1).jpg"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\1c0e01bf-f0f5-4d6c-b892-9405e943f440-93bf20c3-2a25-44ac-b2e9-a66e175b929b_4342b420-91be-485e-86df-80eb5d75fb9c_TurfCopaPinkAbove.jpg",
+      "PackagePath": "staticwebassets\\images\\1c0e01bf-f0f5-4d6c-b892-9405e943f440-93bf20c3-2a25-44ac-b2e9-a66e175b929b_4342b420-91be-485e-86df-80eb5d75fb9c_TurfCopaPinkAbove.jpg"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\1e33d690-7754-4946-b8a7-9a0a332c0fff-download.jpg",
+      "PackagePath": "staticwebassets\\images\\1e33d690-7754-4946-b8a7-9a0a332c0fff-download.jpg"
+    },
+    {
       "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\2.jpg",
       "PackagePath": "staticwebassets\\images\\2.jpg"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\299f49af-5a5c-40bc-a83c-6da5702d0f1b-micBest.jpg",
+      "PackagePath": "staticwebassets\\images\\299f49af-5a5c-40bc-a83c-6da5702d0f1b-micBest.jpg"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\43d76324-662f-4a6d-96a9-88c49b765e3a-4c90e6bd.jpg",
+      "PackagePath": "staticwebassets\\images\\43d76324-662f-4a6d-96a9-88c49b765e3a-4c90e6bd.jpg"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\53563532-21ae-4b02-9647-4dcb01de33ff-560b90766bb5c4eb9da4.jpg",
+      "PackagePath": "staticwebassets\\images\\53563532-21ae-4b02-9647-4dcb01de33ff-560b90766bb5c4eb9da4.jpg"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\6d4b34d0-2381-485e-8e6c-9a9adca8919e-4c90e6bd.jpg",
+      "PackagePath": "staticwebassets\\images\\6d4b34d0-2381-485e-8e6c-9a9adca8919e-4c90e6bd.jpg"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\74d96fb8-08bc-4189-8830-5e9c5f66ce27-85844507-5c23-4d48-9999-874f4cdd7c59_95c544e4-00bf-4f77-ae04-920c2a9604fb_886e73bf-7bef-4df5-9233-544b25798bd0_46d1eb79-a1d0-4cd0-b03f-b0ea0c3af149.jpg",
+      "PackagePath": "staticwebassets\\images\\74d96fb8-08bc-4189-8830-5e9c5f66ce27-85844507-5c23-4d48-9999-874f4cdd7c59_95c544e4-00bf-4f77-ae04-920c2a9604fb_886e73bf-7bef-4df5-9233-544b25798bd0_46d1eb79-a1d0-4cd0-b03f-b0ea0c3af149.jpg"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\76bacfe2-146e-4404-93b7-c1999e617648-download (1).jpg",
+      "PackagePath": "staticwebassets\\images\\76bacfe2-146e-4404-93b7-c1999e617648-download (1).jpg"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\a2b59c44-d978-4488-bf9f-ced800da0d31-68113c29-6fb8-4cca-b337-6ef9e1cbe99a.jpg",
+      "PackagePath": "staticwebassets\\images\\a2b59c44-d978-4488-bf9f-ced800da0d31-68113c29-6fb8-4cca-b337-6ef9e1cbe99a.jpg"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\a6db2321-25ec-48b3-949f-cf4b7fdefd17-4c90e6bd.jpg",
+      "PackagePath": "staticwebassets\\images\\a6db2321-25ec-48b3-949f-cf4b7fdefd17-4c90e6bd.jpg"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\ca25afa9-8758-4e67-a947-f751e2c66011-e309311c-5437-4cd0-9c87-636e61e87329_2a5f1129-c7c0-47e8-9d49-4dd39d993fbc_abd78516-d585-4306-91dd-85e9fb76641b_30dd4eb6-53a1-41fd-b2b9-f943db9ddf2d.jpg",
+      "PackagePath": "staticwebassets\\images\\ca25afa9-8758-4e67-a947-f751e2c66011-e309311c-5437-4cd0-9c87-636e61e87329_2a5f1129-c7c0-47e8-9d49-4dd39d993fbc_abd78516-d585-4306-91dd-85e9fb76641b_30dd4eb6-53a1-41fd-b2b9-f943db9ddf2d.jpg"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\cd9042e8-be11-489f-b830-fabcb1914620-68113c29-6fb8-4cca-b337-6ef9e1cbe99a.jpg",
+      "PackagePath": "staticwebassets\\images\\cd9042e8-be11-489f-b830-fabcb1914620-68113c29-6fb8-4cca-b337-6ef9e1cbe99a.jpg"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\cdafac81-12ca-48af-96cd-c9b2f56ac82c-4c90e6bd.jpg",
+      "PackagePath": "staticwebassets\\images\\cdafac81-12ca-48af-96cd-c9b2f56ac82c-4c90e6bd.jpg"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\dell.jpg",
+      "PackagePath": "staticwebassets\\images\\dell.jpg"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\micBest.jpg",
+      "PackagePath": "staticwebassets\\images\\micBest.jpg"
+    },
+    {
+      "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\no_images.jpg",
+      "PackagePath": "staticwebassets\\images\\no_images.jpg"
     },
     {
       "Id": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\js\\scripts.js",

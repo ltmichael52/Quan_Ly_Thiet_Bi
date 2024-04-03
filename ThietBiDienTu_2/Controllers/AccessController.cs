@@ -14,7 +14,7 @@ namespace ThietBiDienTu_2.Controllers
 
         public IActionResult Login()
         {
-            if (HttpContext.Session.GetString("UserName") == null)
+            if (HttpContext.Session.GetInt32("UserName") == null)
             {
                 return View();
                 //If not login
@@ -34,22 +34,23 @@ namespace ThietBiDienTu_2.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(Account user)
+        public IActionResult Login(Taikhoan user)
         {
-            if (HttpContext.Session.GetString("UserName") == null)
+            if (HttpContext.Session.GetInt32("UserName") == null)
             {
-                var u = _context.Accounts
-                    .Where(x => x.Username.Equals(user.Username) && x.Password.Equals(user.Password))
+                var u = _context.Taikhoans
+                    .Where(x => x.Matk.Equals(user.Matk) && x.Matkhau.Equals(user.Matkhau))
                     .FirstOrDefault();
                 //Check user and password
 
                 if (u != null)
                 {
-                    HttpContext.Session.SetString("UserName", u.Username.ToString());
-                    HttpContext.Session.SetInt32("TypeAccount", (int)u.Loaiuser);
+                    HttpContext.Session.SetInt32("UserName", u.Matk);
+                    HttpContext.Session.SetInt32("TypeAccount", (int)u.Loaitk);
 
                     if (HttpContext.Session.GetInt32("TypeAccount") == 0)
                     {
+
                         return RedirectToAction("Index", "Home");
                     }
                     else

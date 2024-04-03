@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Coso>
+
+<h1>Cơ sở</h1>
+<a asp-action="Create">Tạo cơ sở mới</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã cơ sở</th>
+            <th>Tên cơ sở</th>
+            <th>Địa chỉ</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var coso in Model)
+        {
+            <tr>
+                <td>@coso.Macs</td>
+                <td>@coso.Tencs</td>
+                <td>@coso.Diachi</td>
+                <td>
+                    <a class="btn btn-info btn-sm"  href="@Url.Action("Details", "Coso", new { id = coso.Macs })">
+                        <svg class="icon icon-lg">
+                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-list")"></use>
+                        </svg>
+                    </a>
+                    <a class="btn btn-primary btn-sm" href="@Url.Action("Edit", "Coso", new { id = coso.Macs })">
+                        <svg class="icon icon-lg">
+                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-pen")"></use>
+                        </svg>
+                    </a> 
+                    <a class="btn btn-danger btn-sm" href="@Url.Action("Delete", "Coso", new { id = coso.Macs })">
+                        <svg class="icon icon-lg">
+                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
+                        </svg>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

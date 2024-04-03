@@ -1,0 +1,23 @@
+﻿@model Coso
+
+<h1>Delete Cơ sở</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Coso</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Mã cơ sở</dt>
+        <dd>@Model.Macs</dd>
+        <dt>Tên cơ sở</dt>
+        <dd>@Model.Tencs</dd>
+        <dt>Địa chỉ</dt>
+        <dd>@Model.Diachi</dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Macs" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a href="@Url.Action("Index")">Back to List</a>
+    </form>
+</div>

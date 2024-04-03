@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Phong>
+
+<h1>Phòng</h1>
+<a asp-action="Create">Tạo phòng mới</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã phòng</th>
+            <th>Tên phòng</th>
+            <th>Loại phòng</th>
+            <th>Mã cơ sở</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var phong in Model)
+        {
+            <tr>
+                <td>@phong.Map</td>
+                <td>@phong.Tenphong</td>
+                <td>@phong.Loaiphong</td>
+                <td>@phong.Macs</td>
+                <td>
+                    <a href="@Url.Action("Edit", "Phong", new { id = phong.Map })">Edit</a> 
+                    <a href="@Url.Action("Details", "Phong", new { id = phong.Map })">Details</a>
+                    <a href="@Url.Action("Delete", "Phong", new { id = phong.Map })">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

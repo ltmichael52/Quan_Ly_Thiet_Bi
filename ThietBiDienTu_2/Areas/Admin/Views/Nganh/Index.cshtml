@@ -1,0 +1,27 @@
+﻿@model IEnumerable<ThietBiDienTu_2.Models.Nganh>
+
+<h2>Danh sách Ngành</h2>
+<a asp-action="Create">Tạo ngành mới</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã Ngành</th>
+            <th>Tên Ngành</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var nganh in Model)
+        {
+            <tr>
+                <td>@nganh.Manganh</td>
+                <td>@nganh.Tennganh</td>
+                <td>
+                    <a href="@Url.Action("Edit", new { id = nganh.Manganh })">Sửa</a> |
+                    <a href="@Url.Action("Details", new { id = nganh.Manganh })">Chi tiết</a> |
+                    <a href="@Url.Action("Delete", new { id = nganh.Manganh })">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

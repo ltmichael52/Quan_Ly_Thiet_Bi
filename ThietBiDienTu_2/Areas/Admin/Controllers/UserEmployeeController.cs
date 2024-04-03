@@ -10,8 +10,6 @@ using X.PagedList;
 namespace ThietBiDienTu_2.Areas.Admin.Controllers
 {
     [Area("admin")]
-    [Route("admin/[controller]/[action]/{id?}")]
-    [AuthenticationManager]
     public class UserEmployeeController : Controller
     {
         ToolDbContext _context;
@@ -74,14 +72,14 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             }
             else
             {
-                Account nacc = new Account
+                Taikhoan nacc = new Taikhoan
                 {
-                    Username = nv.Manv,
-                    Password = "123456",
-                    Loaiuser = 1
+                    Matk = nv.Manv,
+                    Matkhau = "123456",
+                    Loaitk = 1
                 };
                 nv.ManvNavigation = nacc;
-                _context.Accounts.Add(nacc);
+                _context.Taikhoans.Add(nacc);
                 _context.Nhanviens.Add(nv);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
@@ -91,7 +89,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
         public IActionResult Update(int id)
         {
             Nhanvien _nv = _context.Nhanviens.FirstOrDefault(x => x.Manv == id);
-            Account _acc = _context.Accounts.FirstOrDefault(x => x.Username == id);
+            Taikhoan _acc = _context.Taikhoans.FirstOrDefault(x => x.Matk == id);
             EmpAcc empacc = new EmpAcc
             {
                 nv = _nv,
@@ -107,7 +105,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             {
                 return View(emp_acc);
             }
-            else if (_context.Nhanviens.Any(x => x.Manv == emp_acc.nv.Manv && x.Manv != emp_acc.acc.Username))
+            else if (_context.Nhanviens.Any(x => x.Manv == emp_acc.nv.Manv && x.Manv != emp_acc.acc.Matk))
             {
                 ModelState.AddModelError("nv.Manv", "Mã nhân viên đã tồn tại");
                 return View(emp_acc);
@@ -116,17 +114,17 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             {
                 //Update method doesn't track the change of the primary key 
                 //So need to remove then add new one
-                Account acc = _context.Accounts.FirstOrDefault(x => x.Username == emp_acc.acc.Username);
-                Nhanvien emp = _context.Nhanviens.FirstOrDefault(x => x.Manv == emp_acc.acc.Username);
+                Taikhoan acc = _context.Taikhoans.FirstOrDefault(x => x.Matk == emp_acc.acc.Matk);
+                Nhanvien emp = _context.Nhanviens.FirstOrDefault(x => x.Manv == emp_acc.acc.Matk);
 
                 //Remove emp first cuz in database emp has foreign key to acc
                 _context.Nhanviens.Remove(emp);
-                _context.Accounts.Remove(acc);
+                _context.Taikhoans.Remove(acc);
 
-                emp_acc.acc.Username = emp_acc.nv.Manv;
-                emp_acc.acc.Password = emp_acc.acc.Password;
+                emp_acc.acc.Matk = emp_acc.nv.Manv;
+                emp_acc.acc.Matkhau = emp_acc.acc.Matkhau;
                 emp_acc.nv.ManvNavigation = emp_acc.acc;
-                _context.Accounts.Add(emp_acc.acc);
+                _context.Taikhoans.Add(emp_acc.acc);
                 _context.Nhanviens.Add(emp_acc.nv);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
@@ -136,11 +134,11 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
         public IActionResult Delete(int id)
         {
             Nhanvien emp = _context.Nhanviens.Find(id);
-            Account acc = _context.Accounts.Find(id);
+            Taikhoan acc = _context.Taikhoans.Find(id);
 
             //Remove emp first cuz in database emp has foreign key to acc
             _context.Nhanviens.Remove(emp);
-            _context.Accounts.Remove(acc);
+            _context.Taikhoans.Remove(acc);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }

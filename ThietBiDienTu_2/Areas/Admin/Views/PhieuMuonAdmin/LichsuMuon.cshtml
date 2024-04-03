@@ -1,0 +1,146 @@
+﻿@using ThietBiDienTu_2.Areas.Admin.ViewModels;
+@using ThietBiDienTu_2.Models;
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+@{
+    ViewData["Title"] = "Phieu muon list";
+}
+
+@model X.PagedList.IPagedList<Phieumuon>
+@section searchArea{
+    <form id="searchForm" action="@Url.Action("ThietBiList","ThietBi")" method="get" style="width:85%" class="d-none d-md-flex">
+        <div class="input-group">
+            <!-- Search bar -->
+            <input value="@ViewBag.searchString" style="width:25%" name="searchString" id="searchString" type="search" placeholder="Tìm tên tên sinh viên..." class="form-control rounded" aria-label="Search">
+            <button class="btn btn-info rounded" type="submit">
+                <svg class="icon icon-lg">
+                    <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-search")"></use>
+                </svg>
+            </button>
+
+            <input placeholder="Từ ngày" type="date"/>
+            <input placeholder="Đến ngày" type="date"/>
+            <!-- Filter dropdown 3 -->
+            <select name="Trangthai" id="stateSelect" class="form-select rounded ms-3">
+                <option value="all">Trạng thái</option>
+            </select>
+        </div>
+    </form>
+}
+
+@section naviheader{
+    <div class="header-divider"></div>
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Admin/HomeAdmin/Index">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Lịch sử phiếu mượn</li>
+            </ol>
+        </nav>
+    </div>
+}
+
+<!-- Content Header (Page header) -->
+<div class="card">
+    <div class="card-header">
+            <h3>Lịch sử phiếu mượn</h3>
+    </div>
+    <div class="card-body ">
+        <div class="bs-stepper linear">
+            <div class="bs-stepper-content">
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr class="text-center">
+                            <th>Stt</th>
+                            <th>Tên sinh viên</th>
+                            <th>Khóa</th>
+                            <th>Ngành</th>
+                            <th>Ngày lập</th>
+                            <th>Ngày mượn</th>
+                            <th>Người duyệt</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            int index = (Model.PageNumber - 1) * Model.PageSize;
+                        }
+                        @foreach (Phieumuon pm in Model)
+                        {
+                            ++index;
+                            var formattedDateNgayLap = ((DateTime)pm.Ngaylap).ToString("dd/MM/yyyy");
+                            var formattedDateNgayMuon = ((DateTime)pm.Ngaymuon).ToString("dd/MM/yyyy");
+                            <tr class="text-center">
+                                <td>@index</td>
+                                <td>@pm.MasvNavigation.Tensv</td>
+                                <td>@pm.MasvNavigation.MakhoaNavigation.Tenkhoa</td>
+                                <td>@pm.MasvNavigation.ManganhNavigation.Tennganh</td>
+                                <td>@formattedDateNgayLap</td>
+                                <td>@formattedDateNgayMuon</td>
+                                <td>@(pm.Manv == null ? "" : pm.ManvNavigation.Tennv)</td>
+                                @{
+                                    string ttView="";
+                                    if (pm.Trangthai == 0)
+                                    {
+                                        ttView = "Chưa duyệt";
+                                    }
+                                    if (pm.Trangthai == 1)
+                                    {
+                                        ttView = "Đã  duyệt";
+                                    }
+                                    if (pm.Trangthai == 2)
+                                    {
+                                        ttView = "Từ chối";
+                                    }
+                                }
+                                <td>@ttView</td>
+                                <td>
+                                    <a asp-action="ChitietPhieuMuon" asp-controller="PhieuMuonAdmin" asp-route-mapm="@pm.Mapm" class="btn btn-info btn-sm rounded">
+                                        <svg class="icon icon-lg">
+                                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-pen")"></use>
+                                        </svg>
+                                    </a>
+                                   
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        <!-- First Page -->
+                        @if (Model.PageNumber > 1)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="@Url.Action("Index", new { page = 1 })">Đầu</a>
+                            </li>
+                        }
+
+                        <!-- Page Numbers -->
+                        @for (var i = Math.Max(1, Model.PageNumber - 2); i <= Math.Min(Model.PageNumber + 2, Model.PageCount); i++)
+                        {
+                            <li class="page-item @(Model.PageNumber == i ? "active" : "")">
+                                <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                            </li>
+                        }
+
+                        <!-- Last Page -->
+                        @if (Model.PageNumber < Model.PageCount)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="@Url.Action("Index", new { page = Model.PageCount })">Cuối</a>
+                            </li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="footer"></div>
+

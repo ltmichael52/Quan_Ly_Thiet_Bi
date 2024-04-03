@@ -1,0 +1,349 @@
+﻿@using ThietBiDienTu_2.Areas.Admin.ViewModels;
+@using ThietBiDienTu_2.Models;
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+@{
+    ViewData["Title"] = "Devices Detail";
+}
+
+@model X.PagedList.IPagedList<ThietBiViewAdmin>
+@section searchArea{
+    <form id="searchForm" action="@Url.Action("ThietBiList","ThietBi")" method="get" style="width:85%" class="d-none d-md-flex">
+        <div class="input-group">
+            <!-- Search bar -->
+            <input value="@ViewBag.searchStringThietBi" style="width:30%" name="searchStringThietBi" id="searchStringThietBi" type="search" placeholder="Tìm tên dòng thiết bị..." class="form-control rounded" aria-label="Search">
+            <button class="btn btn-info rounded" type="submit">
+                <svg class="icon icon-lg">
+                    <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-search")"></use>
+                </svg>
+            </button>
+
+            <!-- Filter dropdown 1 -->
+            <select name="Coso" id="branchSelect" class="form-select rounded ms-3" style="width:10%">
+                <option value="all">Cơ sở</option>
+                @{
+                    foreach (SelectListItem item in ViewBag.CoSoList)
+                    {
+                                                                    <option value="@item.Value">@item.Text</option>
+                    }
+                }
+            </select>
+
+            <!-- Filter dropdown 2 -->
+            <select name="Phong" id="roomSelect" class="form-select rounded ms-3" style="width:15%">
+                <option value="all">Phòng</option>
+                @{
+                    foreach (SelectListItem item in ViewBag.PhongList)
+                    {
+                                                                    <option value="@item.Value">@item.Text.Split(',')[0]</option>
+                        //data-branch="@item.Text.Split(',')[1]"
+                    }
+                }
+            </select>
+            <select name="LoaiPhong" id="LoaiSelect" class="form-select rounded ms-3" style="width:14%;">
+                <option value="all">Loại phòng</option>
+                @{
+                    foreach (SelectListItem item in ViewBag.roomType)
+                    {
+                                                        <option value="@item.Value">@item.Text</option>
+                        //data-branch="@item.Text.Split(',')[1]"
+                    }
+                }
+            </select>
+            <!-- Filter dropdown 3 -->
+            <select name="Trangthai" id="stateSelect" class="form-select rounded ms-3" style="width:13%;">
+                <option value="all">Trạng thái</option>
+                @{
+                    foreach (SelectListItem item in ViewBag.stateSelect)
+                    {
+                                                            <option value="@item.Value">@item.Text</option>
+                        //data-branch="@item.Text.Split(',')[1]"
+                    }
+                }
+            </select>
+        </div>
+    </form>
+
+}
+
+@section naviheader{
+    <div class="header-divider"></div>
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Admin/HomeAdmin/Index">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Thiết bị trong phòng</li>
+            </ol>
+        </nav>
+    </div>
+}
+
+<!-- Content Header (Page header) -->
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col">
+                <h3 class="card-title">Thiết bị trong phòng</h3>
+            </div>
+            <div class="col-auto">
+                <div class="card-tools">
+                    <a asp-action="CreateThietBi" asp-controller="ThietBi" class="btn btn-primary btn-sm">
+                        <svg class="icon icon-lg">
+                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-plus")"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body ">
+        <div class="bs-stepper linear">
+            <div class="bs-stepper-content">
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr class="text-center">
+                            <th>Stt</th>
+                            <th>Ảnh</th>
+                            <th>Tên dòng thiết bị</th>
+                            <th>Seri</th>
+                            <th>Cơ sở</th>
+                            <th>Phòng</th>
+                            <th>Loại phòng</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center" style="vertical-align: middle;">
+                        @{
+                            int index = (Model.PageNumber - 1) * Model.PageSize;
+                        }
+                        @foreach (ThietBiViewAdmin ctthietbi in Model)
+                        {
+                            ++index;
+                            <tr class="text-center">
+                                <td>@index</td>
+                                <td>
+                                    <img class="imgProduct" src="~/images/@ctthietbi.HinhAnh">
+                                </td>
+                                <td>@ctthietbi.DongThietBi</td>
+                                <td>@ctthietbi.Seri</td>
+                                <td>@ctthietbi.CoSo</td>
+                                <td>@ctthietbi.MaP - @ctthietbi.Phong</td>
+                                <td>@ctthietbi.LoaiPhong</td>
+                                <td>@ctthietbi.TrangThai</td>
+                                <td>
+                                    <a asp-action="UpdateThietBi" asp-route-Id="@ctthietbi.Matb" class="btn btn-info btn-sm rounded">
+                                        <svg class="icon icon-lg">
+                                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-pen")"></use>
+                                        </svg>
+                                    </a>
+                                   @*  <button type="button" class="btn btn-danger btn-sm rounded" data-toggle="modal" data-target="#exampleModal">
+                                        <svg class="icon icon-lg">
+                                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
+                                        </svg>
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Xác nhận xóa?</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                                                    <a onclick="getUrlDelete('@ctthietbi.Matb')" class="btn btn-primary">Xác nhận</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> *@
+                                    <a onclick="getUrlDelete('@ctthietbi.Matb')" class="btn btn-danger btn-sm rounded">
+                                        <svg class="icon icon-lg">
+                                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        <!-- First Page -->
+                        @if (Model.PageNumber > 1)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" onclick="getUrlPage(1)">Đầu</a>
+                            </li>
+                        }
+
+                        <!-- Page Numbers -->
+                        @for (var i = Math.Max(1, Model.PageNumber - 2); i <= Math.Min(Model.PageNumber + 2, Model.PageCount); i++)
+                        {
+                            <li class="page-item @(Model.PageNumber == i ? "active" : "")">
+                                <a class="page-link" onclick="getUrlPage(@i)">@i</a>
+                            </li>
+                        }
+
+                        <!-- Last Page -->
+                        @if (Model.PageNumber < Model.PageCount)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" onclick="getUrlPage(@Model.PageCount)">Cuối</a>
+                            </li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="footer"></div>
+
+<script>
+    var searchStringThietBi = encodeURIComponent(localStorage.getItem('savedsearchStringThietBi'));
+    var coso = encodeURIComponent(localStorage.getItem('savedCoso'));
+    var phong = encodeURIComponent(localStorage.getItem('savedPhong'));
+    var loaiphong = encodeURIComponent(localStorage.getItem('savedLoaiPhong'));
+    var trangthai = encodeURIComponent(localStorage.getItem('savedTrangthai'));
+
+
+    function getUrlDelete(id) {
+        console.log("id", id);
+        var url = "/Admin/ThietBi/DeleteThietBi?id=" + id + "&searchStringThietBi1=" + searchStringThietBi + "&Coso1=" + coso + "&Phong1=" + phong + "&Loaiphong1=" + loaiphong + "&Trangthai1=" + trangthai;
+        console.log("Url: ", url);
+        window.location.href = url;
+    }
+    function getUrlPage(page){
+        var url = "/Admin/ThietBi/ThietBiList?page=" + page + "&searchStringThietBi=" + searchStringThietBi + "&Coso=" + coso + "&Phong=" + phong + "&LoaiPhong=" + loaiphong + "&Trangthai=" + trangthai;
+        window.location.href = url;
+    }
+    
+    document.getElementById('branchSelect').addEventListener('change', function () {
+        var branchId = this.value;
+        var roomSelect = document.getElementById('roomSelect');
+
+        //clear all option
+
+        while (roomSelect.options.length > 1) {
+            roomSelect.remove(1);
+        }
+
+        //C# is in server side, Javascript is in client side
+        //Show cannot use branch id in C# so using text
+        @foreach(SelectListItem items in ViewBag.PhongList)
+        {
+            <text>
+                var roomBranchId = "@items.Text.Split(',')[1]";
+                if (branchId === "all" || roomBranchId === branchId) {
+                    roomSelect.options.add(new Option("@items.Text.Split(',')[0]", "@items.Value", false));
+                    //false mean not selected by default
+                }
+            </text>
+            //Switch razor syntax and generate js code dynamically for each room
+        }
+            handleChange();
+    });
+    document.getElementById('roomSelect').addEventListener('change', function () {
+        handleChange();
+    });
+
+    document.getElementById('LoaiSelect').addEventListener('change', function () {
+        handleChange();
+    });
+
+    document.getElementById('stateSelect').addEventListener('change', function () {
+        handleChange();
+    });
+    
+    function storeData() {
+        const searchStringThietBi = document.getElementById('searchStringThietBi').value;
+        const coso = document.getElementById('branchSelect').value;
+        const phong = document.getElementById('roomSelect').value;
+        const roomType = document.getElementById('LoaiSelect').value;
+        const stateSelect = document.getElementById('stateSelect').value;
+
+        localStorage.setItem('savedCoso', coso);
+        localStorage.setItem('savedPhong', phong);
+        localStorage.setItem('savedsearchStringThietBi', searchStringThietBi);
+        localStorage.setItem('savedLoaiPhong', roomType);
+        localStorage.setItem('savedTrangthai', stateSelect);
+    }
+
+    function setData() {
+        const searchStringThietBi = localStorage.getItem('savedsearchStringThietBi');
+        const savedCoso = localStorage.getItem('savedCoso');
+        const savedPhong = localStorage.getItem('savedPhong');
+        const roomType = localStorage.getItem('savedLoaiPhong');
+        const stateSelect = localStorage.getItem('savedTrangthai');
+
+        if (searchStringThietBi != null && searchStringThietBi != "") {
+            document.getElementById('searchStringThietBi').value = searchStringThietBi;
+        }
+        if (roomType != null && roomType != "all") {
+            document.getElementById('LoaiSelect').value = roomType;
+        }
+        if (stateSelect != null && stateSelect != "all") {
+            document.getElementById('stateSelect').value = stateSelect;
+        }
+        if (savedCoso != null && savedCoso != "all") {
+            document.getElementById('branchSelect').value = savedCoso;
+            roomSelect = document.getElementById('roomSelect');
+
+            //clear all option
+
+            while (roomSelect.options.length > 1) {
+                roomSelect.remove(1);
+            }
+
+            //C# is in server side, Javascript is in client side
+            //Show cannot use branch id in C# so using text
+    @foreach (SelectListItem items in ViewBag.PhongList)
+    {
+        <text>
+                                var roomBranchId = "@items.Text.Split(',')[1]";
+                if (roomBranchId === savedCoso) {
+                    roomSelect.options.add(new Option("@items.Text.Split(',')[0]", "@items.Value", false));
+                    //false mean not selected by default
+                }
+        </text>
+        //Switch razor syntax and generate js code dynamically for each room
+    }
+            }
+
+        if (savedPhong != null && savedPhong != "all") {
+            document.getElementById('roomSelect').value = savedPhong;
+           
+        }
+    }
+
+    window.onload = function () {
+        setData();
+
+    }
+
+    function handleFormSubmission() {
+        storeData();
+    }
+
+    function handleChange() {
+        storeData();
+        document.getElementById('searchForm').submit();
+    }
+    
+
+    document.getElementById('searchForm').addEventListener('submit', function () {
+        handleFormSubmission();
+    });
+
+    
+
+    
+</script>

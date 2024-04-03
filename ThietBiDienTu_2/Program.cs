@@ -23,13 +23,15 @@ builder.Services.AddSession();
 // Register HttpContextAccessor
 
 builder.Services.AddScoped<ICoSoAdmin, CoSoAdminRepo>();
+builder.Services.AddScoped<IPhieuMuonAdmin, PhieuMuonAdminRepo>();
 builder.Services.AddScoped<IPhongAdmin, PhongAdminRepo>();
-builder.Services.AddScoped<ILoaiAdmin, LoaiAdminRepo>();
+builder.Services.AddScoped<IDongThietBiAdmin, DongThietBiAdminRepo>();
 builder.Services.AddScoped<IThietBiAdmin, ThietBiAdminRepo>();
 
 builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
 app.UseSession();
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -49,7 +51,7 @@ app.UseSession();
 app.MapAreaControllerRoute(
     name: "Admin",
     areaName: "Admin",
-    pattern: "admin/{controller=ToolDetail}/{action=ToolDetailList}/{id?}"
+    pattern: "admin/{controller=Coso}/{action=Index}/{id?}"
     );
 app.MapControllerRoute(
     name: "default",

@@ -28,7 +28,6 @@
                     @Html.AntiForgeryToken()
                     @Html.ValidationSummary(true)
                     <!-- your steps content here -->
-                    <div id="logins-part" class="content active dstepper-block" role="tabpanel" aria-labelledby="logins-part-trigger">
                         <div class="row">
                             <div class="col-md-6" style="width:40%">
                                 <div class="form-group mb-2" >
@@ -71,29 +70,34 @@
                             </div>
                         </div>
                         <div class="form-group mb-2">
-                            <label for="Diachi" class="mb-2"><strong>Địa chỉ</strong></label>
-                            @Html.TextBoxFor(x => x.Diachi, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(x => x.Diachi, null, new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group mb-2">
                             <label for="Gioitinh"><strong>Giới tính<span class="text-danger"> *  </span></strong></label>
                             @Html.RadioButtonFor(x => x.Gioitinh, "Nam") Nam @Html.RadioButtonFor(x => x.Gioitinh, "Nữ") Nữ
                             <div class="text-danger">
                                 @Html.ValidationMessageFor(x => x.Gioitinh, null, new { @class = "text-danger" })
                             </div>
                         </div>
-                        <div class="form-group mb-2">
-                            <label for="Ngaysinh" class="mb-2"><strong>Ngày sinh<span class="text-danger"> *</span></strong></label>
-                            @Html.TextBoxFor(x => x.Ngaysinh, new { @class = "form-control",placeholder="DD/MM/YYYY" })
-                            @Html.ValidationMessageFor(x => x.Ngaysinh, null, new { @class = "text-danger" })
+                        <div class="row">
+                            <div class="col-md-6" style="width:40%">
+                                <div class="form-group mb-2">
+                                    <label for="Ngaysinh" class="mb-2"><strong>Ngày sinh<span class="text-danger"> *</span></strong></label>
+                                    @Html.TextBoxFor(x => x.Ngaysinh, new { @class = "form-control",placeholder="DD/MM/YYYY" })
+                                    @Html.ValidationMessageFor(x => x.Ngaysinh, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="width:60%">
+                                <div class="form-group mb-2">
+                                    <label for="Diachi" class="mb-2"><strong>Địa chỉ</strong></label>
+                                    @Html.TextBoxFor(x => x.Diachi, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Diachi, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
                         </div>
-                        <input asp-for="@Model.ManvNavigation.Username" value="123" hidden/>
-                        <input asp-for="@Model.ManvNavigation.Password" value="123" hidden/>
+                        <input asp-for="@Model.ManvNavigation.Matk" value="123" hidden/>
+                        <input asp-for="@Model.ManvNavigation.Matkhau" value="123" hidden/>
                         <div class="form-group mt-3">
                             <a href="/Admin/UserEmployee/Index" class="btn btn-danger">Quay lại</a>
                             <button type="submit" class="btn btn-primary">Tạo mới</button>
                         </div>
-                    </div>
                 }
             </div>
         </div>
@@ -147,4 +151,4 @@
     <div class="col-12">
         <button type="submit" class="btn btn-primary">Sign in</button>
     </div>
-</form>*@
+</form> *@

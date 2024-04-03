@@ -1,0 +1,21 @@
+﻿@model ThietBiDienTu_2.Models.Khoa
+
+<h2>Xác nhận xóa Khóa</h2>
+
+<h3>Bạn có chắc chắn muốn xóa Khóa này không?</h3>
+<div>
+    <h4>Khóa</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Mã Khóa</dt>
+        <dd class="col-sm-10">@Model.Makhoa</dd>
+
+        <dt class="col-sm-2">Tên Khóa</dt>
+        <dd class="col-sm-10">@Model.Tenkhoa</dd>
+    </dl>
+</div>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Makhoa" />
+    <input type="submit" value="Xóa" class="btn btn-danger" /> |
+    <a href="@Url.Action("Index")">Hủy</a>
+</form>

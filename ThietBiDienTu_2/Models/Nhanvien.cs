@@ -19,7 +19,7 @@ public partial class Nhanvien
 
     public string? Diachi { get; set; }
 
-    public virtual Account ManvNavigation { get; set; } = null!;
+    public virtual Taikhoan ManvNavigation { get; set; } = null!;
 
     public virtual ICollection<Phieumuon> Phieumuons { get; set; } = new List<Phieumuon>();
 }

@@ -1,0 +1,47 @@
+﻿@model ThietBiDienTu_2.Models.Dongthietbi
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <!-- Sử dụng col-md-6 cho kích thước cột rộng hơn một chút -->
+        <form asp-action="CreateTool" asp-controller="DongThietBi" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Tendongtb" class="form-label">Tên Sản Phẩm</label>
+                <input asp-for="Tendongtb" class="form-control " />
+                <span asp-validation-for="Tendongtb" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Soluong" class="form-label">Số lượng</label>
+                <input asp-for="Soluong" class="form-control " />
+                <span asp-validation-for="Soluong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mota" class="form-label">Mota</label>
+                <input asp-for="Mota" class="form-control " />
+                <span asp-validation-for="Mota" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Hinhanh" class="form-label">Hình ảnh</label>
+                <input asp-for="Hinhanh" class="form-control" type="file" />
+                
+            </div>
+            <div class="mb-3">
+                <input type="submit" value="Create" class="btn btn-primary" /> <!-- Sử dụng btn-primary cho nút submit -->
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a> <!-- Sử dụng btn-secondary cho nút quay lại -->
+</div>
+
+

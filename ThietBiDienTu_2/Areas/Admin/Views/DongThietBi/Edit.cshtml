@@ -1,0 +1,49 @@
+﻿@model ThietBiDienTu_2.Models.Dongthietbi
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<h2 class="text-center mt-4 mb-4"> Chỉnh sửa </h2>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" asp-controller="DongThietBi" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Madongtb" value="@Model.Madongtb" />
+
+            <div class="form-group">
+                <label asp-for="Tendongtb" class="control-label">Tên sản phẩm</label>
+                <input asp-for="Tendongtb" class="form-control" />
+                <span asp-validation-for="Tendongtb" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Soluong" class="control-label">Số lượng</label>
+                <input asp-for="Soluong" class="form-control" />
+                <span asp-validation-for="Soluong" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Mota" class="control-label">Mô tả</label>
+                <input asp-for="Mota" class="form-control" />
+                <span asp-validation-for="Mota" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Hinhanh" class="form-label">Hình ảnh</label>
+                 <input asp-for="Hinhanh" class="form-control" value="@Model.Hinhanh" hidden />
+                <input asp-for="hinhanh" class="form-control" type="file" />
+            </div>
+           
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Lưu</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary mt-3">Trở về</a>
+</div>

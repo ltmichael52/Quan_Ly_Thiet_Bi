@@ -15,57 +15,46 @@ public partial class ToolDbContext : DbContext
     {
     }
 
-    public virtual DbSet<Account> Accounts { get; set; }
-
     public virtual DbSet<Chitietphieumuon> Chitietphieumuons { get; set; }
-
-    public virtual DbSet<Chitietthietbi> Chitietthietbis { get; set; }
 
     public virtual DbSet<Coso> Cosos { get; set; }
 
-    public virtual DbSet<Loaithietbi> Loaithietbis { get; set; }
+    public virtual DbSet<Dongthietbi> Dongthietbis { get; set; }
+
+    public virtual DbSet<Khoa> Khoas { get; set; }
+
+    public virtual DbSet<Nganh> Nganhs { get; set; }
 
     public virtual DbSet<Nhanvien> Nhanviens { get; set; }
 
     public virtual DbSet<Phieumuon> Phieumuons { get; set; }
 
+    public virtual DbSet<Phieusua> Phieusuas { get; set; }
+
     public virtual DbSet<Phong> Phongs { get; set; }
 
     public virtual DbSet<Sinhvien> Sinhviens { get; set; }
+
+    public virtual DbSet<Taikhoan> Taikhoans { get; set; }
 
     public virtual DbSet<Thietbi> Thietbis { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=MICHAEL;Initial Catalog=QLTHIETBI;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+        => optionsBuilder.UseSqlServer("Data Source=MICHAEL;Initial Catalog=QLTHIETBI2;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Account>(entity =>
-        {
-            entity.HasKey(e => e.Username).HasName("PK__ACCOUNT__6029121DD1D4BE32");
-
-            entity.ToTable("ACCOUNT");
-
-            entity.Property(e => e.Username)
-                .ValueGeneratedNever()
-                .HasColumnName("USERNAME");
-            entity.Property(e => e.Loaiuser).HasColumnName("LOAIUSER");
-            entity.Property(e => e.Password)
-                .HasMaxLength(255)
-                .HasColumnName("PASSWORD");
-        });
-
         modelBuilder.Entity<Chitietphieumuon>(entity =>
         {
-            entity.HasKey(e => new { e.Mapm, e.Seri });
+            entity.HasKey(e => new { e.Mapm, e.Matb });
 
             entity.ToTable("CHITIETPHIEUMUON");
 
+            entity.HasIndex(e => e.Matb, "IX_CHITIETPHIEUMUON_IDCTTB");
+
             entity.Property(e => e.Mapm).HasColumnName("MAPM");
-            entity.Property(e => e.Seri)
-                .HasMaxLength(255)
-                .HasColumnName("SERI");
+            entity.Property(e => e.Matb).HasColumnName("MATB");
             entity.Property(e => e.Ngaytra)
                 .HasColumnType("datetime")
                 .HasColumnName("NGAYTRA");
@@ -75,40 +64,10 @@ public partial class ToolDbContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_CHITIETPHIEUMUON_PHIEUMUON1");
 
-            entity.HasOne(d => d.SeriNavigation).WithMany(p => p.Chitietphieumuons)
-                .HasForeignKey(d => d.Seri)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_CHITIETPHIEUMUON_CHITIETTHIETBI");
-        });
-
-        modelBuilder.Entity<Chitietthietbi>(entity =>
-        {
-            entity.HasKey(e => e.Seri);
-
-            entity.ToTable("CHITIETTHIETBI");
-
-            entity.Property(e => e.Seri)
-                .HasMaxLength(255)
-                .HasColumnName("SERI");
-            entity.Property(e => e.Map)
-                .HasMaxLength(30)
-                .HasColumnName("MAP");
-            entity.Property(e => e.Matb)
-                .HasMaxLength(255)
-                .HasColumnName("MATB");
-            entity.Property(e => e.Trangthai)
-                .HasMaxLength(255)
-                .HasColumnName("TRANGTHAI");
-
-            entity.HasOne(d => d.MapNavigation).WithMany(p => p.Chitietthietbis)
-                .HasForeignKey(d => d.Map)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_CHITIETTHIETBI_PHONG");
-
-            entity.HasOne(d => d.MatbNavigation).WithMany(p => p.Chitietthietbis)
+            entity.HasOne(d => d.MatbNavigation).WithMany(p => p.Chitietphieumuons)
                 .HasForeignKey(d => d.Matb)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_CHITIETTHIETBI_THIETBI");
+                .HasConstraintName("FK_CHITIETPHIEUMUON_CHITIETTHIETBI");
         });
 
         modelBuilder.Entity<Coso>(entity =>
@@ -126,19 +85,44 @@ public partial class ToolDbContext : DbContext
                 .HasColumnName("TENCS");
         });
 
-        modelBuilder.Entity<Loaithietbi>(entity =>
+        modelBuilder.Entity<Dongthietbi>(entity =>
         {
-            entity.HasKey(e => e.Maloai);
+            entity.HasKey(e => e.Madongtb).HasName("PK__THIETBI__6023721DFE47CEB0");
 
-            entity.ToTable("LOAITHIETBI");
+            entity.ToTable("DONGTHIETBI");
 
-            entity.Property(e => e.Maloai)
-                .HasMaxLength(10)
-                .IsFixedLength()
-                .HasColumnName("MALOAI");
-            entity.Property(e => e.Tenloai)
-                .HasMaxLength(50)
-                .HasColumnName("TENLOAI");
+            entity.Property(e => e.Madongtb).HasColumnName("MADONGTB");
+            entity.Property(e => e.Hinhanh).HasColumnName("HINHANH");
+            entity.Property(e => e.Mota).HasColumnName("MOTA");
+            entity.Property(e => e.Soluong).HasColumnName("SOLUONG");
+            entity.Property(e => e.Tendongtb)
+                .HasMaxLength(255)
+                .HasColumnName("TENDONGTB");
+        });
+
+        modelBuilder.Entity<Khoa>(entity =>
+        {
+            entity.HasKey(e => e.Makhoa);
+
+            entity.ToTable("KHOA");
+
+            entity.Property(e => e.Makhoa).HasColumnName("MAKHOA");
+            entity.Property(e => e.Tenkhoa)
+                .HasMaxLength(55)
+                .HasColumnName("TENKHOA");
+        });
+
+        modelBuilder.Entity<Nganh>(entity =>
+        {
+            entity.HasKey(e => e.Manganh);
+
+            entity.ToTable("NGANH");
+
+            entity.Property(e => e.Manganh)
+            .HasColumnName("MANGANH");
+            entity.Property(e => e.Tennganh)
+                .HasMaxLength(255)
+                .HasColumnName("TENNGANH");
         });
 
         modelBuilder.Entity<Nhanvien>(entity =>
@@ -181,9 +165,23 @@ public partial class ToolDbContext : DbContext
 
             entity.ToTable("PHIEUMUON");
 
+            entity.HasIndex(e => e.Manv, "IX_PHIEUMUON_MANV");
+
+            entity.HasIndex(e => e.Masv, "IX_PHIEUMUON_MASV");
+
             entity.Property(e => e.Mapm).HasColumnName("MAPM");
+            entity.Property(e => e.Lydomuon)
+                .HasDefaultValueSql("(N'')")
+                .HasColumnName("LYDOMUON");
             entity.Property(e => e.Manv).HasColumnName("MANV");
             entity.Property(e => e.Masv).HasColumnName("MASV");
+            entity.Property(e => e.LydoTuChoi)
+               .HasMaxLength(255)
+               .HasColumnName("LYDOTUCHOI");
+            entity.Property(e => e.LydoHuy)
+               .HasMaxLength(255)
+               .HasColumnName("LYDOHUY");
+
             entity.Property(e => e.Ngaylap)
                 .HasColumnType("datetime")
                 .HasColumnName("NGAYLAP");
@@ -191,12 +189,10 @@ public partial class ToolDbContext : DbContext
                 .HasColumnType("datetime")
                 .HasColumnName("NGAYMUON");
             entity.Property(e => e.Trangthai)
-                .HasMaxLength(255)
                 .HasColumnName("TRANGTHAI");
 
             entity.HasOne(d => d.ManvNavigation).WithMany(p => p.Phieumuons)
                 .HasForeignKey(d => d.Manv)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_PHIEUMUON_NHANVIEN1");
 
             entity.HasOne(d => d.MasvNavigation).WithMany(p => p.Phieumuons)
@@ -205,15 +201,43 @@ public partial class ToolDbContext : DbContext
                 .HasConstraintName("FK_PHIEUMUON_SINHVIEN");
         });
 
+        modelBuilder.Entity<Phieusua>(entity =>
+        {
+            entity.HasKey(e => e.Maps);
+
+            entity.ToTable("PHIEUSUA");
+
+            entity.Property(e => e.Maps).HasColumnName("MAPS");
+            entity.Property(e => e.Chiphi)
+                .HasColumnType("money")
+                .HasColumnName("CHIPHI");
+            entity.Property(e => e.Matb).HasColumnName("MATB");
+            entity.Property(e => e.Mota).HasColumnName("MOTA");
+            entity.Property(e => e.Ngayhoantat)
+                .HasColumnType("datetime")
+                .HasColumnName("NGAYHOANTAT");
+            entity.Property(e => e.Ngaylap)
+                .HasColumnType("datetime")
+                .HasColumnName("NGAYLAP");
+
+            entity.HasOne(d => d.MatbNavigation).WithMany(p => p.Phieusuas)
+                .HasForeignKey(d => d.Matb)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_PHIEUSUA_THIETBI");
+        });
+
         modelBuilder.Entity<Phong>(entity =>
         {
             entity.HasKey(e => e.Map).HasName("PK__PHONG__C790778043DD78DD");
 
             entity.ToTable("PHONG");
 
+            entity.HasIndex(e => e.Macs, "IX_PHONG_MACS");
+
             entity.Property(e => e.Map)
                 .HasMaxLength(30)
                 .HasColumnName("MAP");
+            entity.Property(e => e.Douutien).HasColumnName("DOUUTIEN");
             entity.Property(e => e.Loaiphong)
                 .HasMaxLength(255)
                 .HasColumnName("LOAIPHONG");
@@ -248,12 +272,8 @@ public partial class ToolDbContext : DbContext
                 .HasMaxLength(3)
                 .HasDefaultValueSql("(N'')")
                 .HasColumnName("GIOITINH");
-            entity.Property(e => e.Khoa)
-                .HasMaxLength(255)
-                .HasColumnName("KHOA");
-            entity.Property(e => e.Nganh)
-                .HasMaxLength(255)
-                .HasColumnName("NGANH");
+            entity.Property(e => e.Makhoa).HasColumnName("MAKHOA");
+            entity.Property(e => e.Manganh).HasColumnName("MANGANH");
             entity.Property(e => e.Ngaysinh)
                 .HasColumnType("datetime")
                 .HasColumnName("NGAYSINH");
@@ -264,35 +284,68 @@ public partial class ToolDbContext : DbContext
                 .HasMaxLength(255)
                 .HasColumnName("TENSV");
 
+            entity.HasOne(d => d.MakhoaNavigation).WithMany(p => p.Sinhviens)
+                .HasForeignKey(d => d.Makhoa)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_SINHVIEN_KHOA");
+
+            entity.HasOne(d => d.ManganhNavigation).WithMany(p => p.Sinhviens)
+                .HasForeignKey(d => d.Manganh)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_SINHVIEN_NGANH");
+
             entity.HasOne(d => d.MasvNavigation).WithOne(p => p.Sinhvien)
                 .HasForeignKey<Sinhvien>(d => d.Masv)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__ACCOUNT__SV");
         });
 
+        modelBuilder.Entity<Taikhoan>(entity =>
+        {
+            entity.HasKey(e => e.Matk).HasName("PK__ACCOUNT__6029121DD1D4BE32");
+
+            entity.ToTable("TAIKHOAN");
+
+            entity.Property(e => e.Matk)
+                .ValueGeneratedNever()
+                .HasColumnName("MATK");
+            entity.Property(e => e.Loaitk).HasColumnName("LOAITK");
+            entity.Property(e => e.Matkhau)
+                .HasMaxLength(255)
+                .HasColumnName("MATKHAU");
+        });
+
         modelBuilder.Entity<Thietbi>(entity =>
         {
-            entity.HasKey(e => e.Matb).HasName("PK__THIETBI__6023721DFE47CEB0");
+            entity.HasKey(e => e.Matb).HasName("PK_CHITIETTHIETBI");
 
             entity.ToTable("THIETBI");
 
-            entity.Property(e => e.Matb)
-                .HasMaxLength(255)
-                .HasColumnName("MATB");
-            entity.Property(e => e.Hinhanh).HasColumnName("HINHANH");
-            entity.Property(e => e.Maloai)
-                .HasMaxLength(10)
-                .IsFixedLength()
-                .HasColumnName("MALOAI");
-            entity.Property(e => e.Mota).HasColumnName("MOTA");
-            entity.Property(e => e.Soluong).HasColumnName("SOLUONG");
-            entity.Property(e => e.Tenthietbi)
-                .HasMaxLength(255)
-                .HasColumnName("TENTHIETBI");
+            entity.HasIndex(e => e.Map, "IX_CHITIETTHIETBI_MAP");
 
-            entity.HasOne(d => d.MaloaiNavigation).WithMany(p => p.Thietbis)
-                .HasForeignKey(d => d.Maloai)
-                .HasConstraintName("FK_THIETBI_LOAITHIETBI");
+            entity.HasIndex(e => e.Madongtb, "IX_CHITIETTHIETBI_MATB");
+
+            entity.Property(e => e.Matb).HasColumnName("MATB");
+            entity.Property(e => e.Madongtb).HasColumnName("MADONGTB");
+            entity.Property(e => e.Map)
+                .HasMaxLength(30)
+                .HasColumnName("MAP");
+            entity.Property(e => e.Seri)
+                .HasMaxLength(255)
+                .HasColumnName("SERI");
+            entity.Property(e => e.Trangthai)
+                .HasMaxLength(255)
+                .HasColumnName("TRANGTHAI");
+
+            entity.HasOne(d => d.MadongtbNavigation).WithMany(p => p.Thietbis)
+                .HasForeignKey(d => d.Madongtb)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_CHITIETTHIETBI_THIETBI");
+
+            entity.HasOne(d => d.MapNavigation).WithMany(p => p.Thietbis)
+                .HasForeignKey(d => d.Map)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_CHITIETTHIETBI_PHONG");
         });
 
         OnModelCreatingPartial(modelBuilder);

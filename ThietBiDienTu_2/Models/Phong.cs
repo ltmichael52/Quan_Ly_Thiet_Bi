@@ -13,7 +13,9 @@ public partial class Phong
 
     public string Loaiphong { get; set; } = null!;
 
-    public virtual ICollection<Chitietthietbi> Chitietthietbis { get; set; } = new List<Chitietthietbi>();
+    public int? Douutien { get; set; }
 
     public virtual Coso MacsNavigation { get; set; } = null!;
+
+    public virtual ICollection<Thietbi> Thietbis { get; set; } = new List<Thietbi>();
 }

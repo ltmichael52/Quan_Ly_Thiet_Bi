@@ -1,0 +1,153 @@
+﻿@using ThietBiDienTu_2.Areas.Admin.ViewModels;
+@model PhieuMuonViewModel
+@{
+    var formattedNgayMuon = ((DateTime)Model.Ngaymuon.Date).ToString("dd/MM/yyyy");
+}
+
+@section naviheader{
+    <div class="header-divider"></div>
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Admin/HomeAdmin/Index">Home</a></li>
+                <li class="breadcrumb-item"><a href="/Admin/PhieuMuonAdmin/LichsuMuon">Lịch sử phiếu mượn</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Chi tiết phiếu mượn</li>
+            </ol>
+        </nav>
+    </div>
+}
+<div class="card">
+    <form asp-action="ChitietPhieuMuon" asp-controller="PhieuMuonAdmin" method="post">
+        <input asp-for="Trangthai" value="@Model.Trangthai" hidden/>
+    <div class="card-header">
+          
+        <div class="row">
+            <div class="col">
+                <h3 class="card-title">Chi tiết phiếu mượn</h3>
+            </div>
+          
+            @if(Model.Trangthai==0)
+            {
+                <div class="col-auto text-center">
+                    <div class="card-tools">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">
+                            <svg class="icon icon-lg">
+                                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-x-circle")"></use>
+                            </svg>
+                            Từ chối
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Xác nhận từ chối?</h5>
+                                       
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                            <select class ="form-control" asp-for="@Model.LydoTuChoi">
+                                                <option value="0">Chọn lý do từ chối </option>
+                                            </select>
+                                       
+                                        <span asp-validation-for="@Model.LydoTuChoi" class="text-danger"></span>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                                            <button type="submit" asp-route-trangthaiduyet="2" class="btn btn-primary">Xác nhận</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                            <button type="submit" asp-route-trangthaiduyet="1" class="btn btn-success btn-sm">
+                            <svg class="icon icon-lg">
+                                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-check-circle")"></use>
+                            </svg>
+                            Đồng ý
+                        </button>
+                    </div>
+                </div>
+            }
+                @if (Model.Trangthai == 1)
+                {
+                    <div class="col-auto text-center">
+                        <div class="card-tools">
+                            <div class="btn btn-success btn-sm" style="cursor:default">
+                                <svg class="icon icon-lg">
+                                    <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-check-circle")"></use>
+                                </svg>
+                                Đã duyệt
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+    </div>
+    <div class="card-body">
+            <div class="row">
+                <div class="col-md-6" style="width:40%">
+                    <div class="form-group mb-2">
+                        <label class="mb-2" asp-for="@Model.Masv"><strong>Mã sinh viên: </strong></label>
+                        <input class="form-control"asp-for="@Model.Masv" value="@Model.Masv" readonly style="background-color:#E8E8E8" />
+                    </div>
+                </div>
+                <div class="col-md-6" style="width:60%">
+                    <div class="form-group mb-2">
+                        <label class="mb-2" asp-for="@Model.Tensv"><strong>Tên sinh viên: </strong></label>
+                        <input class="form-control"asp-for="@Model.Tensv" value="@Model.Tensv" readonly style="background-color:#E8E8E8" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" style="width:40%">
+                    <div class="form-group mb-2">
+                        <label class="mb-2" asp-for="@Model.TenKhoa"><strong>Khóa: </strong></label>
+                        <input class="form-control" asp-for="@Model.TenKhoa" value="@Model.TenKhoa" readonly style="background-color:#E8E8E8" />
+                    </div>
+                </div>
+                <div class="col-md-6" style="width:60%">
+                    <div class="form-group mb-2">
+                        <label class="mb-2" asp-for="@Model.TenNganh"><strong>Ngành: </strong></label>
+                        <input class="form-control" asp-for="@Model.TenNganh" value="@Model.TenNganh" readonly style="background-color:#E8E8E8" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group mb-2">
+                        <label class="mb-2" asp-for="@Model.Ngaylap.Date"><strong>Ngày lập phiếu mượn: </strong></label>
+                       
+                        <input type="datetime" class="form-control" asp-for="@Model.Ngaylap.Date" value="@Model.Ngaylap.Date" readonly style="background-color:#E8E8E8" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mb-2">
+                        <label class="mb-2" class="mb-2" asp-for="@Model.Ngaymuon"><strong>Ngày mượn: </strong></label>
+                        <input type="datetime" class="form-control" asp-for="@Model.Ngaymuon.Date" value="@formattedNgayMuon" readonly style="background-color:#E8E8E8" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mb-2">
+                <label class="mb-2" asp-for="@Model.Lydomuon"><strong>Lý do mượn:</strong> </label>
+                <input class="form-control" asp-for="@Model.Lydomuon" value="@Model.Lydomuon" readonly style="background-color:#E8E8E8"/>
+            </div>
+            @{
+                if(Model.Trangthai == 2)
+                {
+                    <div class="form-group mb-2">
+                        <label class="mb-2" asp-for="@Model.LydoTuChoi"><strong>Lý do từ chối:</strong> </label>
+                        <input class="form-control" asp-for="@Model.LydoTuChoi" value="@Model.LydoTuChoi" readonly style="background-color:#E8E8E8" />
+                    </div>
+                }
+            }
+            <div class="form-group mt-3">
+                <a asp-action="LichsuMuon" asp-controller="PhieuMuonAdmin"class="btn btn-primary">Quay lại</a>
+            </div>
+    </div>
+    </form>
+</div>

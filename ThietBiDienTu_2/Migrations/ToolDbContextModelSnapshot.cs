@@ -22,81 +22,25 @@ namespace ThietBiDienTu_2.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ThietBiDienTu_2.Models.Account", b =>
-                {
-                    b.Property<int>("Username")
-                        .HasColumnType("int")
-                        .HasColumnName("USERNAME");
-
-                    b.Property<short>("Loaiuser")
-                        .HasColumnType("smallint")
-                        .HasColumnName("LOAIUSER");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("PASSWORD");
-
-                    b.HasKey("Username")
-                        .HasName("PK__ACCOUNT__6029121DD1D4BE32");
-
-                    b.ToTable("ACCOUNT", (string)null);
-                });
-
             modelBuilder.Entity("ThietBiDienTu_2.Models.Chitietphieumuon", b =>
                 {
                     b.Property<int>("Mapm")
                         .HasColumnType("int")
                         .HasColumnName("MAPM");
 
-                    b.Property<string>("Seri")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("SERI");
+                    b.Property<int>("Matb")
+                        .HasColumnType("int")
+                        .HasColumnName("MATB");
 
                     b.Property<DateTime?>("Ngaytra")
                         .HasColumnType("datetime")
                         .HasColumnName("NGAYTRA");
 
-                    b.HasKey("Mapm", "Seri");
+                    b.HasKey("Mapm", "Matb");
 
-                    b.HasIndex("Seri");
+                    b.HasIndex(new[] { "Matb" }, "IX_CHITIETPHIEUMUON_IDCTTB");
 
                     b.ToTable("CHITIETPHIEUMUON", (string)null);
-                });
-
-            modelBuilder.Entity("ThietBiDienTu_2.Models.Chitietthietbi", b =>
-                {
-                    b.Property<string>("Seri")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("SERI");
-
-                    b.Property<string>("Map")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)")
-                        .HasColumnName("MAP");
-
-                    b.Property<string>("Matb")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("MATB");
-
-                    b.Property<string>("Trangthai")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("TRANGTHAI");
-
-                    b.HasKey("Seri");
-
-                    b.HasIndex("Map");
-
-                    b.HasIndex("Matb");
-
-                    b.ToTable("CHITIETTHIETBI", (string)null);
                 });
 
             modelBuilder.Entity("ThietBiDienTu_2.Models.Coso", b =>
@@ -125,23 +69,78 @@ namespace ThietBiDienTu_2.Migrations
                     b.ToTable("COSO", (string)null);
                 });
 
-            modelBuilder.Entity("ThietBiDienTu_2.Models.Loaithietbi", b =>
+            modelBuilder.Entity("ThietBiDienTu_2.Models.Dongthietbi", b =>
                 {
-                    b.Property<string>("Maloai")
-                        .HasMaxLength(10)
-                        .HasColumnType("nchar(10)")
-                        .HasColumnName("MALOAI")
-                        .IsFixedLength();
+                    b.Property<int>("Madongtb")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("MADONGTB");
 
-                    b.Property<string>("Tenloai")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Madongtb"));
+
+                    b.Property<string>("Hinhanh")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("TENLOAI");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("HINHANH");
 
-                    b.HasKey("Maloai");
+                    b.Property<string>("Mota")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("MOTA");
 
-                    b.ToTable("LOAITHIETBI", (string)null);
+                    b.Property<int>("Soluong")
+                        .HasColumnType("int")
+                        .HasColumnName("SOLUONG");
+
+                    b.Property<string>("Tendongtb")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("TENDONGTB");
+
+                    b.HasKey("Madongtb")
+                        .HasName("PK__THIETBI__6023721DFE47CEB0");
+
+                    b.ToTable("DONGTHIETBI", (string)null);
+                });
+
+            modelBuilder.Entity("ThietBiDienTu_2.Models.Khoa", b =>
+                {
+                    b.Property<int>("Makhoa")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("MAKHOA");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Makhoa"));
+
+                    b.Property<string>("Tenkhoa")
+                        .IsRequired()
+                        .HasMaxLength(55)
+                        .HasColumnType("nvarchar(55)")
+                        .HasColumnName("TENKHOA");
+
+                    b.HasKey("Makhoa");
+
+                    b.ToTable("KHOA", (string)null);
+                });
+
+            modelBuilder.Entity("ThietBiDienTu_2.Models.Nganh", b =>
+                {
+                    b.Property<int>("Manganh")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("MANGANH");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Manganh"));
+
+                    b.Property<string>("Tennganh")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("TENNGANH");
+
+                    b.HasKey("Manganh");
+
+                    b.ToTable("NGANH", (string)null);
                 });
 
             modelBuilder.Entity("ThietBiDienTu_2.Models.Nhanvien", b =>
@@ -198,7 +197,24 @@ namespace ThietBiDienTu_2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Mapm"));
 
-                    b.Property<int>("Manv")
+                    b.Property<string>("LydoHuy")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("LYDOHUY");
+
+                    b.Property<string>("LydoTuChoi")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("LYDOTUCHOI");
+
+                    b.Property<string>("Lydomuon")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("LYDOMUON")
+                        .HasDefaultValueSql("(N'')");
+
+                    b.Property<int?>("Manv")
                         .HasColumnType("int")
                         .HasColumnName("MANV");
 
@@ -210,23 +226,58 @@ namespace ThietBiDienTu_2.Migrations
                         .HasColumnType("datetime")
                         .HasColumnName("NGAYLAP");
 
-                    b.Property<DateTime?>("Ngaymuon")
+                    b.Property<DateTime>("Ngaymuon")
                         .HasColumnType("datetime")
                         .HasColumnName("NGAYMUON");
 
-                    b.Property<string>("Trangthai")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
+                    b.Property<int>("Trangthai")
+                        .HasColumnType("int")
                         .HasColumnName("TRANGTHAI");
 
                     b.HasKey("Mapm")
                         .HasName("PK__PHIEUMUO__603F61CDEBB7FD91");
 
-                    b.HasIndex("Manv");
+                    b.HasIndex(new[] { "Manv" }, "IX_PHIEUMUON_MANV");
 
-                    b.HasIndex("Masv");
+                    b.HasIndex(new[] { "Masv" }, "IX_PHIEUMUON_MASV");
 
                     b.ToTable("PHIEUMUON", (string)null);
+                });
+
+            modelBuilder.Entity("ThietBiDienTu_2.Models.Phieusua", b =>
+                {
+                    b.Property<int>("Maps")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("MAPS");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Maps"));
+
+                    b.Property<decimal?>("Chiphi")
+                        .HasColumnType("money")
+                        .HasColumnName("CHIPHI");
+
+                    b.Property<int>("Matb")
+                        .HasColumnType("int")
+                        .HasColumnName("MATB");
+
+                    b.Property<string>("Mota")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("MOTA");
+
+                    b.Property<DateTime?>("Ngayhoantat")
+                        .HasColumnType("datetime")
+                        .HasColumnName("NGAYHOANTAT");
+
+                    b.Property<DateTime>("Ngaylap")
+                        .HasColumnType("datetime")
+                        .HasColumnName("NGAYLAP");
+
+                    b.HasKey("Maps");
+
+                    b.HasIndex("Matb");
+
+                    b.ToTable("PHIEUSUA", (string)null);
                 });
 
             modelBuilder.Entity("ThietBiDienTu_2.Models.Phong", b =>
@@ -235,6 +286,10 @@ namespace ThietBiDienTu_2.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)")
                         .HasColumnName("MAP");
+
+                    b.Property<int?>("Douutien")
+                        .HasColumnType("int")
+                        .HasColumnName("DOUUTIEN");
 
                     b.Property<string>("Loaiphong")
                         .IsRequired()
@@ -255,7 +310,7 @@ namespace ThietBiDienTu_2.Migrations
                     b.HasKey("Map")
                         .HasName("PK__PHONG__C790778043DD78DD");
 
-                    b.HasIndex("Macs");
+                    b.HasIndex(new[] { "Macs" }, "IX_PHONG_MACS");
 
                     b.ToTable("PHONG", (string)null);
                 });
@@ -289,17 +344,13 @@ namespace ThietBiDienTu_2.Migrations
                         .HasColumnName("GIOITINH")
                         .HasDefaultValueSql("(N'')");
 
-                    b.Property<string>("Khoa")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("KHOA");
+                    b.Property<int>("Makhoa")
+                        .HasColumnType("int")
+                        .HasColumnName("MAKHOA");
 
-                    b.Property<string>("Nganh")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("NGANH");
+                    b.Property<int>("Manganh")
+                        .HasColumnType("int")
+                        .HasColumnName("MANGANH");
 
                     b.Property<DateTime>("Ngaysinh")
                         .HasColumnType("datetime")
@@ -320,45 +371,71 @@ namespace ThietBiDienTu_2.Migrations
                     b.HasKey("Masv")
                         .HasName("PK__SINHVIEN__60228A2812E98CDF");
 
+                    b.HasIndex("Makhoa");
+
+                    b.HasIndex("Manganh");
+
                     b.ToTable("SINHVIEN", (string)null);
+                });
+
+            modelBuilder.Entity("ThietBiDienTu_2.Models.Taikhoan", b =>
+                {
+                    b.Property<int>("Matk")
+                        .HasColumnType("int")
+                        .HasColumnName("MATK");
+
+                    b.Property<short>("Loaitk")
+                        .HasColumnType("smallint")
+                        .HasColumnName("LOAITK");
+
+                    b.Property<string>("Matkhau")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("MATKHAU");
+
+                    b.HasKey("Matk")
+                        .HasName("PK__ACCOUNT__6029121DD1D4BE32");
+
+                    b.ToTable("TAIKHOAN", (string)null);
                 });
 
             modelBuilder.Entity("ThietBiDienTu_2.Models.Thietbi", b =>
                 {
-                    b.Property<string>("Matb")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
+                    b.Property<int>("Matb")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
                         .HasColumnName("MATB");
 
-                    b.Property<string>("Hinhanh")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("HINHANH");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Matb"));
 
-                    b.Property<string>("Maloai")
-                        .HasMaxLength(10)
-                        .HasColumnType("nchar(10)")
-                        .HasColumnName("MALOAI")
-                        .IsFixedLength();
-
-                    b.Property<string>("Mota")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("MOTA");
-
-                    b.Property<int>("Soluong")
+                    b.Property<int>("Madongtb")
                         .HasColumnType("int")
-                        .HasColumnName("SOLUONG");
+                        .HasColumnName("MADONGTB");
 
-                    b.Property<string>("Tenthietbi")
+                    b.Property<string>("Map")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)")
+                        .HasColumnName("MAP");
+
+                    b.Property<string>("Seri")
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)")
-                        .HasColumnName("TENTHIETBI");
+                        .HasColumnName("SERI");
+
+                    b.Property<string>("Trangthai")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("TRANGTHAI");
 
                     b.HasKey("Matb")
-                        .HasName("PK__THIETBI__6023721DFE47CEB0");
+                        .HasName("PK_CHITIETTHIETBI");
 
-                    b.HasIndex("Maloai");
+                    b.HasIndex(new[] { "Map" }, "IX_CHITIETTHIETBI_MAP");
+
+                    b.HasIndex(new[] { "Madongtb" }, "IX_CHITIETTHIETBI_MATB");
 
                     b.ToTable("THIETBI", (string)null);
                 });
@@ -371,39 +448,20 @@ namespace ThietBiDienTu_2.Migrations
                         .IsRequired()
                         .HasConstraintName("FK_CHITIETPHIEUMUON_PHIEUMUON1");
 
-                    b.HasOne("ThietBiDienTu_2.Models.Chitietthietbi", "SeriNavigation")
+                    b.HasOne("ThietBiDienTu_2.Models.Thietbi", "MatbNavigation")
                         .WithMany("Chitietphieumuons")
-                        .HasForeignKey("Seri")
+                        .HasForeignKey("Matb")
                         .IsRequired()
                         .HasConstraintName("FK_CHITIETPHIEUMUON_CHITIETTHIETBI");
 
                     b.Navigation("MapmNavigation");
-
-                    b.Navigation("SeriNavigation");
-                });
-
-            modelBuilder.Entity("ThietBiDienTu_2.Models.Chitietthietbi", b =>
-                {
-                    b.HasOne("ThietBiDienTu_2.Models.Phong", "MapNavigation")
-                        .WithMany("Chitietthietbis")
-                        .HasForeignKey("Map")
-                        .IsRequired()
-                        .HasConstraintName("FK_CHITIETTHIETBI_PHONG");
-
-                    b.HasOne("ThietBiDienTu_2.Models.Thietbi", "MatbNavigation")
-                        .WithMany("Chitietthietbis")
-                        .HasForeignKey("Matb")
-                        .IsRequired()
-                        .HasConstraintName("FK_CHITIETTHIETBI_THIETBI");
-
-                    b.Navigation("MapNavigation");
 
                     b.Navigation("MatbNavigation");
                 });
 
             modelBuilder.Entity("ThietBiDienTu_2.Models.Nhanvien", b =>
                 {
-                    b.HasOne("ThietBiDienTu_2.Models.Account", "ManvNavigation")
+                    b.HasOne("ThietBiDienTu_2.Models.Taikhoan", "ManvNavigation")
                         .WithOne("Nhanvien")
                         .HasForeignKey("ThietBiDienTu_2.Models.Nhanvien", "Manv")
                         .IsRequired()
@@ -417,7 +475,6 @@ namespace ThietBiDienTu_2.Migrations
                     b.HasOne("ThietBiDienTu_2.Models.Nhanvien", "ManvNavigation")
                         .WithMany("Phieumuons")
                         .HasForeignKey("Manv")
-                        .IsRequired()
                         .HasConstraintName("FK_PHIEUMUON_NHANVIEN1");
 
                     b.HasOne("ThietBiDienTu_2.Models.Sinhvien", "MasvNavigation")
@@ -429,6 +486,17 @@ namespace ThietBiDienTu_2.Migrations
                     b.Navigation("ManvNavigation");
 
                     b.Navigation("MasvNavigation");
+                });
+
+            modelBuilder.Entity("ThietBiDienTu_2.Models.Phieusua", b =>
+                {
+                    b.HasOne("ThietBiDienTu_2.Models.Thietbi", "MatbNavigation")
+                        .WithMany("Phieusuas")
+                        .HasForeignKey("Matb")
+                        .IsRequired()
+                        .HasConstraintName("FK_PHIEUSUA_THIETBI");
+
+                    b.Navigation("MatbNavigation");
                 });
 
             modelBuilder.Entity("ThietBiDienTu_2.Models.Phong", b =>
@@ -444,35 +512,48 @@ namespace ThietBiDienTu_2.Migrations
 
             modelBuilder.Entity("ThietBiDienTu_2.Models.Sinhvien", b =>
                 {
-                    b.HasOne("ThietBiDienTu_2.Models.Account", "MasvNavigation")
+                    b.HasOne("ThietBiDienTu_2.Models.Khoa", "MakhoaNavigation")
+                        .WithMany("Sinhviens")
+                        .HasForeignKey("Makhoa")
+                        .IsRequired()
+                        .HasConstraintName("FK_SINHVIEN_KHOA");
+
+                    b.HasOne("ThietBiDienTu_2.Models.Nganh", "ManganhNavigation")
+                        .WithMany("Sinhviens")
+                        .HasForeignKey("Manganh")
+                        .IsRequired()
+                        .HasConstraintName("FK_SINHVIEN_NGANH");
+
+                    b.HasOne("ThietBiDienTu_2.Models.Taikhoan", "MasvNavigation")
                         .WithOne("Sinhvien")
                         .HasForeignKey("ThietBiDienTu_2.Models.Sinhvien", "Masv")
                         .IsRequired()
                         .HasConstraintName("FK__ACCOUNT__SV");
+
+                    b.Navigation("MakhoaNavigation");
+
+                    b.Navigation("ManganhNavigation");
 
                     b.Navigation("MasvNavigation");
                 });
 
             modelBuilder.Entity("ThietBiDienTu_2.Models.Thietbi", b =>
                 {
-                    b.HasOne("ThietBiDienTu_2.Models.Loaithietbi", "MaloaiNavigation")
+                    b.HasOne("ThietBiDienTu_2.Models.Dongthietbi", "MadongtbNavigation")
                         .WithMany("Thietbis")
-                        .HasForeignKey("Maloai")
-                        .HasConstraintName("FK_THIETBI_LOAITHIETBI");
+                        .HasForeignKey("Madongtb")
+                        .IsRequired()
+                        .HasConstraintName("FK_CHITIETTHIETBI_THIETBI");
 
-                    b.Navigation("MaloaiNavigation");
-                });
+                    b.HasOne("ThietBiDienTu_2.Models.Phong", "MapNavigation")
+                        .WithMany("Thietbis")
+                        .HasForeignKey("Map")
+                        .IsRequired()
+                        .HasConstraintName("FK_CHITIETTHIETBI_PHONG");
 
-            modelBuilder.Entity("ThietBiDienTu_2.Models.Account", b =>
-                {
-                    b.Navigation("Nhanvien");
+                    b.Navigation("MadongtbNavigation");
 
-                    b.Navigation("Sinhvien");
-                });
-
-            modelBuilder.Entity("ThietBiDienTu_2.Models.Chitietthietbi", b =>
-                {
-                    b.Navigation("Chitietphieumuons");
+                    b.Navigation("MapNavigation");
                 });
 
             modelBuilder.Entity("ThietBiDienTu_2.Models.Coso", b =>
@@ -480,9 +561,19 @@ namespace ThietBiDienTu_2.Migrations
                     b.Navigation("Phongs");
                 });
 
-            modelBuilder.Entity("ThietBiDienTu_2.Models.Loaithietbi", b =>
+            modelBuilder.Entity("ThietBiDienTu_2.Models.Dongthietbi", b =>
                 {
                     b.Navigation("Thietbis");
+                });
+
+            modelBuilder.Entity("ThietBiDienTu_2.Models.Khoa", b =>
+                {
+                    b.Navigation("Sinhviens");
+                });
+
+            modelBuilder.Entity("ThietBiDienTu_2.Models.Nganh", b =>
+                {
+                    b.Navigation("Sinhviens");
                 });
 
             modelBuilder.Entity("ThietBiDienTu_2.Models.Nhanvien", b =>
@@ -497,7 +588,7 @@ namespace ThietBiDienTu_2.Migrations
 
             modelBuilder.Entity("ThietBiDienTu_2.Models.Phong", b =>
                 {
-                    b.Navigation("Chitietthietbis");
+                    b.Navigation("Thietbis");
                 });
 
             modelBuilder.Entity("ThietBiDienTu_2.Models.Sinhvien", b =>
@@ -505,9 +596,18 @@ namespace ThietBiDienTu_2.Migrations
                     b.Navigation("Phieumuons");
                 });
 
+            modelBuilder.Entity("ThietBiDienTu_2.Models.Taikhoan", b =>
+                {
+                    b.Navigation("Nhanvien");
+
+                    b.Navigation("Sinhvien");
+                });
+
             modelBuilder.Entity("ThietBiDienTu_2.Models.Thietbi", b =>
                 {
-                    b.Navigation("Chitietthietbis");
+                    b.Navigation("Chitietphieumuons");
+
+                    b.Navigation("Phieusuas");
                 });
 #pragma warning restore 612, 618
         }

@@ -71,7 +71,7 @@
                     </thead>
                     <tbody>
                         @{
-                            int index = 0;
+                            int index = (Model.PageNumber - 1) * Model.PageSize;
                         }
                         @foreach (Nhanvien nv in Model)
                         {

@@ -4,7 +4,7 @@
 @using X.PagedList.Mvc.Core;
 @using X.PagedList.Web.Common;
 @{
-    ViewData["Title"] = "UserEmployee";
+    ViewData["Title"] = "UserStudent";
 }
 
 @model X.PagedList.IPagedList<Sinhvien>
@@ -23,10 +23,10 @@
             <select name="course" id="course" class="form-select rounded ms-3">
                 <option value="all">Khóa</option>
                 @{
-                    StuAcc newSA = new StuAcc(); 
-                    foreach(string a in newSA.CourseName)
+                   
+                    foreach(SelectListItem a in ViewBag.khoaType)
                     {
-                    <option value="@a">@a</option>
+                    <option value="@a.Value">@a.Text</option>
                     }
                 }
             </select>
@@ -34,9 +34,9 @@
             <select name="major" id="major" class="form-select rounded ms-3" style="width:25%;">
                 <option value="all">Ngành</option>
                 @{
-                    foreach(string a in newSA.MajorName)
+                    foreach (SelectListItem a in ViewBag.nganhType)
                     {
-                    <option value="@a">@a</option>
+                        <option value="@a.Value">@a.Text</option>
                     }
                 }
               
@@ -94,7 +94,7 @@
                     </thead>
                     <tbody>
                         @{
-                            int index = 0;
+                            int index = (Model.PageNumber - 1) * Model.PageSize;
                         }
                         @foreach (Sinhvien sv in Model)
                         {
@@ -105,8 +105,8 @@
                                 <td>@sv.Tensv</td>
                                 <td>@sv.Gioitinh</td>
                                 <td>@formattedDate</td>
-                                <td>@sv.Khoa</td>
-                                <td>@sv.Nganh</td>
+                                <td>@sv.MakhoaNavigation.Tenkhoa</td>
+                                <td>@sv.ManganhNavigation.Tennganh</td>
                                 <td>@sv.Sdt</td>
                                 <td>
                                     <a href="/admin/userStudent/Update/@sv.Masv" class="btn btn-info btn-sm rounded">

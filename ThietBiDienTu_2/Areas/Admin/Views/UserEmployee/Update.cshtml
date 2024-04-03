@@ -28,7 +28,6 @@
                     @Html.AntiForgeryToken()
                     @Html.ValidationSummary(true)
                     <!-- your steps content here -->
-                    <div id="logins-part" class="content active dstepper-block" role="tabpanel" aria-labelledby="logins-part-trigger">
                         <div class="row">
                             <div class="col-md-6" style="width:40%">
                                 <div class="form-group mb-2">
@@ -49,8 +48,8 @@
                         </div>
                         <div class="form-group mb-2">
                             <label for="acc.Password" class="mb-2"><strong>Mật khẩu<span class="text-danger"> *</span></strong></label>
-                            @Html.TextBoxFor(x => x.acc.Password, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(x => x.acc.Password, null, new { @class = "text-danger" })
+                            @Html.TextBoxFor(x => x.acc.Matkhau, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.acc.Matkhau, null, new { @class = "text-danger" })
                         </div>
                         <div class="row">
                             <div class="col-md-6" style="width:40%">
@@ -69,32 +68,36 @@
                             </div>
                         </div>
                         <div class="form-group mb-2">
-                            <label for="nv.Diachi" class="mb-2"><strong>Địa chỉ</strong></label>
-                            @Html.TextBoxFor(x => x.nv.Diachi, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(x => x.nv.Diachi, null, new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group mb-2">
                             <label for="nv.Gioitinh"><strong>Giới tính<span class="text-danger"> *  </span></strong></label>
                             @Html.RadioButtonFor(x => x.nv.Gioitinh, "Nam") Nam @Html.RadioButtonFor(x => x.nv.Gioitinh, "Nữ") Nữ
                             <div class="text-danger">
                                 @Html.ValidationMessageFor(x => x.nv.Gioitinh, null, new { @class = "text-danger" })
                             </div>
                         </div>
-
-                        <div class="form-group mb-2">
-                            <label for="nv.Ngaysinh" class="mb-2"><strong>Ngày sinh<span class="text-danger"> *</span></strong></label>
-                            @Html.TextBoxFor(x => x.nv.Ngaysinh,"{0:dd/MM/yyyy}", new { @class = "form-control",placeholder="DD/MM/YYYY"})
-                            @Html.ValidationMessageFor(x => x.nv.Ngaysinh, null, new { @class = "text-danger" })
+                        <div class="row">
+                            <div class="col-md-6" style="width:40%">
+                                <div class="form-group mb-2">
+                                    <label for="nv.Ngaysinh" class="mb-2"><strong>Ngày sinh<span class="text-danger"> *</span></strong></label>
+                                    @Html.TextBoxFor(x => x.nv.Ngaysinh,"{0:dd/MM/yyyy}", new { @class = "form-control",placeholder="DD/MM/YYYY"})
+                                    @Html.ValidationMessageFor(x => x.nv.Ngaysinh, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="width:60%">
+                                <div class="form-group mb-2">
+                                    <label for="nv.Diachi" class="mb-2"><strong>Địa chỉ</strong></label>
+                                    @Html.TextBoxFor(x => x.nv.Diachi, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.nv.Diachi, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
                         </div>
-                        @Html.HiddenFor(x => x.acc.Loaiuser)
-                        @Html.HiddenFor(x => x.acc.Username)
-                        <input asp-for="@Model.nv.ManvNavigation.Username" value="123" hidden />
-                        <input asp-for="@Model.nv.ManvNavigation.Password" value="123" hidden />
+                        @Html.HiddenFor(x => x.acc.Loaitk)
+                        @Html.HiddenFor(x => x.acc.Matk)
+                        <input asp-for="@Model.nv.ManvNavigation.Matk" value="123" hidden />
+                        <input asp-for="@Model.nv.ManvNavigation.Matkhau" value="123" hidden />
                         <div class="form-group mt-3">
                             <a href="/Admin/UserEmployee/Index" class="btn btn-danger">Quay lại</a>
                             <button type="submit" class="btn btn-primary">Cập nhật</button>
                         </div>
-                    </div>
                 }
             </div>
         </div>

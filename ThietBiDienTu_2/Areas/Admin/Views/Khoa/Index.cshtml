@@ -1,0 +1,28 @@
+﻿@model IEnumerable<ThietBiDienTu_2.Models.Khoa>
+
+<h2>Danh sách Khóa</h2>
+<a asp-action="Create">Tạo khóa mới</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã Khóa</th>
+            <th>Tên Khóa</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var khoa in Model)
+        {
+            <tr>
+                <td>@khoa.Makhoa</td>
+                <td>@khoa.Tenkhoa</td>
+                <td>
+                    <a href="@Url.Action("Edit", new { id = khoa.Makhoa })">Sửa</a> |
+                    <a href="@Url.Action("Details", new { id = khoa.Makhoa })">Chi tiết</a> |
+                    <a href="@Url.Action("Delete", new { id = khoa.Makhoa })">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

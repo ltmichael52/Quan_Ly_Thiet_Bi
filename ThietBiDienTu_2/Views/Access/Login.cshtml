@@ -1,7 +1,7 @@
 ﻿@{
     Layout = null;
 }
-@model Account
+@model Taikhoan
 <!DOCTYPE html>
 
 
@@ -56,7 +56,7 @@
                                         <use xlink:href="~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-user"></use>
                                     </svg>
                                 </span>
-                                <input class="form-control" type="text" placeholder="Username" asp-for="Username" required="required" autofocus="autofocus">
+                                <input class="form-control" type="text" placeholder="Mã tài khoản" asp-for="Matk" required="required" autofocus="autofocus">
                             </div>
                             <div class="input-group mb-3">
                                 <!-- Adjusted mb-4 to mb-3 for smaller spacing -->
@@ -65,7 +65,8 @@
                                         <use xlink:href="~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-lock-locked"></use>
                                     </svg>
                                 </span>
-                                <input class="form-control" type="password" placeholder="Password" asp-for="Password" required="required">
+                                <input class="form-control" type="password" placeholder="Mật khẩu" asp-for="Matkhau" required="required">
+                                
                             </div>
                             <div class="row">
                                 <div class="col-12">

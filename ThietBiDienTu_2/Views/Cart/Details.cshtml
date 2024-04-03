@@ -1,0 +1,124 @@
+﻿@using ThietBiDienTu_2.Models.ViewModels
+@model CartItemViewModel
+<style>
+    .imgDetail{
+        max-height:80px;
+        max-weight:80px;
+    }
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<body>
+    <form asp-action="Details" asp-controller="Cart" method="post" enctype="multipart/form-data">
+    <div class="container py-5">
+        <div class="row d-flex justify-content-center my-4">
+            <div class="col-md-8">
+                <div class="card mb-4">
+                    <div class="card-header py-3">
+                        <h5 class="mb-0">Chi tiết giỏ hàng</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Single item -->
+                        @if (Model.CartItems.Count > 0)
+                        {   
+                            @foreach (var item in Model.CartItems)
+                            {
+                                <div class="row">
+
+                                      
+                                            <div class="infor-customer">
+                                                <label asp-for="@Model.Sv.Masv">Mã số sinh viên</label>
+                                                <input asp-for="@Model.Sv.Masv" readonly />
+                                            </div>
+                                            <div class="infor-customer">
+                                                <label asp-for="@Model.Sv.Tensv">Tên sinh viên</label>
+                                                <input asp-for="@Model.Sv.Tensv" readonly />
+                                            </div>
+                            
+    
+                                            <div class="infor-customer">
+                                                <label asp-for="@Model.Phieumuon.Lydomuon">Lý do mượn</label>
+                                                <input asp-for="@Model.Phieumuon.Lydomuon" type="text"/>
+                                            </div>
+                                            <div class="infor-customer">
+                                                <label for="ngayDat">Ngày đặt:</label>
+                                                <input type="date" id="ngayDat" name="ngayDat">
+                                            </div>
+                                       
+                                    </div>
+                                <!-- Single item -->
+
+                                <hr class="my-4" />
+                            }
+                        }
+                       
+                    </div>
+                </div>
+            </div>
+            @if (Model.CartItems.Count > 0)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-header py-3">
+                            <h5 class="mb-0">Kiểm tra thông tin</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <ul class="list-group list-group-flush">
+                                        @foreach (var item in Model.CartItems)
+                                        {
+                                                <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                                                    <img class="imgDetail" src="~/images/@item.Hinhanh"
+                                                         class="w-100" alt="@item.Tendongtb" />
+                                                    <span><strong>@item.Tendongtb (@item.Soluong)</strong></span>
+                                                    
+                                                    <a href="#!">
+                                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                                    </a>
+                                                </div>
+                                                
+                                        }
+                                        
+                                    </ul>
+                                        
+                                </div>
+                                    
+                            </div>
+                            
+                            
+
+                           
+                        </div>
+                    </div>
+                </div>
+            }
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="pt-5">
+                            <h6 class="mb-0">
+                                <a href="@Url.Action("Index", "Cart")" class="text-body">
+                                    <i class="fas fa-long-arrow-alt-left me-2"></i>Back to shop
+                                </a>
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="pt-5 text-end">
+                            <button type="submit" class="btn btn-dark btn-lg" data-mdb-ripple-color="dark">
+                                Xác nhận
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    </form>
+</body>
+
+</html>
+
