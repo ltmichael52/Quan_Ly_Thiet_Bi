@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj": {}
+    "C:\\Users\\My Computer\\OneDrive\\Máy tính\\bao\\KTPM\\ThietBiDienTu_Final1\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj": {}
   },
   "projects": {
-    "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj": {
+    "C:\\Users\\My Computer\\OneDrive\\Máy tính\\bao\\KTPM\\ThietBiDienTu_Final1\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj",
+        "projectUniqueName": "C:\\Users\\My Computer\\OneDrive\\Máy tính\\bao\\KTPM\\ThietBiDienTu_Final1\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj",
         "projectName": "ThietBiDienTu_2",
-        "projectPath": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\obj\\",
+        "projectPath": "C:\\Users\\My Computer\\OneDrive\\Máy tính\\bao\\KTPM\\ThietBiDienTu_Final1\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj",
+        "packagesPath": "C:\\Users\\My Computer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\My Computer\\OneDrive\\Máy tính\\bao\\KTPM\\ThietBiDienTu_Final1\\ThietBiDienTu_2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\My Computer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -70,7 +70,7 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[7.0.11, )"
+              "version": "[7.0.12, )"
             },
             "X.PagedList": {
               "target": "Package",
@@ -100,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.407\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

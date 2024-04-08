@@ -29,10 +29,45 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var TooldbContext = _context.Dongthietbis.ToList();
-            return View(TooldbContext);
+            List<DongThietBiViewModel> dongthietbiList = new List<DongThietBiViewModel>();
+
+            // Lấy danh sách các dòng thiết bị từ cơ sở dữ liệu
+            var allDongThietBi = _context.Dongthietbis.Include(d => d.Thietbis).ToList();
+
+            foreach (var dongthietbi in allDongThietBi)
+            {
+                // Tính số lượng thiết bị hoạt động của đối tượng DongThietBi
+                int soLuongHoatDong = dongthietbi.Thietbis.Count(t => t.Trangthai == "Hoạt động");
+
+                // Tính số lượng thiết bị hỏng của đối tượng DongThietBi
+                int soLuongHu = dongthietbi.Thietbis.Count(t => t.Trangthai == "Bị hư");
+
+                // Tính số lượng thiết bị tồn kho của đối tượng DongThietBi
+                int soLuongTonKho = dongthietbi.Thietbis.Count(t => t.Trangthai == "Tồn kho");
+
+                // Tạo một đối tượng ViewModel mới để chứa thông tin
+                var dongThietBiViewModel = new DongThietBiViewModel
+                {
+                    Madongtb = dongthietbi.Madongtb,
+                    Tendongtb = dongthietbi.Tendongtb,
+                    Soluong = dongthietbi.Soluong,
+                    Mota = dongthietbi.Mota,
+                    Hinhanh = dongthietbi.Hinhanh,
+                    SoLuongHoatDong = soLuongHoatDong,
+                    SoLuongHu = soLuongHu,
+                    SoLuongTonKho = soLuongTonKho
+                };
+
+                // Thêm đối tượng ViewModel vào danh sách
+                dongthietbiList.Add(dongThietBiViewModel);
+            }
+
+            return View(dongthietbiList); // Truyền đúng kiểu dữ liệu cho View
         }
-        
+
+
+
+
         public IActionResult CreateTool()
         {
             ViewData["YourDropdownData"] = _context.Dongthietbis.ToList();
@@ -44,24 +79,46 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult CreateTool(Dongthietbi dongthietbi)
         {
-            string stringhinhanh = UploadFile(dongthietbi);
-            var dtb = new Dongthietbi
+            if (ModelState.IsValid)
             {
-                Madongtb = dongthietbi.Madongtb,
-                Tendongtb = dongthietbi.Tendongtb,
-                Soluong = dongthietbi.Soluong,
-                Mota = dongthietbi.Mota,
-                Hinhanh = stringhinhanh
-            };
-       
-            // Kiểm tra xác nhận dữ liệu và thêm vào cơ sở dữ liệu
-            _context.Dongthietbis.Add(dtb);
-            _context.SaveChanges();
+                // Kiểm tra các điều kiện trước khi thêm vào cơ sở dữ liệu
+                if (string.IsNullOrEmpty(dongthietbi.Tendongtb))
+                {
+                    ModelState.AddModelError("Tendongtb", "Tên dòng thiết bị không được bỏ trống");
+                }
+                else if (_context.Dongthietbis.Any(d => d.Tendongtb == dongthietbi.Tendongtb))
+                {
+                    ModelState.AddModelError("Tendongtb", "Tên dòng thiết bị đã tồn tại");
+                }
 
-            return RedirectToAction(nameof(Index)); // Chuyển hướng sau khi thêm thành công, bạn có thể chuyển hướng đến trang khác tùy ý
+                if (dongthietbi.Soluong <= 0)
+                {
+                    ModelState.AddModelError("Soluong", "Số lượng phải lớn hơn 0");
+                }
+
+                if (ModelState.IsValid)
+                {
+                    // Tiến hành thêm vào cơ sở dữ liệu
+                    string stringhinhanh = UploadFile(dongthietbi);
+                    var dtb = new Dongthietbi
+                    {
+                        Madongtb = dongthietbi.Madongtb,
+                        Tendongtb = dongthietbi.Tendongtb,
+                        Soluong = dongthietbi.Soluong,
+                        Mota = dongthietbi.Mota,
+                        Hinhanh = stringhinhanh
+                    };
+
+                    _context.Dongthietbis.Add(dtb);
+                    _context.SaveChanges();
+                    TempData["AlertMessage"] = "Đã thêm dòng thiết bị thành công";
+                    return RedirectToAction(nameof(Index)); // Chuyển hướng sau khi thêm thành công
+                }
+            }
+
+            return View(dongthietbi); // Hiển thị lại form với thông báo lỗi nếu có
         }
 
-        
 
         public IActionResult Edit(int id)
         {            
@@ -112,7 +169,9 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                 // Cập nhật thông tin và lưu vào cơ sở dữ liệu
                 _context.Entry(dtb).State = EntityState.Modified;
                 _context.SaveChanges();
+                TempData["AlertMessage"] = "Đã chỉnh sửa dòng thiết bị thành công";
                 return RedirectToAction("Index");
+
             }
 
             // Nếu dữ liệu không hợp lệ, trả về view và giữ nguyên các giá trị đã nhập
@@ -138,40 +197,6 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             return fileName;
         }
 
-
-        //[HttpGet]
-        //public async Task<IActionResult> Edit(int id)
-        //{
-        //    if (id == null || _context.Dongthietbis == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    var dongthietbi = await _context.Dongthietbis.Where(n => n.Madongtb == id).FirstOrDefaultAsync();
-        //    if (dongthietbi == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(dongthietbi);
-        //}
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Edit(int id, Dongthietbi dongthietbi)
-        //{
-        //    if (id != dongthietbi.Madongtb)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    string stringhinhanh = UploadFile(dongthietbi);
-        //    dongthietbi.Hinhanh = stringhinhanh;
-
-        //    _context.Update(dongthietbi);
-        //    await _context.SaveChangesAsync();
-        //    return RedirectToAction(nameof(Index));
-        //}
-
-
         public IActionResult Delete(int id)
         {
             
@@ -184,14 +209,20 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             var dongthietbi = _context.Dongthietbis
                 .FirstOrDefault(m => m.Madongtb == id);
             if (dongthietbi == null)
-            {
-               
+            {              
                 return NotFound();
             }
+
             _context.Dongthietbis.Remove(dongthietbi);
             _context.SaveChanges();
-
+            TempData["AlertMessage"] = "Đã xóa dòng thiết bị thành công";
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Details(int id)
+        {
+            var dtb = _context.Dongthietbis.Find(id);
+            return View(dtb);
         }
     }
 }

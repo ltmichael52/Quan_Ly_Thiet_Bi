@@ -9,189 +9,193 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ThietBiDienTu_2
 build_property.RootNamespace = ThietBiDienTu_2
-build_property.ProjectDir = D:\Uni\KTPM\ThietBiDienTu_2\ThietBiDienTu_2\
+build_property.ProjectDir = C:\Users\My Computer\OneDrive\Máy tính\bao\KTPM\ThietBiDienTu_Final1\ThietBiDienTu_2\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Uni\KTPM\ThietBiDienTu_2\ThietBiDienTu_2
+build_property.MSBuildProjectDirectory = C:\Users\My Computer\OneDrive\Máy tính\bao\KTPM\ThietBiDienTu_Final1\ThietBiDienTu_2
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/Coso/Create.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/Coso/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ29zb1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/Coso/Delete.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/Coso/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ29zb1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/Coso/Edit.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/Coso/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ29zb1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/Coso/Index.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/Coso/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ29zb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/DongThietBi/CreateTool.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/DongThietBi/CreateTool.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRG9uZ1RoaWV0QmlcQ3JlYXRlVG9vbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/DongThietBi/Edit.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/DongThietBi/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRG9uZ1RoaWV0QmlcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/DongThietBi/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRG9uZ1RoaWV0QmlcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/DongThietBi/Index.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/DongThietBi/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRG9uZ1RoaWV0QmlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/HomeAdmin/Index.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/HomeAdmin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/Khoa/Create.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/Khoa/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcS2hvYVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/Khoa/Delete.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/Khoa/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcS2hvYVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/Khoa/Edit.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/Khoa/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcS2hvYVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/Khoa/Index.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/Khoa/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcS2hvYVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/Nganh/Create.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/Nganh/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmdhbmhcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/Nganh/Delete.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/Nganh/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmdhbmhcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/Nganh/Edit.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/Nganh/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmdhbmhcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/Nganh/Index.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/Nganh/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmdhbmhcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/PhieuMuonAdmin/ChitietPhieuMuon.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/PhieuMuonAdmin/ChitietPhieuMuon.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGhpZXVNdW9uQWRtaW5cQ2hpdGlldFBoaWV1TXVvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/PhieuMuonAdmin/LichsuMuon.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/PhieuMuonAdmin/LichsuMuon.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGhpZXVNdW9uQWRtaW5cTGljaHN1TXVvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/Phong/Create.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/Phong/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGhvbmdcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/Phong/Delete.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/Phong/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGhvbmdcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/Phong/Edit.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/Phong/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGhvbmdcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/Phong/Index.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/Phong/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGhvbmdcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/ThietBi/CreateThietBi.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/ThietBi/CreateThietBi.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGhpZXRCaVxDcmVhdGVUaGlldEJpLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/ThietBi/ThietBiList.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/ThietBi/ThietBiList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGhpZXRCaVxUaGlldEJpTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/ThietBi/UpdateThietBi.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/ThietBi/UpdateThietBi.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGhpZXRCaVxVcGRhdGVUaGlldEJpLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/UserEmployee/Create.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/UserEmployee/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlckVtcGxveWVlXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/UserEmployee/Index.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/UserEmployee/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlckVtcGxveWVlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/UserEmployee/Update.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/UserEmployee/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlckVtcGxveWVlXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/UserStudent/Create.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/UserStudent/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclN0dWRlbnRcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/UserStudent/Index.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/UserStudent/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclN0dWRlbnRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/UserStudent/Update.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/UserStudent/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclN0dWRlbnRcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/_ViewImports.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/_ViewStart.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Views/Access/Login.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Views/Access/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNzXExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Views/Borrow/Index.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Views/Borrow/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Views/Cart/Details.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Views/Cart/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Views/Cart/Index.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Views/Home/Index.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Views/Home/Privacy.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Views/Shared/Error.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Views/_ViewImports.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Views/_ViewStart.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Views/Shared/_Layout.cshtml]
+[C:/Users/My Computer/OneDrive/Máy tính/bao/KTPM/ThietBiDienTu_Final1/ThietBiDienTu_2/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-x4j8j1lpju
