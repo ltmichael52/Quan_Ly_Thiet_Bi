@@ -21,5 +21,6 @@
         public string Tensv {  get; set; }
         public string TenKhoa {  get; set; }
         public string TenNganh {  get; set; }
+        public List<ChitietPhieuMuonViewModel> ctpmView {  get; set; }
     }
 }

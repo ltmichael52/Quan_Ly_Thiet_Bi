@@ -27,7 +27,7 @@ builder.Services.AddScoped<IPhieuMuonAdmin, PhieuMuonAdminRepo>();
 builder.Services.AddScoped<IPhongAdmin, PhongAdminRepo>();
 builder.Services.AddScoped<IDongThietBiAdmin, DongThietBiAdminRepo>();
 builder.Services.AddScoped<IThietBiAdmin, ThietBiAdminRepo>();
-
+builder.Services.AddScoped<IKhoa, KhoaAdminRepo>();
 builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
 app.UseSession();

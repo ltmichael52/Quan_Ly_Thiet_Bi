@@ -1,24 +1,30 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
-//namespace ThietBiDienTu_2.Areas.Admin.ViewModels
-//{
-//    public class DongThietBiViewModel
-//    {
-//        public int Madongtb { get; set; }
+namespace ThietBiDienTu_2.Areas.Admin.ViewModels
+{
+	public class DongThietBiViewModel
+	{
+		public int Madongtb { get; set; }
 
-//        public string Tendongtb { get; set; }
+		public string Tendongtb { get; set; }
 
-//        public int Soluong { get; set; }
+		public string? Hinhanh { get; set; }
 
-//        public string? Mota { get; set; }
+		public int Soluong { get; set; }
 
-//        [NotMapped]
-//        public IFormFile hinhanh { get; set; }
+		public int SoLuongHoatDong { get; set; }
+
+		public int SoLuongTonKho { get; set; }
+
+		public int SoLuongHu { get; set; }
+
+		public string? Mota { get; set; }
+
+		[NotMapped]
+		public IFormFile hinhanh { get; set; }
 
 
-//        //public IFormFile hinhanh { get; set; }
-
-//    }
-//}
+	}
+}
