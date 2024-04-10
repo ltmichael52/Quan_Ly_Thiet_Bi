@@ -170,12 +170,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/C\#/KTPM/ThietBiDienTu_2/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[D:/C\#/KTPM/ThietBiDienTu_2/Views/Histroy/ChiTietPhieuMuon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGlzdHJveVxDaGlUaWV0UGhpZXVNdW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/C\#/KTPM/ThietBiDienTu_2/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[D:/C\#/KTPM/ThietBiDienTu_2/Views/Histroy/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGlzdHJveVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/C\#/KTPM/ThietBiDienTu_2/Views/ProcductManagement/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2R1Y3RNYW5hZ2VtZW50XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/C\#/KTPM/ThietBiDienTu_2/Views/ProcductManagement/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2R1Y3RNYW5hZ2VtZW50XFByaXZhY3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/C\#/KTPM/ThietBiDienTu_2/Views/ProcductManagement/_PartialShowProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvY2R1Y3RNYW5hZ2VtZW50XF9QYXJ0aWFsU2hvd1Byb2R1Y3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/C\#/KTPM/ThietBiDienTu_2/Views/Shared/Error.cshtml]
