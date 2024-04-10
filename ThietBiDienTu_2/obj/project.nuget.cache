@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tkV0iMm3WPDeIBbhQORXu5K1JHeVehWnUln4c6ZQH8vu4z3ZhdAgMDKIUB2h4F59CqezEd4wvpApMMJ5+pax0g==",
+  "dgSpecHash": "cpGCfybV8+5eW8N6mmxdGxmD2vWTGuxe8cvOFg1diZSLil56DOOVoMftu835OfY1XaqF9KHtA6hWenuUEfdMCA==",
   "success": true,
-  "projectFilePath": "D:\\Uni\\KTPM\\ThietBiDienTu_3\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj",
+  "projectFilePath": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
