@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Uni\\KTPM\\ThietBiDienTu_3\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj": {}
+    "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj": {}
   },
   "projects": {
-    "D:\\Uni\\KTPM\\ThietBiDienTu_3\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj": {
+    "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Uni\\KTPM\\ThietBiDienTu_3\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj",
+        "projectUniqueName": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj",
         "projectName": "ThietBiDienTu_2",
-        "projectPath": "D:\\Uni\\KTPM\\ThietBiDienTu_3\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj",
+        "projectPath": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\Uni\\KTPM\\ThietBiDienTu_3\\ThietBiDienTu_2\\obj\\",
+        "outputPath": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
