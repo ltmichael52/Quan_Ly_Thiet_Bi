@@ -1,7 +1,83 @@
-﻿@{
-    ViewData["Title"] = "Index";
-    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = "Quản lý thiết bị";
 }
 
-<h1>Index</h1>
+<h1>QUẢN LÝ THIẾT BỊ TRƯỜNG ĐẠI HỌC QUỐC TẾ SÀI GÒN</h1>
 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Card View</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <a href="@Url.Action("ThietBiList", "ThietBi", new { area = "Admin" })" class="card-link">
+                    <div class="card bg-primary">
+                        <div class="card-body">
+                            <h5 class="card-title text-white">Quản lý thiết bị</h5>
+                            <p class="card-text text-white">Description</p>
+                            <p class="card-text text-white"><strong>Số lượng: @ViewBag.ThietBiCount</strong></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <a href="@Url.Action("Index", "DongThietBi", new { area = "Admin" })" class="card-link">
+                    <div class="card bg-secondary">
+                        <div class="card-body">
+                            <h5 class="card-title text-white">Quản lý dòng thiết bị</h5>
+                            <p class="card-text text-white">Description</p>
+                            <p class="card-text text-white"><strong>Số lượng: @ViewBag.DTBCount</strong></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            @if (HttpContextAccessor.HttpContext.Session.GetInt32("TypeAccount") == 2)
+            {
+                <div class="col-md-4 mb-3">
+                    <a href="@Url.Action("Index", "UserEmployee", new { area = "Admin" })" class="card-link">
+                        <div class="card bg-success">
+                            <div class="card-body">
+                                <h5 class="card-title text-white">Quản lý nhân viên</h5>
+                                <p class="card-text text-white">Description</p>
+                                <p class="card-text text-white"><strong>Số lượng: @ViewBag.NvCount</strong></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <a href="@Url.Action("Index", "UserStudent", new { area = "Admin" })" class="card-link">
+                        <div class="card bg-danger">
+                            <div class="card-body">
+                                <h5 class="card-title text-white">Quản lý sinh viên</h5>
+                                <p class="card-text text-white">Description</p>
+                                <p class="card-text text-white"><strong>Số lượng: @ViewBag.SvCount</strong></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+            <!-- Thêm thẻ card khác nếu cần -->
+
+            <div class="col-md-4 mb-3">
+                <a href="@Url.Action("LichsuMuon", "PhieuMuonAdmin", new { area = "Admin" })" class="card-link">
+                    <div class="card bg-secondary">
+                        <div class="card-body">
+                            <h5 class="card-title text-white">Quản lý phiếu mượn</h5>
+                            <p class="card-text text-white">Description</p>
+                            <p class="card-text text-white"><strong>Số lượng: @ViewBag.DTBCount</strong></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
