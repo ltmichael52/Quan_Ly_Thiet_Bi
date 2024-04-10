@@ -7,5 +7,7 @@ namespace ThietBiDienTu_2.Areas.Admin.InterfaceRepositories
     {
         List<Phieumuon> GetAllPhieuMuon();
         PhieuMuonViewModel GetPhieumuonViewById(int mapm);
+        void DuyetPm(int trangthai, PhieuMuonViewModel pm);
+        List<int> AllStatePhieuMuonToday();
     }
 }
