@@ -1,0 +1,117 @@
+﻿@using ThietBiDienTu_2.Models.ViewModels;
+@using ThietBiDienTu_2.Models;
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+@model X.PagedList.IPagedList<Phieumuon>
+@{
+    ViewData["Title"] = "Phieu muon list";
+
+    string GetTrangThaiString(int trangThai)
+    {
+        switch (trangThai)
+        {
+            case 0: return "Chưa duyệt";
+            case 1: return "Chưa trả";
+            case 2: return "Đã duyệt";
+            case 3: return "Đã trả";
+            case 4: return "Từ chối";
+            case 5: return "Hủy phiếu";
+            case 6: return "Không mượn";
+            default: return ""; // Trạng thái không xác định
+        }
+    }
+}
+@section searchArea {
+    <!-- Form search -->
+}
+
+@section naviheader {
+    <div class="header-divider"></div>
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Phiếu mượn</li>
+            </ol>
+        </nav>
+    </div>
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3>Lịch sử phiếu mượn</h3>
+    </div>
+    <div class="card-body">
+        <div class="bs-stepper linear">
+            <div class="bs-stepper-content">
+                <table class="table table-striped">
+                    <thead>
+                        <tr class="text-center">
+                            <th>Stt</th>
+                            <th>Tên sinh viên</th>
+                            <th>Mã sinh viên</th>
+                            <th>Ngày lập</th>
+                            <th>Ngày mượn</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            int index = (Model.PageNumber - 1) * Model.PageSize + 1;
+                        }
+                        @foreach (var pm in Model)
+                        {
+                            <tr class="text-center">
+                                <td>@index</td>
+                                <td>@(pm.MasvNavigation?.Tensv)</td>
+                                <td>@pm.Masv</td>
+                                <td>@pm.Ngaylap.ToShortDateString()</td>
+                                <td>@pm.Ngaymuon.ToShortDateString()</td>
+                                <td>@GetTrangThaiString(pm.Trangthai)</td>
+                                <td>
+                                    <a asp-action="ChitietPhieuMuon" asp-controller="Histroy" asp-route-id="@pm.Mapm" class="btn btn-info btn-sm rounded">
+                                        <svg class="icon icon-lg">
+                                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-pen")"></use>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            index++;
+                        }
+                    </tbody>
+                </table>
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        <!-- First Page -->
+                        @if (Model.HasPreviousPage)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="@Url.Action("Index", new { page = 1 })">Đầu</a>
+                            </li>
+                        }
+
+                        <!-- Page Numbers -->
+                        @for (var i = 1; i <= Model.PageCount; i++)
+                        {
+                            <li class="page-item @(Model.PageNumber == i ? "active" : "")">
+                                <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                            </li>
+                        }
+
+                        <!-- Last Page -->
+                        @if (Model.HasNextPage)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="@Url.Action("Index", new { page = Model.PageCount })">Cuối</a>
+                            </li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer"></div>

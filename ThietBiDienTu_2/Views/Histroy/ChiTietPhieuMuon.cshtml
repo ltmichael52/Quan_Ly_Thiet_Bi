@@ -1,0 +1,90 @@
+﻿@model ThietBiDienTu_2.Models.ViewModels.HomeViewModel
+@{
+    var formattedNgayMuon = Model.NgayDat.HasValue ? Model.NgayDat.Value.Date.ToString("dd/MM/yyyy") : string.Empty;
+}
+
+@section naviheader {
+    <div class="header-divider"></div>
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/Histroy">Lịch sử phiếu mượn</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Chi tiết phiếu mượn</li>
+            </ol>
+        </nav>
+    </div>
+}
+<div class="card">
+    <form asp-action="ChiTietPhieuMuon" asp-controller="Histroy" method="post">
+        <input asp-for="Trangthai" value="@Model.Trangthai" hidden />
+        <div class="card-header">
+
+            <div class="row">
+                <div class="col">
+                    <h3 class="card-title">Chi tiết phiếu mượn</h3>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6" style="width:40%">
+                    <div class="form-group mb-2">
+                        <label class="mb-2" asp-for="@Model.Masv"><strong>Mã sinh viên: </strong></label>
+                        <input class="form-control" asp-for="@Model.Masv" value="@Model.Masv" readonly style="background-color:#E8E8E8" />
+                    </div>
+                </div>
+                <div class="col-md-6" style="width:60%">
+                    <div class="form-group mb-2">
+                        <label class="mb-2" asp-for="@Model.Tensv"><strong>Tên sinh viên: </strong></label>
+                        <input class="form-control" asp-for="@Model.Tensv" value="@Model.Tensv" readonly style="background-color:#E8E8E8" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" style="width:40%">
+                    <div class="form-group mb-2">
+                        <label class="mb-2" asp-for="@Model.TenKhoa"><strong>Khóa: </strong></label>
+                        <input class="form-control" asp-for="@Model.TenKhoa" value="@Model.TenKhoa" readonly style="background-color:#E8E8E8" />
+                    </div>
+                </div>
+                <div class="col-md-6" style="width:60%">
+                    <div class="form-group mb-2">
+                        <label class="mb-2" asp-for="@Model.TenNganh"><strong>Ngành: </strong></label>
+                        <input class="form-control" asp-for="@Model.TenNganh" value="@Model.TenNganh" readonly style="background-color:#E8E8E8" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group mb-2">
+                        <label class="mb-2" asp-for="@Model.Ngaylap"><strong>Ngày lập phiếu mượn: </strong></label>
+                        <input type="text" class="form-control" asp-for="@Model.Ngaylap" readonly style="background-color:#E8E8E8" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mb-2">
+                        <label class="mb-2" asp-for="@Model.NgayDat"><strong>Ngày mượn: </strong></label>
+                        <input type="text" class="form-control" asp-for="@Model.NgayDat" readonly style="background-color:#E8E8E8" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mb-2">
+                <label class="mb-2" asp-for="@Model.Lydomuon"><strong>Lý do mượn:</strong> </label>
+                <input class="form-control" asp-for="@Model.Lydomuon" readonly style="background-color:#E8E8E8" />
+            </div>
+            @{
+                if (Model.Trangthai == 2)
+                {
+                    <div class="form-group mb-2">
+                        <label class="mb-2" asp-for="@Model.LydoTuChoi"><strong>Lý do từ chối:</strong> </label>
+                        <input class="form-control" asp-for="@Model.LydoTuChoi" readonly style="background-color:#E8E8E8" />
+                    </div>
+                }
+            }
+            <div class="form-group mt-3">
+                <a asp-action="Index" asp-controller="Histroy" class="btn btn-primary">Quay lại</a>
+            </div>
+        </div>
+    </form>
+</div>

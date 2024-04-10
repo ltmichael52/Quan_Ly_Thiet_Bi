@@ -55,7 +55,7 @@ app.MapAreaControllerRoute(
     );
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=ProcductManagement}/{action=Index}/{id?}");
 
 
 

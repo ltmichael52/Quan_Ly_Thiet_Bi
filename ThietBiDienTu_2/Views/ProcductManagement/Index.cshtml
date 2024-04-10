@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model ThietBiDienTu_2.Models.ViewModels.HomeViewModel
+@section searchArea{
+    <form id="searchForm" asp-action="Index" asp-controller="ProcductManagement" method="get" style="width:40%" class="d-none d-md-flex">
+        <div class="input-group">
+            <!-- Search bar -->
+            <input value="@ViewBag.searchString" style="width:30%" name="searchString" id="searchString" type="search" placeholder="Tìm tên dòng thiết bị..." class="form-control rounded" aria-label="Search">
+            <button class="btn btn-info rounded" type="submit">
+                <svg class="icon icon-lg">
+                    <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-search")"></use>
+                </svg>
+            </button>
+            <!-- Filter dropdown 1 -->
+        </div>
+        
+    </form>
+}
+<h2>Danh sách thiết bị  </h2>
+<!-- Section-->
+<form id="dateForm">
+    <p>Ngày đặt thiết bị:</p>
+    <input name="NgayDat" type="date" id="NgayDat" class="ml-2" />
+</form>
+<div class="py-5" id="productShow" style="display:none">
+    <partial name="_PartialShowProduct" model="@Model"/>
+</div>
+
+<div class="text-center">
+    <a asp-controller="ProcductManagement" asp-action="Index" asp-route-trangThai="Tồn Kho" class="btn btn-primary see-more-btn">
+        Xem thêm
+    </a>
+</div>
+
+<script>
+
+    $(document).ready(function () {
+        var ngaydat1 = null;
+        var searchString1 = null;
+
+        $('#NgayDat').change(function () {
+            var selectedValue = $(this).val();
+            ngaydat1 = selectedValue;
+
+            getToController();
+
+            if (ngaydat1 == null) {
+                $('#productShow').css('display', 'none');
+            }
+            else {
+                $('#productShow').css('display', 'block');
+            }
+        });
+
+        function getToController() {
+            $.ajax({
+                url: '/ProcductManagement/Index',
+                type: 'GET',
+                data: {
+                    searchString: searchString1,
+                    NgayDat: ngaydat1,
+                    trangThai : null
+                },
+                success: function (response) {
+                    $('#productShow').html(response);
+                }
+            });
+        }
+    });
+</script>

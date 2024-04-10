@@ -37,6 +37,8 @@
     <link href="@Url.Content("~/LayoutAdmin/dist/css/style.css")" rel="stylesheet">
     <!-- We use those styles to show code examples, you should remove them in your application.-->
     <link href="@Url.Content("~/LayoutAdmin/dist/css/examples.css")" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 <body>
     <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
@@ -57,35 +59,26 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="colors.html">
+                <a class="nav-link" asp-action="Index" asp-controller="ProcductManagement">
+                    <svg class="nav-icon">
+                        <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-home")"></use>
+                    </svg>Quản lý thiết bị
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-action="Index" asp-controller="Cart">
                     <svg class="nav-icon">
                         <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-devices")"></use>
-                    </svg> Quản lý thiết bị
+                    </svg> Phiếu mượn
                 </a>
             </li>
 
             <li class="nav-group">
-                <a class="nav-link nav-group-toggle" href="#">
+                <a class="nav-link" asp-action="Index" asp-controller="Histroy"> 
                     <svg class="nav-icon">
                         <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-notes")"></use>
-                    </svg> Mượn trả thiết bị
+                    </svg> Lịch sử phiếu mượn
                 </a>
-                <ul class="nav-group-items">
-                    <li class="nav-item">
-                        <a class="nav-link" asp-action="Index" asp-controller="Borrow">
-                            <svg class="nav-icon">
-                                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-note-add")"></use>
-                            </svg>Phiếu mượn
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="base/breadcrumb.html">
-                            <svg class="nav-icon">
-                                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-note-add")"></use>
-                            </svg>Phiếu trả
-                        </a>
-                    </li>
-                </ul>
             </li>
 
 
@@ -103,13 +96,7 @@
                 @RenderSection("searchArea",required:false)
 
                 <ul class="header-nav ms-3">
-                    <li style="margin-right: 10px;">
-                        <a asp-action="Index" asp-controller="Cart">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-cart" viewBox="0 0 16 16" style="margin-left: -5px; margin-right: 5px;">
-                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                            </svg>
-                        </a>
-                    </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                             <div class="avatar avatar-md"><img class="avatar-img" src="@Url.Content("~/LayoutAdmin/dist/assets/img/avatars/8.jpg")" alt="user@email.com"></div>
