@@ -60,6 +60,7 @@ namespace ThietBiDienTu_2.Controllers
 
                 }
             }
+            ModelState.AddModelError("Matkhau", "Tài khoản hoặc mật khẩu không hợp lệ");
             return View();
         }
 

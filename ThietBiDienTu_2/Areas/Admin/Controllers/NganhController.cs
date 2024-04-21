@@ -2,11 +2,14 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ThietBiDienTu_2.Models;
+using ThietBiDienTu_2.Models.Authentication;
+using X.PagedList;
 
 namespace ThietBiDienTu_2.Areas.Admin.Controllers
 {
     [Area("admin")]
-    [Route("admin/[controller]/[action]")]
+    [AuthenticationManager]
+
     public class NganhController : Controller
     {
         private readonly ToolDbContext _context;
@@ -16,9 +19,31 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string searchString, int? page)
         {
-            return View(_context.Nganhs.ToList());
+            ViewBag.CurrentFilter = searchString;
+
+            var nganhs = string.IsNullOrEmpty(searchString)
+                ? _context.Nganhs.ToList()
+                : _context.Nganhs.Where(n => n.Tennganh.Contains(searchString)).ToList();
+
+            int pageSize = 5; 
+            int pageNumber = (page ?? 1); 
+
+            var pagedNganhs = nganhs.ToPagedList(pageNumber, pageSize);
+
+            return View(pagedNganhs);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Search(string searchString)
+        {
+            var nganhs = string.IsNullOrEmpty(searchString)
+                ? await _context.Nganhs.ToListAsync()
+                : await _context.Nganhs.Where(n => n.Tennganh.Contains(searchString)).ToListAsync();
+
+            return PartialView("PartialViewNganh", nganhs);
         }
 
         public IActionResult Details(int id)
@@ -39,7 +64,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("TenNganh")] Nganh nganh)
+        public IActionResult Create([Bind("Tennganh")] Nganh nganh)
         {
             if (ModelState.IsValid)
             {
@@ -50,7 +75,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             return View(nganh);
         }
 
-        public IActionResult Edit(string id)
+        public IActionResult Edit(int id)
         {
             var nganh = _context.Nganhs.Find(id);
             if (nganh == null)

@@ -2,11 +2,13 @@
 using System.Diagnostics;
 using ThietBiDienTu_2.Migrations;
 using ThietBiDienTu_2.Models;
+using ThietBiDienTu_2.Models.Authentication;
 using ThietBiDienTu_2.Models.ViewModels;
 using ThietBiDienTu_2.Repository;
 
 namespace ThietBiDienTu_2.Controllers
 {
+    [AuthenticationCustomer]
     public class CartController : Controller
     {
         private readonly ToolDbContext _dataContext;
@@ -56,24 +58,28 @@ namespace ThietBiDienTu_2.Controllers
         {
             List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart");
             CartItemModel cartItem = cart.Where(c => c.Madongtb == id).FirstOrDefault();
-            if (cartItem.Soluong > 1)
+            if (cartItem != null)
             {
-                --cartItem.Soluong;
-            }
-            else
-            {
-                cart.RemoveAll(p => p.Madongtb == id);
-            }
-            if (cart.Count == 0)
-            {
-                HttpContext.Session.Remove("Cart");
-            }
-            else
-            {
-                HttpContext.Session.SetJson("Cart", cart);
+                if (cartItem.Soluong > 1)
+                {
+                    --cartItem.Soluong;
+                }
+                else
+                {
+                    cart.RemoveAll(p => p.Madongtb == id);
+                }
+                if (cart.Count == 0)
+                {
+                    HttpContext.Session.Remove("Cart");
+                }
+                else
+                {
+                    HttpContext.Session.SetJson("Cart", cart);
+                }
             }
             return RedirectToAction("Index");
         }
+
         public IActionResult Increase(int id)
         {
             List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart");
@@ -125,13 +131,15 @@ namespace ThietBiDienTu_2.Controllers
                 Phieumuon = new Phieumuon()
                 {
                     Ngaylap = DateTime.Now,
+                    Ngaymuon = DateTime.Parse(HttpContext.Session.GetString("NgayDat")),
+
                 }
 
             };
 
             return View(cartVM);
         }
-        [HttpPost]
+
         [HttpPost]
         public IActionResult Details(CartItemViewModel cartVM)
         {
@@ -139,71 +147,89 @@ namespace ThietBiDienTu_2.Controllers
             {
                 // Lấy dữ liệu từ form
                 string lyDoMuon = cartVM.Phieumuon.Lydomuon;
-                DateTime ngayMuon = cartVM.Phieumuon.Ngaymuon;
-                int maSv = cartVM.Sv.Masv;
+                DateTime ngayMuon = DateTime.Parse(HttpContext.Session.GetString("NgayDat"));
+                int maSv = HttpContext.Session.GetInt32("UserName") ?? 0;
 
-                // Tạo đối tượng Phieumuon và gán dữ liệu từ form
-                Phieumuon phieuMuon = new Phieumuon
+                // Bắt đầu giao dịch
+                using (var transaction = _dataContext.Database.BeginTransaction())
                 {
-                    Lydomuon = lyDoMuon,
-                    Ngaymuon = ngayMuon,
-                    Ngaylap = DateTime.Now,
-                    Masv = maSv,
-                };
-
-                // Lưu đối tượng Phieumuon vào cơ sở dữ liệu
-                _dataContext.Phieumuons.Add(phieuMuon);
-                _dataContext.SaveChanges();
-
-                // Lấy Mã phiếu mượn mới tạo
-                int maPhieuMuon = phieuMuon.Mapm;
-
-                // Lấy danh sách các thiết bị trong giỏ hàng của sinh viên
-                var cartItems = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
-
-                // Tạo danh sách tạm thời để lưu các phần tử cần loại bỏ
-                var itemsToRemove = new List<CartItemModel>();
-
-                foreach (var cartItem in cartItems)
-                {
-                    // Tìm mã thiết bị có trạng thái "Tồn Kho" và chưa được đặt trong cùng một ngày
-                    var thietBiTonKho = _dataContext.Thietbis.FirstOrDefault(tb => tb.Madongtb == cartItem.Madongtb && tb.Trangthai == "Tồn Kho" && !_dataContext.Chitietphieumuons.Any(c => c.Ngaytra.HasValue && c.Ngaytra.Value.Date == ngayMuon.Date && c.Matb == tb.Matb));
-
-                    if (thietBiTonKho != null)
+                    try
                     {
-                        // Tạo ChiTietPhieuMuon chỉ với số lượng thiết bị đặt tương ứng
-                        for (int i = 0; i < cartItem.Soluong; i++)
+                        // Tạo đối tượng Phiieumuon và gán dữ liệu từ form
+                        Phieumuon phieuMuon = new Phieumuon
                         {
-                            Chitietphieumuon chiTietPhieuMuon = new Chitietphieumuon
-                            {
-                                Mapm = maPhieuMuon,
-                                Matb = thietBiTonKho.Matb,
-                                Ngaytra = ngayMuon // Cập nhật Ngaytra bằng Ngaymuon
-                            };
+                            Lydomuon = lyDoMuon,
+                            Ngaymuon = ngayMuon,
+                            Ngaylap = DateTime.Now,
+                            Masv = maSv,
+                        };
 
-                            // Lưu đối tượng ChiTietPhieuMuon vào cơ sở dữ liệu
-                            _dataContext.Chitietphieumuons.Add(chiTietPhieuMuon);
+                        // Lưu đối tượng Phieumuon vào cơ sở dữ liệu
+                        _dataContext.Phieumuons.Add(phieuMuon);
+                        _dataContext.SaveChanges();
+
+                        // Lấy Mã phiếu mượn mới tạo
+                        int maPhieuMuon = phieuMuon.Mapm;
+
+                        // Lấy danh sách các thiết bị trong giỏ hàng của sinh viên
+                        var cartItems = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
+
+                        // Tạo danh sách tạm thời để lưu các phần tử cần loại bỏ
+                        var itemsToRemove = new List<CartItemModel>();
+
+                        foreach (var cartItem in cartItems)
+                        {
+                            // Tìm mã thiết bị có trạng thái "Sẵn sàng" và chưa được đặt trong cùng một ngày
+                            var thietBiTonKho = _dataContext.Thietbis.FirstOrDefault(tb => tb.Madongtb == cartItem.Madongtb && tb.Trangthai == "Sẵn sàng" && !_dataContext.Chitietphieumuons.Any(c => c.Ngaytra.HasValue && c.Ngaytra.Value.Date == ngayMuon.Date && c.Matb == tb.Matb));
+
+                            if (thietBiTonKho != null)
+                            {
+                                // Tạo ChiTietPhieuMuon chỉ với số lượng thiết bị đặt tương ứng
+                                for (int i = 0; i < cartItem.Soluong; i++)
+                                {
+                                    Chitietphieumuon chiTietPhieuMuon = new Chitietphieumuon
+                                    {
+                                        Mapm = maPhieuMuon,
+                                        Matb = thietBiTonKho.Matb,
+                                    };
+
+                                    // Lưu đối tượng ChiTietPhieuMuon vào cơ sở dữ liệu
+                                    _dataContext.Chitietphieumuons.Add(chiTietPhieuMuon);
+                                }
+
+                                // Thêm phần tử vào danh sách cần loại bỏ
+                                itemsToRemove.Add(cartItem);
+                            }
                         }
 
-                        // Thêm phần tử vào danh sách cần loại bỏ
-                        itemsToRemove.Add(cartItem);
+                        // Loại bỏ các phần tử đã được xử lý khỏi danh sách giỏ hàng
+                        foreach (var item in itemsToRemove)
+                        {
+                            cartItems.Remove(item);
+                        }
+
+                        // Lưu thay đổi vào cơ sở dữ liệu
+                        _dataContext.SaveChanges();
+
+                        HttpContext.Session.SetJson("Cart", cartItems);
+                        HttpContext.Session.Remove("Cart");
+
+                        // Hoàn thành giao dịch
+                        transaction.Commit();
+
+                        // Sau khi lưu thành công, bạn có thể thực hiện các hành động khác ở đây, ví dụ: redirect đến trang thành công, hiển thị thông báo, v.v.
+                        return RedirectToAction("Index", "Histroy");
+                    }
+                    catch (Exception ex)
+                    {
+                        // Nếu có lỗi xảy ra, rollback giao dịch
+                        transaction.Rollback();
+                        // Xử lý lỗi (ví dụ: log, hiển thị thông báo)
+                        Debug.WriteLine("Error: " + ex.Message);
+                        // Quay trở lại trang trước đó hoặc hiển thị thông báo lỗi
+                        return RedirectToAction("Index", "Histroy");
                     }
                 }
-
-                // Loại bỏ các phần tử đã được xử lý khỏi danh sách giỏ hàng
-                foreach (var item in itemsToRemove)
-                {
-                    cartItems.Remove(item);
-                }
-
-                // Lưu thay đổi vào cơ sở dữ liệu
-                _dataContext.SaveChanges();
-
-                HttpContext.Session.SetJson("Cart", cartItems);
-                HttpContext.Session.Remove("Cart");
-
-                // Sau khi lưu thành công, bạn có thể thực hiện các hành động khác ở đây, ví dụ: redirect đến trang thành công, hiển thị thông báo, v.v.
-                return RedirectToAction("Index", "Home");
             }
             else
             {
@@ -217,10 +243,6 @@ namespace ThietBiDienTu_2.Controllers
                 return View(cartVM);
             }
         }
-
-
-
-
 
     }
 }

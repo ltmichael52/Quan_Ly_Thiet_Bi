@@ -12,7 +12,7 @@
     <form id="searchForm" action="@Url.Action("ThietBiList","ThietBi")" method="get" style="width:85%" class="d-none d-md-flex">
         <div class="input-group">
             <!-- Search bar -->
-            <input value="@ViewBag.searchStringThietBi" style="width:30%" name="searchStringThietBi" id="searchStringThietBi" type="search" placeholder="Tìm tên dòng thiết bị..." class="form-control rounded" aria-label="Search">
+            <input value="@ViewBag.searchStringThietBi" style="width:30%" name="searchStringThietBi" id="searchStringThietBi" type="search" placeholder="Tìm tên dòng/seri thiết bị..." class="form-control rounded" aria-label="Search">
             <button class="btn btn-info rounded" type="submit">
                 <svg class="icon icon-lg">
                     <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-search")"></use>
@@ -79,6 +79,12 @@
     </div>
 }
 
+@if (TempData["Action"] != null)
+{
+    <div class="alert alert-success" id="notify">
+        <strong>Success!</strong> @TempData["Action"]
+    </div>
+}
 <!-- Content Header (Page header) -->
 <div class="card">
     <div class="card-header">
@@ -208,6 +214,12 @@
 <div class="footer"></div>
 
 <script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            console.log("here");
+            $('#notify').css("display", "none");
+        }, 10000);
+    });
     var searchStringThietBi = encodeURIComponent(localStorage.getItem('savedsearchStringThietBi'));
     var coso = encodeURIComponent(localStorage.getItem('savedCoso'));
     var phong = encodeURIComponent(localStorage.getItem('savedPhong'));
@@ -343,7 +355,13 @@
         handleFormSubmission();
     });
 
-    
+    $(document).ready(function () {
+        setTimeout(function () {
+            console.log("here");
+            $('#notify').css("display", "none");
+        }, 10000);
+    });
+
 
     
 </script>

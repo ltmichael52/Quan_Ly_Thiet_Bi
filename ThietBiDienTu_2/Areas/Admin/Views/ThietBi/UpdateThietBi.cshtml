@@ -124,6 +124,15 @@
 
 <script>
     
+    $(document).ready(function () {
+        if ($('#StateProduct').val() == "Đang mượn") {
+            console.log("Get in here borrow");
+            $('#StateProduct').prop('disabled', true);
+            $('#roomSelect').prop('disabled', true);
+            $('#branchSelect').prop('disabled', true);
+        }
+    });
+
     document.getElementById('branchSelect').addEventListener('change', function () {
         var branchId = this.value;
         var roomSelect = document.getElementById('roomSelect');
@@ -165,8 +174,8 @@
                 roomType.value = '@items.Loaiphong';
                 if ('@items.Loaiphong' === 'Kho') {
 
-                    firstOption.value = "Tồn kho";
-                    firstOption.text = "Tồn kho";
+                    firstOption.value = "Sẵn sàng";
+                    firstOption.text = "Sẵn sàng";
                     stateProduct.options.add(new Option("Hư", "Hư", false));
                     stateProduct.options.add(new Option("Thanh lý", "Thanh lý", false));
                   
@@ -242,8 +251,8 @@
         var stateProduct = document.getElementById('StateProduct');
         var firstOptionState = document.getElementById('firstOption');
 
-        if (firstOptionState.value != "Tồn kho" && firstOptionState.value!="Hoạt động") {
-            stateProduct.options.add(new Option("Tồn kho", "Tồn kho", false));
+        if (firstOptionState.value != "Sẵn sàng" && firstOptionState.value!="Hoạt động") {
+            stateProduct.options.add(new Option("Sẵn sàng", "Sẵn sàng", false));
         }
         if (firstOptionState.value != "Thanh lý" && firstOptionState.value != "Hoạt động") {
             stateProduct.options.add(new Option("Thanh lý", "Thanh lý", false));

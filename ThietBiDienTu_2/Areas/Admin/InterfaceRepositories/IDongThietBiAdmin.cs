@@ -5,7 +5,8 @@ namespace ThietBiDienTu_2.Areas.Admin.InterfaceRepositories
     public interface IDongThietBiAdmin
     {
         List<Dongthietbi> GetAllDongThietBi();
-        Task Updatedtb(Dongthietbi dongthietbi);
+        void Updatedtb(Dongthietbi dongthietbi);
         bool CountSlFullOrNot(int MaDongTb);
+        Dongthietbi GetDtbById(int id);
     }
 }

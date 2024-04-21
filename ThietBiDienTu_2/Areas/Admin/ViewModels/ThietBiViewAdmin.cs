@@ -6,7 +6,7 @@
         public string Seri {  get; set; }
         public string HinhAnh {  get; set; }
         public string DongThietBi {get; set; }
-        public int MaDongTb { get; set; }
+        public int MaDongTb { get; set; } 
         public string CoSo {  get; set; }
         public int MaCoSo {  get; set; }
         public string Phong {  get; set; }

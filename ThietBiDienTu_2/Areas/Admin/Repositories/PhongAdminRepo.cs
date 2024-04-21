@@ -16,5 +16,25 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
             List<Phong> pList = _toolDbContext.Phongs.ToList();
             return pList;
         }
+        public void Add(Phong phong)
+        {
+            _toolDbContext.Add(phong);
+            _toolDbContext.SaveChangesAsync();
+        }
+        public void Update(Phong phong)
+        {
+            _toolDbContext.Update(phong);
+            _toolDbContext.SaveChangesAsync();
+        }
+        public void Delete(Phong phong)
+        {
+            _toolDbContext.Phongs.Remove(phong);
+            _toolDbContext.SaveChangesAsync();
+        }
+        public Phong FindPhong(string Map)
+        {
+            var phong = _toolDbContext.Phongs.Find(Map);
+            return phong;
+        }
     }
 }

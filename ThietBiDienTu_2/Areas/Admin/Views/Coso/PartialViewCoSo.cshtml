@@ -1,0 +1,40 @@
+﻿@model X.PagedList.StaticPagedList<ThietBiDienTu_2.Models.Coso>
+
+@section searchArea {
+
+}
+<table class="table table-striped">
+    <thead class="text-center">
+        <tr>
+            <th>STT</th>
+            <th>Tên cơ sở</th>
+            <th>Địa chỉ</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody class="text-center">
+        @{
+            int count = 0;
+        }
+        @foreach (var coso in Model)
+        {
+            <tr>
+                <td>@(++count)</td>
+                <td>@coso.Tencs</td>
+                <td>@coso.Diachi</td>
+                <td>
+                    <a class="btn btn-info btn-sm rounded" href="@Url.Action("Edit", "Coso", new { id = coso.Macs })">
+                        <svg class="icon icon-lg">
+                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-pen")"></use>
+                        </svg>
+                    </a>
+                    <a class="btn btn-danger btn-sm" href="@Url.Action("Delete", "Coso", new { id = coso.Macs })">
+                        <svg class="icon icon-lg">
+                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
+                        </svg>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

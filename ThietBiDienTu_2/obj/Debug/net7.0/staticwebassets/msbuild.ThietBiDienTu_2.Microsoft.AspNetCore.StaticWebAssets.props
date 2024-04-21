@@ -1,5 +1,37 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\calendar-20\calendar-20\.DS_Store))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>calendar-20/calendar-20/.DS_Store</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\calendar-20\calendar-20\.DS_Store))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\calendar-20\calendar-20\css\.DS_Store))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>calendar-20/calendar-20/css/.DS_Store</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\calendar-20\calendar-20\css\.DS_Store))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\calendar-20\calendar-20\css\bootstrap.min.css))">
       <SourceType>Package</SourceType>
       <SourceId>ThietBiDienTu_2</SourceId>
@@ -127,6 +159,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\calendar-20\calendar-20\css\style.css))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\calendar-20\calendar-20\fonts\.DS_Store))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>calendar-20/calendar-20/fonts/.DS_Store</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\calendar-20\calendar-20\fonts\.DS_Store))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\calendar-20\calendar-20\fonts\icomoon\demo-files\demo.css))">
       <SourceType>Package</SourceType>
@@ -2736,6 +2784,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\calendar-20\calendar-20\fullcalendar\packages\timegrid\README.md))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\calendar-20\calendar-20\images\.DS_Store))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>calendar-20/calendar-20/images/.DS_Store</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\calendar-20\calendar-20\images\.DS_Store))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\calendar-20\calendar-20\index.html))">
       <SourceType>Package</SourceType>
       <SourceId>ThietBiDienTu_2</SourceId>
@@ -2751,6 +2815,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\calendar-20\calendar-20\index.html))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\calendar-20\calendar-20\js\.DS_Store))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>calendar-20/calendar-20/js/.DS_Store</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\calendar-20\calendar-20\js\.DS_Store))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\calendar-20\calendar-20\js\bootstrap.min.js))">
       <SourceType>Package</SourceType>
@@ -2847,6 +2927,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\calendar-20\calendar-20\main.html))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\calendar-20\calendar-20\scss\.DS_Store))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>calendar-20/calendar-20/scss/.DS_Store</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\calendar-20\calendar-20\scss\.DS_Store))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\calendar-20\calendar-20\scss\bootstrap\bootstrap-grid.scss))">
       <SourceType>Package</SourceType>
@@ -9248,6 +9344,54 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\2.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\2069d876-d725-44f1-83c4-b3b56c7858f4-1d38220b-6821-4eb6-bcb5-65bf034dba22_z5304760414098_ec39d0942a4b30d08ec8f7dded418194.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>images/2069d876-d725-44f1-83c4-b3b56c7858f4-1d38220b-6821-4eb6-bcb5-65bf034dba22_z5304760414098_ec39d0942a4b30d08ec8f7dded418194.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\2069d876-d725-44f1-83c4-b3b56c7858f4-1d38220b-6821-4eb6-bcb5-65bf034dba22_z5304760414098_ec39d0942a4b30d08ec8f7dded418194.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\226ed43c-0b72-4d0d-96da-3d373bbc1a0e-3ebf7bdc-94b8-43ad-8d3f-1ddcc81f556a_z5304760404111_2832627c9471a74f1630c58a07866974.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>images/226ed43c-0b72-4d0d-96da-3d373bbc1a0e-3ebf7bdc-94b8-43ad-8d3f-1ddcc81f556a_z5304760404111_2832627c9471a74f1630c58a07866974.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\226ed43c-0b72-4d0d-96da-3d373bbc1a0e-3ebf7bdc-94b8-43ad-8d3f-1ddcc81f556a_z5304760404111_2832627c9471a74f1630c58a07866974.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\24174468-f88c-4bba-86f0-de6d4aa7e573-1d38220b-6821-4eb6-bcb5-65bf034dba22_z5304760414098_ec39d0942a4b30d08ec8f7dded418194.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>images/24174468-f88c-4bba-86f0-de6d4aa7e573-1d38220b-6821-4eb6-bcb5-65bf034dba22_z5304760414098_ec39d0942a4b30d08ec8f7dded418194.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\24174468-f88c-4bba-86f0-de6d4aa7e573-1d38220b-6821-4eb6-bcb5-65bf034dba22_z5304760414098_ec39d0942a4b30d08ec8f7dded418194.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\299f49af-5a5c-40bc-a83c-6da5702d0f1b-micBest.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>ThietBiDienTu_2</SourceId>
@@ -9263,6 +9407,38 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\299f49af-5a5c-40bc-a83c-6da5702d0f1b-micBest.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\385b4d73-c9fa-4531-83ee-fc8ad3f1d008-ManChieu.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>images/385b4d73-c9fa-4531-83ee-fc8ad3f1d008-ManChieu.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\385b4d73-c9fa-4531-83ee-fc8ad3f1d008-ManChieu.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\38a09eb5-decd-48d3-a190-796101aa0f73-Loaprov40.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>images/38a09eb5-decd-48d3-a190-796101aa0f73-Loaprov40.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\38a09eb5-decd-48d3-a190-796101aa0f73-Loaprov40.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\43d76324-662f-4a6d-96a9-88c49b765e3a-4c90e6bd.jpg))">
       <SourceType>Package</SourceType>
@@ -9280,6 +9456,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\43d76324-662f-4a6d-96a9-88c49b765e3a-4c90e6bd.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\48388d07-372f-4b15-af87-5c20a7b146b9-1b182bd1-050a-4971-b918-0b1b104cdf28_z5304760437730_4f252cc2e1e5eadcc749338613289e26.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>images/48388d07-372f-4b15-af87-5c20a7b146b9-1b182bd1-050a-4971-b918-0b1b104cdf28_z5304760437730_4f252cc2e1e5eadcc749338613289e26.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\48388d07-372f-4b15-af87-5c20a7b146b9-1b182bd1-050a-4971-b918-0b1b104cdf28_z5304760437730_4f252cc2e1e5eadcc749338613289e26.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\53563532-21ae-4b02-9647-4dcb01de33ff-560b90766bb5c4eb9da4.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>ThietBiDienTu_2</SourceId>
@@ -9295,6 +9487,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\53563532-21ae-4b02-9647-4dcb01de33ff-560b90766bb5c4eb9da4.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\62bd27ea-486a-4ccf-bfd2-a62ff458ea17-TIVI.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>images/62bd27ea-486a-4ccf-bfd2-a62ff458ea17-TIVI.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\62bd27ea-486a-4ccf-bfd2-a62ff458ea17-TIVI.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\6d4b34d0-2381-485e-8e6c-9a9adca8919e-4c90e6bd.jpg))">
       <SourceType>Package</SourceType>
@@ -9376,6 +9584,102 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\a6db2321-25ec-48b3-949f-cf4b7fdefd17-4c90e6bd.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\a83734b8-213c-43e1-a78f-0ede379f6f84-Loaprov40.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>images/a83734b8-213c-43e1-a78f-0ede379f6f84-Loaprov40.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\a83734b8-213c-43e1-a78f-0ede379f6f84-Loaprov40.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\aa864e60-4fd1-45f3-a215-8835307faafd-3ebf7bdc-94b8-43ad-8d3f-1ddcc81f556a_z5304760404111_2832627c9471a74f1630c58a07866974.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>images/aa864e60-4fd1-45f3-a215-8835307faafd-3ebf7bdc-94b8-43ad-8d3f-1ddcc81f556a_z5304760404111_2832627c9471a74f1630c58a07866974.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\aa864e60-4fd1-45f3-a215-8835307faafd-3ebf7bdc-94b8-43ad-8d3f-1ddcc81f556a_z5304760404111_2832627c9471a74f1630c58a07866974.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\b80148b4-a02e-4b0f-96f5-40211b99d1c4-dellKB612_BanPhim.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>images/b80148b4-a02e-4b0f-96f5-40211b99d1c4-dellKB612_BanPhim.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\b80148b4-a02e-4b0f-96f5-40211b99d1c4-dellKB612_BanPhim.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\b9cdd42f-e7c2-4eb6-9c98-4530b2153cbb-3ebf7bdc-94b8-43ad-8d3f-1ddcc81f556a_z5304760404111_2832627c9471a74f1630c58a07866974.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>images/b9cdd42f-e7c2-4eb6-9c98-4530b2153cbb-3ebf7bdc-94b8-43ad-8d3f-1ddcc81f556a_z5304760404111_2832627c9471a74f1630c58a07866974.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\b9cdd42f-e7c2-4eb6-9c98-4530b2153cbb-3ebf7bdc-94b8-43ad-8d3f-1ddcc81f556a_z5304760404111_2832627c9471a74f1630c58a07866974.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\bfe5a06e-e5c2-4b66-8370-3e72b3aa5a1c-maychieuViewSonic.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>images/bfe5a06e-e5c2-4b66-8370-3e72b3aa5a1c-maychieuViewSonic.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\bfe5a06e-e5c2-4b66-8370-3e72b3aa5a1c-maychieuViewSonic.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\c6193b11-b400-41ad-a552-4c2ac6553f92-ManHinhApple20Inch.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>images/c6193b11-b400-41ad-a552-4c2ac6553f92-ManHinhApple20Inch.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\c6193b11-b400-41ad-a552-4c2ac6553f92-ManHinhApple20Inch.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\ca25afa9-8758-4e67-a947-f751e2c66011-e309311c-5437-4cd0-9c87-636e61e87329_2a5f1129-c7c0-47e8-9d49-4dd39d993fbc_abd78516-d585-4306-91dd-85e9fb76641b_30dd4eb6-53a1-41fd-b2b9-f943db9ddf2d.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>ThietBiDienTu_2</SourceId>
@@ -9424,6 +9728,38 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\cdafac81-12ca-48af-96cd-c9b2f56ac82c-4c90e6bd.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\d55650f4-c017-4f76-acaa-02df02909471-3ebf7bdc-94b8-43ad-8d3f-1ddcc81f556a_z5304760404111_2832627c9471a74f1630c58a07866974.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>images/d55650f4-c017-4f76-acaa-02df02909471-3ebf7bdc-94b8-43ad-8d3f-1ddcc81f556a_z5304760404111_2832627c9471a74f1630c58a07866974.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\d55650f4-c017-4f76-acaa-02df02909471-3ebf7bdc-94b8-43ad-8d3f-1ddcc81f556a_z5304760404111_2832627c9471a74f1630c58a07866974.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\dd4790c9-0a6d-4cba-8b19-e02975574489-maychieuViewSonic.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>images/dd4790c9-0a6d-4cba-8b19-e02975574489-maychieuViewSonic.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\dd4790c9-0a6d-4cba-8b19-e02975574489-maychieuViewSonic.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\dell.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>ThietBiDienTu_2</SourceId>
@@ -9440,6 +9776,54 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\dell.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\e2e61c88-a6df-4918-b7e4-a97afe2c44aa-1d38220b-6821-4eb6-bcb5-65bf034dba22_z5304760414098_ec39d0942a4b30d08ec8f7dded418194.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>images/e2e61c88-a6df-4918-b7e4-a97afe2c44aa-1d38220b-6821-4eb6-bcb5-65bf034dba22_z5304760414098_ec39d0942a4b30d08ec8f7dded418194.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\e2e61c88-a6df-4918-b7e4-a97afe2c44aa-1d38220b-6821-4eb6-bcb5-65bf034dba22_z5304760414098_ec39d0942a4b30d08ec8f7dded418194.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\e376eb1c-1263-4914-a98e-e7b8cc7bba12-1d38220b-6821-4eb6-bcb5-65bf034dba22_z5304760414098_ec39d0942a4b30d08ec8f7dded418194.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>images/e376eb1c-1263-4914-a98e-e7b8cc7bba12-1d38220b-6821-4eb6-bcb5-65bf034dba22_z5304760414098_ec39d0942a4b30d08ec8f7dded418194.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\e376eb1c-1263-4914-a98e-e7b8cc7bba12-1d38220b-6821-4eb6-bcb5-65bf034dba22_z5304760414098_ec39d0942a4b30d08ec8f7dded418194.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\ef52120b-d423-4d6f-b650-acf30f89e392-68113c29-6fb8-4cca-b337-6ef9e1cbe99a.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>images/ef52120b-d423-4d6f-b650-acf30f89e392-68113c29-6fb8-4cca-b337-6ef9e1cbe99a.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\ef52120b-d423-4d6f-b650-acf30f89e392-68113c29-6fb8-4cca-b337-6ef9e1cbe99a.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\f123d319-b378-48f8-9c18-08d8b5d0e7d7-viewsonic-m1-mini-plus-1-1-org.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>ThietBiDienTu_2</SourceId>
@@ -9455,6 +9839,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\f123d319-b378-48f8-9c18-08d8b5d0e7d7-viewsonic-m1-mini-plus-1-1-org.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\f51d59b3-5caf-49b1-b069-332bfc8c4587-TIVI.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>images/f51d59b3-5caf-49b1-b069-332bfc8c4587-TIVI.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\f51d59b3-5caf-49b1-b069-332bfc8c4587-TIVI.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\micBest.jpg))">
       <SourceType>Package</SourceType>

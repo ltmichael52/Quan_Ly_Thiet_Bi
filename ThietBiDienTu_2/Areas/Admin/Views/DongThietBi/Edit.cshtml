@@ -1,49 +1,90 @@
 ﻿@model ThietBiDienTu_2.Models.Dongthietbi
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Create";
 }
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-<h2 class="text-center mt-4 mb-4"> Chỉnh sửa </h2>
 
-
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit" asp-controller="DongThietBi" method="post" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Madongtb" value="@Model.Madongtb" />
-
-            <div class="form-group">
-                <label asp-for="Tendongtb" class="control-label">Tên sản phẩm</label>
-                <input asp-for="Tendongtb" class="form-control" />
-                <span asp-validation-for="Tendongtb" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Soluong" class="control-label">Số lượng</label>
-                <input asp-for="Soluong" class="form-control" />
-                <span asp-validation-for="Soluong" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Mota" class="control-label">Mô tả</label>
-                <input asp-for="Mota" class="form-control" />
-                <span asp-validation-for="Mota" class="text-danger"></span>
-            </div>
-            <div class="form-group mb-3">
-                <label asp-for="Hinhanh" class="form-label">Hình ảnh</label>
-                 <input asp-for="Hinhanh" class="form-control" value="@Model.Hinhanh" hidden />
-                <input asp-for="hinhanh" class="form-control" type="file" />
-            </div>
-           
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Lưu</button>
-            </div>
-        </form>
+@section naviheader{
+    <div class="header-divider"></div>
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Admin/HomeAdmin/Index">Home</a></li>
+                <li class="breadcrumb-item"><a href="@Url.Action("Index", "DongThietBi", new { area = "Admin" })">Dòng thiết bị</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Cập nhật dòng thiết bị</li>
+            </ol>
+        </nav>
     </div>
-</div>
+}
+<form asp-action="Edit"  asp-controller="DongThietBi" method="post" enctype="multipart/form-data">
+    <div class="card">
+        <div class="card-header">
+            <h3>Cập nhật dòng thiết bị</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <!-- Left Column for Image -->
+                <div class="col-md-6 d-flex justify-content-center align-items-center flex-column">
+                    <img src="~/images/@Model.Hinhanh" id="imgProduct" class="img-fluid" alt="Product Image"
+                         style="border:solid 2px #ccc; max-height:308px;max-width:308px; border-radius:4px;">
+                    <div class="input-group mt-3" style="width:308px">
+                        <input asp-for="hinhanh" class="form-control" type="file" id="imgInput" onchange="previewImage(event)" />
+                        <input asp-for="Hinhanh" value="123" hidden />
+                        <input asp-for="Madongtb" hidden/>
+                    </div>
+                </div>
 
-<div>
-    <a asp-action="Index" class="btn btn-secondary mt-3">Trở về</a>
-</div>
+                <!-- Right Column for Form -->
+                <div class="col-md-6">
+                    <div class="bs-stepper linear">
+                        <div class="bs-stepper-content">
+                            <!-- your steps content here -->
+                            <div class="form-group mb-2">
+                                <label asp-for="Tendongtb" class="mb-2"><strong>Tên dòng thiết bị<span class="text-danger"> *</span></strong></label>
+                                <input asp-for="Tendongtb" class="form-control" required="required"/>
+                                <span asp-validation-for="Tendongtb" class="text-danger"></span>
+                            </div>
+                            <div class="form-group mb-2">
+                                <label asp-for="Soluong" class="form-label"><strong>Số lượng<span class="text-danger"> *</span></strong></label>
+                                <input asp-for="Soluong" class="form-control" required="required" />
+                                <span asp-validation-for="Soluong" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Mota" class="control-label"><strong>Mô tả</strong></label>
+                                <input asp-for="Mota" class="form-control" />
+                                <span asp-validation-for="Mota" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group mt-3">
+                                <a asp-action="Index" class="btn btn-danger">Quay lại</a>
+                                <button type="submit" asp-route-OldHinhAnh="@ViewBag.Hinhanh" class="btn btn-primary">Cập nhật</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Đã cập nhật thành công"]
+    </div>
+}
+<script>
+    function previewImage(event) {
+        var input = event.target;
+        var reader = new FileReader();
+        reader.onload = function () {
+            var imgElement = document.getElementById("imgProduct");
+            imgElement.src = reader.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+    };
+</script>
+

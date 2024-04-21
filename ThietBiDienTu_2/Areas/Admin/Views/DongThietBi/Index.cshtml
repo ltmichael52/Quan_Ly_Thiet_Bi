@@ -1,11 +1,37 @@
-﻿@model IEnumerable<ThietBiDienTu_2.Models.Dongthietbi>
+﻿@model IEnumerable<ThietBiDienTu_2.Areas.Admin.ViewModels.DongThietBiViewModel>
+
 @using X.PagedList;
 @using X.PagedList.Mvc.Core;
 @using X.PagedList.Web.Common;
 @{
     ViewData["Title"] = "Index";
 }
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            console.log("here");
+            $('#notify').css("display", "none");
+        }, 10000);
+    });
+</script>
+@if (TempData["AlertMessage"] != null)
+{
+    <div class="alert alert-success" id="notify">
+        <strong>Success!</strong> @TempData["AlertMessage"]
+    </div>
+}
 
+@section naviheader{
+    <div class="header-divider"></div>
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Admin/HomeAdmin/Index">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Dòng thiết bị</li>
+            </ol>
+        </nav>
+    </div>
+}
 <div class="container mt-3">
     <div class="card">
         <div class="card-header">
@@ -28,76 +54,59 @@
             <div class="bs-stepper linear">
                 <div class="bs-stepper-content">
                     <div class="table-responsive">
-                        <table class="table table-striped">
+                        <table class="table table-striped text-center">
                             <thead>
                                 <tr class="text-center">
-                                    <th>Stt</th>
-                                    <th>Hình ảnh</th>
+                                    <th>STT</th>
+                                    <th>Ảnh</th>
                                     <th>Tên Thiết bị</th>
-                                    <th>Số lượng</th>
-                                    <th>Số lượng hoạt động</th>
-                                    <th>Số lượng hư</th>
-                                    <th>Số lượng tồn kho</th>
+                                    <th>Tổng SL</th>
+                                    <th>SL hoạt động</th>
+                                    <th>SL hư</th>
+                                    <th>SL sẵn sàng</th>
                                     <th>Thao tác</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="text-center">
                                 @{
                                     int i = 0;
                                 }
                                 @foreach (var dtb in Model)
                                 {
-
                                     <tr>
                                         <td>@(++i)</td>
-                                        <td>
+                                        <td class="text-center">
                                             <img src="@Url.Content("~/images/" + dtb.Hinhanh)" class="card-image-top thumbnail-image" />
-
                                         </td>
-                                        <td>@Html.DisplayFor(modelItem => dtb.Tendongtb)</td>
-                                        <td>@Html.DisplayFor(modelItem => dtb.Soluong)</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            <a class="btn btn-primary" asp-controller="DongThietBi" asp-action="Edit" asp-route-id="@dtb.Madongtb">Edit</a> |
-                                            <a onclick="if (confirm('Xác nhận xóa dòng thiết bị này?') == true) {location.href='/admin/DongThietBi/Delete/@dtb.Madongtb'}" class="btn btn-danger btn-sm rounded">Delete</a>
-                                            <a class="btn btn-info" onclick="getUrlDetail('@dtb.Tendongtb')">Details</a> |
+                                        <td class="text-center">@Html.DisplayFor(modelItem => dtb.Tendongtb)</td>
+                                        <td class="text-center">@Html.DisplayFor(modelItem => dtb.Soluong)</td>
+                                        <td class="text-center">@Html.DisplayFor(modelItem => dtb.SoLuongHoatDong)</td>
+                                        <td class="text-center">@Html.DisplayFor(modelItem => dtb.SoLuongHu)</td>
+                                        <td class="text-center">@Html.DisplayFor(modelItem => dtb.SoLuongTonKho)</td>
+                                        <td class="text-center">
+                                            <a class="btn btn-success btn-sm rounded" asp-controller="ThietBi" asp-action="ThietBiList" asp-route-searchStringThietBi="@dtb.Tendongtb">
+                                                <svg class="icon icon-lg">
+                                                    <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-file")"></use>
+                                                </svg>
+                                            </a>
+                                            <a class="btn btn-info btn-sm rounded" asp-controller="DongThietBi" asp-action="Edit" asp-route-id="@dtb.Madongtb">
+                                                <svg class="icon icon-lg">
+                                                    <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-pen")"></use>
+                                                </svg>
+                                            </a>
+                                            <a onclick="if (confirm('Xác nhận xóa dòng thiết bị này?') == true) {location.href='/admin/DongThietBi/Delete/@dtb.Madongtb'}" class="btn btn-danger btn-sm rounded">
+                                                <svg class="icon icon-lg">
+                                                    <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
+                                                </svg>
+                                            </a> 
                                            
+                                            @* <a class ="btn btn-primary" asp-controller="DongThietBi" asp-action="Themthiebi" asp-route-id="@dtb.Madongtb"></a> *@
                                         </td>
                                     </tr>
                                 }
                             </tbody>
                         </table>
                     </div>
-
-                    @*<nav>
-                    <ul class="pagination justify-content-center">
-                    <!-- First Page -->
-                    @if (Model.PageNumber > 1)
-                    {
-                    <li class="page-item">
-                    <a class="page-link" asp-action="Index" asp-route-page="1">First</a>
-                    </li>
-                    }
-
-                    <!-- Page Numbers -->
-                    @for (var i = Math.Max(1, Model.PageNumber - 2); i <= Math.Min(Model.PageNumber + 2, Model.PageCount); i++)
-                    {
-                    <li class="page-item @(Model.PageNumber == i ? "active" : "")">
-                    <a class="page-link" asp-action="Index" asp-route-page="@i">@i</a>
-                    </li>
-                    }
-
-                    <!-- Last Page -->
-                    @if (Model.PageNumber < Model.PageCount)
-                    {
-                    <li class="page-item">
-                    <a class="page-link" asp-action="Index" asp-route-page="@Model.PageCount">Last</a>
-                    </li>
-                    }
-                    </ul>
-                    </nav>*@
                 </div>
             </div>
         </div>
@@ -107,8 +116,7 @@
 <div class="footer"></div>
 <style>
     .thumbnail-image {
-        max-width: 100px; /* Adjust the maximum width as needed */
-        max-height: 100px; /* Adjust the maximum height as needed */
+        max-width: 60px; /* Adjust the maximum width as needed */
+        max-height: 60px; /* Adjust the maximum height as needed */
     }
 </style>
-

@@ -1,5 +1,6 @@
 ﻿@using ThietBiDienTu_2.Models.ViewModels
 @model CartItemViewModel
+
 <style>
     .imgDetail {
         max-height: 80px;
@@ -30,11 +31,11 @@
 
                                     <div class="infor-customer">
                                         <label asp-for="@Model.Sv.Masv">Mã số sinh viên</label>
-                                        <input asp-for="@Model.Sv.Masv" readonly />
+                                        <input asp-for="@Model.Sv.Masv" disabled />
                                     </div>
                                     <div class="infor-customer">
                                         <label asp-for="@Model.Sv.Tensv">Tên sinh viên</label>
-                                        <input asp-for="@Model.Sv.Tensv" readonly />
+                                        <input asp-for="@Model.Sv.Tensv" disabled />
                                     </div>
 
 
@@ -44,11 +45,12 @@
                                     </div>
                                     <div class="infor-customer">
                                         <label asp-for="@Model.Phieumuon.Ngaymuon">Ngày mượn:</label>
-                                        <input asp-for="@Model.Phieumuon.Ngaymuon" type="datetime">
+                                        <input disabled value="@Model.Phieumuon.Ngaymuon.ToString("dd-MM-yyyy")">
+                                        <input asp-for="@Model.Phieumuon.Ngaymuon" type="datetime" hidden>
                                     </div>
                                     <div class="infor-customer">
                                         <label asp-for="@Model.Phieumuon.Ngaylap">Ngày lập:</label>
-                                        <input asp-for="@Model.Phieumuon.Ngaylap" type="datetime" readonly>
+                                        <input asp-for="@Model.Phieumuon.Ngaylap" type="datetime" disabled>
                                     </div>
 
                                 </div>

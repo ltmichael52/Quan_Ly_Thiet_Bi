@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Phong>
+
+@{
+    var dbContext = new ToolDbContext(); // Khởi tạo ToolDbContext
+}
+
+<table class="table table-striped">
+    <thead class="text-center">
+        <tr>
+            <th>STT</th>
+            <th>Mã phòng</th>
+            <th>Tên phòng</th>
+            <th>Loại phòng</th>
+            <th>Tên cơ sở</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody class ="text-center">
+        @{
+            int count = 0;
+        }
+        @foreach (var phong in Model)
+        {
+            <tr>
+                <td>@(++count)</td>
+                <td>@phong.Map</td>
+                <td>@phong.Tenphong</td>
+                <td>@phong.Loaiphong</td>
+                <td>
+                    @{
+                        var coso = dbContext.Cosos.FirstOrDefault(c => c.Macs == phong.Macs);
+                        if (coso != null)
+                        {
+                            @coso.Tencs
+                        }
+                    }
+                </td>
+                <td>
+                    <a class="btn btn-info btn-sm rounded" href="@Url.Action("Edit", "Phong", new { id = phong.Map })">
+                        <svg class="icon icon-lg">
+                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-pen")"></use>
+                        </svg>
+                    </a>
+                    <a class="btn btn-danger btn-sm" href="@Url.Action("Delete", "Phong", new { id = phong.Map })">
+                        <svg class="icon icon-lg">
+                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
+                        </svg>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -22,14 +22,14 @@
 <!-- Section-->
 <form id="dateForm">
     <p>Ngày đặt thiết bị:</p>
-    <input name="NgayDat" type="date" id="NgayDat" class="ml-2" />
+    <input name="NgayDat" type="date" id="NgayDat" class="ml-2" min="2024-04-17" />
 </form>
 <div class="py-5" id="productShow" style="display:none">
     <partial name="_PartialShowProduct" model="@Model"/>
 </div>
 
 <div class="text-center">
-    <a asp-controller="ProcductManagement" asp-action="Index" asp-route-trangThai="Tồn Kho" class="btn btn-primary see-more-btn">
+    <a asp-controller="ProcductManagement" asp-action="Index" asp-route-trangThai="Sẵn sàng" class="btn btn-primary see-more-btn">
         Xem thêm
     </a>
 </div>

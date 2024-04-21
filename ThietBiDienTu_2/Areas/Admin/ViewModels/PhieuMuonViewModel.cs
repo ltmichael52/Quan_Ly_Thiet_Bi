@@ -17,9 +17,11 @@
         public string Lydomuon { get; set; } = null!;
 
         public string? LydoTuChoi { get; set; }
+        public string? LydoHuy {  get; set; }
 
         public string Tensv {  get; set; }
         public string TenKhoa {  get; set; }
         public string TenNganh {  get; set; }
+        public List<ChitietPhieuMuonViewModel> ctpmView {  get; set; }
     }
 }

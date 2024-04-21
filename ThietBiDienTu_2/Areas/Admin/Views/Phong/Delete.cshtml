@@ -1,8 +1,8 @@
 ﻿@model Phong
 
-<h1>Delete Phòng</h1>
+<h1>Xóa Phòng</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Bạn có chắc muốn xóa phòng này?</h3>
 <div>
     <h4>Phong</h4>
     <hr />
@@ -19,7 +19,7 @@
 
     <form asp-action="Delete">
         <input type="hidden" asp-for="Map" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a href="@Url.Action("Index")">Back to List</a>
+        <input type="submit" value="Xóa" class="btn btn-danger" /> |
+        <a href="@Url.Action("Index")">Hủy</a>
     </form>
 </div>

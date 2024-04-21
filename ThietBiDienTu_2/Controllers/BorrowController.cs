@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ThietBiDienTu_2.Models.Authentication;
 
 namespace DateBorrowTest.Controllers
 {
+    [AuthenticationCustomer]
     public class BorrowController : Controller
     {
         public IActionResult Index()

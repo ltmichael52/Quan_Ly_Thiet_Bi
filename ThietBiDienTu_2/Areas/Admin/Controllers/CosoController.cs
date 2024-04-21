@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ThietBiDienTu_2.Models;
+using ThietBiDienTu_2.Models.Authentication;
+using X.PagedList;
 
 namespace ThietBiDienTu_2.Areas.Admin.Controllers
 {
 	[Area("admin")]
-	
+	[AuthenticationManager]
 	public class CosoController : Controller
 	{
 		private readonly ToolDbContext _context;
@@ -15,14 +17,42 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 			_context = context;
 		}
 
-		// GET: Cosos
-		public async Task<IActionResult> Index()
-		{
-			return View(await _context.Cosos.ToListAsync());
-		}
+        // GET: Cosos
+        // GET: Cosos
+        public async Task<IActionResult> Index(string? searchString, int? page)
+        {
+            ViewBag.CurrentFilter = searchString;
 
-		// GET: Cosos/Create
-		public IActionResult Create()
+            var cosos = _context.Cosos.AsQueryable();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+				cosos = cosos.Where(x => x.Tencs.ToLower().Contains(searchString.ToLower()));
+                                        
+            }
+
+            int pageSize = 10; // Số lượng bản ghi trên mỗi trang
+            int pageNumber = (page ?? 1); // Trang hiện tại, nếu không có trang nào thì mặc định là 1
+
+            var pagedCosos = await cosos.ToPagedListAsync(pageNumber, pageSize);
+
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return PartialView("PartialViewCoSo", pagedCosos);
+            }
+
+            return View(pagedCosos);
+        }
+
+
+        private bool IsAjaxRequest()
+        {
+            throw new NotImplementedException();
+        }
+
+
+        // GET: Cosos/Create
+        public IActionResult Create()
 		{
 			return View();
 		}
@@ -41,8 +71,16 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 			return View(coso);
 		}
 
-		// GET: Cosos/Edit/5
-		public async Task<IActionResult> Edit(int? id)
+        [HttpPost]
+        public IActionResult Search(string? searchString)
+        {
+            var cosos = _context.Cosos.Where(c => c.Tencs.ToLower().Contains(searchString.ToLower())).ToList();
+            return PartialView("PartialViewCoSo", cosos);
+        }
+
+
+        // GET: Cosos/Edit/5
+        public async Task<IActionResult> Edit(int? id)
 		{
 			if (id == null)
 			{

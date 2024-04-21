@@ -10,6 +10,7 @@ using X.PagedList;
 namespace ThietBiDienTu_2.Areas.Admin.Controllers
 {
     [Area("admin")]
+    [AuthenticationManager]
     public class UserEmployeeController : Controller
     {
         ToolDbContext _context;
@@ -37,14 +38,24 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                                    Ngaysinh = emp.Ngaysinh,
                                    Gioitinh = emp.Gioitinh,
                                    Sdt = emp.Sdt,
-                                   ManvNavigation = emp.ManvNavigation
+                                   ManvNavigation = _context.Taikhoans.FirstOrDefault(x=>x.Matk == emp.Manv)
                                })
                                .OrderBy(emp => emp.Tennv);
                 nv = new PagedList<Nhanvien>(nvList1, pageNumber, pageSize);
             }
             else
             {
-                var nvList2 = _context.Nhanviens.AsNoTracking().OrderBy(x => x.Tennv);
+                var nvList2 = _context.Nhanviens.Select(emp => new Nhanvien
+                {
+                    Manv = emp.Manv,
+                    Tennv = emp.Tennv,
+                    Diachi = emp.Diachi,
+                    Email = emp.Email,
+                    Ngaysinh = emp.Ngaysinh,
+                    Gioitinh = emp.Gioitinh,
+                    Sdt = emp.Sdt,
+                    ManvNavigation = _context.Taikhoans.FirstOrDefault(x => x.Matk == emp.Manv)
+                }).OrderBy(x => x.Tennv);
                 nv = new PagedList<Nhanvien>(nvList2, pageNumber, pageSize);
             }
 
@@ -78,6 +89,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                     Matkhau = "123456",
                     Loaitk = 1
                 };
+                TempData["Action"] = "Tạo thành công";
                 nv.ManvNavigation = nacc;
                 _context.Taikhoans.Add(nacc);
                 _context.Nhanviens.Add(nv);
@@ -127,6 +139,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                 _context.Taikhoans.Add(emp_acc.acc);
                 _context.Nhanviens.Add(emp_acc.nv);
                 _context.SaveChanges();
+                TempData["Action"] = "Cập nhật thành công";
                 return RedirectToAction("Index");
             }
         }

@@ -7,7 +7,14 @@
 }
 
 @model X.PagedList.IPagedList<Nhanvien>
-
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            console.log("here");
+            $('#notify').css("display", "none");
+        }, 10000);
+    });
+</script>
 @section searchArea{
     <form id="searchForm" action="@Url.Action("Index","UserEmployee")" method="get" style="width:40%; text-align:left;" class="d-none d-md-flex">
         <div class="input-group">
@@ -34,7 +41,12 @@
         </nav>
     </div>
 }
-
+@if (TempData["Action"] != null)
+{
+    <div class="alert alert-success" id="notify">
+        <strong>Success!</strong> @TempData["Action"]
+    </div>
+}
 <!-- Content Header (Page header) -->
 <div class="card">
     <div class="card-header">
@@ -90,11 +102,15 @@
                                             <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-pen")"></use>
                                         </svg>
                                     </a>
-                                    <a onclick="if (confirm('Xác nhận xóa nhân viên?') == true) {location.href='/admin/userEmployee/Delete/@nv.Manv'}" class="btn btn-danger btn-sm rounded">
-                                        <svg class="icon icon-lg">
-                                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
-                                        </svg>
-                                    </a>                                 
+                                    @if (nv.ManvNavigation.Loaitk != 2)
+                                    {
+                                        <a onclick="if (confirm('Xác nhận xóa nhân viên?') == true) {location.href='/admin/userEmployee/Delete/@nv.Manv'}" class="btn btn-danger btn-sm rounded">
+                                            <svg class="icon icon-lg">
+                                                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
+                                            </svg>
+                                        </a>
+                                    }
+                                                                 
                                 </td>
                             </tr>
                         }

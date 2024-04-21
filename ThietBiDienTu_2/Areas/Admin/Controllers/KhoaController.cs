@@ -2,11 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ThietBiDienTu_2.Models;
+using ThietBiDienTu_2.Models.Authentication;
+using X.PagedList;
 
 namespace ThietBiDienTu_2.Areas.Admin.Controllers
 {
     [Area("admin")]
-   
+    [AuthenticationManager]
     public class KhoaController : Controller
     {
         private readonly ToolDbContext _context;
@@ -16,10 +18,31 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(string searchString, int? page)
         {
-            return View(_context.Khoas.ToList());
+            ViewBag.CurrentFilter = searchString;
+
+            var pageNumber = page ?? 1; // nếu page không có giá trị, mặc định là 1
+            var pageSize = 10; // số lượng phần tử trên mỗi trang
+
+                var khoas = string.IsNullOrEmpty(searchString)
+              ? await _context.Khoas.ToPagedListAsync(pageNumber, pageSize)
+              : await _context.Khoas.Where(k => k.Tenkhoa.Contains(searchString)).ToPagedListAsync(pageNumber, pageSize);
+            
+          
+
+            if (IsAjaxRequest())
+            {
+                return PartialView("PartialViewKhoa", khoas);
+            }
+            return View(khoas);
         }
+
+        private bool IsAjaxRequest()
+        {
+            return Request.Headers["X-Requested-With"] == "XMLHttpRequest";
+        }
+
 
         public IActionResult Details(int id)
         {
@@ -31,6 +54,20 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 
             return View(khoa);
         }
+        [HttpPost]
+        public IActionResult Search(string searchString)
+        {
+            var khoas = _context.Khoas.Where(k => k.Tenkhoa.Contains(searchString)).ToList();
+            if (IsAjaxRequest())
+            {
+                return PartialView("PartialViewKhoa", khoas);
+            }
+            return View(khoas);
+        }
+
+
+
+
         // KhoaController
         public IActionResult Create()
         {
@@ -39,7 +76,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("TenKhoa")] Khoa khoa)
+        public IActionResult Create([Bind("Tenkhoa")] Khoa khoa)
         {
             if (ModelState.IsValid)
             {
@@ -62,7 +99,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("TenKhoa")] Khoa khoa)
+        public IActionResult Edit(int id, [Bind("MaKhoa,TenKhoa")] Khoa khoa)
         {
             if (id != khoa.Makhoa)
             {

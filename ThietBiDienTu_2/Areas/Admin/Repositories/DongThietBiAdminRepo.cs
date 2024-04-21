@@ -25,10 +25,20 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
             return count >= Soluongtb ? true : false;
         }
 
-        public async Task Updatedtb(Dongthietbi dongthietbi)
+        public void Updatedtb(Dongthietbi dongthietbi)
         {
+           //Dongthietbi dtb = context.Dongthietbis.Find(dongthietbi.Madongtb);
+            //dtb.Hinhanh = dongthietbi.Hinhanh;
+            //dtb.Soluong = dongthietbi.Soluong;
+            //dtb.Mota = dongthietbi.Mota;
             context.Update(dongthietbi);
-            await context.SaveChangesAsync();
+            context.SaveChanges();
+        }
+
+        public Dongthietbi GetDtbById(int id)
+        {
+            Dongthietbi dtb = context.Dongthietbis.Find(id);
+            return dtb;
         }
 
     }

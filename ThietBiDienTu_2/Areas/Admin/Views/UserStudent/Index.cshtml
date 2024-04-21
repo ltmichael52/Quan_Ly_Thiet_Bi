@@ -56,7 +56,12 @@
         </nav>
     </div>
 }
-
+@if (TempData["Action"] != null)
+{
+    <div class="alert alert-success" id="notify">
+        <strong>Success!</strong> @TempData["Action"]
+    </div>
+}
 <!-- Content Header (Page header) -->
 <div class="card">
     <div class="card-header">
@@ -159,6 +164,12 @@
 
 <div class="footer"></div>
 <script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            console.log("here");
+            $('#notify').css("display", "none");
+        }, 10000);
+    });
     function storeCourseAndMajorAndSearchString(){
         const course = document.getElementById('course').value;
         const searchString = document.getElementById('searchString').value;

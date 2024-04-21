@@ -16,7 +16,7 @@ namespace ThietBiDienTu_2.Controllers
         private readonly ToolDbContext _dataContext;
         private readonly ILogger<ProcductManagementController> _logger; IHttpContextAccessor contextAcc;
 
-        public ProcductManagementController(ILogger<ProcductManagementController> logger, ToolDbContext context,IHttpContextAccessor contextAcc)
+        public ProcductManagementController(ILogger<ProcductManagementController> logger, ToolDbContext context, IHttpContextAccessor contextAcc)
         {
             _logger = logger;
             _dataContext = context;
@@ -35,7 +35,7 @@ namespace ThietBiDienTu_2.Controllers
             foreach (Dongthietbi tb in dongtbList)
             {
                 int soLuong = _dataContext.Thietbis
-                    .Count(ct => ct.Madongtb == tb.Madongtb && ct.Trangthai == "Tồn kho");
+                    .Count(ct => ct.Madongtb == tb.Madongtb && ct.Trangthai == "Sẵn sàng");
                 tb.Soluong = soLuong;
             }
             displayList = dongtbList;
@@ -52,6 +52,7 @@ namespace ThietBiDienTu_2.Controllers
 
                 if (NgayDat != null)
                 {
+                    HttpContext.Session.SetString("NgayDat", NgayDat?.ToString("dd-MM-yyyy"));
                     // Query to get details for the specified date
                     List<Chitietphieumuon> chiTietPhieuMuonList = _dataContext.Chitietphieumuons
                         .Include(ct => ct.MapmNavigation)
@@ -70,14 +71,14 @@ namespace ThietBiDienTu_2.Controllers
                     viewModel.ChiTietPhieuMuonList = chiTietPhieuMuonList;
                 }
 
-                if (trangThai == "Tồn Kho")
+                if (trangThai == "Sẵn sàng")
                 {
                     // Trả về tất cả các mục
                     viewModel.DongThietBiList = displayList;
                 }
 
 
-                return PartialView("_PartialShowProduct",viewModel);
+                return PartialView("_PartialShowProduct", viewModel);
             }
 
             return View(viewModel);

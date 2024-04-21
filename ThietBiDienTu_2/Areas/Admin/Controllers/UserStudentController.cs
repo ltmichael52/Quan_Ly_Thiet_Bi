@@ -114,6 +114,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                 sv.MasvNavigation = newAcc;
                 _context.Sinhviens.Add(sv);
                 _context.SaveChanges();
+                TempData["Action"] = "Tạo thành công";
                 return RedirectToAction("Index");
             }
             
@@ -163,6 +164,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                 _context.Taikhoans.Add(stu_acc.acc);
                 _context.Sinhviens.Add(stu_acc.sv);
                 _context.SaveChanges();
+                TempData["Action"] = "Cập nhật thành công";
                 return RedirectToAction("Index");
             }
         }

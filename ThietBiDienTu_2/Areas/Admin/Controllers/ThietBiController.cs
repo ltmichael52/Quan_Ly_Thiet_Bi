@@ -8,11 +8,13 @@ using System.Net;
 using ThietBiDienTu_2.Areas.Admin.InterfaceRepositories;
 using ThietBiDienTu_2.Areas.Admin.ViewModels;
 using ThietBiDienTu_2.Models;
+using ThietBiDienTu_2.Models.Authentication;
 using X.PagedList;
 
 namespace ThietBiDienTu_2.Areas.Admin.Controllers
 {
     [Area("admin")]
+    [AuthenticationM_S]
     public class ThietBiController : Controller
     {
         ICoSoAdmin coso; IPhongAdmin pRepo; IDongThietBiAdmin Dongtb;
@@ -54,7 +56,8 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 
             if (!string.IsNullOrEmpty(searchStringThietBi))
             {
-                dataList = dataList.Where(x => x.DongThietBi != null && x.DongThietBi.ToLower().Contains(searchStringThietBi.TrimEnd().ToLower())).ToList();
+                dataList = dataList.Where(x => x.DongThietBi != null && 
+                (x.DongThietBi.ToLower().Contains(searchStringThietBi.TrimEnd().ToLower())  || x.Seri.ToLower().Contains(searchStringThietBi.TrimEnd().ToLower())  )).ToList();
                 ViewBag.searchStringThietBi= searchStringThietBi;
             }
             if (!string.IsNullOrEmpty(Coso) && Coso != "all")
@@ -98,12 +101,13 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult CreateThietBi(ThietBiViewAdmin ThietBiView,string? searchStringThietBi1,string? Coso1,string? Phong1,string? Loaiphong1,string? Trangthai1)
         {
+            
             CreateSelectData();
             if (CheckValid(ThietBiView) ==1)
             {
                 return View(ThietBiView);
             }
-
+            TempData["Action"] = "Tạo thành công";
             Thietbi tb = new Thietbi
             {
                 Matb = ThietBiView.Matb,
@@ -142,12 +146,14 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult UpdateThietBi(ThietBiViewAdmin ThietBiView,string oldSeri, string? searchStringThietBi1, string? Coso1, string? Phong1, string? Loaiphong1, string? Trangthai1)
         {
+            
             CreateSelectData();
             ViewBag.oldSeri = oldSeri;
             if (CheckValid(ThietBiView, oldSeri) == 1)
             {
                 return View(ThietBiView);
             }
+            TempData["Action"] = "Cập nhật thành công";
             Debug.WriteLine("search string: ", searchStringThietBi1);
             
             thietbi.UpdateTB(ThietBiView);

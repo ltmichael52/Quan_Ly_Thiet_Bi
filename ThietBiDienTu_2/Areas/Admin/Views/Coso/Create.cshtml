@@ -1,16 +1,27 @@
 ﻿@model Coso
-
-<h1>Create New Cơ sở</h1>
+@section naviheader{
+    <div class="header-divider"></div>
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Admin/HomAdmin/Index">Home</a></li>
+                <li class="breadcrumb-item"><a class="linktag" style="cursor:pointer" asp-action="Index" asp-controller="Coso">Danh sách cơ sở</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Tạo cơ sở</li>
+            </ol>
+        </nav>
+    </div>
+}
+<h1>Tạo cơ sở mới</h1>
 <form asp-action="Create">
     <div class="form-group">
-        <label asp-for="Tencs" class="control-label"></label>
+        <label asp-for="Tencs" class="control-label">Tên cơ sở</label>
         <input asp-for="Tencs" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="Diachi" class="control-label"></label>
+        <label asp-for="Diachi" class="control-label">Địa chỉ</label>
         <input asp-for="Diachi" class="form-control" />
     </div>
     <div class="form-group">
-        <input type="submit" value="Create" class="btn btn-primary" />
+        <input type="submit" value="Tạo" class="btn btn-primary" />
     </div>
 </form>

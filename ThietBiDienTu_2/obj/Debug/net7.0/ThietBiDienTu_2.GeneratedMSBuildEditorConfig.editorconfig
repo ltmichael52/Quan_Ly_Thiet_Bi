@@ -36,7 +36,7 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRG9uZ1RoaWV0QmlcQ3JlYXRlVG9vbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/DongThietBi/Edit.cshtml]
+[D:/C\#/KTPM/ThietBiDienTu_2/Areas/Admin/Views/DongThietBi/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRG9uZ1RoaWV0QmlcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
@@ -84,7 +84,11 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGhpZXVNdW9uQWRtaW5cQ2hpdGlldFBoaWV1TXVvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/Phong/Create.cshtml]
+[D:/C\#/KTPM/ThietBiDienTu_2/Areas/Admin/Views/PhieuMuonAdmin/LichsuMuon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGhpZXVNdW9uQWRtaW5cTGljaHN1TXVvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/C\#/KTPM/ThietBiDienTu_2/Areas/Admin/Views/Phong/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGhvbmdcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 

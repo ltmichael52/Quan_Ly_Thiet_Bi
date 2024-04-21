@@ -48,15 +48,15 @@
                     <!-- Adjusted col-lg-6 to make the card smaller -->
                     <div class="card p-4 mb-0">
                         <form class="card-body" method="post" asp-action="Login" asp-controller="Access">
-                            <h1 class="text-center">Login</h1>
-                            <p class="text-medium-emphasis text-center">Sign In to your account</p>
+                            <h1 class="text-center">Phần Mềm Quản Lý Thiết Bị Điện Tử SIU</h1>
+                            <p class="text-medium-emphasis text-center">Đăng nhập vào tài khoản</p>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">
                                     <svg class="icon">
                                         <use xlink:href="~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-user"></use>
                                     </svg>
                                 </span>
-                                <input class="form-control" type="text" placeholder="Mã tài khoản" asp-for="Matk" required="required" autofocus="autofocus">
+                                <input class="form-control" type="text" placeholder="Mã tài khoản" asp-for="Matk" required="required" autofocus="autofocus"/>                         
                             </div>
                             <div class="input-group mb-3">
                                 <!-- Adjusted mb-4 to mb-3 for smaller spacing -->
@@ -65,9 +65,10 @@
                                         <use xlink:href="~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-lock-locked"></use>
                                     </svg>
                                 </span>
-                                <input class="form-control" type="password" placeholder="Mật khẩu" asp-for="Matkhau" required="required">
+                                <input class="form-control" type="password" placeholder="Mật khẩu" asp-for="Matkhau" required="required"/>
                                 
                             </div>
+                            <span asp-validation-for="Matkhau" class="text-danger"></span>
                             <div class="row">
                                 <div class="col-12">
                                     <!-- Adjusted col-6 to col-12 for full width button -->
