@@ -16,7 +16,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 	[Area("admin")]
 	[AuthenticationM_S]
 	public class DongThietBiController : Controller
-	{
+	{//Test
 		private readonly ToolDbContext _context;
 		private readonly IWebHostEnvironment _webHost;
 		private readonly IDongThietBiAdmin _idongthietbirepo;
