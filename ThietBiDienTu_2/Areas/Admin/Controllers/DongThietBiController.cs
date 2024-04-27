@@ -68,8 +68,6 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 		}
 
 
-
-
 		public IActionResult CreateTool()
 		{
 			ViewData["YourDropdownData"] = _context.Dongthietbis.ToList();
@@ -187,29 +185,36 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 			return fileName;
 		}
 
-		public IActionResult Delete(int id)
-		{
+        public IActionResult Delete(int id)
+        {
+            if (id == null || _context.Dongthietbis == null)
+            {
+                return NotFound();
+            }
 
-			if (id == null || _context.Dongthietbis == null)
-			{
+            var dongthietbi = _context.Dongthietbis
+                .Include(d => d.Thietbis) // Load các Thietbi thuộc về Dongthietbi
+                .FirstOrDefault(m => m.Madongtb == id);
 
-				return NotFound();
-			}
+            if (dongthietbi == null)
+            {
+                return NotFound();
+            }
 
-			var dongthietbi = _context.Dongthietbis
-				.FirstOrDefault(m => m.Madongtb == id);
-			if (dongthietbi == null)
-			{
-				return NotFound();
-			}
+            if (dongthietbi.Thietbis != null && dongthietbi.Thietbis.Any())
+            {
+                TempData["DangerMessage"] = "Không thể xóa dòng thiết bị vì còn tồn tại thiết bị thuộc dòng này.";
+                return RedirectToAction("Index");
+            }
 
-			_context.Dongthietbis.Remove(dongthietbi);
-			_context.SaveChanges();
-			TempData["AlertMessage"] = "Đã xóa dòng thiết bị thành công";
-			return RedirectToAction("Index");
-		}
+            _context.Dongthietbis.Remove(dongthietbi);
+            _context.SaveChanges();
+            TempData["AlertMessage"] = "Đã xóa dòng thiết bị thành công";
+            return RedirectToAction("Index");
+        }
 
-		public ActionResult Details(int id)
+
+        public ActionResult Details(int id)
 		{
 			var dtb = _context.Dongthietbis.Find(id);
 			return View(dtb);
