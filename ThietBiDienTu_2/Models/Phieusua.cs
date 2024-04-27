@@ -7,15 +7,12 @@ public partial class Phieusua
 {
     public int Maps { get; set; }
 
-    public int Matb { get; set; }
-
     public DateTime Ngaylap { get; set; }
 
-    public DateTime? Ngayhoantat { get; set; }
+    public int Trangthai { get; set; }
 
-    public decimal? Chiphi { get; set; }
+    public decimal? Tongchiphi { get; set; }
 
-    public string? Mota { get; set; }
+    public virtual ICollection<Chitietphieusua> Chitietphieusuas { get; set; } = new List<Chitietphieusua>();
 
-    public virtual Thietbi MatbNavigation { get; set; } = null!;
 }

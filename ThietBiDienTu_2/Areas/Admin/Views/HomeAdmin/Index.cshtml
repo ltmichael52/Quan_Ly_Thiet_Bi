@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Card View</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -17,89 +17,92 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 mb-3">
-                <a href="@Url.Action("ThietBiList", "ThietBi", new { area = "Admin" })" class="card-link">
-                    <div class="card bg-primary">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Quản lý thiết bị</h5>
-                            <p class="card-text text-white">Description</p>
-                            <p class="card-text text-white"><strong>Số lượng: @ViewBag.ThietBiCount</strong></p>
-                        </div>
+                <div class="card bg-success">
+                    <div class="card-body">
+                        <h5 class="card-title text-white">Quản lý thiết bị</h5>
+                        <p class="card-text text-white">Hôm nay: @ViewBag.Today</p>
+                        <p class="card-text text-white">Quản lý các thiết bị của Trường SIU</p>
+                        <p class="card-text text-white"><strong>Tổng số: @ViewBag.ThietBiCount</strong></p>
                     </div>
-                </a>
+                </div>
             </div>
 
             <div class="col-md-4 mb-3">
-                <a href="@Url.Action("Index", "DongThietBi", new { area = "Admin" })" class="card-link">
-                    <div class="card bg-secondary">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Quản lý dòng thiết bị</h5>
-                            <p class="card-text text-white">Description</p>
-                            <p class="card-text text-white"><strong>Số lượng: @ViewBag.DTBCount</strong></p>
-                        </div>
+                <div class="card bg-success">
+                    <div class="card-body">
+                        <h5 class="card-title text-white">Quản lý dòng thiết bị</h5>
+                        <p class="card-text text-white">Hôm nay: @ViewBag.Today</p>
+                        <p class="card-text text-white">Quản lý các dòng thiết bị của Trường SIU</p>
+                        <p class="card-text text-white"><strong>Tổng số: @ViewBag.DTBCount</strong></p>
                     </div>
-                </a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                
             </div>
             @if (HttpContextAccessor.HttpContext.Session.GetInt32("TypeAccount") == 2)
             {
                 <div class="col-md-4 mb-3">
-                    <a href="@Url.Action("Index", "UserEmployee", new { area = "Admin" })" class="card-link">
-                        <div class="card bg-success">
-                            <div class="card-body">
-                                <h5 class="card-title text-white">Quản lý nhân viên</h5>
-                                <p class="card-text text-white">Description</p>
-                                <p class="card-text text-white"><strong>Số lượng: @ViewBag.NvCount</strong></p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <a href="@Url.Action("Index", "UserStudent", new { area = "Admin" })" class="card-link">
-                        <div class="card bg-danger">
-                            <div class="card-body">
-                                <h5 class="card-title text-white">Quản lý sinh viên</h5>
-                                <p class="card-text text-white">Description</p>
-                                <p class="card-text text-white"><strong>Số lượng: @ViewBag.SvCount</strong></p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            }
-            <!-- Thêm thẻ card khác nếu cần -->
-            <div class="col-md-4 mb-3">
-                <a href="@Url.Action("DanhsachPhieuMuon", "PhieuMuonAdmin", new { area = "Admin" })" class="card-link">
                     <div class="card bg-success">
                         <div class="card-body">
-                            <h5 class="card-title text-white">Tổng số phiếu hôm nay</h5>
+                            <h5 class="card-title text-white">Quản lý nhân viên</h5>
                             <p class="card-text text-white">Hôm nay: @ViewBag.Today</p>
-                            <p class="card-text text-white"><strong>Số lượng: @ViewBag.PhieutodayCount</strong></p>
+                            <p class="card-text text-white">Quản lý nhân viên của Trường SIU</p>
+                            <p class="card-text text-white"><strong>Tổng số: @ViewBag.NvCount</strong></p>
                         </div>
                     </div>
-                </a>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <div class="card bg-success">
+                        <div class="card-body">
+                            <h5 class="card-title text-white">Quản lý sinh viên</h5>
+                            <p class="card-text text-white">Hôm nay: @ViewBag.Today</p>
+                            <p class="card-text text-white">Quản lý sinh viên của Trường SIU</p>
+                            <p class="card-text text-white"><strong>Tổng số: @ViewBag.SvCount</strong></p>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="col-md-4 mb-3">
+                
             </div>
             <div class="col-md-4 mb-3">
-                <a href="@Url.Action("DanhsachPhieuMuon", "PhieuMuonAdmin", new { area = "Admin" })" class="card-link">
-                    <div class="card bg-secondary">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Tổng số phiếu mượn chưa duyệt</h5>
-                            <p class="card-text text-white">Hôm nay: @ViewBag.Today</p>
-                            <p class="card-text text-white"><strong>Số lượng hôm nay: @ViewBag.todayCDCount</strong></p>
-                            <p class="card-text text-white">Tổng số: @ViewBag.tongCDCount </p>
-                        </div>
+                <div class="card bg-success">
+                    <div class="card-body">
+                        <h5 class="card-title text-white">Tổng số phiếu hôm nay</h5>
+                        <p class="card-text text-white">Hôm nay: @ViewBag.Today</p>
+                        <p class="card-text text-white">Bao gồm tất cả phiếu trong hôm nay</p>
+                        <p class="card-text text-white"><strong>Tổng số: @ViewBag.PhieutodayCount</strong></p>
                     </div>
-                </a>
+                </div>
             </div>
-            <div class="col-md-4 md-3">
-                <a href="@Url.Action("DanhsachPhieuMuon", "PhieuMuonAdmin", new { area = "Admin" })" class="card-link">
-                    <div class="card bg-primary">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Tổng số phiếu mượn chưa trả</h5>
-                            <p class="card-text text-white">Description</p>
-                            <p class="card-text text-white"><strong>Số lượng: @ViewBag.CTCount</strong></p>
-                        </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card bg-success">
+                    <div class="card-body">
+                        <h5 class="card-title text-white">Tổng phiếu mượn chưa duyệt</h5>
+                        <p class="card-text text-white">Hôm nay: @ViewBag.Today</p>
+                        <p class="card-text text-white"><strong>Số lượng hôm nay: @ViewBag.todayCDCount</strong></p>
+                        <p class="card-text text-white"><strong>Tổng số: @ViewBag.tongCDCount</strong></p>
                     </div>
-                </a>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card bg-success">
+                    <div class="card-body">
+                        <h5 class="card-title text-white">Tổng phiếu mượn chưa trả</h5>
+                        <p class="card-text text-white">Hôm nay: @ViewBag.Today</p>
+                        <p class="card-text text-white">Gồm các phiếu chưa trả của các ngày</p>
+                        <p class="card-text text-white"><strong>Tổng số: @ViewBag.CTCount</strong></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </body>
+
+
 </html>
