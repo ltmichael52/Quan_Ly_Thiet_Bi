@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace ThietBiDienTu_2.Models;
 
@@ -17,8 +18,9 @@ public partial class Thietbi
 
     public virtual ICollection<Chitietphieumuon> Chitietphieumuons { get; set; } = new List<Chitietphieumuon>();
 
+    [JsonIgnore]
     public virtual Dongthietbi MadongtbNavigation { get; set; } = null!;
-
+    [JsonIgnore]
     public virtual Phong MapNavigation { get; set; } = null!;
 
     public virtual ICollection<Phieusua> Phieusuas { get; set; } = new List<Phieusua>();

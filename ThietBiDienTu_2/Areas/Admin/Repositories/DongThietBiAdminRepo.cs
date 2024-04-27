@@ -1,5 +1,7 @@
-﻿using System.Diagnostics;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 using ThietBiDienTu_2.Areas.Admin.InterfaceRepositories;
+using ThietBiDienTu_2.Areas.Admin.ViewModels;
 using ThietBiDienTu_2.Models;
 
 namespace ThietBiDienTu_2.Areas.Admin.Repositories
@@ -41,5 +43,34 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
             return dtb;
         }
 
+        public List<DongTbAndAmount> DongTbAndAmountTbInDay(DateTime Ngaymuon)
+        {
+            List<Chitietphieumuon> allCtpmInDay = context.Chitietphieumuons
+                                                          .Include(x => x.MapmNavigation)
+                                                          .Where(x => x.MapmNavigation.Ngaymuon == Ngaymuon && 
+                                                          (x.MapmNavigation.Trangthai == 0 || x.MapmNavigation.Trangthai == 1))
+                                                          .ToList();
+
+            List<int> madongtbdamuon = allCtpmInDay.Select(x => x.Matb).ToList();
+
+            List<Dongthietbi> dongtb = context.Dongthietbis.Select(x => new Dongthietbi
+            {
+                Tendongtb = x.Tendongtb,
+                Hinhanh = x.Hinhanh,
+                Mota = x.Mota,
+                Madongtb = x.Madongtb,
+                Soluong = x.Soluong,
+                Thietbis = context.Thietbis.Where(a=>a.Madongtb == x.Madongtb && a.Trangthai =="Sẵn sàng" 
+                                            && !madongtbdamuon.Contains(a.Matb)).ToList(),
+            }).ToList();
+            List<DongTbAndAmount> dongtbAmount = dongtb.Select(x => new DongTbAndAmount
+            {
+                madongtb = x.Madongtb,
+                tendongtb = x.Tendongtb,
+                hinhanh = x.Hinhanh,
+                amount = x.Thietbis.Count
+            }).ToList();
+            return dongtbAmount;
+        }
     }
 }
