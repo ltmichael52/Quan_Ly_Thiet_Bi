@@ -25,6 +25,7 @@ namespace ThietBiDienTu_2.Areas.Admin.ViewModels
 		[NotMapped]
 		public IFormFile hinhanh { get; set; }
 
+        public DateTime YourDateProperty { get; set; }
 
-	}
+    }
 }

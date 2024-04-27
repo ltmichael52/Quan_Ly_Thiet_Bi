@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ThietBiDienTu_2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f0919b41a1d10d847b47523e4a1392f652688ce")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("ThietBiDienTu_2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ThietBiDienTu_2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

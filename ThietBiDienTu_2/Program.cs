@@ -29,6 +29,7 @@ builder.Services.AddScoped<INhanVien, NhanvienAdminRepo>();
 builder.Services.AddScoped<IDongThietBiAdmin, DongThietBiAdminRepo>();
 builder.Services.AddScoped<IThietBiAdmin, ThietBiAdminRepo>();
 builder.Services.AddScoped<IKhoa, KhoaAdminRepo>();
+builder.Services.AddScoped<ISinhvienAdmin, SinhvienAdminRepo>();
 builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
 app.UseSession();
