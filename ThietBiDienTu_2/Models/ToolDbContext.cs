@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
 
 namespace ThietBiDienTu_2.Models;
@@ -39,6 +40,8 @@ public partial class ToolDbContext : DbContext
 
     public virtual DbSet<Thietbi> Thietbis { get; set; }
 
+    public virtual DbSet<Chitietphieusua> Chitietphieusuas { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Data Source=MICHAEL;Initial Catalog=QLTHIETBI2;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
@@ -68,6 +71,36 @@ public partial class ToolDbContext : DbContext
                 .HasForeignKey(d => d.Matb)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_CHITIETPHIEUMUON_CHITIETTHIETBI");
+        });
+
+        modelBuilder.Entity<Chitietphieusua>(entity =>
+        {
+            entity.HasKey(e => new { e.Maps, e.Matb });
+
+            entity.ToTable("CHITIETPHIEUSUA");
+
+            entity.HasIndex(e => e.Matb, "IX_CHITIETPHIEUSUA_IDCTTB");
+
+            entity.Property(e => e.Maps).HasColumnName("MAPS");
+            entity.Property(e => e.Matb).HasColumnName("MATB");
+            entity.Property(e => e.Mota).HasColumnName("MOTA");
+            entity.Property(e => e.Chiphi)
+                .HasColumnType("money")
+                .HasColumnName("CHIPHI");
+
+            entity.Property(e => e.Ngayhoanthanh)
+                .HasColumnType("datetime")
+                .HasColumnName("NGAYHOANTHANH");
+
+            entity.HasOne(d => d.MapsNavigation).WithMany(p => p.Chitietphieusuas)
+                .HasForeignKey(d => d.Maps)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_CHITIETPHIEUSUA_PHIEUSUA1");
+
+            entity.HasOne(d => d.MatbNavigation).WithMany(p => p.Chitietphieusuas)
+                .HasForeignKey(d => d.Matb)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_CHITIETPHIEUSUA_CHITIETTHIETBI");
         });
 
         modelBuilder.Entity<Coso>(entity =>
@@ -208,22 +241,13 @@ public partial class ToolDbContext : DbContext
             entity.ToTable("PHIEUSUA");
 
             entity.Property(e => e.Maps).HasColumnName("MAPS");
-            entity.Property(e => e.Chiphi)
+            entity.Property(e => e.Tongchiphi)
                 .HasColumnType("money")
-                .HasColumnName("CHIPHI");
-            entity.Property(e => e.Matb).HasColumnName("MATB");
-            entity.Property(e => e.Mota).HasColumnName("MOTA");
-            entity.Property(e => e.Ngayhoantat)
-                .HasColumnType("datetime")
-                .HasColumnName("NGAYHOANTAT");
+                .HasColumnName("TONGCHIPHI");
             entity.Property(e => e.Ngaylap)
                 .HasColumnType("datetime")
                 .HasColumnName("NGAYLAP");
-
-            entity.HasOne(d => d.MatbNavigation).WithMany(p => p.Phieusuas)
-                .HasForeignKey(d => d.Matb)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_PHIEUSUA_THIETBI");
+            entity.Property(e => e.Trangthai).HasColumnName("TRANGTHAI");
         });
 
         modelBuilder.Entity<Phong>(entity =>

@@ -23,5 +23,5 @@ public partial class Thietbi
     [JsonIgnore]
     public virtual Phong MapNavigation { get; set; } = null!;
 
-    public virtual ICollection<Phieusua> Phieusuas { get; set; } = new List<Phieusua>();
+    public virtual ICollection<Chitietphieusua> Chitietphieusuas { get; set; } = new List<Chitietphieusua>();
 }

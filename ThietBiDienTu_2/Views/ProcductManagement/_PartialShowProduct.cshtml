@@ -6,7 +6,7 @@
                 int counter = 0;
                 foreach (var item in Model.DongThietBiList)
                 {
-                        @if (item.Soluong <= 0)
+                        @if (item.Thietbis.Count <= 0)
                     {
                         continue;
                     }

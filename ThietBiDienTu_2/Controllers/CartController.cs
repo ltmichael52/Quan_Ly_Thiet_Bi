@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using ThietBiDienTu_2.Migrations;
 using ThietBiDienTu_2.Models;
@@ -174,15 +175,25 @@ namespace ThietBiDienTu_2.Controllers
                         // Lấy danh sách các thiết bị trong giỏ hàng của sinh viên
                         var cartItems = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
 
+                        List<Chitietphieumuon> ctpmThatDay = _dataContext.Chitietphieumuons.Include(x=>x.MapmNavigation)
+                                                                .Where(a=>a.MapmNavigation.Ngaymuon == ngayMuon).ToList();
+                        List<string> maThietBiDaMuon = ctpmThatDay.Select(ct => ct.Matb.ToString()).ToList();
                         // Tạo danh sách tạm thời để lưu các phần tử cần loại bỏ
                         var itemsToRemove = new List<CartItemModel>();
 
                         foreach (var cartItem in cartItems)
                         {
                             // Tìm mã thiết bị có trạng thái "Sẵn sàng" và chưa được đặt trong cùng một ngày
-                            var thietBiTonKho = _dataContext.Thietbis.FirstOrDefault(tb => tb.Madongtb == cartItem.Madongtb && tb.Trangthai == "Sẵn sàng" && !_dataContext.Chitietphieumuons.Any(c => c.Ngaytra.HasValue && c.Ngaytra.Value.Date == ngayMuon.Date && c.Matb == tb.Matb));
+                            List<Thietbi> tbss = _dataContext.Thietbis.Include(a=> a.MapNavigation)
+                                .Where(x => x.Madongtb == cartItem.Madongtb && x.Trangthai == "Sẵn sàng" 
+                                && !maThietBiDaMuon.Contains(x.Matb.ToString()))
+                                .OrderByDescending(z=>z.MapNavigation.Douutien )
+                                .OrderByDescending(u=>u.Seri).ToList();
+                            
+                            
+                            
 
-                            if (thietBiTonKho != null)
+                            if (tbss != null && tbss.Count >=cartItem.Soluong)
                             {
                                 // Tạo ChiTietPhieuMuon chỉ với số lượng thiết bị đặt tương ứng
                                 for (int i = 0; i < cartItem.Soluong; i++)
@@ -190,9 +201,8 @@ namespace ThietBiDienTu_2.Controllers
                                     Chitietphieumuon chiTietPhieuMuon = new Chitietphieumuon
                                     {
                                         Mapm = maPhieuMuon,
-                                        Matb = thietBiTonKho.Matb,
+                                        Matb = tbss.ElementAt(i).Matb,
                                     };
-
                                     // Lưu đối tượng ChiTietPhieuMuon vào cơ sở dữ liệu
                                     _dataContext.Chitietphieumuons.Add(chiTietPhieuMuon);
                                 }

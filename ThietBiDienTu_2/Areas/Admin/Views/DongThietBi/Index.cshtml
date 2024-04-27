@@ -17,7 +17,14 @@
 @if (TempData["AlertMessage"] != null)
 {
     <div class="alert alert-success" id="notify">
-        <strong>Success!</strong> @TempData["AlertMessage"]
+        <strong>Thành công!</strong> @TempData["AlertMessage"]
+    </div>
+}
+
+@if (TempData["DangerMessage"] != null)
+{
+    <div class="alert alert-danger" id="notify">
+        <strong>Thất bại!</strong> @TempData["DangerMessage"]
     </div>
 }
 
@@ -70,8 +77,10 @@
                             <tbody class="text-center">
                                 @{
                                     int i = 0;
+                                    // Sắp xếp danh sách theo mã dòng thiết bị giảm dần
+                                    var sortedModel = Model.OrderByDescending(d => d.Madongtb);
                                 }
-                                @foreach (var dtb in Model)
+                                @foreach (var dtb in sortedModel)
                                 {
                                     <tr>
                                         <td>@(++i)</td>
@@ -98,8 +107,8 @@
                                                 <svg class="icon icon-lg">
                                                     <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
                                                 </svg>
-                                            </a> 
-                                           
+                                            </a>
+
                                             @* <a class ="btn btn-primary" asp-controller="DongThietBi" asp-action="Themthiebi" asp-route-id="@dtb.Madongtb"></a> *@
                                         </td>
                                     </tr>
@@ -114,6 +123,8 @@
 </div>
 
 <div class="footer"></div>
+
+
 <style>
     .thumbnail-image {
         max-width: 60px; /* Adjust the maximum width as needed */

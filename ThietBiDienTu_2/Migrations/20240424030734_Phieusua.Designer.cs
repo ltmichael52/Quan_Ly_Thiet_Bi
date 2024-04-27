@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ThietBiDienTu_2.Models;
 
@@ -11,9 +12,11 @@ using ThietBiDienTu_2.Models;
 namespace ThietBiDienTu_2.Migrations
 {
     [DbContext(typeof(ToolDbContext))]
-    partial class ToolDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240424030734_Phieusua")]
+    partial class Phieusua
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,7 +56,7 @@ namespace ThietBiDienTu_2.Migrations
                         .HasColumnType("int")
                         .HasColumnName("MATB");
 
-                    b.Property<decimal?>("Chiphi")
+                    b.Property<decimal>("Chiphi")
                         .HasColumnType("money")
                         .HasColumnName("CHIPHI");
 

@@ -14,6 +14,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
     <div class="container">
         <div class="row">
             <div class="col-md-4 mb-3">
@@ -21,7 +22,7 @@
                     <div class="card bg-primary">
                         <div class="card-body">
                             <h5 class="card-title text-white">Phiếu mượn thiết bị</h5>
-                            <p class="card-text text-white">Description</p>
+                            <p class="card-text text-white"></p>
                             <p class="card-text text-white"><strong>Số lượng: @ViewBag.TotalQuantity </strong></p>
                         </div>
                     </div>
@@ -30,10 +31,10 @@
 
             <div class="col-md-4 mb-3">
                 <a href="@Url.Action("Index", "Histroy")" class="card-link">
-                    <div class="card bg-secondary">
+                    <div class="card bg-primary">
                         <div class="card-body">
                             <h5 class="card-title text-white">Tổng số phiếu mượn chưa duyệt</h5>
-                            <p class="card-text text-white">Description</p>
+                            <p class="card-text text-white"></p>
                             <p class="card-text text-white"><strong>Số lượng: @ViewBag.CDCount</strong></p>
                         </div>
                     </div>
@@ -44,7 +45,7 @@
                     <div class="card bg-primary">
                         <div class="card-body">
                             <h5 class="card-title text-white">Tổng số phiếu mượn chưa trả</h5>
-                            <p class="card-text text-white">Description</p>
+                            <p class="card-text text-white"></p>
                             <p class="card-text text-white"><strong>Số lượng: @ViewBag.CTCount</strong></p>
                         </div>
                     </div>

@@ -64,7 +64,15 @@ namespace ThietBiDienTu_2.Controllers
                     List<string> maThietBiDaMuon = chiTietPhieuMuonList.Select(ct => ct.Matb.ToString()).ToList();
 
                     // Lọc danh sách hiển thị để loại bỏ các thiết bị đã được mượn
-                    displayList = displayList.Where(tb => !maThietBiDaMuon.Contains(tb.Madongtb.ToString())).ToList();
+                    displayList = displayList.Select(x=> new Dongthietbi
+                    {
+                        Tendongtb = x.Tendongtb,
+                        Hinhanh = x.Hinhanh,
+                        Soluong = x.Soluong,
+                        Mota = x.Mota,
+                        Madongtb = x.Madongtb,
+                        Thietbis = _dataContext.Thietbis.Where(y=>y.Madongtb==x.Madongtb && !maThietBiDaMuon.Contains(y.Matb.ToString())).ToList(),
+                    }).ToList();
 
                     // Gán dữ liệu vào ViewModel
                     viewModel.DongThietBiList = displayList;
