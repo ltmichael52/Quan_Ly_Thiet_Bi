@@ -38,6 +38,7 @@ namespace ThietBiDienTu_2.Controllers
                     .Count(ct => ct.Madongtb == tb.Madongtb && ct.Trangthai == "Sẵn sàng");
                 tb.Soluong = soLuong;
             }
+            //Lấy hết thiết bị trong kho với tổng số lượng sẵn sàng
             displayList = dongtbList;
             viewModel.DongThietBiList = displayList.Take(4).ToList();
 
