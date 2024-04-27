@@ -56,7 +56,7 @@ app.MapAreaControllerRoute(
     );
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=ProcductManagement}/{action=Index}/{id?}");
+    pattern: "{controller=Histroy}/{action=Index}/{id?}");
 
 
 

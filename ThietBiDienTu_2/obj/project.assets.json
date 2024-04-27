@@ -11709,19 +11709,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP\\.nuget\\packages\\": {}
+    "C:\\Users\\hi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj",
+      "projectUniqueName": "D:\\C#\\Project_KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj",
       "projectName": "ThietBiDienTu_2",
-      "projectPath": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\obj\\",
+      "projectPath": "D:\\C#\\Project_KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj",
+      "packagesPath": "C:\\Users\\hi\\.nuget\\packages\\",
+      "outputPath": "D:\\C#\\Project_KTPM\\ThietBiDienTu_2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\hi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11741,6 +11741,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -11807,7 +11812,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.408\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
