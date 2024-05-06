@@ -30,7 +30,7 @@ public class HistroyController : Controller
         int masv = HttpContext.Session.GetInt32("UserName") ?? 0;
 
         // Lọc danh sách phiếu mượn chỉ hiển thị của sinh viên hiện tại
-        var phieuMuonList = _dataContext.Phieumuons.Where(x => x.Masv == masv).ToList();
+        var phieuMuonList = _dataContext.Phieumuons.Where(x => x.Masv == masv).OrderBy(x=> x.Trangthai).ThenByDescending(x => x.Mapm).ToList();
 
         // Chuyển đổi danh sách thành IEnumerable trước khi sử dụng ToPagedList()
         var pagedList = phieuMuonList.Select(x => new Phieumuon
