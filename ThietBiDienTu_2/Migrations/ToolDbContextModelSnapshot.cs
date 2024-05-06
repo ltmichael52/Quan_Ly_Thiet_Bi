@@ -43,6 +43,35 @@ namespace ThietBiDienTu_2.Migrations
                     b.ToTable("CHITIETPHIEUMUON", (string)null);
                 });
 
+            modelBuilder.Entity("ThietBiDienTu_2.Models.Chitietphieusua", b =>
+                {
+                    b.Property<int>("Maps")
+                        .HasColumnType("int")
+                        .HasColumnName("MAPS");
+
+                    b.Property<int>("Matb")
+                        .HasColumnType("int")
+                        .HasColumnName("MATB");
+
+                    b.Property<decimal?>("Chiphi")
+                        .HasColumnType("money")
+                        .HasColumnName("CHIPHI");
+
+                    b.Property<string>("Mota")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("MOTA");
+
+                    b.Property<DateTime?>("Ngayhoanthanh")
+                        .HasColumnType("datetime")
+                        .HasColumnName("NGAYHOANTHANH");
+
+                    b.HasKey("Maps", "Matb");
+
+                    b.HasIndex(new[] { "Matb" }, "IX_CHITIETPHIEUSUA_IDCTTB");
+
+                    b.ToTable("CHITIETPHIEUSUA", (string)null);
+                });
+
             modelBuilder.Entity("ThietBiDienTu_2.Models.Coso", b =>
                 {
                     b.Property<int>("Macs")
@@ -253,29 +282,19 @@ namespace ThietBiDienTu_2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Maps"));
 
-                    b.Property<decimal?>("Chiphi")
-                        .HasColumnType("money")
-                        .HasColumnName("CHIPHI");
-
-                    b.Property<int>("Matb")
-                        .HasColumnType("int")
-                        .HasColumnName("MATB");
-
-                    b.Property<string>("Mota")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("MOTA");
-
-                    b.Property<DateTime?>("Ngayhoantat")
-                        .HasColumnType("datetime")
-                        .HasColumnName("NGAYHOANTAT");
-
                     b.Property<DateTime>("Ngaylap")
                         .HasColumnType("datetime")
                         .HasColumnName("NGAYLAP");
 
-                    b.HasKey("Maps");
+                    b.Property<decimal?>("Tongchiphi")
+                        .HasColumnType("money")
+                        .HasColumnName("TONGCHIPHI");
 
-                    b.HasIndex("Matb");
+                    b.Property<int>("Trangthai")
+                        .HasColumnType("int")
+                        .HasColumnName("TRANGTHAI");
+
+                    b.HasKey("Maps");
 
                     b.ToTable("PHIEUSUA", (string)null);
                 });
@@ -325,10 +344,6 @@ namespace ThietBiDienTu_2.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)")
                         .HasColumnName("DIACHI");
-
-                    b.Property<int?>("Diemrenluyen")
-                        .HasColumnType("int")
-                        .HasColumnName("DIEMRENLUYEN");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -459,6 +474,25 @@ namespace ThietBiDienTu_2.Migrations
                     b.Navigation("MatbNavigation");
                 });
 
+            modelBuilder.Entity("ThietBiDienTu_2.Models.Chitietphieusua", b =>
+                {
+                    b.HasOne("ThietBiDienTu_2.Models.Phieusua", "MapsNavigation")
+                        .WithMany("Chitietphieusuas")
+                        .HasForeignKey("Maps")
+                        .IsRequired()
+                        .HasConstraintName("FK_CHITIETPHIEUSUA_PHIEUSUA1");
+
+                    b.HasOne("ThietBiDienTu_2.Models.Thietbi", "MatbNavigation")
+                        .WithMany("Chitietphieusuas")
+                        .HasForeignKey("Matb")
+                        .IsRequired()
+                        .HasConstraintName("FK_CHITIETPHIEUSUA_CHITIETTHIETBI");
+
+                    b.Navigation("MapsNavigation");
+
+                    b.Navigation("MatbNavigation");
+                });
+
             modelBuilder.Entity("ThietBiDienTu_2.Models.Nhanvien", b =>
                 {
                     b.HasOne("ThietBiDienTu_2.Models.Taikhoan", "ManvNavigation")
@@ -486,17 +520,6 @@ namespace ThietBiDienTu_2.Migrations
                     b.Navigation("ManvNavigation");
 
                     b.Navigation("MasvNavigation");
-                });
-
-            modelBuilder.Entity("ThietBiDienTu_2.Models.Phieusua", b =>
-                {
-                    b.HasOne("ThietBiDienTu_2.Models.Thietbi", "MatbNavigation")
-                        .WithMany("Phieusuas")
-                        .HasForeignKey("Matb")
-                        .IsRequired()
-                        .HasConstraintName("FK_PHIEUSUA_THIETBI");
-
-                    b.Navigation("MatbNavigation");
                 });
 
             modelBuilder.Entity("ThietBiDienTu_2.Models.Phong", b =>
@@ -586,6 +609,11 @@ namespace ThietBiDienTu_2.Migrations
                     b.Navigation("Chitietphieumuons");
                 });
 
+            modelBuilder.Entity("ThietBiDienTu_2.Models.Phieusua", b =>
+                {
+                    b.Navigation("Chitietphieusuas");
+                });
+
             modelBuilder.Entity("ThietBiDienTu_2.Models.Phong", b =>
                 {
                     b.Navigation("Thietbis");
@@ -607,7 +635,7 @@ namespace ThietBiDienTu_2.Migrations
                 {
                     b.Navigation("Chitietphieumuons");
 
-                    b.Navigation("Phieusuas");
+                    b.Navigation("Chitietphieusuas");
                 });
 #pragma warning restore 612, 618
         }

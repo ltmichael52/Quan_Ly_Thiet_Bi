@@ -33,8 +33,6 @@ public partial class Sinhvien
     [Required(ErrorMessage = "Vui lòng chọn giới tính")]
     public string Gioitinh { get; set; } = null!;
 
-    public int? Diemrenluyen { get; set; }
-
     public virtual Khoa MakhoaNavigation { get; set; } = null!;
 
     public virtual Nganh ManganhNavigation { get; set; } = null!;

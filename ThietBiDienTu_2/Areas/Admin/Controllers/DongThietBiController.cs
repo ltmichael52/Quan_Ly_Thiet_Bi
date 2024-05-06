@@ -20,16 +20,18 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 		private readonly ToolDbContext _context;
 		private readonly IWebHostEnvironment _webHost;
 		private readonly IDongThietBiAdmin _idongthietbirepo;
+        private readonly IHttpContextAccessor contextAccess;
 
-		public DongThietBiController(ToolDbContext context, IWebHostEnvironment webHost, IDongThietBiAdmin idongthietbirepo)
+        public DongThietBiController(ToolDbContext context, IWebHostEnvironment webHost, IDongThietBiAdmin idongthietbirepo)
 		{
 			_context = context;
 			_webHost = webHost;
 			_idongthietbirepo = idongthietbirepo;
-		}
+            this.contextAccess = contextAccess;
+        }
 
 
-		public async Task<IActionResult> Index()
+		public async Task<IActionResult> Index(string? searchString, int? page)
 		{
 			List<DongThietBiViewModel> dongthietbiList = new List<DongThietBiViewModel>();
 
@@ -64,13 +66,32 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 				dongthietbiList.Add(dongThietBiViewModel);
 			}
 
-			return View(dongthietbiList); // Truyền đúng kiểu dữ liệu cho View
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                dongthietbiList = dongthietbiList.Where(d => d.Tendongtb.ToLower().Contains(searchString.ToLower())).ToList();
+            }
+            // Phân trang
+            var pageNumber = page ?? 1; // Trang hiện tại, mặc định là trang 1 nếu không có page được truyền vào
+            var pageSize = 5; // Số lượng mục trên mỗi trang
+            var pagedDongThietBiList = dongthietbiList.ToPagedList(pageNumber, pageSize); // Tạo danh sách phân trang
+
+            // Nếu có chuỗi tìm kiếm, lọc danh sách dòng thiết bị
+
+
+            // Kiểm tra xem request có phải là Ajax không
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return PartialView("PartialViewDongtb", pagedDongThietBiList);
+            }
+            return View(pagedDongThietBiList); // Truyền đúng kiểu dữ liệu cho View
 		}
 
-
-
-
-		public IActionResult CreateTool()
+        private bool IsAjaxRequest()
+        {
+            var request = contextAccess.HttpContext.Request;
+            return request.Headers["X-Requested-With"] == "XMLHttpRequest";
+        }
+        public IActionResult CreateTool()
 		{
 			ViewData["YourDropdownData"] = _context.Dongthietbis.ToList();
 			string madongtb = _context.Dongthietbis.Select(x => x.Madongtb).Count() + 1.ToString();
@@ -187,29 +208,36 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 			return fileName;
 		}
 
-		public IActionResult Delete(int id)
-		{
+        public IActionResult Delete(int id)
+        {
+            if (id == null || _context.Dongthietbis == null)
+            {
+                return NotFound();
+            }
 
-			if (id == null || _context.Dongthietbis == null)
-			{
+            var dongthietbi = _context.Dongthietbis
+                .Include(d => d.Thietbis) // Load các Thietbi thuộc về Dongthietbi
+                .FirstOrDefault(m => m.Madongtb == id);
 
-				return NotFound();
-			}
+            if (dongthietbi == null)
+            {
+                return NotFound();
+            }
 
-			var dongthietbi = _context.Dongthietbis
-				.FirstOrDefault(m => m.Madongtb == id);
-			if (dongthietbi == null)
-			{
-				return NotFound();
-			}
+            if (dongthietbi.Thietbis != null && dongthietbi.Thietbis.Any())
+            {
+                TempData["DangerMessage"] = "Không thể xóa dòng thiết bị vì còn tồn tại thiết bị thuộc dòng này.";
+                return RedirectToAction("Index");
+            }
 
-			_context.Dongthietbis.Remove(dongthietbi);
-			_context.SaveChanges();
-			TempData["AlertMessage"] = "Đã xóa dòng thiết bị thành công";
-			return RedirectToAction("Index");
-		}
+            _context.Dongthietbis.Remove(dongthietbi);
+            _context.SaveChanges();
+            TempData["AlertMessage"] = "Đã xóa dòng thiết bị thành công";
+            return RedirectToAction("Index");
+        }
 
-		public ActionResult Details(int id)
+
+        public ActionResult Details(int id)
 		{
 			var dtb = _context.Dongthietbis.Find(id);
 			return View(dtb);

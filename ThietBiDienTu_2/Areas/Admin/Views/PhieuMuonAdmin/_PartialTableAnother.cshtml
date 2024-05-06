@@ -7,12 +7,10 @@
         var borrowFrom = '@ViewBag.borrowFrom';
         var borrowTo = '@ViewBag.borrowTo';
         var page1 = null;
-        var selectKhoa = '@ViewBag.selectKhoaChoose';
         $('#searchString_2').val(searchString1);
         $('#SelectAnother').val(selectAnother);
         $('#BorrowFrom').val(borrowFrom);
         $('#BorrowTo').val(borrowTo);
-        $('#KhoaSelect').val(selectKhoa);
 
         $('#btnSearch_2').click(function (e) {
             var selectedValue = $('#searchString_2').val();
@@ -35,13 +33,6 @@
 
         });
 
-        $('#KhoaSelect').change(function () {
-            var selectedValue = $(this).val();
-            if (selectedValue) {
-                selectKhoa = selectedValue;
-                getToController();
-            }
-        });
 
         $('#BorrowFrom').change(function () {
             var selectedValue = $(this).val();
@@ -80,7 +71,6 @@
                     searchString: searchString1,
                     Trangthai: selectAnother,// Corrected the colons here,
                     indexPartial: 2,
-                    Makhoa: selectKhoa,
                     From: borrowFrom,
                     To: borrowTo
                     },
@@ -99,20 +89,14 @@
     <div style="width:100%" class="d-none d-md-flex align-items-center mb-2">
         <div class="input-group" style="width:35%">
             <!-- Search bar -->
-            <input name="searchString" id="searchString_2" type="search" placeholder="Tìm tên tên sinh viên..." class="form-control rounded" aria-label="Search">
+            <input name="searchString" id="searchString_2" type="search" placeholder="Tìm mã phiếu mượn/mã sv..." class="form-control rounded" aria-label="Search">
             <button class="btn btn-info rounded mr-2" type="submit" id="btnSearch_2">
                 <svg class="icon icon-lg">
                     <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-search")"></use>
                 </svg>
             </button>
         </div>
-        <select id="KhoaSelect" class="rounded-2 form-select mr-2" style="width:15%">
-            <option value="-1">Chọn khóa</option>
-            @foreach (SelectListItem k in ViewBag.selectKhoa)
-            {
-                <option value="@k.Value">@k.Text</option>
-            }
-        </select>
+        
         <select class="rounded-2 form-select" style="width:19%" id="SelectAnother">
             <option value="-1">Chọn trạng thái</option>
             <option value="0">Chưa duyệt</option>
@@ -141,9 +125,9 @@
                 <thead>
                     <tr class="text-center">
                         <th>STT</th>
+                        <th>Mã pm</th>
                         <th>Tên sinh viên</th>
-                        <th>Khóa</th>
-                        <th>Ngành</th>
+                        <th>Mã sv</th>
                         <th>Ngày lập</th>
                         <th>Ngày mượn</th>
                         <th>Người duyệt</th>
@@ -162,9 +146,9 @@
                         var formattedDateNgayMuon = ((DateTime)pm.Ngaymuon).ToString("dd/MM/yyyy");
                         <tr class="text-center">
                             <td>@indexCount</td>
+                            <td>@pm.Mapm</td>
                             <td>@pm.MasvNavigation.Tensv</td>
-                            <td>@pm.MasvNavigation.MakhoaNavigation.Tenkhoa</td>
-                            <td>@pm.MasvNavigation.ManganhNavigation.Tennganh</td>
+                            <td>@pm.MasvNavigation.Masv</td>
                             <td>@formattedDateNgayLap</td>
                             <td>@formattedDateNgayMuon</td>
                             <td>@(pm.Manv == null ? "" : pm.ManvNavigation.Tennv)</td>

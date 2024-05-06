@@ -7,21 +7,23 @@
 @{
     ViewData["Title"] = "Phieu muon list";
 
-    string GetTrangThaiString(int trangThai)
-    {
-        switch (trangThai)
-        {
-            case 0: return "Chưa duyệt";
-            case 1: return "Chưa trả";
-            case 2: return "Đã duyệt";
-            case 3: return "Đã trả";
-            case 4: return "Từ chối";
-            case 5: return "Hủy phiếu";
-            case 6: return "Không mượn";
-            default: return ""; // Trạng thái không xác định
-        }
-    }
+    // string GetTrangThaiString(int trangThai)
+    // {
+    //     switch (trangThai)
+    //     {
+    //         case 0: return "Chưa duyệt";
+    //         case 1: return "Chưa trả";
+    //         case 2: return "Đã duyệt";
+    //         case 3: return "Đã trả";
+    //         case 4: return "Từ chối";
+    //         case 5: return "Hủy phiếu";
+    //         case 6: return "Không mượn";
+    //         default: return ""; // Trạng thái không xác định
+    //     }
+    // }
+
 }
+
 @section searchArea {
     <!-- Form search -->
 }
@@ -48,7 +50,8 @@
                 <table class="table table-striped">
                     <thead>
                         <tr class="text-center">
-                            <th>Stt</th>
+                            <th>STT</th>
+                            <th>Mã phiếu mượn</th>
                             <th>Tên sinh viên</th>
                             <th>Mã sinh viên</th>
                             <th>Ngày lập</th>
@@ -65,11 +68,15 @@
                         {
                             <tr class="text-center">
                                 <td>@index</td>
+                                <td>@pm.Mapm</td>
                                 <td>@(pm.MasvNavigation?.Tensv)</td>
                                 <td>@pm.Masv</td>
                                 <td>@pm.Ngaylap.ToShortDateString()</td>
                                 <td>@pm.Ngaymuon.ToShortDateString()</td>
-                                <td>@GetTrangThaiString(pm.Trangthai)</td>
+                              @*   <td>@GetTrangThaiString(pm.Trangthai)</td> *@
+                                <td>
+                                    <partial name="_PartialTrangthaiPM" model="@pm.Trangthai" />
+                                </td>
                                 <td>
                                     <a asp-action="ChitietPhieuMuon" asp-controller="Histroy" asp-route-id="@pm.Mapm" class="btn btn-info btn-sm rounded">
                                         <svg class="icon icon-lg">

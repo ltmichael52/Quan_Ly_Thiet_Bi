@@ -38,9 +38,10 @@ namespace ThietBiDienTu_2.Controllers
                     .Count(ct => ct.Madongtb == tb.Madongtb && ct.Trangthai == "Sẵn sàng");
                 tb.Soluong = soLuong;
             }
+            //Lấy hết thiết bị trong kho với tổng số lượng sẵn sàng
             displayList = dongtbList;
             viewModel.DongThietBiList = displayList.Take(4).ToList();
-
+            
             if (IsAjaxRequest())
             {
                 if (!string.IsNullOrEmpty(searchString))
@@ -63,7 +64,15 @@ namespace ThietBiDienTu_2.Controllers
                     List<string> maThietBiDaMuon = chiTietPhieuMuonList.Select(ct => ct.Matb.ToString()).ToList();
 
                     // Lọc danh sách hiển thị để loại bỏ các thiết bị đã được mượn
-                    displayList = displayList.Where(tb => !maThietBiDaMuon.Contains(tb.Madongtb.ToString())).ToList();
+                    displayList = displayList.Select(x=> new Dongthietbi
+                    {
+                        Tendongtb = x.Tendongtb,
+                        Hinhanh = x.Hinhanh,
+                        Soluong = x.Soluong,
+                        Mota = x.Mota,
+                        Madongtb = x.Madongtb,
+                        Thietbis = _dataContext.Thietbis.Where(y=>y.Madongtb==x.Madongtb && !maThietBiDaMuon.Contains(y.Matb.ToString())).ToList(),
+                    }).ToList();
 
                     // Gán dữ liệu vào ViewModel
                     viewModel.DongThietBiList = displayList;

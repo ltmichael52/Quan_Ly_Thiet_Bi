@@ -38,14 +38,14 @@
                     <input asp-for="@Model.ManganhNavigation.Tennganh" value="123" hidden />
                     <!-- your steps content here -->
                         <div class="row">
-                            <div class="col-md-6" style="width:40%">
+                        <div class="col-md-6" style="width:40%">
                                 <div class="form-group mb-2">
                                     <label for="Masv" class="mb-2"><strong>Mã sinh viên<span class="text-danger"> *</span></strong></label>
                                     @Html.TextBoxFor(x => x.Masv, new { @class = "form-control",@id="masvInput" })
                                     @Html.ValidationMessageFor(x => x.Masv, null, new { @class = "text-danger" })
                                 </div>
                             </div>
-                            <div class="col-md-6" style="width:60%">
+                        <div class="col-md-6" style="width:60%">
                                 <div class="form-group mb-2">
                                     <label for="Tensv" class="mb-2"><strong>Tên sinh viên<span class="text-danger"> *</span></strong></label>
                                     @Html.TextBoxFor(x => x.Tensv, new { @class = "form-control" })
@@ -56,7 +56,7 @@
                         
                         
                         <div class="row">
-                            <div class="col-md-6" style="width:40%">
+                        <div class="col-md-6" style="width:40%">
                                 <div class="form-group mb-2">
                                     <label for="Khoa" class="mb-2"><strong>Khoá<span class="text-danger"> *</span></strong></label>
                                 <select asp-for="@Model.Makhoa" class="form-control">
@@ -70,7 +70,7 @@
                                     @Html.ValidationMessageFor(x => x.Makhoa, null, new { @class = "text-danger" })
                                 </div>
                             </div>
-                            <div class="col-md-6" style="width:60%">
+                        <div class="col-md-6" style="width:60%">
                                 <div class="form-group mb-2">
                                     <label for="Nganh" class="mb-2"><strong>Ngành<span class="text-danger"> *</span></strong></label>
                                 <select asp-for="@Model.Manganh" class="form-control">
@@ -86,29 +86,29 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6" style="width:60%">
+                        <div class="col-md-6" style="width:40%">
+                            <div class="form-group mb-2">
+                                <label for="Ngaysinh" class="mb-2"><strong>Ngày sinh<span class="text-danger"> *</span></strong></label>
+                                @Html.TextBoxFor(x => x.Ngaysinh, new { @class = "form-control",placeholder="DD/MM/YYYY" })
+                                @Html.ValidationMessageFor(x => x.Ngaysinh, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="width:60%">
                                 <div class="form-group mb-2">
                                     <label class="mb-2"><strong>Mật khẩu<span class="text-danger"> *</span></strong></label>
                                     <input class="form-control" type="text" value="123456" aria-label="readonly input example" style="background-color:#E8E8E8;" readonly>
                                 </div>
                             </div>
-                            <div class="col-md-6" style="width:40%">
-                                <div class="form-group mb-2">
-                                    <label class="mb-2"><strong>Điểm rèn luyện<span class="text-danger"> *</span></strong></label>
-                                    <input asp-for="@Model.Diemrenluyen" class="form-control" style="background-color:#E8E8E8;"
-                                           type="text" value="100" aria-label="readonly input example" readonly>
-                                </div>
-                            </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6" style="width:40%">
+                        <div class="col-md-6" style="width:40%">
                                 <div class="form-group mb-2">
                                     <label for="Sdt" class="mb-2"><strong>Số điện thoại<span class="text-danger"> *</span></strong></label>
                                     @Html.TextBoxFor(x => x.Sdt, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(x => x.Sdt, null, new { @class = "text-danger" })
                                 </div>
                             </div>
-                            <div class="col-md-6" style="width:60%">
+                        <div class="col-md-6" style="width:60%">
                                 <div class="form-group mb-2">
                                     <label for="Email" class="mb-2"><strong>Email<span class="text-danger"> *</span></strong></label>
                                     @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
@@ -125,14 +125,8 @@
                         </div>
                         
                         <div class="row">
-                            <div class="col-md-6" style="width:40%">
-                                <div class="form-group mb-2">
-                                    <label for="Ngaysinh" class="mb-2"><strong>Ngày sinh<span class="text-danger"> *</span></strong></label>
-                                    @Html.TextBoxFor(x => x.Ngaysinh, new { @class = "form-control",placeholder="DD/MM/YYYY" })
-                                    @Html.ValidationMessageFor(x => x.Ngaysinh, null, new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="col-md-6" style="width:60%">
+                            
+                            <div class="col-md-12">
                                 <div class="form-group mb-2">
                                     <label for="Diachi" class="mb-2"><strong>Địa chỉ</strong></label>
                                     @Html.TextBoxFor(x => x.Diachi, new { @class = "form-control" })
@@ -141,8 +135,8 @@
                             </div>
                         </div>
                         <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-primary">Tạo mới</button>
                             <a href="/Admin/UserStudent/Index" class="btn btn-danger">Quay lại</a>
-                            <button type="submit" class="btn btn-primary">Tạo mới</button>
                         </div>
                 }
 
