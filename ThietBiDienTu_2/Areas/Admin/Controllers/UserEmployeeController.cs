@@ -146,13 +146,21 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 
         public IActionResult Delete(int id)
         {
-            Nhanvien emp = _context.Nhanviens.Find(id);
-            Taikhoan acc = _context.Taikhoans.Find(id);
+            Phieumuon pm = _context.Phieumuons.FirstOrDefault(x => x.Manv == id);
+            if (pm == null)
+            {
+                Nhanvien emp = _context.Nhanviens.Find(id);
+                Taikhoan acc = _context.Taikhoans.Find(id);
 
-            //Remove emp first cuz in database emp has foreign key to acc
-            _context.Nhanviens.Remove(emp);
-            _context.Taikhoans.Remove(acc);
-            _context.SaveChanges();
+                //Remove emp first cuz in database emp has foreign key to acc
+                _context.Nhanviens.Remove(emp);
+                _context.Taikhoans.Remove(acc);
+                _context.SaveChanges();
+            }
+            else
+            {
+                TempData["Fail"] = "Nhân viên không thể xóa";
+            }
             return RedirectToAction("Index");
         }
     }

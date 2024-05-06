@@ -10,6 +10,7 @@
         public string Hinhanh {  get; set; }
         public List<DateTime> Ngaytra {  get; set; }
         public List<bool> check {  get; set; }
+        public string TenKho {  get; set; }
         //public int matb {  get; set; }
     }
 }

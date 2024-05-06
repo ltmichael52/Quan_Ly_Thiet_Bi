@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 using ThietBiDienTu_2.Areas.Admin.InterfaceRepositories;
 using ThietBiDienTu_2.Areas.Admin.ViewModels;
 using ThietBiDienTu_2.Models;
@@ -72,6 +73,25 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
 
             context.Thietbis.Remove(tb);
             context.SaveChanges();
+        }
+
+        public List<Thietbi> GetTbListInThatDay(int matb, DateTime Ngaymuon)
+        {
+            List<Chitietphieumuon> ctpmThatDay = context.Chitietphieumuons.Include(x => x.MapmNavigation)
+                                                        .Where(x => x.MapmNavigation.Ngaymuon == Ngaymuon
+                                                         && x.MapmNavigation.Trangthai <4
+                                                         &&x.Ngaytra == null).ToList();
+            List<int> matbList = ctpmThatDay.Select(x => x.Matb).ToList();
+            Thietbi tb = context.Thietbis.FirstOrDefault(x => x.Matb == matb);
+            List<Thietbi> tbList = context.Thietbis.Where(x => !matbList.Contains(x.Matb)
+                                                    && x.Trangthai == "Sẵn sàng"  && x.Madongtb== tb.Madongtb)
+                                                 .Include(x => x.MapNavigation)
+                                                 .Include(x => x.MadongtbNavigation)
+                                                 .OrderByDescending(x => x.MapNavigation.Douutien)
+                                                 .ThenByDescending(x => x.Seri).ToList();
+
+            return tbList;
+
         }
     }
 }

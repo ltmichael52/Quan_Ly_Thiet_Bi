@@ -124,12 +124,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGhpZXVNdW9uQWRtaW5cX1BhcnRpYWxUcmFuZ3RoYWlQTS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/PhieuMuonAdmin/_PartialViewChangeDevices.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGhpZXVNdW9uQWRtaW5cX1BhcnRpYWxWaWV3Q2hhbmdlRGV2aWNlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/PhieuMuonAdmin/_PartialViewChooseDevices.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGhpZXVNdW9uQWRtaW5cX1BhcnRpYWxWaWV3Q2hvb3NlRGV2aWNlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/PhieuMuonAdmin/_PartialViewCreatePm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGhpZXVNdW9uQWRtaW5cX1BhcnRpYWxWaWV3Q3JlYXRlUG0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/PhieuMuonAdmin/_PartialViewCtpmList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGhpZXVNdW9uQWRtaW5cX1BhcnRpYWxWaWV3Q3RwbUxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Uni/KTPM/ThietBiDienTu_2/ThietBiDienTu_2/Areas/Admin/Views/PhieuMuonAdmin/_PartialViewShowProductMuonCart.cshtml]

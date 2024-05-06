@@ -81,8 +81,14 @@
 
 @if (TempData["Action"] != null)
 {
-    <div class="alert alert-success" id="notify">
-        <strong>Success!</strong> @TempData["Action"]
+    <div class="alert alert-success notify">
+        <strong>Thành công!</strong> @TempData["Action"]
+    </div>
+}
+@if(TempData["Fail"] != null)
+{
+    <div class="alert alert-danger notify">
+        <strong>Thất bại!</strong> @TempData["Fail"]
     </div>
 }
 <!-- Content Header (Page header) -->
@@ -110,7 +116,7 @@
                 <table class="table table-striped">
                     <thead>
                         <tr class="text-center">
-                            <th>Stt</th>
+                            <th>STT</th>
                             <th>Ảnh</th>
                             <th>Tên dòng thiết bị</th>
                             <th>Seri</th>
@@ -217,7 +223,7 @@
     $(document).ready(function () {
         setTimeout(function () {
             console.log("here");
-            $('#notify').css("display", "none");
+            $('.notify').css("display", "none");
         }, 10000);
     });
     var searchStringThietBi = encodeURIComponent(localStorage.getItem('savedsearchStringThietBi'));

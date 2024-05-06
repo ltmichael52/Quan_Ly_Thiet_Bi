@@ -161,6 +161,8 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                 stu_acc.acc.Matk = stu_acc.sv.Masv;
                 stu_acc.acc.Matkhau = stu_acc.acc.Matkhau;
                 stu_acc.sv.MasvNavigation = stu_acc.acc;
+                stu_acc.sv.ManganhNavigation = null;
+                stu_acc.sv.MakhoaNavigation = null;
                 _context.Taikhoans.Add(stu_acc.acc);
                 _context.Sinhviens.Add(stu_acc.sv);
                 _context.SaveChanges();
@@ -171,13 +173,22 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 
         public IActionResult Delete(int id)
         {
-            Sinhvien sv = _context.Sinhviens.Find(id);
-            Taikhoan acc = _context.Taikhoans.Find(id);
+            Phieumuon pm = _context.Phieumuons.FirstOrDefault(x => x.Masv == id);
+            if (pm == null)
+            {
+                Sinhvien sv = _context.Sinhviens.Find(id);
+                Taikhoan acc = _context.Taikhoans.Find(id);
 
-            //Remove stu first cuz in database stu has foreign key to acc
-            _context.Sinhviens.Remove(sv);
-            _context.Taikhoans.Remove(acc);
-            _context.SaveChanges();
+                //Remove stu first cuz in database stu has foreign key to acc
+                _context.Sinhviens.Remove(sv);
+                _context.Taikhoans.Remove(acc);
+                _context.SaveChanges();
+            }
+            else
+            {
+                TempData["Fail"] = "Nhân viên không thể xóa";
+            }
+            
             return RedirectToAction("Index");
         }
 

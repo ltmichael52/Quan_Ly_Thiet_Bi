@@ -345,10 +345,6 @@ namespace ThietBiDienTu_2.Migrations
                         .HasColumnType("nvarchar(255)")
                         .HasColumnName("DIACHI");
 
-                    b.Property<int?>("Diemrenluyen")
-                        .HasColumnType("int")
-                        .HasColumnName("DIEMRENLUYEN");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(255)

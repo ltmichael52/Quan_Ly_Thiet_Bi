@@ -36,5 +36,12 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
             var phong = _toolDbContext.Phongs.Find(Map);
             return phong;
         }
+
+        public List<Phong> phongKhoListOfTbList(List<Thietbi> tbList)
+        {
+            List<Phong> khoList = tbList.Select(x => x.MapNavigation)
+                                            .Where(x=>x.Loaiphong=="Kho").Distinct().ToList();
+            return khoList;
+        }
     }
 }

@@ -28,7 +28,7 @@
                 getToController();
             }
         });
-        $('.page-link').on("click", function () {
+        $('.page2').on("click", function () {
             var selectedValue = $(this).attr('value');
             page1 = selectedValue;
             getToController();
@@ -55,8 +55,8 @@
     <div style="width:60%" class="d-none d-md-flex mb-2">
         <div class="input-group">
             <!-- Search bar -->
-            <input style="width:30%" 
-            name="searchString" id="searchString_1" type="search" placeholder="Tìm tên tên sinh viên..." class="form-control rounded" aria-label="Search">
+            <input style="width:30%"
+                   name="searchString" id="searchString_1" type="search" placeholder="Tìm mã phiếu mượn/mã sv..." class="form-control rounded" aria-label="Search">
             <button class="btn btn-info rounded" type="submit" id="btnSearch_1">
                 <svg class="icon icon-lg">
                     <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-search")"></use>
@@ -79,9 +79,9 @@
                 <thead>
                     <tr class="text-center">
                         <th>STT</th>
+                        <th>Mã pm</th>
                         <th>Tên sinh viên</th>
-                        <th>Khóa</th>
-                        <th>Ngành</th>
+                        <th>Mã sv</th>
                         <th>Ngày lập</th>
                         <th>Ngày mượn</th>
                         <th>Người duyệt</th>
@@ -100,9 +100,9 @@
                         var formattedDateNgayMuon = ((DateTime)pm.Ngaymuon).ToString("dd/MM/yyyy");
                         <tr class="text-center">
                             <td>@indexCount</td>
+                            <td>@pm.Mapm</td>
                             <td>@pm.MasvNavigation.Tensv</td>
-                            <td>@pm.MasvNavigation.MakhoaNavigation.Tenkhoa</td>
-                            <td>@pm.MasvNavigation.ManganhNavigation.Tennganh</td>
+                            <td>@pm.MasvNavigation.Masv</td>
                             <td>@formattedDateNgayLap</td>
                             <td>@formattedDateNgayMuon</td>
                             <td>@(pm.Manv == null ? "" : pm.ManvNavigation.Tennv)</td>
@@ -127,7 +127,7 @@
                     @if (Model.PageNumber > 1)
                     {
                         <li class="page-item">
-                            <a class="page-link" value="1">Đầu</a>
+                            <a class="page-link page2" value="1">Đầu</a>
                         </li>
                     }
 
@@ -135,7 +135,7 @@
                     @for (var i = Math.Max(1, Model.PageNumber - 2); i <= Math.Min(Model.PageNumber + 2, Model.PageCount); i++)
                     {
                         <li class="page-item @(Model.PageNumber == i ? "active" : "")">
-                            <a class="page-link" value="@i">@i</a>
+                            <a class="page-link page2" value="@i">@i</a>
                         </li>
                     }
 
@@ -143,7 +143,7 @@
                     @if (Model.PageNumber < Model.PageCount)
                     {
                         <li class="page-item">
-                            <a class="page-link" value="@Model.PageCount">Cuối</a>
+                            <a class="page-link page2" value="@Model.PageCount">Cuối</a>
                         </li>
                     }
                 </ul>
