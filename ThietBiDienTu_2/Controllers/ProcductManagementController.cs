@@ -41,7 +41,7 @@ namespace ThietBiDienTu_2.Controllers
             //Lấy hết thiết bị trong kho với tổng số lượng sẵn sàng
             displayList = dongtbList;
             viewModel.DongThietBiList = displayList.Take(4).ToList();
-
+            
             if (IsAjaxRequest())
             {
                 if (!string.IsNullOrEmpty(searchString))
