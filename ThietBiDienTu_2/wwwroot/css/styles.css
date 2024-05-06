@@ -12,6 +12,10 @@
  */
 /*Thêm đoạn CSS này để điều chỉnh vị trí của các phần tử trong card*/
 
+.page-link{
+    cursor:pointer;
+}
+
 .custom-div {
     display: inline-flex;
     align-items: center;

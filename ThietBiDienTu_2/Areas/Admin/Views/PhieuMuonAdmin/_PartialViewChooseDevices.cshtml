@@ -1,4 +1,5 @@
-﻿@using ThietBiDienTu_2.Areas.Admin.ViewModels
+﻿@using System.Web;
+@using ThietBiDienTu_2.Areas.Admin.ViewModels
 @model X.PagedList.IPagedList<DongTbAndAmount>
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
  <script>
@@ -6,13 +7,16 @@
          
         var Ngaymuon = '@(HttpContextAccessor.HttpContext.Session.GetString("NgaymuonPm") == null 
         ? "" : DateTime.Parse(HttpContextAccessor.HttpContext.Session.GetString("NgaymuonPm")).Year < 2010 ?
-            "" : DateTime.Parse(HttpContextAccessor.HttpContext.Session.GetString("NgaymuonPm")).ToString("yyyy-MM-dd"))';
-         
-         //Use event delegation to handle click events on dynamic loaded elements
+            "" : DateTime.Parse(HttpContextAccessor.HttpContext.Session.GetString("NgaymuonPm")).ToString("yyyy-MM-dd"))' ;
+
+         var searchStringView = '@Html.Raw(HttpUtility.HtmlEncode(ViewBag.searchStringAdd))';
+        var pageView = '@ViewBag.pageAdd';
+         var madongtbView = null;
+        //Use event delegation to handle click events on dynamic loaded elements
         $('.addProductA').click(function () {
-             var madongtbView = $(this).attr('value');
-            console.log("Get to click a");
-            getToController(madongtbView);
+            madongtbView = $(this).attr('value');
+            console.log("Get to click a" + madongtbView);
+            getToAddBorrowDevices();
          });
 
         $('.CloseModalPopup').click(function () {
@@ -23,16 +27,42 @@
 
          $('#BorrowTo').change(function () {
              Ngaymuon = $(this).val();
-             getToController()
+             searchStringView = null;
+             pageView = null;
+            getToAddBorrowDevices()
          
          });
+        $('#BorrowTo').attr({
+            'min': TodayMade
+        });
+
+        $('#searchString_ChooseDevices').val(searchStringView);
+
+        $('#searchString_ChooseDevices').change(function () {
+             searchStringView = $(this).val();
+            getToAddBorrowDevices();
+         });
+
+        $('#btnSearch_ChooseDevices').click(function () {
+            searchStringView = $('#searchString_ChooseDevices').val();
+            getToAddBorrowDevices();
+         });
+
+         $('.page-link').click(function () {
+             pageView = $(this).attr('value');
+             console.log("Page: " + pageView);
+            getToAddBorrowDevices();
+         });
+
          $('#ngayMuonInput').val(Ngaymuon);
-        function getToController(madongtbView) {
+        function getToAddBorrowDevices() {
              $.ajax({
                 url: '/Admin/PhieuMuonAdmin/AddBorrowDevices',
                 type: 'Get',
                 data: {
                     madongtb: madongtbView,
+                    page: pageView,
+                    searchString: searchStringView,
                     Ngaymuon : Ngaymuon
                 },
                  success: function (response) {
@@ -58,6 +88,9 @@
             $('body').css({
                 'padding-right': ''
             });
+            searchStringView = null;
+            pageView = null;
+            
         }
 
         function openModalPopup() {
@@ -93,12 +126,12 @@
                 <div style="width:100%" class="d-none d-md-flex align-items-center mb-2">
                     <div class="input-group" style="width:50%">
                         <!-- Search bar -->
-                        <input name="searchString" id="searchString_2" type="search" placeholder="Tìm tên dòng thiết bị..." class="form-control rounded" aria-label="Search">
-                        <button class="btn btn-info rounded mr-2" type="submit" id="btnSearch_2">
+                        <input name="searchString" id="searchString_ChooseDevices" type="search" placeholder="Tìm tên dòng thiết bị..." class="form-control rounded" aria-label="Search">
+                        <a class="btn btn-info rounded mr-2" id="btnSearch_ChooseDevices">
                             <svg class="icon icon-lg">
                                 <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-search")"></use>
                             </svg>
-                        </button>
+                        </a>
                     </div>
                     <div class="form-group mb-0 ml-2" style="width:20%">
                         <label class="mb-1"><strong>Ngày mượn</strong></label>
@@ -106,6 +139,22 @@
                         </div>
 
                 </div>
+                    @if (HttpContextAccessor.HttpContext.Session.GetString("NgaymuonPm") == null)
+                    {
+                        <div class="alert alert-info" role="alert" id="alertNgaymuon">
+                            Vui lòng chọn ngày mượn
+                        </div>
+                    }
+                    else
+                    {
+                        if (DateTime.Parse(HttpContextAccessor.HttpContext.Session.GetString("NgaymuonPm")).Year < 2010)
+                        {
+                            <div class="alert alert-info" role="alert" id="alertNgaymuon">
+                                Vui lòng chọn ngày mượn
+                            </div>
+                        }
+                    }
+
                 <table class="table table-striped text-center">
                     <thead>
                         <tr class="text-center">
@@ -118,7 +167,7 @@
                     </thead>
                     <tbody>
                         @{
-                            int index = 0;
+                            int index = (Model.PageNumber-1) *Model.PageSize;
                         }
                         @foreach (DongTbAndAmount dongtbAmount in Model)
                         {

@@ -1,4 +1,5 @@
-﻿@using ThietBiDienTu_2.Areas.Admin.ViewModels
+﻿@using System.Web;
+@using ThietBiDienTu_2.Areas.Admin.ViewModels
 @model CreatePmViewModel
 @section naviheader{
     <div class="header-divider"></div>
@@ -14,36 +15,47 @@
 }
 <script>
     $(document).ready(function () {
-        var masvView = null;
+        var masvView = '@(ViewBag.MasvView == 0 ? null : ViewBag.MasvView)';
         var NgaymuonView = null;
-        var LydomuonView = null;
+        var LydomuonView = '@Html.Raw(HttpUtility.HtmlEncode(ViewBag.LydomuonView))';
+        console.log("Lydo muon view: " + LydomuonView);
         var ajaxCall = 0;
+        $('#masvInput').val(masvView);
+        $('#LydoMuonInput').val(LydomuonView);
+
+        $('#ngayMuonInput').attr({
+            'min': TodayMade
+        });
         $('#masvInput').change(function () {
             masvView = $(this).val();
             console.log("In here masv: " + masvView);
             ajaxCall = 1;
-            getToController();
+            getToControllerCreate();
         });
 
         $('#ngayMuonInput').change(function () {
             NgaymuonView = $(this).val();
             console.log("In here ngay muon: " + NgaymuonView);
             ajaxCall = 2;
-            getToController();
+            getToControllerCreate();
         });
 
         $('#LydoMuonInput').change(function () {
             LydomuonView = $(this).val();
-            console.log("Ly do muon view: "+LydomuonView);
-            getToController();
         });
-        function getToController(){
+
+        $('.createPmButton').click(function () {
+            getToControllerCreate();
+        });
+        function getToControllerCreate(){
             $.ajax({
                 url:'/admin/PhieuMuonAdmin/CreatePm',
                 type: 'Get',
                 data: {
                     masv: masvView,
                     Ngaymuon: NgaymuonView,
+                    Lydomuon: LydomuonView,
+                    ajaxCall : ajaxCall,
                     checkInBorrow : true
                 },
                 success: function(response){
@@ -57,8 +69,12 @@
                 }
             });
         }
+
+        
+        
     });
 </script>
+<form asp-controller="PhieuMuonAdmin" asp-action="CreatePm" method="post">
 <div class="card">
     <div class="card-header">
         <div class="row">
@@ -70,9 +86,9 @@
             </div>
             <div class="col-auto text-center">
                 <div class="card-tools">
-                    <a asp-action="DanhsachPhieuMuon" asp-controller="PhieuMuonAdmin" class="btn btn-primary btn-sm">
+                    <button class="btn btn-primary btn-sm" type="submit">
                         Tạo phiếu
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
@@ -83,13 +99,14 @@
             <div class="col-md-6">
                 <div class="form-group mb-2">
                     <label class="mb-2"><strong>Mã sinh viên: </strong></label>
-                    <input class="form-control" text="text" id="masvInput" />
+                    <input class="form-control" text="text" id="masvInput" name="masv"/>
+                    
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group mb-2">
                     <label class="mb-2"><strong>Ngày mượn: </strong></label>
-                    <input type="date" class="form-control" id="ngayMuonInput" />
+                        <input type="date" class="form-control" id="ngayMuonInput" name="Ngaymuon" />
                 </div>
             </div>
         </div>
@@ -98,19 +115,23 @@
         </div>
         <div class="form-group mb-2">
             <label class="mb-2"><strong>Lý do mượn:</strong></label>
-            <select class="form-control" type="text" id="LydoMuonInput">
+                <select class="form-control" type="text" id="LydoMuonInput" name="Lydomuon">
             <option value="">Chọn lý do mượn</option>
             <option value="Tổ chức sự kiện clb">Tổ chức sự kiện clb</option>
             <option value="Tổ chức sự kiện của trường">Tổ chức sự kiện của trường</option>
             <option value="Học nhóm">Học nhóm</option>
             <option value="Khác">Khác</option>
             </select>
+            
         </div>
 
         <h3 class="text-center mt-3"> Danh sách thiết bị mượn</h3>
         <div id="_PartialViewChooseDevices">
-
-        <partial name="_PartialViewChooseDevices" model="Model.pagedongtb" />
+                @if (ViewBag.BorrowCartValid != null)
+                {
+                    <span class="text-danger">Vui lòng chọn dòng thiết bị muốn mượn</span>
+                }
+                <partial name="_PartialViewChooseDevices" model="Model.pagedongtb" />
         </div>
         
 
@@ -124,7 +145,7 @@
             <div class="col-md-6">
 
                 <div class="card-tools float-right">
-                    <button type="submit" class="btn btn-primary btn-sm">
+                    <button class="btn btn-primary btn-sm" type="submit">
                         Tạo phiếu
                     </button>
                 </div>
@@ -133,7 +154,8 @@
 
     </div>
 </div>
-
+</form>
+<div class="footer"></div>
 <style>
     .thumbnail-image {
         max-width: 60px; /* Adjust the maximum width as needed */

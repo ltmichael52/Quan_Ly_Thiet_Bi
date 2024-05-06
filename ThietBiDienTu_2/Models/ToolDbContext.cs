@@ -288,7 +288,6 @@ public partial class ToolDbContext : DbContext
             entity.Property(e => e.Diachi)
                 .HasMaxLength(255)
                 .HasColumnName("DIACHI");
-            entity.Property(e => e.Diemrenluyen).HasColumnName("DIEMRENLUYEN");
             entity.Property(e => e.Email)
                 .HasMaxLength(255)
                 .HasColumnName("EMAIL");

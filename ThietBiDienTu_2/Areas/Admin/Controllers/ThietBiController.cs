@@ -18,16 +18,16 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
     public class ThietBiController : Controller
     {
         ICoSoAdmin coso; IPhongAdmin pRepo; IDongThietBiAdmin Dongtb;
-        IThietBiAdmin thietbi;
-        ToolDbContext _dataContext;
+        IThietBiAdmin thietbi; IPhieuMuonAdmin pmRepo; IPhieuSuaAdmin psRepo;
         public ThietBiController(ICoSoAdmin CS, IPhongAdmin p, IDongThietBiAdmin _dongtb,
-            IThietBiAdmin tb, ToolDbContext context)
+            IThietBiAdmin tb, IPhieuMuonAdmin pmRepo,IPhieuSuaAdmin psRepo)
         {
             coso = CS;
             pRepo = p;
             Dongtb = _dongtb;
             thietbi = tb;
-            this._dataContext = context;
+            this.pmRepo = pmRepo;
+            this.psRepo = psRepo;
         }
 
         public IActionResult ThietBiList(int? page, string? searchStringThietBi, string? Coso, string? Phong, string? LoaiPhong, string? Trangthai)
@@ -81,7 +81,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                 dataList = dataList.Where(x => x.TrangThai == Trangthai).ToList();
                 
             }
-
+            dataList = dataList.OrderByDescending(x => x.Matb).ToList();
             CreateSelectData();
             Debug.Write("Phong: ", Phong);
             Debug.Write("Coso: ", Coso);
@@ -162,9 +162,14 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 
         public IActionResult DeleteThietBi(int id, string? searchStringThietBi1, string? Coso1, string? Phong1, string? Loaiphong1, string? Trangthai1)
         {
-            
-            thietbi.DeleteTB(id);
-            Debug.WriteLine("Get in delete");
+            if(psRepo.TbHasPhieuSua(id) || pmRepo.TbHasPhieuMuon(id))
+            {
+                TempData["Fail"] = "Thiết bị không thể xóa";
+            }
+            else
+            {
+                thietbi.DeleteTB(id);
+            }
             return RedirectToAction("ThietBiList", new { searchStringThietBi = searchStringThietBi1, Coso = Coso1, Phong = Phong1, LoaiPhong = Loaiphong1, Trangthai = Trangthai1 });
         }
 

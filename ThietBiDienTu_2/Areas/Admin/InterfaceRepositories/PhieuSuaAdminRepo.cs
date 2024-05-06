@@ -1,0 +1,18 @@
+﻿using ThietBiDienTu_2.Models;
+
+namespace ThietBiDienTu_2.Areas.Admin.InterfaceRepositories
+{
+    public class PhieuSuaAdminRepo : IPhieuSuaAdmin
+    {
+        ToolDbContext context;
+        public PhieuSuaAdminRepo(ToolDbContext context)
+        {
+            this.context = context;
+        }
+
+        public bool TbHasPhieuSua(int matb)
+        {
+            return context.Chitietphieusuas.FirstOrDefault(x => x.Matb == matb) == null;
+        }
+    }
+}

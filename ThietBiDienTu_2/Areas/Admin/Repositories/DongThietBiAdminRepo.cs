@@ -47,8 +47,8 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
         {
             List<Chitietphieumuon> allCtpmInDay = context.Chitietphieumuons
                                                           .Include(x => x.MapmNavigation)
-                                                          .Where(x => x.MapmNavigation.Ngaymuon == Ngaymuon && 
-                                                          (x.MapmNavigation.Trangthai == 0 || x.MapmNavigation.Trangthai == 1))
+                                                          .Where(x => x.MapmNavigation.Ngaymuon == Ngaymuon && x.Ngaytra==null
+                                                          && x.MapmNavigation.Trangthai <4)
                                                           .ToList();
 
             List<int> madongtbdamuon = allCtpmInDay.Select(x => x.Matb).ToList();
@@ -69,7 +69,9 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
                 tendongtb = x.Tendongtb,
                 hinhanh = x.Hinhanh,
                 amount = x.Thietbis.Count
-            }).ToList();
+            }).
+            Where(x=>x.amount >0).ToList();
+            
             return dongtbAmount;
         }
     }

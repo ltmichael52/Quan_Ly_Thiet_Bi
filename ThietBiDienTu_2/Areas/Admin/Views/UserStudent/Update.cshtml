@@ -27,9 +27,10 @@
                 {
                     @Html.AntiForgeryToken()
                     @Html.ValidationSummary(true)
-                    <!-- your steps content here -->
+                    
+                <!-- your steps content here -->
                         <div class="row">
-                            <div class="col-md-6" style="width:40%">
+                        <div class="col-md-6" style="width:40%">
                                 <div class="form-group mb-2">
                                     <label for="sv.Masv" class="mb-2"><strong>Mã sinh viên<span class="text-danger"> *</span></strong></label>
                                     @Html.TextBoxFor(x => x.sv.Masv, new { @class = "form-control",@id="masvInput" })
@@ -75,6 +76,13 @@
                         </div>
                     </div>
                         <div class="row">
+                        <div class="col-md-6" style="width:40%">
+                             <div class="form-group mb-2">
+                                    <label for="sv.Ngaysinh" class="mb-2"><strong>Ngày sinh<span class="text-danger"> *</span></strong></label>
+                                    @Html.TextBoxFor(x => x.sv.Ngaysinh,"{0:dd/MM/yyyy}", new { @class = "form-control",placeholder="DD/MM/YYYY"})
+                                    @Html.ValidationMessageFor(x => x.sv.Ngaysinh, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
                             <div class="col-md-6" style="width:60%">
                                 <div class="form-group mb-2">
                                     <label for="acc.Password" class="mb-2"><strong>Mật khẩu<span class="text-danger"> *</span></strong></label>
@@ -82,16 +90,9 @@
                                     @Html.ValidationMessageFor(x => x.acc.Matkhau, null, new { @class = "text-danger" })
                                 </div>
                             </div>
-                            <div class="col-md-6" style="width:40%">
-                                <div class="form-group mb-2">
-                                    <label class="mb-2"><strong>Điểm rèn luyện<span class="text-danger"> *</span></strong></label>
-                                    <input asp-for="@Model.sv.Diemrenluyen" class="form-control" type="text"
-                                           aria-label="readonly input example" style="background-color:#E8E8E8;" readonly>
-                                </div>
-                            </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6" style="width:40%">
+                        <div class="col-md-6" style="width:40%">
                                 <div class="form-group mb-2">
                                     <label for="sv.Sdt" class="mb-2"><strong>Số điện thoại<span class="text-danger"> *</span></strong></label>
                                     @Html.TextBoxFor(x => x.sv.Sdt, new { @class = "form-control" })
@@ -114,14 +115,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6" style="width:40%">
-                                <div class="form-group mb-2">
-                                    <label for="sv.Ngaysinh" class="mb-2"><strong>Ngày sinh<span class="text-danger"> *</span></strong></label>
-                                    @Html.TextBoxFor(x => x.sv.Ngaysinh,"{0:dd/MM/yyyy}", new { @class = "form-control",placeholder="DD/MM/YYYY"})
-                                    @Html.ValidationMessageFor(x => x.sv.Ngaysinh, null, new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="col-md-6" style="width:60%">
+                            <div class="col-md-12">
                                 <div class="form-group mb-2">
                                     <label for="sv.Diachi" class="mb-2"><strong>Địa chỉ</strong></label>
                                     @Html.TextBoxFor(x => x.sv.Diachi, new { @class = "form-control" })
@@ -134,9 +128,14 @@
                         @Html.HiddenFor(x => x.acc.Matk)
                         <input asp-for="@Model.sv.MasvNavigation.Matk" value="123" hidden />
                         <input asp-for="@Model.sv.MasvNavigation.Matkhau" value="123" hidden />
+                        <input asp-for="@Model.sv.ManganhNavigation.Manganh" value="123" hidden />
+                        <input asp-for="@Model.sv.MakhoaNavigation.Makhoa" value="123" hidden />
+                        <input asp-for="@Model.sv.ManganhNavigation.Tennganh" value="123" hidden />
+                        <input asp-for="@Model.sv.MakhoaNavigation.Tenkhoa" value="123" hidden />
                         <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-primary">Cập nhật</button>
                             <a href="/Admin/UserStudent/Index" class="btn btn-danger">Quay lại</a>
-                            <button type="submit" class="btn btn-primary">Cập nhật</button>
+                           
                         </div>
                 }
             </div>
