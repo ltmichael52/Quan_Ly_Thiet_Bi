@@ -10,5 +10,7 @@ namespace ThietBiDienTu_2.Areas.Admin.InterfaceRepositories
         void Delete(Phong phong);
         Phong FindPhong(string Map);
         List<Phong> phongKhoListOfTbList(List<Thietbi> tbList);
+        bool CheckIfPhongHasDevices(string id);
+        object GetDevicesInPhong(string phongId);
     }
 }

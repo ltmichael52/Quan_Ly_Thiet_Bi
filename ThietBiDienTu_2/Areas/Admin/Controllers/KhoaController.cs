@@ -18,18 +18,17 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index(string searchString, int? page)
+        public async Task<IActionResult> Index(string? searchString, int? page)
         {
             ViewBag.CurrentFilter = searchString;
 
-            var pageNumber = page ?? 1; // nếu page không có giá trị, mặc định là 1
-            var pageSize = 10; // số lượng phần tử trên mỗi trang
+            var pageNumber = page ?? 1;
+            var pageSize = 5;
+            var khoas = string.IsNullOrEmpty(searchString)
+          ? await _context.Khoas.ToPagedListAsync(pageNumber, pageSize)
+          : await _context.Khoas.Where(k => k.Tenkhoa.Contains(searchString)).ToPagedListAsync(pageNumber, pageSize);
+            ViewBag.searchString = searchString;
 
-                var khoas = string.IsNullOrEmpty(searchString)
-              ? await _context.Khoas.ToPagedListAsync(pageNumber, pageSize)
-              : await _context.Khoas.Where(k => k.Tenkhoa.Contains(searchString)).ToPagedListAsync(pageNumber, pageSize);
-            
-          
 
             if (IsAjaxRequest())
             {
@@ -81,6 +80,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 _context.Add(khoa);
+                TempData["Action"] = "Tạo thành công";
                 _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
@@ -99,7 +99,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("MaKhoa,TenKhoa")] Khoa khoa)
+        public IActionResult Edit(int id, [Bind("Makhoa,Tenkhoa")] Khoa khoa)
         {
             if (id != khoa.Makhoa)
             {
@@ -111,6 +111,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                 try
                 {
                     _context.Update(khoa);
+                    TempData["Action"] = "Chỉnh sửa thành công";
                     _context.SaveChanges();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -138,6 +139,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             }
 
             _context.Khoas.Remove(khoa);
+            TempData["Action"] = "Xóa thành công";
             _context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
