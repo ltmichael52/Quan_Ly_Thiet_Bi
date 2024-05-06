@@ -43,5 +43,16 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
                                             .Where(x=>x.Loaiphong=="Kho").Distinct().ToList();
             return khoList;
         }
+
+        public bool CheckIfPhongHasDevices(string id)
+        {
+            // Kiểm tra trong bảng Thiết bị xem có bản ghi nào tham chiếu đến phòng có mã là id không
+            return _toolDbContext.Thietbis.Any(tb => tb.Map == id);
+        }
+
+        public object GetDevicesInPhong(string phongId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

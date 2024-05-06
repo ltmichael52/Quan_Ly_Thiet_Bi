@@ -2,42 +2,47 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ThietBiDienTu_2.Models;
-using ThietBiDienTu_2.Models.Authentication;
 using X.PagedList;
 
 namespace ThietBiDienTu_2.Areas.Admin.Controllers
 {
     [Area("admin")]
-    [AuthenticationManager]
-
+    [Route("admin/[controller]/[action]")]
     public class NganhController : Controller
     {
+        private readonly IHttpContextAccessor contextAccess;
         private readonly ToolDbContext _context;
 
-        public NganhController(ToolDbContext context)
+        public NganhController(ToolDbContext context, IHttpContextAccessor contextAccess)
         {
             _context = context;
+            this.contextAccess = contextAccess;
         }
 
-        public IActionResult Index(string searchString, int? page)
+        public IActionResult Index(string? searchString, int? page)
         {
-            ViewBag.CurrentFilter = searchString;
-
             var nganhs = string.IsNullOrEmpty(searchString)
                 ? _context.Nganhs.ToList()
                 : _context.Nganhs.Where(n => n.Tennganh.Contains(searchString)).ToList();
-
-            int pageSize = 5; 
-            int pageNumber = (page ?? 1); 
+            ViewBag.searchString = searchString;
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
 
             var pagedNganhs = nganhs.ToPagedList(pageNumber, pageSize);
-
+            if (IsAjaxRequest())
+            {
+                return PartialView("PartialViewNganh", pagedNganhs);
+            }
             return View(pagedNganhs);
         }
 
-
+        private bool IsAjaxRequest()
+        {
+            var request = contextAccess.HttpContext.Request;
+            return request.Headers["X-Requested-With"] == "XMLHttpRequest";
+        }
         [HttpPost]
-        public async Task<IActionResult> Search(string searchString)
+        public async Task<IActionResult> Search(string? searchString)
         {
             var nganhs = string.IsNullOrEmpty(searchString)
                 ? await _context.Nganhs.ToListAsync()
@@ -87,7 +92,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("TenNganh")] Nganh nganh)
+        public IActionResult Edit(int id, [Bind("Manganh, TenNganh")] Nganh nganh)
         {
             if (id != nganh.Manganh)
             {
@@ -100,6 +105,8 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                 {
                     _context.Update(nganh);
                     _context.SaveChanges();
+                    TempData["SuccessMessage"] = "Đã cập nhật ngành thành công";
+                    return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -112,7 +119,6 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
             }
             return View(nganh);
         }
