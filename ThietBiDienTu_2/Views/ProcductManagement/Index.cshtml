@@ -18,12 +18,13 @@
         
     </form>
 }
-<h2>Danh sách thiết bị  </h2>
+<h2 class="text-center">DANH SÁCH THIẾT BỊ</h2>
 <!-- Section-->
 <form id="dateForm">
     <p>Ngày đặt thiết bị:</p>
     <input name="NgayDat" type="date" id="NgayDat" class="ml-2" min="2024-04-17" />
 </form>
+@* <P>Vui lòng chọn ngày đặt để hiển thị thiết bị!</P> *@
 <div class="py-5" id="productShow" style="display:none">
     <partial name="_PartialShowProduct" model="@Model"/>
 </div>
