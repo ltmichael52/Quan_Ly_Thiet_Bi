@@ -88,20 +88,20 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
             {
 
                 ChitietPhieuMuonViewModel ctpmViewTemp = ctpmView.FirstOrDefault(x => x.Madongtb == dongtbAndSeri1.madongtb);
+                Dongthietbi dongtb = context.Dongthietbis.FirstOrDefault(x => x.Madongtb == dongtbAndSeri1.madongtb);
+                Thietbi tb = context.Thietbis.FirstOrDefault(x => x.Matb == dongtbAndSeri1.Matb);
+                Phong phong = context.Phongs.FirstOrDefault(x => x.Map == tb.Map);
                 if (ctpmViewTemp != null)
                 {
                     ctpmViewTemp.Seri.Add(dongtbAndSeri1.seri);
                     ctpmViewTemp.Matb.Add(dongtbAndSeri1.Matb);
                     ctpmViewTemp.check.Add(dongtbAndSeri1.Ngaytra.Year > 2010);
                     ctpmViewTemp.Ngaytra.Add(dongtbAndSeri1.Ngaytra);
+                    ctpmViewTemp.TenKho.Add(phong.Map + " - " + phong.Tenphong);
                     ctpmViewTemp.Soluong += 1;
                 }
                 else
                 {
-                    Dongthietbi dongtb = context.Dongthietbis.FirstOrDefault(x => x.Madongtb == dongtbAndSeri1.madongtb);
-                    Thietbi tb = context.Thietbis.FirstOrDefault(x => x.Matb == dongtbAndSeri1.Matb);
-                    Phong phong = context.Phongs.FirstOrDefault(x => x.Map == tb.Map);
-
                     ctpmView.Add(new ChitietPhieuMuonViewModel
                     {
                         Madongtb = dongtbAndSeri1.madongtb,
@@ -112,7 +112,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
                         Soluong = 1,
                         Hinhanh = dongtb.Hinhanh,
                         Ngaytra = new List<DateTime> { dongtbAndSeri1.Ngaytra },
-                        TenKho = phong.Map + " - "+ phong.Tenphong,
+                        TenKho = new List<string> { phong.Map + " - " + phong.Tenphong },
                     });
                 }
             }
@@ -225,22 +225,27 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
                                                                .ThenByDescending(x=>x.Seri).ToList();
                 
                 if(tbReady!=null && tbReady.Count() >= dongtbAmount.amount)
-                {
+                { //53 - 50 - 49 - 61 - 78 -77 
                     List<Chitietphieumuon> ctpmAdd = new List<Chitietphieumuon>();
                     for(int i=0;i<dongtbAmount.amount; i++)
                     {
-                        ctpmAdd.Add(new Chitietphieumuon()
+                        //ctpmAdd.Add(new Chitietphieumuon()
+                        //{
+                        //    Mapm = maPhieumuon,
+                        //    Matb = tbReady[i].Matb
+                        //});
+                        context.Chitietphieumuons.Add(new Chitietphieumuon()
                         {
                             Mapm = maPhieumuon,
                             Matb = tbReady[i].Matb
                         });
-
+                        context.SaveChanges();
                     }
-                    context.Chitietphieumuons.AddRange(ctpmAdd);
+                    //context.Chitietphieumuons.AddRange(ctpmAdd);
                     
                 }
             }
-            context.SaveChanges();
+            //context.SaveChanges();
             return pm.Mapm;
         }
 
