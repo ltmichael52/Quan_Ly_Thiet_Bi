@@ -1,4 +1,5 @@
-﻿using ThietBiDienTu_2.Models;
+﻿using ThietBiDienTu_2.Areas.Admin.ViewModels;
+using ThietBiDienTu_2.Models;
 
 namespace ThietBiDienTu_2.Areas.Admin.InterfaceRepositories
 {
