@@ -134,29 +134,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             return _context.Cosos.Any(e => e.Macs == macs);
         }
 
-
-        // GET: Cosos/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var coso = await _context.Cosos
-                .FirstOrDefaultAsync(m => m.Macs == id);
-            if (coso == null)
-            {
-                return NotFound();
-            }
-
-            return View(coso);
-        }
-
-        // POST: Cosos/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var coso = await _context.Cosos.FindAsync(id);
 
@@ -166,16 +144,15 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             if (hasRooms)
             {
                 TempData["AlertMessage"] = "Cơ sở này đã có phòng";
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index");
             }
 
             _context.Cosos.Remove(coso);
             TempData["AlertMessage"] = "Đã xóa cơ sở thành công";
             await _context.SaveChangesAsync();
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index");
         }
 
     }
-
 }
