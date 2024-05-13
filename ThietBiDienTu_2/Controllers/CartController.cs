@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using System.Globalization;
 using ThietBiDienTu_2.Migrations;
 using ThietBiDienTu_2.Models;
 using ThietBiDienTu_2.Models.Authentication;
@@ -53,7 +54,31 @@ namespace ThietBiDienTu_2.Controllers
 
             HttpContext.Session.SetJson("Cart", cart);
 
-            return Redirect(Request.Headers["Referer"].ToString()); // tra ve trang hien tai
+            var viewModel = new HomeViewModel();
+            DateTime NgayDat = DateTime.Now;
+            string sessionNgayDat = HttpContext.Session.GetString("NgayDat");
+            if (!string.IsNullOrEmpty(sessionNgayDat))
+            {
+                // Chuyển đổi session NgayDat từ chuỗi thành DateTime
+                if (DateTime.TryParseExact(sessionNgayDat, "dd-MM-yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime parsedNgayDat))
+                {
+                    NgayDat = parsedNgayDat;
+                }
+            }
+            IQueryable<Dongthietbi> dongthietbiQuery = _dataContext.Dongthietbis.Include(x => x.Thietbis);
+
+            List<string> maThietBiDaMuon = _dataContext.Chitietphieumuons
+                    .Where(ct => ct.MapmNavigation.Ngaymuon.Date == NgayDat.Date)
+                    .Select(ct => ct.Matb.ToString())
+                    .ToList();
+
+            // Loại bỏ các thiết bị đã được mượn khỏi danh sách đồng thiết bị
+            dongthietbiQuery = dongthietbiQuery.Where(x => !x.Thietbis.Any(y => maThietBiDaMuon.Contains(y.Matb.ToString())));
+
+            List<Dongthietbi> displayList = dongthietbiQuery.ToList();
+            viewModel.DongThietBiList = displayList.Take(4).ToList();
+            viewModel.NgayDat = NgayDat; // Gán ngày đặt vào ViewModel
+            return PartialView("_PartialShowProduct", viewModel);
         }
         public IActionResult Decrease(int id)
         {
@@ -84,25 +109,29 @@ namespace ThietBiDienTu_2.Controllers
         public IActionResult Increase(int id)
         {
             List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart");
-            CartItemModel cartItem = cart.Where(c => c.Madongtb == id).FirstOrDefault();
-            if (cartItem.Soluong >= 1)
+            CartItemModel cartItem = cart.FirstOrDefault(c => c.Madongtb == id);
+
+            if (cartItem != null)
             {
-                ++cartItem.Soluong;
+                var availableQuantity = _dataContext.Thietbis
+                    .Count(x => x.Madongtb == id && x.Trangthai == "Sẵn sàng");
+
+                if (cartItem.Soluong >= availableQuantity)
+                {
+                    // Lưu thông báo vượt quá số lượng "Sẵn sàng" vào TempData của sản phẩm
+                    TempData[$"Message_{id}"] = "Sản phẩm vượt quá số lượng sẵn có.";
+                }
+                else
+                {
+                    cartItem.Soluong++;
+                    HttpContext.Session.SetJson("Cart", cart);
+                }
             }
-            else
-            {
-                cart.RemoveAll(p => p.Madongtb == id);
-            }
-            if (cart.Count == 0)
-            {
-                HttpContext.Session.Remove("Cart");
-            }
-            else
-            {
-                HttpContext.Session.SetJson("Cart", cart);
-            }
+
             return RedirectToAction("Index");
         }
+
+
         public IActionResult Delete(int Madongtb)
         {
             List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart");
@@ -189,7 +218,8 @@ namespace ThietBiDienTu_2.Controllers
                                 .Where(x => x.Madongtb == cartItem.Madongtb && x.Trangthai == "Sẵn sàng" 
                                 && !maThietBiDaMuon.Contains(x.Matb.ToString()))
                                 .OrderByDescending(z=>z.MapNavigation.Douutien )
-                                .OrderByDescending(u=>u.Seri).ToList();
+                                .ThenByDescending(u=>u.Seri).ToList();
+                              
                             
                             
                             

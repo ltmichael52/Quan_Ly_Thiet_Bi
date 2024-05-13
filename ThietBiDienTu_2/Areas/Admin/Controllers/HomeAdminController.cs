@@ -53,7 +53,44 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             //Tổng phieu hôm nay
             int phieutodayCount = _context.Phieumuons.Count(p => p.Ngaymuon.Date == today);
             ViewBag.PhieutodayCount = phieutodayCount;
+
+            int thietbihuCount = _context.Thietbis.Count(p => p.Trangthai == "Đang hư");
+            ViewBag.ThietBiHuCount = thietbihuCount;
+
             return View();
         }
+
+        [HttpGet]
+        public IActionResult GetChartData()
+        {
+            List<int> trangthaiList = _context.Phieumuons.Select(t => t.Trangthai).ToList();
+
+            Dictionary<int, string> trangthaiNames = new Dictionary<int, string>
+            {
+                { 0, "Chưa duyệt" },
+                { 1, "Chưa trả" },
+                { 2, "Đã duyệt" },
+                { 3, "Đã trả" },
+                { 4, "Từ chối" },
+                { 5, "Hủy phiếu" },
+                { 6, "Không mượn" }
+            };
+
+            List<int> counts = new List<int>();
+            foreach (var trangthai in Enumerable.Range(0, trangthaiNames.Count))
+            {
+                counts.Add(trangthaiList.Count(t => t == trangthai));
+            }
+
+            var data = new
+            {
+                TrangthaiNames = trangthaiNames.Values.ToList(),
+                Counts = counts
+            };
+
+            return Json(data); // Trả về dữ liệu JSON
+        }
+
+
     }
 }

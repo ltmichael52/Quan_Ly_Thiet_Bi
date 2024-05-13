@@ -40,7 +40,7 @@
         </thead>
         <tbody class="text-center">
             @{
-                int count = 0;
+                int count = Model.PageSize * (Model.PageNumber -1);
             }
             @foreach (var nganh in Model)
             {
@@ -53,7 +53,7 @@
                                 <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-pen")"></use>
                             </svg>
                         </a>
-                        <a class="btn btn-danger btn-sm" href="@Url.Action("Delete", "Nganh", new { id = nganh.Manganh })">
+                        <a onclick="if (confirm('Xác nhận xóa ngành này?') == true) {location.href='/admin/Nganh/Delete/@nganh.Manganh'}" class="btn btn-danger btn-sm rounded">
                             <svg class="icon icon-lg">
                                 <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
                             </svg>

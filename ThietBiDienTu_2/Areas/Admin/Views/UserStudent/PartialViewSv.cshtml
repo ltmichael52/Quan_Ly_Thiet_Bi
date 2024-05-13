@@ -1,32 +1,32 @@
-﻿@model X.PagedList.IPagedList<Phong>
+﻿@model X.PagedList.IPagedList<Sinhvien>
 
-@{
-    var dbContext = new ToolDbContext(); // Khởi tạo ToolDbContext
-}
 <script>
     $(document).ready(function () {
         var pageNumber = null;
         var searchStringAjax = '@ViewBag.searchStringController';
-        var filterLoaiphongAjax = '@ViewBag.filterLoaiphongController';
-        var filterCosoAjax = '@ViewBag.filterCosoController';
-
+        var filterKhoaAjax = '@ViewBag.filterKhoar';
+        var filterNganhAjax = '@ViewBag.filterNganh'; 
         $('.page-link').click(function () {
-            pageNumber = $(this).attr('value');
-            getToController();
+            var pageNumber = $(this).attr('value');
+            getToController(pageNumber);
         });
 
-        function getToController() {
+        function getToController(pageNumber) {
+            var searchStringAjax = $('#searchString').val();
+            var filterKhoaAjax = $('#filterKhoa').val();
+            var filterNganhAjax = $('#filterNganh').val();
+
             $.ajax({
-                url: '/admin/Phong/Index',
+                url: '/admin/UserStudent/Index',
                 type: 'GET',
                 data: {
                     searchStringController: searchStringAjax,
-                    filterLoaiphongController: filterLoaiphongAjax,
-                    filterCosoController: filterCosoAjax,
+                    filterKhoa: filterKhoaAjax,
+                    filterNganh: filterNganhAjax,
                     page: pageNumber
                 },
                 success: function (response) {
-                    $('#PartialViewPhong').html(response);
+                    $('#PartialViewSv').html(response);
                 },
                 error: function () {
                     console.log("fail");
@@ -35,45 +35,44 @@
         }
     });
 </script>
-
 <table class="table table-striped">
-    <thead class="text-center">
-        <tr>
+    <thead>
+        <tr class="text-center">
             <th>STT</th>
-            <th>Mã phòng</th>
-            <th>Tên phòng</th>
-            <th>Loại phòng</th>
-            <th>Tên cơ sở</th>
+            <th>Mã sv</th>
+            <th>Tên</th>
+            <th>Giới tính</th>
+            <th>Ngày sinh</th>
+            <th>Khoá</th>
+            <th>Ngành</th>
+            <th>Số điện thoại</th>
             <th>Thao tác</th>
         </tr>
     </thead>
-    <tbody class="text-center">
+    <tbody>
         @{
-            int count = Model.PageSize * (Model.PageNumber - 1);
+            int index = (Model.PageNumber - 1) * Model.PageSize;
         }
-        @foreach (var phong in Model)
+        @foreach (Sinhvien sv in Model)
         {
-            <tr>
-                <td>@(++count)</td>
-                <td>@phong.Map</td>
-                <td>@phong.Tenphong</td>
-                <td>@phong.Loaiphong</td>
+            ++index;
+            var formattedDate = sv.Ngaysinh.ToString("dd/MM/yyyy");
+            <tr class="text-center">
+                <td>@index</td>
+                <td>@sv.Masv</td>
+                <td>@sv.Tensv</td>
+                <td>@sv.Gioitinh</td>
+                <td>@formattedDate</td>
+                <td>@(sv.MakhoaNavigation?.Tenkhoa)</td>
+                <td>@(sv.ManganhNavigation?.Tennganh)</td>
+                <td>@sv.Sdt</td>
                 <td>
-                    @{
-                        var coso = dbContext.Cosos.FirstOrDefault(c => c.Macs == phong.Macs);
-                        if (coso != null)
-                        {
-                            @coso.Tencs
-                        }
-                    }
-                </td>
-                <td>
-                    <a class="btn btn-info btn-sm rounded" href="@Url.Action("Edit", "Phong", new { id = phong.Map })">
+                    <a href="/admin/userStudent/Update/@sv.Masv" class="btn btn-info btn-sm rounded">
                         <svg class="icon icon-lg">
                             <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-pen")"></use>
                         </svg>
                     </a>
-                    <a onclick="if (confirm('Xác nhận xóa phòng này?') == true) {location.href='/admin/Phong/Delete/@phong.Map'}" class="btn btn-danger btn-sm rounded">
+                    <a onclick="if (confirm('Xác nhận xóa sinh viên?') == true) {location.href='/admin/userStudent/Delete/@sv.Masv'}" class="btn btn-danger btn-sm rounded">
                         <svg class="icon icon-lg">
                             <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
                         </svg>
@@ -84,10 +83,9 @@
     </tbody>
 </table>
 
-
-
 <nav>
     <ul class="pagination justify-content-center">
+        <!-- First Page -->
         <!-- First Page -->
         @if (Model.HasPreviousPage)
         {
