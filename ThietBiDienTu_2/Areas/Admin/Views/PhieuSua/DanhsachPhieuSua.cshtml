@@ -1,0 +1,135 @@
+﻿@model X.PagedList.IPagedList<Phieusua>
+@section naviheader{
+    <div class="header-divider"></div>
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Admin/HomeAdmin/Index">Trang chủ</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Danh sách phiếu sửa</li>
+            </ol>
+        </nav>
+    </div>
+}
+@section searchArea{
+    <div style="width:85%" class="d-none d-md-flex align-items-center mb-2">
+        <div class="input-group" style="width:35%">
+            <!-- Search bar -->
+            <input name="searchString" id="searchString_2" type="search" placeholder="Tìm mã phiếu sửa..." class="form-control rounded" aria-label="Search">
+            <button class="btn btn-info rounded mr-2" type="submit" id="btnSearch_2">
+                <svg class="icon icon-lg">
+                    <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-search")"></use>
+                </svg>
+            </button>
+        </div>
+
+        <select class="rounded-2 form-select" style="width:19%" id="SelectAnother">
+            <option value="-1">Chọn trạng thái</option>
+            <option value="0">Chưa duyệt</option>
+            <option value="1">Chưa trả</option>
+
+        </select>
+        <div class="form-group mb-0 ml-2" style="width:15%">
+            <label class="mb-1"><strong>Ngày lập từ</strong></label>
+            <input type="date" class="form-control" id="BorrowFrom" min="2024-03-01">
+        </div>
+        <div class="form-group mb-0 ml-2" style="width:15%">
+            <label class="mb-1"><strong>Ngày lập đến</strong></label>
+            <input type="date" class="form-control" id="BorrowTo" min="2024-03-01" />
+        </div>
+
+    </div>
+}
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col">
+                <h3 class="card-title">Danh sách phiếu sửa</h3>
+            </div>
+            <div class="col-auto">
+                <div class="card-tools">
+                    <a asp-action="CreatePs" class="btn btn-primary btn-sm">
+                        <svg class="icon icon-lg">
+                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-plus")"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div id="content_2">
+
+
+            <div class="bs-stepper linear">
+                <div class="bs-stepper-content">
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="text-center">
+                                <th>STT</th>
+                                <th>Mã phiếu sửa</th>
+                                <th>Ngày lập</th>
+                                <th>Trạng thái</th>
+                                <th>Tổng chi phí</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                int indexCount = (Model.PageNumber - 1) * Model.PageSize;
+                            }
+                            @foreach (Phieusua ps in Model)
+                            {
+                                ++indexCount;
+                                var formattedDateNgayLap = ((DateTime)ps.Ngaylap).ToString("dd/MM/yyyy");
+                                <tr class="text-center">
+                                    <td>@indexCount</td>
+                                    <td>@ps.Maps</td>
+                                    <td>@formattedDateNgayLap</td>
+                                    <td>@ps.Trangthai</td>
+                                    <td>@ps.Tongchiphi?.ToString("#,##0")đ</td>
+                                    <td>
+                                        <a asp-action="ChitietPhieuMuon" asp-controller="PhieuMuonAdmin" asp-route-mapm="@ps.Maps" class="btn btn-info btn-sm rounded">
+                                            <svg class="icon icon-lg">
+                                                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-pen")"></use>
+                                            </svg>
+                                        </a>
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <nav>
+                        <ul class="pagination justify-content-center">
+                            <!-- First Page -->
+                            @if (Model.PageNumber > 1)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" value="1">Đầu</a>
+                                </li>
+                            }
+
+                            <!-- Page Numbers -->
+                            @for (var i = Math.Max(1, Model.PageNumber - 2); i <= Math.Min(Model.PageNumber + 2, Model.PageCount); i++)
+                            {
+                                <li class="page-item @(Model.PageNumber == i ? "active" : "")">
+                                    <a class="page-link" value="@i">@i</a>
+                                </li>
+                            }
+
+                            <!-- Last Page -->
+                            @if (Model.PageNumber < Model.PageCount)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" value="@Model.PageCount">Cuối</a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

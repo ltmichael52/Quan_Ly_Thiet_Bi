@@ -5,33 +5,55 @@
 
 <script>
     $(document).ready(function () {
-        $('#searchForm').submit(function (e) {
-            e.preventDefault();
-            searchNganh();
+        var searchStringAjax = null;
+        var pageNumber = null;
+
+        $('#searchString').change(function () {
+            var string = $(this).val();
+            searchStringAjax = string;
+            getToController();
         });
 
-        $('#searchString').keypress(function (e) {
-            if (e.which === 13) {
-                searchNganh();
-            }
-        });
+        function getToController() {
+            $.ajax({
+                url: '/admin/Nganh/Index',
+                type: 'GET',
+                data: {
+                    searchString: searchStringAjax,
+                },
+                success: function (response) {
+                    $('#PartialViewNganh').html(response);
+                },
+                error: function () {
+                    console.log("fail");
+                }
+            });
+        }
     });
 
-    function searchNganh() {
-        var searchString = $('#searchString').val();
-        $.ajax({
-            url: '/admin/Nganh/Search',
-            type: 'POST',
-            data: { searchString: searchString },
-            success: function (response) {
-                $('#PartialViewNganh').html(response);
-            },
-            error: function () {
-                console.log("fail");
-            }
-        });
-    }
 </script>
+
+
+@if (TempData["Action"] != null)
+{
+    <div class="alert alert-success" id="notify">
+        <strong>Success!</strong> @TempData["Action"]
+    </div>
+}
+
+@section searchArea {
+    <div class="input-group" style="width:40%">
+        <!-- Search bar -->
+        <input style="width:30%" name="searchStringNganh" id="searchString"
+               type="search" placeholder="Tìm tên ngành" class="form-control rounded" aria-label="Search">
+        @*Id la thuoc tinh phan biet cac html tag*@
+        <button class="btn btn-info rounded" type="submit" id="Searchbutton">
+            <svg class="icon icon-lg">
+                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-search")"></use>
+            </svg>
+        </button>
+    </div>
+}
 @section naviheader{
     <div class="header-divider"></div>
     <div class="container-fluid">
@@ -42,19 +64,6 @@
             </ol>
         </nav>
     </div>
-}
-
-@section searchArea {
-    <form id="searchForm" class="input-group" style="width:40%">
-        <!-- Search bar -->
-        <input style="width:30%" name="searchStringNganh" id="searchString"
-               type="search" placeholder="Tìm tên ngành" class="form-control rounded" aria-label="Search">
-        <button class="btn btn-info rounded" type="submit" id="searchButton">
-            <svg class="icon icon-lg">
-                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-search")"></use>
-            </svg>
-        </button>
-    </form>
 }
 
 <!-- Phân trang -->
@@ -83,33 +92,7 @@
 
                 <partial name="PartialViewNganh" model="Model" />
                 </div>
-                <nav>
-                    <ul class="pagination justify-content-center">
-                        <!-- First Page -->
-                        @if (Model.HasPreviousPage)
-                        {
-                            <li class="page-item">
-                                <a class="page-link" href="@Url.Action("Index", new { page = 1, searchStringController = ViewBag.CurrentFilter })">Đầu</a>
-                            </li>
-                        }
-
-                        <!-- Page Numbers -->
-                        @for (var i = 1; i <= Model.PageCount; i++)
-                        {
-                            <li class="page-item @(Model.PageNumber == i ? "active" : "")">
-                                <a class="page-link" href="@Url.Action("Index", new { page = i, searchStringController = ViewBag.CurrentFilter })">@i</a>
-                            </li>
-                        }
-
-                        <!-- Last Page -->
-                        @if (Model.HasNextPage)
-                        {
-                            <li class="page-item">
-                                <a class="page-link" href="@Url.Action("Index", new { page = Model.PageCount, searchStringController = ViewBag.CurrentFilter })">Cuối</a>
-                            </li>
-                        }
-                    </ul>
-                </nav>
+                
             </div>
         </div>
     </div>

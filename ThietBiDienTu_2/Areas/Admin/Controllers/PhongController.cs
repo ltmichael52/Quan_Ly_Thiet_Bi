@@ -56,18 +56,21 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             if (!string.IsNullOrEmpty(searchStringController))
             {
                 phongs = phongs.Where(x => x.Tenphong.ToLower().Contains(searchStringController.ToLower())).ToList();
+                ViewBag.searchStringController = searchStringController;
             }
             if (!string.IsNullOrEmpty(filterLoaiphongController))
             {
                 phongs = phongs.Where(x => x.Loaiphong == filterLoaiphongController).ToList();
+                ViewBag.filterLoaiphongController = filterLoaiphongController;
             }
             if (!string.IsNullOrEmpty(filterCosoController))
             {
                 phongs = phongs.Where(x => x.Macs.ToString() == filterCosoController).ToList();
+                ViewBag.filterCosoController = filterCosoController;
             }
 
-            int pageSize = 10; // số lượng bản ghi trên mỗi trang
-            int pageNumber = (page ?? 1); // Trang hiện tại, nếu không có trang nào thì mặc định là 1
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
 
             var pagedPhongs = phongs.ToPagedList(pageNumber, pageSize);
 
@@ -94,16 +97,18 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
         // POST: Phongs/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Map,Macs,Tenphong,Loaiphong")] Phong phong)
+        public IActionResult Create([Bind("Map,Macs,Tenphong,Loaiphong")] Phong phong)
         {
-            if (ModelState.IsValid)
-            {
-                phongRepo.Add(phong);
-                return RedirectToAction(nameof(Index));
-            }
+
+            phongRepo.Add(phong);
+            TempData["Action"] = "Tạo thành công";
+            return RedirectToAction(nameof(Index));
+
             GetData();
             return View(phong);
         }
+
+
 
         // GET: Phongs/Edit/5
         public async Task<IActionResult> Edit(string id)
@@ -138,6 +143,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                 try
                 {
                     phongRepo.Update(phong);
+                    TempData["Action"] = "Chỉnh sửa thành công";
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -179,13 +185,34 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
             var phong = phongRepo.FindPhong(id);
-            phongRepo.Delete(phong);
-            return RedirectToAction(nameof(Index));
+
+            try
+            {
+                // Kiểm tra xem có thiết bị nào được gắn với phòng hay không
+                bool phongContainsDevices = phongRepo.CheckIfPhongHasDevices(id);
+
+                if (phongContainsDevices)
+                {
+                    TempData["ErrorMessage"] = "Không thể xóa phòng có chứa thiết bị.";
+                    return RedirectToAction(nameof(Index));
+                }
+
+                phongRepo.Delete(phong);
+                TempData["Action"] = "Xóa thành công";
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                // Xử lý bất kỳ lỗi nào xảy ra trong quá trình xóa phòng
+                TempData["ErrorMessage"] = "Đã xảy ra lỗi khi xóa phòng: " + ex.Message;
+                return RedirectToAction(nameof(Index));
+            }
         }
 
         private bool PhongExists(string id)
         {
             return phongRepo.FindPhong(id) == null;
+
         }
     }
 }

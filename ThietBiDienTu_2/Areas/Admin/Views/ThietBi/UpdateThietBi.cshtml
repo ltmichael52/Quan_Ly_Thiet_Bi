@@ -88,15 +88,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
 
-                                    <div class="col-md-6" syle="width:40%">
-                                        <div class="form-group mb-2">
-                                            <label class="mb-2"><strong>Loại phòng</strong></label>
-                                            <input id="roomType" asp-for="@Model.LoaiPhong" class="form-control" readonly style="background-color:#E8E8E8" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6" syle="width:60%">
+                                <div class="row">
+                                    <div class="col-md-6" style="width:40%">
                                         <div class="form-group mb-2">
                                             <label asp-for="@Model.TrangThai" class="mb-2"><strong>Trạng thái<span class="text-danger"> *</span></strong></label>
                                             <select id="StateProduct" asp-for="@Model.TrangThai" class="form-control">
@@ -105,11 +99,18 @@
                                             <span asp-validation-for="@Model.TrangThai" class="text-danger"></span>
                                         </div>
                                     </div>
+                                    <div class="col-md-6" style="width:60%">
+                                        <div class="form-group mb-2">
+                                            <label class="mb-2"><strong>Loại phòng</strong></label>
+                                            <input id="roomType" asp-for="@Model.LoaiPhong" class="form-control" readonly style="background-color:#E8E8E8" />
+                                        </div>
+                                    </div>
+                                    
                                 </div>
 
                                 <div class="form-group mt-3">
+                                     <button type="submit" class="btn btn-primary">Cập nhật</button>
                                     <a onclick="getUrl()" class="btn btn-danger">Quay lại</a>
-                                    <button type="submit" class="btn btn-primary">Cập nhật</button>
                                 </div>
                         </form>
                     </div>
@@ -176,7 +177,7 @@
 
                     firstOption.value = "Sẵn sàng";
                     firstOption.text = "Sẵn sàng";
-                    stateProduct.options.add(new Option("Hư", "Hư", false));
+                    stateProduct.options.add(new Option("Đang hư", "Đang hư", false));
                     stateProduct.options.add(new Option("Thanh lý", "Thanh lý", false));
                   
                     
@@ -258,7 +259,7 @@
             stateProduct.options.add(new Option("Thanh lý", "Thanh lý", false));
         }
         if (firstOptionState.value != "Hư" && firstOptionState.value != "Hoạt động") {
-            stateProduct.options.add(new Option("Hư", "Hư", false));
+            stateProduct.options.add(new Option("Đang hư", "Đang hư", false));
         }
     }
     window.onload = function(){

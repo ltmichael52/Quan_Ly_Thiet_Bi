@@ -19,6 +19,12 @@ builder.Services.AddDbContext<ToolDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Tool"));
 });
 
+
+//builder.Services.AddDbContext<ToolDbContext>(options =>
+//{
+//    options.UseNpgsql(builder.Configuration.GetConnectionString("Tool"));
+//});
+
 builder.Services.AddSession();
 // Register HttpContextAccessor
 
@@ -29,6 +35,8 @@ builder.Services.AddScoped<INhanVien, NhanvienAdminRepo>();
 builder.Services.AddScoped<IDongThietBiAdmin, DongThietBiAdminRepo>();
 builder.Services.AddScoped<IThietBiAdmin, ThietBiAdminRepo>();
 builder.Services.AddScoped<IKhoa, KhoaAdminRepo>();
+builder.Services.AddScoped<ISinhvienAdmin, SinhvienAdminRepo>();
+builder.Services.AddScoped<IPhieuSuaAdmin, PhieuSuaAdminRepo>();
 builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
 app.UseSession();
@@ -52,11 +60,11 @@ app.UseSession();
 app.MapAreaControllerRoute(
     name: "Admin",
     areaName: "Admin",
-    pattern: "admin/{controller=Coso}/{action=Index}/{id?}"
+    pattern: "admin/{controller=Phieusua}/{action=DanhsachPhieuSua}/{id?}"
     );
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=ProcductManagement}/{action=Index}/{id?}");
+    pattern: "{controller=Histroy}/{action=Index}/{id?}");
 
 
 

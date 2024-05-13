@@ -33,17 +33,17 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-6">
-        <div class="form-group mb-2">
-            <label class="mb-2" asp-for="@Model.Ngaylap.Date"><strong>Ngày lập phiếu mượn: </strong></label>
-
-            <input type="datetime" class="form-control" asp-for="@Model.Ngaylap.Date" value="@Model.Ngaylap.Date" readonly style="background-color:#E8E8E8" />
-        </div>
-    </div>
-    <div class="col-md-6">
+    <div class="col-md-6" style="width:40%">
         <div class="form-group mb-2">
             <label class="mb-2" class="mb-2" asp-for="@Model.Ngaymuon"><strong>Ngày mượn: </strong></label>
             <input type="datetime" class="form-control" asp-for="@Model.Ngaymuon.Date" value="@formattedNgayMuon" readonly style="background-color:#E8E8E8" />
+        </div>
+    </div>
+    <div class="col-md-6" style="width:60%">
+        <div class="form-group mb-2">
+            <label class="mb-2" asp-for="@Model.Ngaylap"><strong>Ngày lập phiếu mượn: </strong></label>
+
+            <input type="datetime" class="form-control" asp-for="@Model.Ngaylap" value="@Model.Ngaylap" readonly style="background-color:#E8E8E8" />
         </div>
     </div>
 </div>
