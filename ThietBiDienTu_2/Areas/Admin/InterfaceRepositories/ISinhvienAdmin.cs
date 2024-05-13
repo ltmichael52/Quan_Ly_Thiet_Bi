@@ -4,6 +4,11 @@ namespace ThietBiDienTu_2.Areas.Admin.InterfaceRepositories
 {
     public interface ISinhvienAdmin
     {
-        public Sinhvien GetSvById(int id);
+        List<Sinhvien> GetSinhvienList();
+        void Add(Sinhvien sinhvien);
+        void Update(Sinhvien sinhvien);
+        void Delete(Sinhvien sinhvien);
+        Sinhvien FindSinhvien(int id);
+        Sinhvien GetSvById(int v);
     }
 }

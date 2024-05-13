@@ -1,5 +1,34 @@
-﻿@model IEnumerable<ThietBiDienTu_2.Models.Khoa>
+﻿@model X.PagedList.IPagedList<Khoa>
 
+
+<script>
+    $(document).ready(function () {
+        var pageNumber = null;
+        var searchStringAjax = '@ViewBag.searchString';
+
+        $('.page-link').click(function () {
+            pageNumber = $(this).attr('value');
+            getToController();
+        });
+
+        function getToController() {
+            $.ajax({
+                url: '/admin/Khoa/Index',
+                type: 'GET',
+                data: {
+                    searchString: searchStringAjax,
+                    page: pageNumber
+                },
+                success: function (response) {
+                    $('#PartialViewKhoa').html(response);
+                },
+                error: function () {
+                    console.log("fail");
+                }
+            });
+        }
+    });
+</script>
 <table class="table table-striped">
     <thead class="text-center">
         <tr>
@@ -10,7 +39,7 @@
     </thead>
     <tbody class="text-center">
         @{
-            int count = 0;
+            int count = Model.PageSize * (Model.PageNumber -1);
         }
         @foreach (var khoa in Model)
         {
@@ -23,7 +52,7 @@
                             <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-pen")"></use>
                         </svg>
                     </a>
-                    <a class="btn btn-danger btn-sm" href="@Url.Action("Delete", "Khoa", new { id = khoa.Makhoa })">
+                    <a onclick="if (confirm('Xác nhận xóa khóa này?') == true) {location.href='/admin/Khoa/Delete/@khoa.Makhoa'}" class="btn btn-danger btn-sm rounded">
                         <svg class="icon icon-lg">
                             <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
                         </svg>
@@ -33,4 +62,32 @@
         }
     </tbody>
 </table>
+
+<nav>
+    <ul class="pagination justify-content-center">
+        <!-- First Page -->
+        @if (Model.HasPreviousPage)
+        {
+            <li class="page-item">
+                <a class="page-link" value="1">Đầu</a>
+            </li>
+        }
+
+        <!-- Page Numbers -->
+        @for (var i = 1; i <= Model.PageCount; i++)
+        {
+            <li class="page-item @(Model.PageNumber == i ? "active" : "")">
+                <a class="page-link" value="@i">@i</a>
+            </li>
+        }
+
+        <!-- Last Page -->
+        @if (Model.HasNextPage)
+        {
+            <li class="page-item">
+                <a class="page-link" value="@Model.PageCount">Cuối</a>
+            </li>
+        }
+    </ul>
+</nav>
 

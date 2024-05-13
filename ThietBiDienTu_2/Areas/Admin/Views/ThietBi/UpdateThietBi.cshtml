@@ -177,7 +177,7 @@
 
                     firstOption.value = "Sẵn sàng";
                     firstOption.text = "Sẵn sàng";
-                    stateProduct.options.add(new Option("Hư", "Hư", false));
+                    stateProduct.options.add(new Option("Đang hư", "Đang hư", false));
                     stateProduct.options.add(new Option("Thanh lý", "Thanh lý", false));
                   
                     
@@ -259,7 +259,7 @@
             stateProduct.options.add(new Option("Thanh lý", "Thanh lý", false));
         }
         if (firstOptionState.value != "Hư" && firstOptionState.value != "Hoạt động") {
-            stateProduct.options.add(new Option("Hư", "Hư", false));
+            stateProduct.options.add(new Option("Đang hư", "Đang hư", false));
         }
     }
     window.onload = function(){

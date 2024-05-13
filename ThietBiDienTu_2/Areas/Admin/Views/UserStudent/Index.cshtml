@@ -1,51 +1,63 @@
-﻿@using ThietBiDienTu_2.Areas.Admin.ViewModels;
-@using ThietBiDienTu_2.Models;
-@using X.PagedList;
-@using X.PagedList.Mvc.Core;
-@using X.PagedList.Web.Common;
+﻿@model X.PagedList.IPagedList<Sinhvien>
+
 @{
     ViewData["Title"] = "UserStudent";
 }
+    <script>
+        $(document).ready(function () {
+            var searchStringAjax = null;
+            var filterKhoaAjax = null;
+            var filterNganhAjax = null;
 
-@model X.PagedList.IPagedList<Sinhvien>
-@section searchArea{
-    <form id="searchForm" action="@Url.Action("Index","UserStudent")" method="get" style="width:70%" class="d-none d-md-flex">
-        <div class="input-group">
-            <!-- Search bar -->
-            <input style="width:40%" name="searchString" id="searchString" type="search" placeholder="Tìm tên sinh viên..." class="form-control rounded" aria-label="Search" style="width:200px">
-            <button class="btn btn-info rounded" type="submit">
-                <svg class="icon icon-lg">
-                    <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-search")"></use>
-                </svg>
-            </button>
+            $('#searchString').change(function () {
+                var string = $(this).val();
+                searchStringAjax = string;
+                pageNumber = null;
+                getToController();
+            });
 
-            <!-- Filter dropdown 1 -->
-            <select name="course" id="course" class="form-select rounded ms-3">
-                <option value="all">Khóa</option>
-                @{
-                   
-                    foreach(SelectListItem a in ViewBag.khoaType)
-                    {
-                    <option value="@a.Value">@a.Text</option>
+            $('#filterKhoa').change(function () {
+                var string = $(this).val();
+                filterKhoaAjax = string;
+                getToController();
+            });
+
+            $('#filterNganh').change(function () {
+                var string = $(this).val();
+                filterNganhAjax = string;
+                getToController();
+            });
+            function getToController() {
+                $.ajax({
+                    url: '/admin/UserStudent/Index',
+                    type: 'GET',
+                    data: {
+                        searchStringController: searchStringAjax,
+                        filterKhoa: filterKhoaAjax,
+                        filterNganh: filterNganhAjax,
+                        pageNumber: pageNumber
+                    },
+                    success: function (response) {
+                        $('#PartialViewSv').html(response);
+                    },
+                    error: function () {
+                        console.log("fail");
                     }
-                }
-            </select>
-            <!-- Filter dropdown 2 -->
-            <select name="major" id="major" class="form-select rounded ms-3" style="width:25%;">
-                <option value="all">Ngành</option>
-                @{
-                    foreach (SelectListItem a in ViewBag.nganhType)
-                    {
-                        <option value="@a.Value">@a.Text</option>
-                    }
-                }
-              
-            </select>
-        </div>
-    </form>
-}
+                });
+            }
+        $('#searchString').keypress(function (e) {
+            if (e.which === 13) { // Kiểm tra xem phím được nhấn có phải là Enter không
+                var string = $(this).val();
+                searchStringAjax = string;
+                pageNumber = null;
+                getToController();
+                return false; // Ngăn chặn hành động mặc định của phím Enter trong trường nhập
+            }
+        });
+        });
+    </script>
 
-@section naviheader{
+@section naviheader {
     <div class="header-divider"></div>
     <div class="container-fluid">
         <nav aria-label="breadcrumb">
@@ -56,19 +68,56 @@
         </nav>
     </div>
 }
+
 @if (TempData["Action"] != null)
 {
     <div class="alert alert-success notify">
         <strong>Thành công!</strong> @TempData["Action"]
     </div>
 }
-@if(TempData["Fail"] != null)
+@if (TempData["Fail"] != null)
 {
     <div class="alert alert-danger notify">
         <strong>Thất bại!</strong> @TempData["Fail"]
     </div>
 }
-<!-- Content Header (Page header) -->
+
+@section searchArea {
+    <form id="searchForm">
+        <div class="input-group" style="width:80%">
+            <!-- Search bar -->
+            <input style="width:30%" name="searchStringSv" id="searchString"
+                   type="search" placeholder="Tìm tên sinh viên" class="form-control rounded" aria-label="Search">
+
+            <!-- Nút tìm kiếm -->
+            <button type="button" class="btn btn-info rounded" id="Searchbutton">
+                <svg class="icon icon-lg">
+                    <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-search")"></use>
+                </svg>
+            </button>
+
+            <!-- Filter dropdown 1 -->
+            <select id="filterKhoa" class="form-select rounded ms-3" style="width:26%">
+                <option value="">Chọn khóa</option>
+                @foreach (SelectListItem a in ViewBag.khoaType)
+                {
+                    <option value="@a.Value">@a.Text</option>
+                }
+            </select>
+            <!-- Filter dropdown 2 -->
+            <select id="filterNganh" class="form-select rounded ms-3" style="width:28%;">
+                <option value="">Chọn ngành</option>
+                @{
+                    foreach (SelectListItem a in ViewBag.nganhType)
+                    {
+                            <option value="@a.Value">@a.Text</option>
+                    }
+                }
+            </select>
+        </div>
+    </form>
+}
+
 <div class="card">
     <div class="card-header">
         <div class="row">
@@ -86,144 +135,15 @@
             </div>
         </div>
     </div>
-    <div class="card-body ">
+    <div class="card-body">
         <div class="bs-stepper linear">
             <div class="bs-stepper-content">
-
-                <table class="table table-striped">
-                    <thead>
-                        <tr class="text-center">
-                            <th>STT</th>
-                            <th>Mã sv</th>
-                            <th>Tên</th>                                                    
-                            <th>Giới tính</th>
-                            <th>Ngày sinh</th>
-                            <th>Khoá</th>
-                            <th>Ngành</th>
-                            <th>Số điện thoại</th>
-                            <th>Thao tác</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @{
-                            int index = (Model.PageNumber - 1) * Model.PageSize;
-                        }
-                        @foreach (Sinhvien sv in Model)
-                        {
-                            ++index;
-                            var formattedDate = ((DateTime)sv.Ngaysinh).ToString("dd/MM/yyyy");
-                            <tr class="text-center">
-                                <td>@index</td>
-                                <td>@sv.Masv</td>
-                                <td>@sv.Tensv</td>
-                                <td>@sv.Gioitinh</td>
-                                <td>@formattedDate</td>
-                                <td>@sv.MakhoaNavigation.Tenkhoa</td>
-                                <td>@sv.ManganhNavigation.Tennganh</td>
-                                <td>@sv.Sdt</td>
-                                <td>
-                                    <a href="/admin/userStudent/Update/@sv.Masv" class="btn btn-info btn-sm rounded">
-                                        <svg class="icon icon-lg">
-                                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-pen")"></use>
-                                        </svg>
-                                    </a>
-                                    <a onclick="if (confirm('Xác nhận xóa sinh viên?') == true) {location.href='/admin/userStudent/Delete/@sv.Masv'}" class="btn btn-danger btn-sm rounded">
-                                        <svg class="icon icon-lg">
-                                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
-                                        </svg>
-                                    </a>                                 
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-                <nav>
-                    <ul class="pagination justify-content-center">
-                        <!-- First Page -->
-                        @if (Model.PageNumber > 1)
-                        {
-                            <li class="page-item">
-                                <a class="page-link" href="@Url.Action("Index", new { page = 1 })">Đầu</a>
-                            </li>
-                        }
-
-                        <!-- Page Numbers -->
-                        @for (var i = Math.Max(1, Model.PageNumber - 2); i <= Math.Min(Model.PageNumber + 2, Model.PageCount); i++)
-                        {
-                            <li class="page-item @(Model.PageNumber == i ? "active" : "")">
-                                <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
-                            </li>
-                        }
-
-                        <!-- Last Page -->
-                        @if (Model.PageNumber < Model.PageCount)
-                        {
-                            <li class="page-item">
-                                <a class="page-link" href="@Url.Action("Index", new { page = Model.PageCount })">Cuối</a>
-                            </li>
-                        }
-                    </ul>
-                </nav>
+                <div id="PartialViewSv">
+                    @Html.Partial("PartialViewSv", Model)
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 
-<div class="footer"></div>
-<script>
-    $(document).ready(function () {
-        setTimeout(function () {
-            console.log("here");
-            $('.notify').css("display", "none");
-        }, 10000);
-    });
-    function storeCourseAndMajorAndSearchString(){
-        const course = document.getElementById('course').value;
-        const searchString = document.getElementById('searchString').value;
-        const major = document.getElementById('major').value;
-        localStorage.setItem('savedCourse', course);
-        localStorage.setItem('savedSearchString', searchString);
-        localStorage.setItem('savedMajor', major);
-    }
-
-    function setCourseAndMajorAndSearchString(){
-        const savedCourse = localStorage.getItem('savedCourse');
-        const savedSearchString = localStorage.getItem('savedSearchString');
-        const savedMajor = localStorage.getItem('savedMajor');
-
-        if (savedCourse) {
-            document.getElementById('course').value = savedCourse;
-        }
-        if (savedSearchString) {
-            document.getElementById('searchString').value = savedSearchString;
-        }
-        if(savedMajor){
-            document.getElementById('major').value = savedMajor;
-        }
-    }
-
-    function handleFormSubmission() {
-        storeCourseAndMajorAndSearchString();
-    }
-
-    function handleCourseOrMajorChange() {
-        storeCourseAndMajorAndSearchString();
-        document.getElementById('searchForm').submit();
-    }
-    window.onload = function () {
-        setCourseAndMajorAndSearchString();
-    }
-
-    document.getElementById('searchForm').addEventListener('submit', function () {
-        handleFormSubmission();
-    });
-
-    document.getElementById('course').addEventListener('change', function () {
-        handleCourseOrMajorChange();
-    });
-
-    document.getElementById('major').addEventListener('change', function () {
-        handleCourseOrMajorChange();
-    });
-</script>

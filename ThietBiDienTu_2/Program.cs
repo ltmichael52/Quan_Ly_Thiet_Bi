@@ -19,6 +19,12 @@ builder.Services.AddDbContext<ToolDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Tool"));
 });
 
+
+//builder.Services.AddDbContext<ToolDbContext>(options =>
+//{
+//    options.UseNpgsql(builder.Configuration.GetConnectionString("Tool"));
+//});
+
 builder.Services.AddSession();
 // Register HttpContextAccessor
 
@@ -54,7 +60,7 @@ app.UseSession();
 app.MapAreaControllerRoute(
     name: "Admin",
     areaName: "Admin",
-    pattern: "admin/{controller=Coso}/{action=Index}/{id?}"
+    pattern: "admin/{controller=Phieusua}/{action=DanhsachPhieuSua}/{id?}"
     );
 app.MapControllerRoute(
     name: "default",

@@ -13,57 +13,50 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
     [AuthenticationManager]
     public class UserEmployeeController : Controller
     {
+        private readonly IHttpContextAccessor contextAccess;
         ToolDbContext _context;
-        public UserEmployeeController(ToolDbContext context)
+        public UserEmployeeController(ToolDbContext context, IHttpContextAccessor contextAccess)
         {
             _context = context;
+            this.contextAccess = contextAccess;
         }
 
         public IActionResult Index(int? page, string? searchString)
         {
             int pageSize = 5;
-            int pageNumber = page == null || page < 0 ? 1 : page.Value;
-            PagedList<Nhanvien> nv;
-            if (searchString != null)
+            int pageNumber = page ?? 1;
+            var query = _context.Nhanviens.Select(emp => new Nhanvien
             {
-                ViewData["CurrentFilter"] = searchString;
-                var nvList1 = _context.Nhanviens
-                               .Where(emp => emp.Tennv.ToLower().Contains(searchString.ToLower()))
-                               .Select(emp => new Nhanvien
-                               {
-                                   Manv = emp.Manv,
-                                   Tennv = emp.Tennv,
-                                   Diachi = emp.Diachi,
-                                   Email = emp.Email,
-                                   Ngaysinh = emp.Ngaysinh,
-                                   Gioitinh = emp.Gioitinh,
-                                   Sdt = emp.Sdt,
-                                   ManvNavigation = _context.Taikhoans.FirstOrDefault(x=>x.Matk == emp.Manv)
-                               })
-                               .OrderBy(emp => emp.Tennv);
-                nv = new PagedList<Nhanvien>(nvList1, pageNumber, pageSize);
-            }
-            else
+                Manv = emp.Manv,
+                Tennv = emp.Tennv,
+                Diachi = emp.Diachi,
+                Email = emp.Email,
+                Ngaysinh = emp.Ngaysinh,
+                Gioitinh = emp.Gioitinh,
+                Sdt = emp.Sdt,
+                ManvNavigation = _context.Taikhoans.FirstOrDefault(x => x.Matk == emp.Manv)
+            });
+
+            if (!string.IsNullOrEmpty(searchString))
             {
-                var nvList2 = _context.Nhanviens.Select(emp => new Nhanvien
-                {
-                    Manv = emp.Manv,
-                    Tennv = emp.Tennv,
-                    Diachi = emp.Diachi,
-                    Email = emp.Email,
-                    Ngaysinh = emp.Ngaysinh,
-                    Gioitinh = emp.Gioitinh,
-                    Sdt = emp.Sdt,
-                    ManvNavigation = _context.Taikhoans.FirstOrDefault(x => x.Matk == emp.Manv)
-                }).OrderBy(x => x.Tennv);
-                nv = new PagedList<Nhanvien>(nvList2, pageNumber, pageSize);
+                query = query.Where(emp => emp.Tennv.ToLower().Contains(searchString.ToLower()));
             }
 
+            var nv = query.OrderBy(emp => emp.Tennv).ToPagedList(pageNumber, pageSize);
+
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return PartialView("PartialViewNv", nv);
+            }
 
             return View(nv);
         }
 
-
+        private bool IsAjaxRequest()
+        {
+            var request = contextAccess.HttpContext.Request;
+            return request.Headers["X-Requested-With"] == "XMLHttpRequest";
+        }
         public IActionResult Create()
         {
             return View();

@@ -93,5 +93,22 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
             return tbList;
 
         }
+
+        public List<TbFixAndCheck> GetTbFixAndCheckList()
+        {
+            List<TbFixAndCheck> tbFix = context.Thietbis.Where(x => x.Trangthai == "Đang hư" && x.MapNavigation.Loaiphong == "Kho")
+                                                    .Include(x => x.MadongtbNavigation)
+                                                    .Include(x => x.MapNavigation).Select(x => new TbFixAndCheck
+                                                    {
+                                                        Matb = x.Matb,
+                                                        Seri = x.Seri,
+                                                        Hinhanh = x.MadongtbNavigation.Hinhanh,
+                                                        Tentb = x.MadongtbNavigation.Tendongtb,
+                                                        TenKho = x.MapNavigation.Tenphong,
+                                                        CheckFix = false
+                                                    }).ToList();
+
+            return tbFix;
+        }
     }
 }

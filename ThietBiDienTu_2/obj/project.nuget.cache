@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7P6qP4dFmJghGbj6UsYSd1RZnNuIYRWy+aZJ7xgvAbWQ7g7KXRdyOeRAIyYqNvxGycXlbZB3OQ8Vj+D7l/O+pw==",
+  "dgSpecHash": "kIAWP6OPuAcEIMjyDPr4AyvuxyymdbNwg9LE03cdd+cC/NUUIy11sj733JnWeEO9sT1I23/yEh2AL4kkoArO2Q==",
   "success": true,
   "projectFilePath": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\ThietBiDienTu_2.csproj",
   "expectedPackageFiles": [
@@ -129,6 +129,8 @@
     "C:\\Users\\HP\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.11\\npgsql.entityframeworkcore.postgresql.7.0.11.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\nuget.common\\6.6.1\\nuget.common.6.6.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\nuget.configuration\\6.6.1\\nuget.configuration.6.6.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\nuget.dependencyresolver.core\\6.6.1\\nuget.dependencyresolver.core.6.6.1.nupkg.sha512",

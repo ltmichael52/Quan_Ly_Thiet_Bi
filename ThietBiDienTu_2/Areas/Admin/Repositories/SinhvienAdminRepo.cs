@@ -5,23 +5,48 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
 {
     public class SinhvienAdminRepo : ISinhvienAdmin
     {
-        ToolDbContext context;
-        public SinhvienAdminRepo(ToolDbContext context)
+        ToolDbContext _toolDbContext;
+        public SinhvienAdminRepo(ToolDbContext toolDbContext)
         {
-            this.context = context;
+            _toolDbContext = toolDbContext;
+        }
+
+        public void Add(Sinhvien sinhvien)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(Sinhvien sinhvien)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Sinhvien FindSinhvien(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Sinhvien> GetSinhvienList()
+        {
+            throw new NotImplementedException();
         }
 
         public Sinhvien GetSvById(int id)
         {
             Sinhvien sv = null;
-            if(context.Sinhviens.Any(x=>x.Masv == id))
+            if(_toolDbContext.Sinhviens.Any(x=>x.Masv == id))
             {
-                sv = context.Sinhviens.Find(id);
-                sv.MakhoaNavigation = context.Khoas.Find(sv.Makhoa);
-                sv.ManganhNavigation = context.Nganhs.Find(sv.Manganh);
+                sv = _toolDbContext.Sinhviens.Find(id);
+                sv.MakhoaNavigation = _toolDbContext.Khoas.Find(sv.Makhoa);
+                sv.ManganhNavigation = _toolDbContext.Nganhs.Find(sv.Manganh);
             }
             
             return sv;
+        }
+
+        public void Update(Sinhvien sinhvien)
+        {
+            throw new NotImplementedException();
         }
     }
 }
