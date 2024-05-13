@@ -4,7 +4,7 @@
 }
 
 @model ThietBiDienTu_2.Models.ViewModels.HomeViewModel
-@section searchArea{
+@section searchArea {
     <form id="searchForm" asp-action="Index" asp-controller="ProcductManagement" method="get" style="width:40%" class="d-none d-md-flex">
         <div class="input-group">
             <!-- Search bar -->
@@ -16,61 +16,92 @@
             </button>
             <!-- Filter dropdown 1 -->
         </div>
-        
+
     </form>
 }
+@section naviheader {
+    <div class="header-divider"></div>
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Home">Trang chủ</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Danh sách thiết bị</li>
+            </ol>
+        </nav>
+    </div>
+}
+
 <h2 class="text-center">DANH SÁCH THIẾT BỊ</h2>
 <!-- Section-->
 <form id="dateForm">
-    <p>Ngày đặt thiết bị:</p>
+    <h3>Ngày đặt thiết bị:</h3>
     <input name="NgayDat" type="date" id="NgayDat" class="ml-2" min="2024-04-17" />
 </form>
-@* <P>Vui lòng chọn ngày đặt để hiển thị thiết bị!</P> *@
 <div class="mt-2 alert alert-info" role="alert" style="display:none">
-    Vui lòng chọn ngày mượn!
+    Vui lòng chọn ngày đặt!
 </div>
 <div class="py-5" id="productShow" style="display:none">
-    <partial name="_PartialShowProduct" model="@Model"/>
+    <partial name="_PartialShowProduct" model="@Model" />
 </div>
 
 <script>
-
     $(document).ready(function () {
-        var ngaydat1 = null;
-        var searchString1 = null;
-
-        
         $('#NgayDat').change(function () {
             var selectedValue = $(this).val();
-            ngaydat1 = selectedValue;
-
+            console.log("Selected: " + selectedValue);
             getToController();
-
-            if (ngaydat1 == null) {
-                $('#productShow').css('display', 'none');
-                $('.alert').css({ display: 'block' });
-                $('#xemthem').css({ display: 'none' });
-            }
-            else {
-                $('#productShow').css('display', 'block');
-                $('.alert').css({ display: 'none' });
-                $('#xemthem').css({ display: 'block' });
-            }
         });
 
         function getToController() {
+            var ngaydat1 = $('#NgayDat').val();
             $.ajax({
                 url: '/ProcductManagement/Index',
                 type: 'GET',
                 data: {
-                    searchString: searchString1,
+                    searchString: '@ViewBag.searchString',
                     NgayDat: ngaydat1,
-                    trangThai : null
+                    trangThai: null
                 },
                 success: function (response) {
                     $('#productShow').html(response);
+                    if (ngaydat1) {
+                        $('#productShow').css('display', 'block');
+                        $('.alert').css('display', 'none');
+                    } else {
+                        $('.alert').css('display', 'block');
+                        $('#productShow').css('display', 'none');
+                    }
                 }
             });
         }
+
+        // Hàm để lấy ngày đặt đã lưu trong session (nếu có) và định dạng lại theo yyyy-MM-dd
+        function GetSavedNgayDat() {
+            var savedNgayDat = '@(HttpContextAccessor.HttpContext.Session.GetString("NgayDat") ?? "")';
+            if (savedNgayDat) {
+                // Định dạng lại ngày thành yyyy-MM-dd
+                var parts = savedNgayDat.split('-');
+                if (parts.length === 3) {
+                    var formattedDate = parts[2] + '-' + parts[1] + '-' + parts[0];
+                    return formattedDate;
+                }
+            }
+            return '';
+        }
+
+        // Kiểm tra nếu đã có ngày đặt trong session để hiển thị danh sách thiết bị
+        var savedNgayDat = GetSavedNgayDat();
+        $('#NgayDat').val(savedNgayDat);
+        if (savedNgayDat) {
+            $('#productShow').css('display', 'block');
+            $('.alert').css('display', 'none');
+        } else {
+            $('.alert').css('display', 'block');
+            $('#productShow').css('display', 'none');
+        }
+        $('#NgayDat').attr({
+            'min': TodayMade
+        });
+
     });
 </script>

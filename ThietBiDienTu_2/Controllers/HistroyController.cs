@@ -143,7 +143,6 @@ public class HistroyController : Controller
     }
    
 
-    [HttpPost]
     public IActionResult HuyPhieuMuon(int id, string lydoHuy)
     {
         // Lấy thông tin phiếu mượn từ cơ sở dữ liệu

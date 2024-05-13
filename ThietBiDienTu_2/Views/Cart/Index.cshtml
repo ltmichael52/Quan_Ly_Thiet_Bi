@@ -6,6 +6,17 @@
     <link rel="stylesheet" href="~/css/style.css">
 </head>
 <body>
+    @section naviheader {
+        <div class="header-divider"></div>
+        <div class="container-fluid">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/Home">Trang chủ</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Phiếu mượn</li>
+                </ol>
+            </nav>
+        </div>
+    }
     <div class="container py-5">
         <div class="row d-flex justify-content-center my-4">
             <div class="col-md-8">
@@ -14,17 +25,15 @@
                         <h5 class="mb-0">Phiếu mượn</h5>
                     </div>
                     <div class="card-body">
-                        <!-- Single item -->
                         @if (Model.CartItems.Count > 0)
-                        { //neu gio hang >0 thi moi chay vao cart
+                        {
                             @foreach (var item in Model.CartItems)
                             {
                                 <div class="row">
                                     <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                                         <!-- Image -->
                                         <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                                            <img src="~/images/@item.Hinhanh"
-                                                 class="w-100" alt="@item.Tendongtb" />
+                                            <img src="~/images/@item.Hinhanh" class="w-100" alt="@item.Tendongtb" />
                                             <a href="#!">
                                                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
                                             </a>
@@ -34,23 +43,19 @@
 
                                     <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                                         <!-- Data -->
-                                        <p><strong>@item.Tendongtb</strong></p>
-                                        <a class="btn btn-danger btn-sm me-1 mb-2" asp-action="Delete" asp-route-Madongtb="@item.Madongtb"
-                                           title="Remove item">
+                                        <p><strong><span style="color: black;">@item.Tendongtb</span></strong></p>
+                                        <a class="btn btn-danger btn-sm me-1 mb-2" asp-action="Delete" asp-route-Madongtb="@item.Madongtb" title="Remove item">
                                             <svg class="icon icon-lg">
                                                 <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
                                             </svg>
                                         </a>
-
-
                                         <!-- Data -->
                                     </div>
 
                                     <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                                         <!-- Quantity -->
                                         <div class="d-flex mb-4" style="max-width: 300px">
-                                            <a class="btn btn-primary px-3 me-2 btn-sm" asp-action="Decrease" asp-route-id="@item.Madongtb"
-                                               onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                            <a class="minusCart btn btn-light btn-sm mr-1" asp-action="Decrease" asp-route-id="@item.Madongtb" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                                                 <svg class="icon icon-lg">
                                                     <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-minus")"></use>
                                                 </svg>
@@ -60,18 +65,23 @@
                                                 <input id="form1" min="0" name="quantity" value="@item.Soluong" type="number" class="form-control" readonly />
                                             </div>
 
-
-                                            <a class="btn btn-primary px-3 ms-2 btn-sm" asp-action="Increase" asp-route-id="@item.Madongtb"
-                                               onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                            <a class="plusCart btn btn-light btn-sm ml-1" asp-action="Increase" asp-route-id="@item.Madongtb" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                                                 <svg class="icon icon-lg">
                                                     <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-plus")"></use>
                                                 </svg>
                                             </a>
+
+                                            
                                         </div>
                                     </div>
+                                    <!-- Hiển thị thông báo nếu có -->
+                                    @if (TempData[$"Message_{item.Madongtb}"] != null)
+                                    {
+                                        <div class="alert alert-danger">
+                                            @TempData[$"Message_{item.Madongtb}"]
+                                        </div>
+                                    }
                                 </div>
-                                <!-- Single item -->
-
                                 <hr class="my-4" />
                             }
                         }
@@ -83,14 +93,14 @@
                                     <div class="col-md-6">
                                         <div class="pt-5">
                                             <h6 class="mb-0">
-                                                <a href="@Url.Action("Index", "Home")" class="text-body" style="text-decoration: none;">
+                                                <a href="@Url.Action("Index", "ProcductManagement")" class="text-body" style="text-decoration: none;">
                                                     <i class="fas fa-long-arrow-alt-left me-2"></i>Quay lại
                                                 </a>
                                             </h6>
                                         </div>
                                     </div>
+                                </div>
                             </tr>
-
                         }
                     </div>
                 </div>
@@ -129,7 +139,7 @@
                                 <div class="col-md-6">
                                     <div class="pt-5">
                                         <h6 class="mb-0">
-                                            <a href="@Url.Action("Index", "Home")" class="text-body" style="text-decoration: none;">
+                                            <a href="@Url.Action("Index", "ProcductManagement")" class="text-body" style="text-decoration: none;">
                                                 <i class="fas fa-long-arrow-alt-left me-2"></i>Quay lại
                                             </a>
                                         </h6>
