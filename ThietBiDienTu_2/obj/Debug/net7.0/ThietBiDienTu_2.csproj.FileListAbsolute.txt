@@ -1543,3 +1543,5 @@ D:\C#\Project_KTPM\ThietBiDienTu_2\obj\Debug\net7.0\refint\ThietBiDienTu_2.dll
 D:\C#\Project_KTPM\ThietBiDienTu_2\obj\Debug\net7.0\ThietBiDienTu_2.pdb
 D:\C#\Project_KTPM\ThietBiDienTu_2\obj\Debug\net7.0\ThietBiDienTu_2.genruntimeconfig.cache
 D:\C#\Project_KTPM\ThietBiDienTu_2\obj\Debug\net7.0\ref\ThietBiDienTu_2.dll
+D:\Uni\KTPM\ThietBiDienTu_2\ThietBiDienTu_2\bin\Debug\net7.0\Npgsql.dll
+D:\Uni\KTPM\ThietBiDienTu_2\ThietBiDienTu_2\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll

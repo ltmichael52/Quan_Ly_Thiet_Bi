@@ -12,5 +12,6 @@ namespace ThietBiDienTu_2.Areas.Admin.InterfaceRepositories
         void UpdateTB(ThietBiViewAdmin toolDetail);
         void DeleteTB(int MaTB);
         List<Thietbi> GetTbListInThatDay(int matb, DateTime Ngaymuon);
+        List<TbFixAndCheck> GetTbFixAndCheckList();
     }
 }

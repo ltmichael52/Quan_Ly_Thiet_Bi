@@ -44,29 +44,30 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                                                 .ThenByDescending(x=>x.Mapm).ToList();
             CreateData(searchString, Trangthai,From,To);
 
+            DateTime today = DateTime.Now.Date;
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                ViewBag.searchString = searchString;
+                pmList = pmList.Where(x => x.Masv.ToString().Contains(searchString)
+                                    || x.Mapm.ToString().Contains(searchString)).ToList();
+            }
+            if (From.HasValue)
+            {
+                pmList = pmList.Where(x => x.Ngaymuon >= From).ToList();
+            }
+            if (To.HasValue)
+            {
+
+                pmList = pmList.Where(x => x.Ngaymuon.Date <= To.Value.Date).ToList();
+            }
+            if (!string.IsNullOrEmpty(Trangthai) && Trangthai != "-1")
+            {
+                pmList = pmList.Where(x => x.Trangthai.ToString() == Trangthai).ToList();
+            }
+
+
             if (IsAjaxRequest())
             {
-                DateTime today = DateTime.Now.Date;
-                if (!string.IsNullOrEmpty(searchString))
-                {
-                    ViewBag.searchString = searchString;
-                    pmList = pmList.Where(x => x.Masv.ToString().Contains(searchString) 
-                                        || x.Mapm.ToString().Contains(searchString)).ToList();
-                }
-                if(From.HasValue)
-                {
-                    pmList = pmList.Where(x => x.Ngaymuon >= From).ToList();
-                }
-                if(To.HasValue)
-                {
-
-                    pmList = pmList.Where(x => x.Ngaymuon.Date <=To.Value.Date).ToList();
-                }
-                if(!string.IsNullOrEmpty(Trangthai) && Trangthai!="-1")
-                {
-                    pmList = pmList.Where(x => x.Trangthai.ToString() == Trangthai).ToList();
-                }
-                
                 if (indexPartial == 1)
                 {
                     pmList = pmList.Where(x => x.Ngaymuon == today).ToList();
