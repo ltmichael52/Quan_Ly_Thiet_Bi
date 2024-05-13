@@ -1,12 +1,48 @@
 ﻿@model ThietBiDienTu_2.Models.ViewModels.HomeViewModel
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     if ($('#NgayDat').val() == null || $('#NgayDat').val() == "") {
-        $('.alert').css({ display: 'block' });
     }
     else { 
         $('#xemthem').css({ display: 'block' });
     }
+
+    $(document).ready(function () {
+        $('a.btn-outline-dark').click(function (e) {
+            e.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+             var url = "/Cart/Add"; // Lấy URL của liên kết
+             var madongtbView = $(this).attr('value');
+             console.log("madong tb: "+madongtbView);
+            // Gửi yêu cầu Ajax
+           $.ajax({
+                type: 'GET',
+                 url: url,
+                 data:{
+                     id : madongtbView,
+                 },
+                success: function (data) {
+                    console.log("Get in success");
+                    // Cập nhật phần hiển thị sản phẩm sau khi thực hiện yêu cầu Ajax
+                    $('#productShow').html(data);
+                    //$('#productShow').show(); // Hiển thị phần sản phẩm sau khi load thành công
+                },
+                 error: function (xhr, status, error) {
+                // Log error details to console
+                console.log('AJAX Error:', xhr.responseText);
+
+                // Optionally, you can display an alert with more specific error details
+                var errorMessage = 'Đã xảy ra lỗi khi thực hiện yêu cầu.';
+                if (xhr.status === 404) {
+                    errorMessage = 'Không tìm thấy trang yêu cầu.';
+                } else if (xhr.status === 500) {
+                    errorMessage = 'Lỗi máy chủ nội bộ.';
+                }
+                alert(errorMessage);
+            }
+            });
+        });
+    });
 </script>
 <div class="container px-4 px-lg-5 mt-5">
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
@@ -33,7 +69,9 @@
                                     <!-- Product actions-->
                                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                         <div class="text-center">
-                                            <a class="btn btn-outline-dark mt-auto" href="/Cart/Add/@item.Madongtb">Thêm vào phiếu mượn</a>
+                                        
+                                        <!-- href="/Cart/Add/item.Madongtb"-->
+                                            <a class="btn btn-outline-dark mt-auto" value="@item.Madongtb">Thêm vào phiếu mượn</a>
                                             <!--Chuc nang them san pham vao trong controller cart-->
                                         </div>
                                     </div>
