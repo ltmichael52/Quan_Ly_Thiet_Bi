@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Diagnostics;
+using ThietBiDienTu_2.Areas.Admin.InterfaceRepositories;
 using ThietBiDienTu_2.Areas.Admin.ViewModels;
 using ThietBiDienTu_2.Models;
 using ThietBiDienTu_2.Models.Authentication;
@@ -14,18 +15,23 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
     [AuthenticationManager]
     public class UserStudentController : Controller
     {
+        private readonly IHttpContextAccessor contextAccess;
+        private readonly ISinhvienAdmin Svrepo;
+
         ToolDbContext _context;
-        public UserStudentController(ToolDbContext context)
+        public UserStudentController(ToolDbContext context, IHttpContextAccessor contextAccess, ISinhvienAdmin Svrepo)
         {
             _context = context;
+            this.contextAccess = contextAccess;
+            this.Svrepo = Svrepo;
         }
 
-        public IActionResult Index(int? page, string? searchString, int? Course, int? Major)
+        public IActionResult Index(int? page, string? searchStringController, int? filterKhoa, int? filterNganh)
         {
             CreateData();
-            int pageSize = 10;
-            int pageNumber = page == null || page < 0 ? 1 : page.Value;
-            PagedList<Sinhvien> sv;
+            var Sinhviens = Svrepo.GetSinhvienList;
+            int pageSize = 5;
+            int pageNumber = page ?? 1;
             var svList = _context.Sinhviens.Select(x => new Sinhvien
             {
                 Masv = x.Masv,
@@ -36,28 +42,42 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                 Sdt = x.Sdt,
                 Ngaysinh = x.Ngaysinh,
                 Gioitinh = x.Gioitinh,
-                MakhoaNavigation = _context.Khoas.FirstOrDefault(a=>a.Makhoa ==x.Makhoa),
+                MakhoaNavigation = _context.Khoas.FirstOrDefault(a => a.Makhoa == x.Makhoa),
                 ManganhNavigation = _context.Nganhs.FirstOrDefault(a => a.Manganh == x.Makhoa),
-
             }).AsQueryable();
 
-            if (!string.IsNullOrEmpty(searchString))
+            if (!string.IsNullOrEmpty(searchStringController))
             {
-                svList = svList.Where(x => x.Tensv != null && x.Tensv.ToLower().Contains(searchString.ToLower()));
+           
+                svList = svList.Where(x =>
+                    x.Tensv != null && x.Tensv.ToLower().Contains(searchStringController.ToLower()) 
+                ); 
+                ViewBag.searchStringController = searchStringController;
             }
-            if (Course != null && Course != 0)
+            if (filterKhoa != null && filterKhoa != 0)
             {
-                svList = svList.Where(x => x.Makhoa == Course);
+                svList = svList.Where(x => x.Makhoa == filterKhoa);
+                ViewBag.filterKhoa = filterKhoa;
             }
-            if (Major!= null &&Major!=0)
+            if (filterNganh != null && filterNganh != 0)
             {
-                svList = svList.Where(x => x.Manganh == Major);
+                svList = svList.Where(x => x.Manganh == filterNganh);
+                ViewBag.filterNganh = filterNganh;
             }
-
 
             svList = svList.OrderBy(x => x.Tensv);
-            sv = new PagedList<Sinhvien>(svList, pageNumber, pageSize);
+            var sv = new PagedList<Sinhvien>(svList, pageNumber, pageSize);
+            if (IsAjaxRequest())
+            {
+                return PartialView("PartialViewSv", sv);
+            }
             return View(sv);
+        }
+
+        private bool IsAjaxRequest()
+        {
+            var request = contextAccess.HttpContext.Request;
+            return request.Headers["X-Requested-With"] == "XMLHttpRequest";
         }
         public IActionResult Create()
         {
@@ -156,7 +176,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 
                 //Remove stu first cuz in database stu has foreign key to acc
                 _context.Sinhviens.Remove(stu);
-                _context.Taikhoans.Remove(acc);
+                _context.Taikhoans.Remove(acc);   
 
                 stu_acc.acc.Matk = stu_acc.sv.Masv;
                 stu_acc.acc.Matkhau = stu_acc.acc.Matkhau;

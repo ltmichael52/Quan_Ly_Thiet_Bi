@@ -34,7 +34,7 @@
             </div>
                 
             <div class="col-md-4 mb-3">
-                <a href="@Url.Action("DanhsachPhieuMuon", "PhieuMuonAdmin", new { Trangthai = 0 ,indexPartial=2})" class="card-link">
+                <a href="@Url.Action("DanhsachPhieuMuon", "PhieuMuonAdmin", new { Trangthai = 0 })" class="card-link">
                     <div class="card bg-success">
                         <div class="card-body">
                             <h5 class="card-title text-white">Tổng phiếu mượn chưa duyệt</h5>
@@ -47,7 +47,7 @@
             </div>
 
             <div class="col-md-4 mb-3">
-                <a href="@Url.Action("DanhsachPhieuMuon", "PhieuMuonAdmin")" class="card-link">
+                <a href="@Url.Action("DanhsachPhieuMuon", "PhieuMuonAdmin", new { trangthai = 1 })" class="card-link">
                     <div class="card bg-success">
                         <div class="card-body">
                             <h5 class="card-title text-white">Tổng phiếu mượn chưa trả</h5>
@@ -59,7 +59,7 @@
             </div>
 
             <div class="col-md-4 mb-3">
-                <a href="@Url.Action("ThietBiList", "ThietBi", new { trangthai = "Tồn kho" })" class="card-link">
+                <a href="@Url.Action("ThietBiList", "ThietBi", new { trangthai = "Đang hư" })" class="card-link">
                     <div class="card bg-success">
                         <div class="card-body">
                             <h5 class="card-title text-white">Tổng số thiết bị hư</h5>
@@ -72,7 +72,7 @@
             </div>
 
             <div class="col-md-4 mb-3">
-                <a href="@Url.Action("DanhsachPhieuMuon", "PhieuMuonAdmin")" class="card-link">
+                <a href="@Url.Action("DanhsachPhieusua", "Phieusua")" class="card-link">
                     <div class="card bg-success">
                         <div class="card-body">
                             <h5 class="card-title text-white">Số phiếu sửa chưa hoàn thành</h5>

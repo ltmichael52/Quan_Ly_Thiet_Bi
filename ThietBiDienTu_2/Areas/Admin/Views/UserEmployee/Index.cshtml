@@ -2,32 +2,70 @@
 @using X.PagedList;
 @using X.PagedList.Mvc.Core;
 @using X.PagedList.Web.Common;
+@model X.PagedList.IPagedList<Nhanvien>
 @{
     ViewData["Title"] = "UserEmployee";
 }
-
-@model X.PagedList.IPagedList<Nhanvien>
 <script>
     $(document).ready(function () {
-        setTimeout(function () {
-            console.log("here");
-            $('.notify').css("display", "none");
-        }, 10000);
+        // Tìm kiếm khi nhấn nút Tìm kiếm
+        $('#searchButton').click(function () {
+            var searchString = $('#searchString').val();
+            searchStringAjax = searchString;
+            pageNumber = null; // Reset số trang về null khi tìm kiếm
+            getToController();
+        });
+        function getToController() {
+            $.ajax({
+                url: '/admin/UserEmployee/Index',
+                type: 'GET',
+                data: {
+                    searchString: searchStringAjax,
+                    page: pageNumber
+                },
+                success: function (response) {
+                    $('#PartialViewNv').html(response);
+                },
+                error: function () {
+                    console.log("fail");
+                }
+            });
+        }
+        // Tìm kiếm khi nhấn phím Enter trong input
+        $('#searchString').keypress(function (e) {
+            if (e.which === 13) {
+                var searchString = $('#searchString').val();
+                searchStringAjax = searchString;
+                pageNumber = null; // Reset số trang về null khi tìm kiếm
+                getToController();
+            }
+        });
     });
-</script>
-@section searchArea{
-    <form id="searchForm" action="@Url.Action("Index","UserEmployee")" method="get" style="width:40%; text-align:left;" class="d-none d-md-flex">
-        <div class="input-group">
-            <!-- Search bar -->
-            <input value="@ViewData["CurrentFilter"]" name="searchString" id="searchString" type="search" placeholder="Tìm tên nhân viên..." class="form-control rounded" aria-label="Search" style="width:200px">
-            <button class="btn btn-info rounded" type="submit">
-                <svg class="icon icon-lg">
-                    <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-search")"></use>
-                </svg>
-            </button>
-        </div>
-    </form>
 
+</script>
+@if (TempData["Action"] != null)
+{
+    <div class="alert alert-success notify">
+        <strong>Thành công!</strong> @TempData["Action"]
+    </div>
+}
+@if (TempData["Fail"] != null)
+{
+    <div class="alert alert-danger notify">
+        <strong>Thất bại!</strong> @TempData["Fail"]
+    </div>
+}
+@section searchArea {
+    <div class="input-group" style="width:40%">
+        <!-- Search bar -->
+        <input style="width:30%" name="searchStringNv" id="searchString"
+               type="search" placeholder="Tìm tên nhân viên" class="form-control rounded" aria-label="Search">
+        <button class="btn btn-info rounded" type="submit" id="searchButton">
+            <svg class="icon icon-lg">
+                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-search")"></use>
+            </svg>
+        </button>
+    </div>
 }
 
 @section naviheader{
@@ -41,19 +79,7 @@
         </nav>
     </div>
 }
-@if (TempData["Action"] != null)
-{
-    <div class="alert alert-success notify">
-        <strong>Thành công!</strong> @TempData["Action"]
-    </div>
-}
-@if(TempData["Fail"] != null)
-{
-    <div class="alert alert-danger notify">
-        <strong>Thất bại!</strong> @TempData["Fail"]
-    </div>
-}
-<!-- Content Header (Page header) -->
+<div class="container mt-3">
 <div class="card">
     <div class="card-header">
         <div class="row">
@@ -74,88 +100,12 @@
     <div class="card-body ">
         <div class="bs-stepper linear">
             <div class="bs-stepper-content">
-
-                <table class="table table-striped">
-                    <thead>
-                        <tr class="text-center">
-                            <th>STT</th>
-                            <th>Mã nv</th>
-                            <th>Tên</th>
-                            <th>Giới tính</th>
-                            <th>Ngày sinh</th>
-                            <th>Số điện thoại</th>
-                            <th>Email</th>
-                            <th>Thao tác</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @{
-                            int index = (Model.PageNumber - 1) * Model.PageSize;
-                        }
-                        @foreach (Nhanvien nv in Model)
-                        {
-                            ++index;
-                            var formattedDate = ((DateTime)nv.Ngaysinh).ToString("dd/MM/yyyy");
-                            <tr class="text-center">
-                                <td>@index</td>
-                                <td>@nv.Manv</td>
-                                <td>@nv.Tennv</td>
-                                <td>@nv.Gioitinh</td>
-                                <td>@formattedDate</td>
-                                <td>@nv.Sdt</td>
-                                <td>@nv.Email</td>
-                                <td>
-                                    <a href="/admin/userEmployee/Update/@nv.Manv" class="btn btn-info btn-sm rounded">
-                                        <svg class="icon icon-lg">
-                                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-pen")"></use>
-                                        </svg>
-                                    </a>
-                                    @if (nv.ManvNavigation.Loaitk != 2)
-                                    {
-                                        <a onclick="if (confirm('Xác nhận xóa nhân viên?') == true) {location.href='/admin/userEmployee/Delete/@nv.Manv'}" class="btn btn-danger btn-sm rounded">
-                                            <svg class="icon icon-lg">
-                                                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
-                                            </svg>
-                                        </a>
-                                    }
-                                                                 
-                                </td>
-                            </tr>
-                        }
-                        
-                    </tbody>
-                </table>
-                <nav>
-                    <ul class="pagination justify-content-center">
-                        <!-- First Page -->
-                        @if (Model.PageNumber > 1)
-                        {
-                            <li class="page-item">
-                                <a class="page-link" href="@Url.Action("Index", new { page = 1 })">Đầu</a>
-                            </li>
-                        }
-
-                        <!-- Page Numbers -->
-                        @for (var i = Math.Max(1, Model.PageNumber - 2); i <= Math.Min(Model.PageNumber + 2, Model.PageCount); i++)
-                        {
-                            <li class="page-item @(Model.PageNumber == i ? "active" : "")">
-                                <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
-                            </li>
-                        }
-
-                        <!-- Last Page -->
-                        @if (Model.PageNumber < Model.PageCount)
-                        {
-                            <li class="page-item">
-                                <a class="page-link" href="@Url.Action("Index", new { page = Model.PageCount })">Cuối</a>
-                            </li>
-                        }
-                    </ul>
-                </nav>
-         </div>
+                <div id="PartialViewNv">
+                    <partial name="PartialViewNv" model="Model" />
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
-
 <div class="footer"></div>
