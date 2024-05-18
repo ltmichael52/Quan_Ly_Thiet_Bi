@@ -19,72 +19,42 @@
 <!-- Content Header (Page header) -->
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Thêm phiếu sửa</h3>
+        <div class="row">
+            <div class="col">
+                <h3 class="card-title">Thêm phiếu sửa</h3>
+            </div>
+
+            <div class="col-auto text-center">
+                <div class="card-tools">
+                    <a class="btn btn-primary btn-sm submitButton" asp-action="CreatePsFinal" asp-controller="Phieusua">
+                        Tạo mới
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="card-body">
             <h3 class="text-center">Danh sách thiết bị</h3>
-            <div class="row">
-                <div class="col-md-6">
-                    <partial name="_PartialViewAddFix" model="Model.tbList"/>
-                </div>
-                <div class="col-md-6">
-                    <h4 class="text-right">Tổng chi phí: 10000đ</h4>
+            <div id="showChoosen">
+                <partial name="_PartialViewShowChoosen" model="Model"/>
+            </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <a asp-action="DanhsachPhieuSua" asp-controller="Phieusua" class="btn btn-secondary btn-sm">Quay lại</a>
+
+            </div>
+            <div class="col-md-6">
+                <div class="card-tools float-right">
+                    <a class="btn btn-primary btn-sm submitButton" asp-action="CreatePsFinal" asp-controller="Phieusua">
+                        Tạo mới
+                    </a>
                 </div>
             </div>
-         <table class="table table-striped">
-             <thead class="text-center">
-                 <tr>
-                    <th>STT</th>
-                    <th>Ảnh</th>
-                    <th>Tên thiết bị</th>
-                    <th>Seri</th>
-                    <th>Kho</th>
-                    <th>Chi phí</th>
-                    <th>Mô tả</th>
-                    <th>Thao tác</th>
-                 </tr>
-                 
-             </thead>
-            <tbody class="text-center">
-                @{
-                    int index = (Model.tbChoosen.PageNumber - 1) * Model.tbChoosen.PageSize;
-                }
-                @foreach(TbFixAndCheck tbFix in Model.tbChoosen)
-                {
-                    <tr>
-                        <td>@(++index)</td>
-                        <td>
-                            <img src="@Url.Content("~/images/" + tbFix.Hinhanh)" class="card-image-top thumbnail-image" />
-                        </td>
-                        <td>
-                            @tbFix.Tentb
-                        </td>
-                        <td>@tbFix.Seri</td>
-                        <td>@tbFix.TenKho</td>
-                        <td>@tbFix.Chiphi</td>
-                        <td>
-                            @tbFix.Mota
-                        </td>
-                        <td>
-                            <a class="btn btn-info btn-sm rounded" >
-                                <svg class="icon icon-lg">
-                                    <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-pen")"></use>
-                                </svg>
-                            </a>
-                            <a class="btn btn-danger btn-sm" >
-                                <svg class="icon icon-lg">
-                                    <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
-                                </svg>
-                            </a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-         </table>
+        </div>
     </div>
 </div>
-
-
 
 
 <div class="footer"></div>

@@ -7,5 +7,6 @@ namespace ThietBiDienTu_2.Areas.Admin.InterfaceRepositories
     {
         bool TbHasPhieuSua(int matb);
         List<Phieusua> GetAllPs();
+        int CreatePs(List<TbFixAndCheck> tbChoosenList,decimal tongchiphi);
     }
 }

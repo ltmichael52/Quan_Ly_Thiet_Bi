@@ -41,12 +41,15 @@
             }
         });
     });
-
+    setTimeout(function () {
+        console.log("here");
+        $('#notify').css("display", "none");
+    }, 10000);
 </script>
 @if (TempData["AlertMessage"] != null)
 {
     <div class="alert alert-success" id="notify">
-        <strong>Success!</strong> @TempData["AlertMessage"]
+        <strong>Thành công!</strong> @TempData["AlertMessage"]
     </div>
 }
 @section searchArea {
