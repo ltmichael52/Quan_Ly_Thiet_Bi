@@ -54,6 +54,7 @@
             getToAddBorrowDevices();
          });
 
+
          $('#ngayMuonInput').val(Ngaymuon);
         function getToAddBorrowDevices() {
              $.ajax({
@@ -73,7 +74,7 @@
                  }
              });
          }
-
+       
         function closeModalPopup() {
             $('#exampleModal').removeClass('show');
             $('#exampleModal').attr('aria-hidden', 'true');

@@ -39,6 +39,20 @@
 
     </div>
 }
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            console.log("here");
+            $('.notify').css("display", "none");
+        }, 10000);
+    });
+</script>
+@if (TempData["AlertMessage"] != null)
+{
+    <div class="alert alert-success notify">
+        <strong>Thành công!</strong> @TempData["AlertMessage"]
+    </div>
+}
 <div class="card">
     <div class="card-header">
         <div class="row">
@@ -85,16 +99,28 @@
                                 <tr class="text-center">
                                     <td>@indexCount</td>
                                     <td>@ps.Maps</td>
-                                    <td>@formattedDateNgayLap</td>
+                                    <td>@ps.Ngaylap</td>
                                     <td>@ps.Trangthai</td>
-                                    <td>@ps.Tongchiphi?.ToString("#,##0")đ</td>
+                                    <td>
+                                        <div class="custom-div success" style="cursor: default">
+                                            <svg class="icon icon-lg">
+                                                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-money")"></use>
+                                            </svg>
+                                            <span class="ml-1"> @ps.Tongchiphi?.ToString("#,##0")đ</span>
+                                        </div>
+                                    </td>
+
                                     <td>
                                         <a asp-action="ChitietPhieuMuon" asp-controller="PhieuMuonAdmin" asp-route-mapm="@ps.Maps" class="btn btn-info btn-sm rounded">
                                             <svg class="icon icon-lg">
                                                 <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-pen")"></use>
                                             </svg>
                                         </a>
-
+                                        <a onclick="if (confirm('Xác nhận xóa phiếu sửa này?') == true) {location.href='/admin/'}" class="btn btn-danger btn-sm rounded">
+                                        <svg class="icon icon-lg">
+                                            <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
+                                        </svg>
+                                    </a>
                                     </td>
                                 </tr>
                             }
