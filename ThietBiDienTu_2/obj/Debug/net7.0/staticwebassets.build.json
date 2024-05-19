@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ya7/F4l/hj34Hs0lHxYv9FwLsomOVHAixucEJv0gsww=",
+  "Hash": "08tH1tXCTVIR41BcjUfuS6Jl3I+of/snbThPw8J/elk=",
   "Source": "ThietBiDienTu_2",
   "BasePath": "_content/ThietBiDienTu_2",
   "Mode": "Default",
@@ -10200,6 +10200,23 @@
       "OriginalItemSpec": "wwwroot\\images\\76bacfe2-146e-4404-93b7-c1999e617648-download (1).jpg"
     },
     {
+      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\7cc59cb9-7dc2-482b-ae3a-ec572b186502-AddColor.png",
+      "SourceId": "ThietBiDienTu_2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
+      "BasePath": "_content/ThietBiDienTu_2",
+      "RelativePath": "images/7cc59cb9-7dc2-482b-ae3a-ec572b186502-AddColor.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\7cc59cb9-7dc2-482b-ae3a-ec572b186502-AddColor.png"
+    },
+    {
       "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\a2b59c44-d978-4488-bf9f-ced800da0d31-68113c29-6fb8-4cca-b337-6ef9e1cbe99a.jpg",
       "SourceId": "ThietBiDienTu_2",
       "SourceType": "Discovered",
@@ -10521,6 +10538,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\f51d59b3-5caf-49b1-b069-332bfc8c4587-TIVI.jpg"
+    },
+    {
+      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\f585b123-53e2-45f2-b420-1bf5aed2f049-EditBanner.png",
+      "SourceId": "ThietBiDienTu_2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
+      "BasePath": "_content/ThietBiDienTu_2",
+      "RelativePath": "images/f585b123-53e2-45f2-b420-1bf5aed2f049-EditBanner.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\f585b123-53e2-45f2-b420-1bf5aed2f049-EditBanner.png"
     },
     {
       "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\micBest.jpg",

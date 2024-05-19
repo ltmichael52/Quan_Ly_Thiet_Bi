@@ -67,7 +67,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 
             var pageNumber = page ?? 1;
             var pageSize = 5;
-            var pagedDongThietBiList = dongthietbiList.ToPagedList(pageNumber, pageSize);
+            var pagedDongThietBiList = dongthietbiList.OrderByDescending(x=>x.Madongtb).ToPagedList(pageNumber, pageSize);
 
             if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
             {

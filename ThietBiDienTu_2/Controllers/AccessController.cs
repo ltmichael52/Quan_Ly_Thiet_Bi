@@ -14,7 +14,7 @@ namespace ThietBiDienTu_2.Controllers
 
         public IActionResult Login()
         {
-           
+            
             if (HttpContext.Session.GetInt32("UserName") == null)
             {
                 return View();
