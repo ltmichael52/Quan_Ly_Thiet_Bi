@@ -31,60 +31,53 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
         }
 
 
-		public async Task<IActionResult> Index(string? searchString, int? page)
-		{
-			List<DongThietBiViewModel> dongthietbiList = new List<DongThietBiViewModel>();
+        public async Task<IActionResult> Index(string? searchString, int? page)
+        {
+            List<DongThietBiViewModel> dongthietbiList = new List<DongThietBiViewModel>();
 
-			// Lấy danh sách các dòng thiết bị từ cơ sở dữ liệu
-			var allDongThietBi = _context.Dongthietbis.Include(d => d.Thietbis).ToList();
+            // Lấy danh sách các dòng thiết bị từ cơ sở dữ liệu
+            var allDongThietBi = _context.Dongthietbis.Include(d => d.Thietbis).ToList();
 
-			foreach (var dongthietbi in allDongThietBi)
-			{
-				// Tính số lượng thiết bị hoạt động của đối tượng DongThietBi
-				int soLuongHoatDong = dongthietbi.Thietbis.Count(t => t.Trangthai == "Hoạt động");
+            foreach (var dongthietbi in allDongThietBi)
+            {
+                int soLuongHoatDong = dongthietbi.Thietbis.Count(t => t.Trangthai == "Hoạt động");
+                int soLuongHu = dongthietbi.Thietbis.Count(t => t.Trangthai == "Hư");
+                int soLuongTonKho = dongthietbi.Thietbis.Count(t => t.Trangthai == "Sẵn sàng");
 
-				// Tính số lượng thiết bị hỏng của đối tượng DongThietBi
-				int soLuongHu = dongthietbi.Thietbis.Count(t => t.Trangthai == "Hư");
+                var dongThietBiViewModel = new DongThietBiViewModel
+                {
+                    Madongtb = dongthietbi.Madongtb,
+                    Tendongtb = dongthietbi.Tendongtb,
+                    Soluong = dongthietbi.Soluong,
+                    Mota = dongthietbi.Mota,
+                    Hinhanh = dongthietbi.Hinhanh,
+                    SoLuongHoatDong = soLuongHoatDong,
+                    SoLuongHu = soLuongHu,
+                    SoLuongTonKho = soLuongTonKho,
+                    NeedsMoreDevices = dongthietbi.Soluong > (soLuongHoatDong + soLuongHu + soLuongTonKho) // Calculate the need for more devices
+                };
 
-				// Tính số lượng thiết bị Sẵn sàng của đối tượng DongThietBi
-				int soLuongTonKho = dongthietbi.Thietbis.Count(t => t.Trangthai == "Sẵn sàng");
-
-				// Tạo một đối tượng ViewModel mới để chứa thông tin
-				var dongThietBiViewModel = new DongThietBiViewModel
-				{
-					Madongtb = dongthietbi.Madongtb,
-					Tendongtb = dongthietbi.Tendongtb,
-					Soluong = dongthietbi.Soluong,
-					Mota = dongthietbi.Mota,
-					Hinhanh = dongthietbi.Hinhanh,
-					SoLuongHoatDong = soLuongHoatDong,
-					SoLuongHu = soLuongHu,
-					SoLuongTonKho = soLuongTonKho
-				};
-
-				// Thêm đối tượng ViewModel vào danh sách
-				dongthietbiList.Add(dongThietBiViewModel);
-			}
+                dongthietbiList.Add(dongThietBiViewModel);
+            }
 
             if (!string.IsNullOrEmpty(searchString))
             {
                 dongthietbiList = dongthietbiList.Where(d => d.Tendongtb.ToLower().Contains(searchString.ToLower())).ToList();
             }
-            // Phân trang
-            var pageNumber = page ?? 1; // Trang hiện tại, mặc định là trang 1 nếu không có page được truyền vào
-            var pageSize = 5; // Số lượng mục trên mỗi trang
-            var pagedDongThietBiList = dongthietbiList.ToPagedList(pageNumber, pageSize); // Tạo danh sách phân trang
 
-            // Nếu có chuỗi tìm kiếm, lọc danh sách dòng thiết bị
+            var pageNumber = page ?? 1;
+            var pageSize = 5;
+            var pagedDongThietBiList = dongthietbiList.ToPagedList(pageNumber, pageSize);
 
-
-            // Kiểm tra xem request có phải là Ajax không
             if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
             {
                 return PartialView("PartialViewDongtb", pagedDongThietBiList);
             }
-            return View(pagedDongThietBiList); // Truyền đúng kiểu dữ liệu cho View
-		}
+
+            return View(pagedDongThietBiList);
+        }
+
+
 
         private bool IsAjaxRequest()
         {
@@ -165,8 +158,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 						string errorMessage = error.ErrorMessage;
 						string exceptionMessage = error.Exception?.Message;
 
-						// Print error message to the console or log it
-						Debug.WriteLine($"Error: {errorMessage}");
+						
 
 						// Handle exception message if there's an exception associated with the error
 						if (exceptionMessage != null)

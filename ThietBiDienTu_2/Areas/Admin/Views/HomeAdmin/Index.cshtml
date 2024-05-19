@@ -6,7 +6,7 @@
 
 }
 
-<h1>QUẢN LÝ THIẾT BỊ TRƯỜNG ĐẠI HỌC QUỐC TẾ SÀI GÒN</h1>
+<h1 class="text-center">QUẢN LÝ THIẾT BỊ TRƯỜNG ĐẠI HỌC QUỐC TẾ SÀI GÒN</h1>
 
 <!DOCTYPE html>
 <html>
@@ -72,13 +72,13 @@
             </div>
 
             <div class="col-md-4 mb-3">
-                <a href="@Url.Action("DanhsachPhieusua", "Phieusua")" class="card-link">
+                <a href="@Url.Action("DanhsachPhieusua", "Phieusua", new { trangthai = "Chưa trả" })" class="card-link">
                     <div class="card bg-success">
                         <div class="card-body">
                             <h5 class="card-title text-white">Số phiếu sửa chưa hoàn thành</h5>
                             <p class="card-text text-white">Hôm nay: @ViewBag.Today</p>
                             <p class="card-text text-white">Gồm các phiếu sửa chưa sửa xog</p>
-                            <p class="card-text text-white"><strong>Tổng số:</strong></p>
+                            <p class="card-text text-white"><strong>Tổng số: @ViewBag.ChuaSuaCount</strong></p>
                         </div>
                     </div>
             </div>
