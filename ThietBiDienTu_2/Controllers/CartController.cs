@@ -157,11 +157,11 @@ namespace ThietBiDienTu_2.Controllers
             CartItemViewModel cartVM = new()
             {
                 CartItems = cartItems,
-                Sv = _dataContext.Sinhviens.Find(HttpContext.Session.GetInt32("UserName")),
+                Sv = _dataContext.Sinhviens.Find(/*HttpContext.Session.GetInt32("UserName")*/485),
                 Phieumuon = new Phieumuon()
                 {
                     Ngaylap = DateTime.Now,
-                    Ngaymuon = DateTime.Parse(HttpContext.Session.GetString("NgayDat")),
+                    Ngaymuon = /*DateTime.Parse(HttpContext.Session.GetString("NgayDat")) */DateTime.Now,
 
                 }
 
