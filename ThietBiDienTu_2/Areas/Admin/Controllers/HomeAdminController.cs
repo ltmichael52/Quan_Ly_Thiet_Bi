@@ -57,6 +57,9 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             int thietbihuCount = _context.Thietbis.Count(p => p.Trangthai == "Đang hư");
             ViewBag.ThietBiHuCount = thietbihuCount;
 
+            int chuasuaCount = _context.Phieusuas.Count(p => p.Trangthai == 1);
+            ViewBag.ChuaSuaCount = chuasuaCount; 
+
             return View();
         }
 

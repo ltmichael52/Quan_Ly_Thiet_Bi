@@ -27,6 +27,13 @@ namespace ThietBiDienTu_2.Controllers
 
             int chuaduyetCount = _context.Phieumuons.Count(p => p.Trangthai == 0 && p.Masv == masv);
             ViewBag.CDCount = chuaduyetCount;
+
+            var student = _context.Sinhviens.FirstOrDefault(s => s.Masv == masv);
+            string studentName = student != null ? student.Tensv : "Sinh viên";
+
+            // Store the student's name in ViewBag
+            ViewBag.StudentName = studentName;
+
             return View();
         }
     }
