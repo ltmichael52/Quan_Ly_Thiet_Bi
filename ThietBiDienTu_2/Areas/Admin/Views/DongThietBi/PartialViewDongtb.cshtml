@@ -45,7 +45,7 @@
     </thead>
     <tbody class="text-center">
         @{
-            int a = 0;
+            int a = (Model.PageNumber -1 ) * Model.PageSize;
         }
         @foreach (var dtb in Model)
         {

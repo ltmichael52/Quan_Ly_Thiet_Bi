@@ -31,10 +31,10 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
         {
             List<SelectListItem> loaiphong = new List<SelectListItem>
             {
-                new SelectListItem { Text = "Phòng Kho", Value = "kho" },
-                new SelectListItem { Text = "Phòng Nhân Viên", Value = "nhanvien" },
+                new SelectListItem { Text = "Phòng Kho", Value = "Kho" },
+                new SelectListItem { Text = "Phòng Nhân Viên", Value = "Phòng nhân viên" },
                 new SelectListItem { Text = "Phòng Học", Value = "Phòng học" },
-                new SelectListItem { Text = "Phòng Chung", Value = "chung" }
+                new SelectListItem { Text = "Phòng Chung", Value = "Phòng chung" }
             };
             ViewBag.RoomTypes = loaiphong;
 

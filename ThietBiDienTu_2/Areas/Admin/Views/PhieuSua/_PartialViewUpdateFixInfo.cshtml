@@ -58,7 +58,7 @@
                             <div class="form-group mb-2">
                                 <label class="mb-2"><strong>Mô tả</strong></label>
                                 <textarea id="Description_@Model.Matb" class="form-control" cols="40" rows="3">@(Model.Mota)</textarea>
-                            <span class="text-danger" id="Mota_validation_@Model.Matb"></span>
+                            <span class="text-danger " id="Mota_validation_@Model.Matb"></span>
                             </div>
 
                     </div>
@@ -76,7 +76,7 @@
     $(document).ready(function () {
         var pageChoosenView = '@ViewBag.Pagechoosen';
         var matb = '@Model.Matb';
-
+        var mapsView = $('#mapsInput').val();
 
         var validationChiphi = '@Html.Raw(HttpUtility.JavaScriptStringEncode(ViewBag.Chiphi))';
         $('#Chiphi_validation_' + matb).text(validationChiphi);
@@ -94,11 +94,12 @@
             var chiphiView = $('#Chiphi_' + matb).val();
             var motaView = $('#Description_' + matb).val();
             console.log("chi phi view : " +chiphiView);
-            if (chiphiView == "" || chiphiView == "0.0" || motaView == null || motaView == "") {
+            if (chiphiView == "" || chiphiView == "0" || motaView == null || motaView == "") {
                 $.ajax({
-                    url: '/admin/Phieusua/ValidationUpdateInfoFix',
+                    url: '/admin/Phieusua/ValidationUpdateInfoFixUpdate',
                     type: 'Get',
                     data: {
+                        maps : mapsView,
                         matb: matbView,
                         Chiphi: chiphiView,
                         Mota: motaView,
@@ -120,9 +121,10 @@
 
         function getToUpdateInfoFix(matbView, chiphiView, motaView) {
             $.ajax({
-                url: '/admin/Phieusua/updateInfoFix',
+                url: '/admin/Phieusua/updateInfoFixUpdate',
                 type: 'Get',
                 data: {
+                    maps : mapsView,
                     matb : matbView,
                     Chiphi: chiphiView,
                     Mota: motaView,
@@ -135,6 +137,10 @@
             });
         }
         $('.CloseModalPopup').click(function () {
+            $('#Chiphi_' + matb).val('@Model.Chiphi.ToString("#.")');
+            $('#Description_' + matb).val('@Model.Mota');
+            $('#Chiphi_validation_' + matb).text("");
+            $('#Mota_validation_' + matb).text("");
             console.log("Get to click close popup ");
             closeModalPopup();
         });
