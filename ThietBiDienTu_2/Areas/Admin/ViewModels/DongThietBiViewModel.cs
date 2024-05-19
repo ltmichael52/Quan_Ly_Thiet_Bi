@@ -20,7 +20,9 @@ namespace ThietBiDienTu_2.Areas.Admin.ViewModels
 
 		public int SoLuongHu { get; set; }
 
-		public string? Mota { get; set; }
+        public bool NeedsMoreDevices { get; set; }
+
+        public string? Mota { get; set; }
 
 		[NotMapped]
 		public IFormFile hinhanh { get; set; }

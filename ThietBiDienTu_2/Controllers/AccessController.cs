@@ -51,7 +51,7 @@ namespace ThietBiDienTu_2.Controllers
                     if (HttpContext.Session.GetInt32("TypeAccount") == 0)
                     {
 
-                        return RedirectToAction("Index", "ProcductManagement");
+                        return RedirectToAction("Index", "Home");
                     }
                     else
                     {

@@ -46,7 +46,13 @@
 @if (TempData["AlertMessage"] != null)
 {
     <div class="alert alert-success" id="notify">
-        <strong>Success!</strong> @TempData["AlertMessage"]
+        <strong>Thành công!</strong> @TempData["AlertMessage"]
+    </div>
+}
+@if (TempData["DangerMessage"] != null)
+{
+    <div class="alert alert-danger" id="notify">
+        <strong>Thất bại!</strong> @TempData["DangerMessage"]
     </div>
 }
 @section searchArea {
