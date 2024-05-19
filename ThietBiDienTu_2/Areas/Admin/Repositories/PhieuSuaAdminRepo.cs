@@ -56,5 +56,62 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
             return ps.Maps;
         }
 
+        public bool Deletepheusua(int maps)
+        {
+            Phieusua ps = context.Phieusuas.FirstOrDefault(x => x.Maps == maps);
+            ps.Chitietphieusuas = context.Chitietphieusuas.Where(x => x.Maps == maps).Include(x => x.MatbNavigation).ToList();
+            if(ps.Chitietphieusuas.Any(x=>x.MatbNavigation.Trangthai != "Sẵn sàng" && x.MatbNavigation.Trangthai != "Đang hư" && x.MatbNavigation.Trangthai != "Đang sửa"))
+            {
+                //Because when delete all the device change again to "Dang hu"
+                return false;
+            }
+            foreach(Chitietphieusua ctps in ps.Chitietphieusuas)
+            {
+                ctps.MatbNavigation.Trangthai = "Đang hư";
+                context.Thietbis.Update(ctps.MatbNavigation);
+                
+            }
+            context.SaveChanges();
+
+            context.Chitietphieusuas.RemoveRange(ps.Chitietphieusuas);
+            context.SaveChanges();
+
+            context.Phieusuas.Remove(ps);
+            context.SaveChanges();
+            return true;
+        }
+
+        public Phieusua GetPsById(int maps)
+        {
+            Phieusua ps = context.Phieusuas.Find(maps);
+            ps.Chitietphieusuas = context.Chitietphieusuas.Where(x => x.Maps == maps).Include(x => x.MatbNavigation)
+                                                            .ThenInclude(x => x.MapNavigation)
+                                                            .Include(x => x.MatbNavigation)
+                                                            .ThenInclude(x => x.MadongtbNavigation).ToList();
+
+            return ps;
+        }
+
+        public void UpdatePhieusua(List<TbFixAndCheck> tbFixCheck, Phieusua ps)
+        {
+            ps.Trangthai = tbFixCheck.Any(x => x.CheckFix == false) ? 0 : 1;
+            ps.Tongchiphi = tbFixCheck.Sum(x => x.Chiphi);
+
+            context.Phieusuas.Update(ps);
+            context.SaveChanges();
+            DateTime today = DateTime.Now; 
+            foreach(TbFixAndCheck tb in tbFixCheck)
+            {
+                Chitietphieusua ctps = context.Chitietphieusuas.FirstOrDefault(x => x.Matb == tb.Matb && x.Maps == ps.Maps);
+                ctps.Chiphi = tb.Chiphi;
+                ctps.Mota = tb.Mota;
+                if(ctps.Ngayhoanthanh.HasValue ==false && tb.CheckFix == true) {
+                    ctps.Ngayhoanthanh = today;
+                }
+                context.Chitietphieusuas.Update(ctps);
+
+            }
+            context.SaveChanges();
+        }
     }
 }

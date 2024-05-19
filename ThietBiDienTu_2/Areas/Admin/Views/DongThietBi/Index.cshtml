@@ -52,6 +52,13 @@
         <strong>Thành công!</strong> @TempData["AlertMessage"]
     </div>
 }
+@if (TempData["DangerMessage"] != null)
+{
+    <div class="alert alert-danger" id="notify">
+        <strong>Thất bại!</strong> @TempData["DangerMessage"]
+
+    </div>
+}
 @section searchArea {
     <div class="input-group" style="width:40%">
         <!-- Search bar -->

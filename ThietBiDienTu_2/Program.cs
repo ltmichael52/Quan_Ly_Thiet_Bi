@@ -64,10 +64,7 @@ app.MapAreaControllerRoute(
     );
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Histroy}/{action=Index}/{id?}");
-
-
-
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 
 app.Run();
