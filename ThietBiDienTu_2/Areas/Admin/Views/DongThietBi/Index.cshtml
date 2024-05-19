@@ -41,7 +41,10 @@
             }
         });
     });
-
+    setTimeout(function () {
+        console.log("here");
+        $('#notify').css("display", "none");
+    }, 10000);
 </script>
 @if (TempData["AlertMessage"] != null)
 {
@@ -53,6 +56,7 @@
 {
     <div class="alert alert-danger" id="notify">
         <strong>Thất bại!</strong> @TempData["DangerMessage"]
+
     </div>
 }
 @section searchArea {
@@ -72,7 +76,7 @@
     <div class="container-fluid">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/Admin/HomeAdmin/Index">Home</a></li>
+                <li class="breadcrumb-item"><a href="/Admin/HomeAdmin/Index">Trang chủ</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Dòng thiết bị</li>
             </ol>
         </nav>

@@ -9,10 +9,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
-    <meta name="author" content="Łukasz Holeczek">
-    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
-    <title>CoreUI Free Bootstrap Admin Template</title>
+    <meta name="description" content="Phần mềm quản lý thiết bị">
+    <meta name="author" content="Powered By G1">
+    <meta name="keyword" content="Cho các trường đại học">
+    <title>Phần mềm quản lý thiết bị</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="apple-touch-icon" sizes="57x57" href="@Url.Content("~/LayoutAdmin/dist/assets/favicon/apple-icon-57x57.png")">
     <link rel="apple-touch-icon" sizes="60x60" href="@Url.Content("~/LayoutAdmin/dist/assets/favicon/apple-icon-60x60.png")">
@@ -69,7 +69,7 @@
                 <a class="nav-link" href="@Url.Action("Index", "HomeAdmin")">
                     <svg class="nav-icon">
                         <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-home")"></use>
-                    </svg>Home
+                    </svg>Trang chủ
                 </a>
             </li>
             <li class="nav-group">
@@ -113,7 +113,7 @@
                         <a class="nav-link" asp-action="DanhsachPhieuSua" asp-controller="Phieusua">
                             <svg class="nav-icon">
                                 <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-note-add")"></use>
-                            </svg>Danh sách phiêu sửa
+                            </svg>Danh sách phiếu sửa
                         </a>
                     </li>
                 </ul>
@@ -221,29 +221,6 @@
                     </svg>
                 </button>
                 @RenderSection("searchArea",required:false)
-                @* <ul class="header-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link">
-                            <svg class="icon icon-lg">
-                                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-bell")"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">
-                            <svg class="icon icon-lg">
-                                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-list-rich")"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">
-                            <svg class="icon icon-lg">
-                                <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-envelope-open")"></use>
-                            </svg>
-                        </a>
-                    </li>
-                </ul> *@
                 <ul class="header-nav ms-3">
                     <li class="nav-item dropdown">
                         <a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -274,7 +251,7 @@
         </div>
         <footer class="footer">
             <div>G1 Company</a> © 2024 G1_Labs.</div>
-            <div class="ms-auto">Powered by&nbsp C#</div>
+            <div class="ms-auto">Powered by&nbsp G1</div>
         </footer>
     </div>
     <!-- CoreUI and necessary plugins-->

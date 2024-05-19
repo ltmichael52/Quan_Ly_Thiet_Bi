@@ -117,6 +117,36 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             }
             else
             {
+                Taikhoan tkTemp = new Taikhoan
+                {
+                    Matk = -1,
+                    Matkhau = "123456",
+                    Loaitk = 0
+                };
+                _context.Taikhoans.Add(tkTemp);
+
+
+                Nhanvien nvTemp = new Nhanvien
+                {
+                    Manv = -1,
+                    Tennv = "123",
+                    Ngaysinh = DateTime.Now,
+                    Gioitinh = "Nam",
+                    Email = "abc.com",
+                    Sdt = "112",
+                };
+                _context.Nhanviens.Add(nvTemp);
+                _context.SaveChanges();
+
+                List<Phieumuon> pmSv = _context.Phieumuons.Where(x => x.Manv == emp_acc.acc.Matk).ToList();
+                for (int i = 0; i < pmSv.Count(); ++i)
+                {
+                    pmSv[i].Manv = nvTemp.Manv;
+                }
+
+                _context.Phieumuons.UpdateRange(pmSv);
+                _context.SaveChanges();
+
                 //Update method doesn't track the change of the primary key 
                 //So need to remove then add new one
                 Taikhoan acc = _context.Taikhoans.FirstOrDefault(x => x.Matk == emp_acc.acc.Matk);
@@ -132,6 +162,20 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                 _context.Taikhoans.Add(emp_acc.acc);
                 _context.Nhanviens.Add(emp_acc.nv);
                 _context.SaveChanges();
+
+                for (int i = 0; i < pmSv.Count(); ++i)
+                {
+                    pmSv[i].Manv = emp_acc.nv.Manv;
+                }
+
+                _context.Phieumuons.UpdateRange(pmSv);
+                _context.SaveChanges();
+
+                _context.Nhanviens.Remove(nvTemp);
+                _context.Taikhoans.Remove(tkTemp);
+                _context.SaveChanges();
+
+
                 TempData["Action"] = "Cập nhật thành công";
                 return RedirectToAction("Index");
             }

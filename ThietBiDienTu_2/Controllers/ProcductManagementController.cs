@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using ThietBiDienTu_2.Models;
 using ThietBiDienTu_2.Models.Authentication;
@@ -26,70 +27,72 @@ namespace ThietBiDienTu_2.Controllers
         public IActionResult Index(string? searchString, DateTime? NgayDat, string trangThai)
         {
             var viewModel = new HomeViewModel();
-            var dongthietbi = _dataContext.Dongthietbis.AsQueryable();
-            List<Dongthietbi> dongtbList = _dataContext.Dongthietbis.ToList();
 
-            // Create a separate list for display
-            List<Dongthietbi> displayList = new List<Dongthietbi>(); // Initialize empty list
-
-            foreach (Dongthietbi tb in dongtbList)
+            // Lưu ngày đặt vào session nếu NgayDat được truyền vào
+            if (NgayDat != null)
             {
-                int soLuong = _dataContext.Thietbis
-                    .Count(ct => ct.Madongtb == tb.Madongtb && ct.Trangthai == "Sẵn sàng");
-                tb.Soluong = soLuong;
+                HttpContext.Session.SetString("NgayDat", NgayDat.Value.ToString("dd-MM-yyyy"));
             }
-            //Lấy hết thiết bị trong kho với tổng số lượng sẵn sàng
-            displayList = dongtbList;
-            viewModel.DongThietBiList = displayList.Take(4).ToList();
-            
-            if (IsAjaxRequest())
+            else
             {
-                if (!string.IsNullOrEmpty(searchString))
+                // Nếu NgayDat không được truyền vào, kiểm tra xem đã có session NgayDat hay chưa
+                string sessionNgayDat = HttpContext.Session.GetString("NgayDat");
+                if (!string.IsNullOrEmpty(sessionNgayDat))
                 {
-                    // If there's a search string, use the filtered thietbi list for display
-                    displayList = dongthietbi.Where(x => x.Tendongtb.Contains(searchString)).ToList();
-                }
-
-
-                if (NgayDat != null)
-                {
-                    HttpContext.Session.SetString("NgayDat", NgayDat?.ToString("dd-MM-yyyy"));
-                    // Query to get details for the specified date
-                    List<Chitietphieumuon> chiTietPhieuMuonList = _dataContext.Chitietphieumuons
-                        .Include(ct => ct.MapmNavigation)
-                        .Where(ct => ct.MapmNavigation.Ngaymuon.Date == NgayDat.Value.Date)
-                        .ToList();
-
-                    // Lọc ra các mã thiết bị đã được mượn vào ngày đó
-                    List<string> maThietBiDaMuon = chiTietPhieuMuonList.Select(ct => ct.Matb.ToString()).ToList();
-
-                    // Lọc danh sách hiển thị để loại bỏ các thiết bị đã được mượn
-                    displayList = displayList.Select(x=> new Dongthietbi
+                    // Chuyển đổi session NgayDat từ chuỗi thành DateTime
+                    if (DateTime.TryParseExact(sessionNgayDat, "dd-MM-yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime parsedNgayDat))
                     {
-                        Tendongtb = x.Tendongtb,
-                        Hinhanh = x.Hinhanh,
-                        Soluong = x.Soluong,
-                        Mota = x.Mota,
-                        Madongtb = x.Madongtb,
-                        Thietbis = _dataContext.Thietbis.Where(y=>y.Madongtb==x.Madongtb && !maThietBiDaMuon.Contains(y.Matb.ToString())).ToList(),
-                    }).ToList();
-
-                    // Gán dữ liệu vào ViewModel
-                    viewModel.DongThietBiList = displayList;
-                    viewModel.NgayDat = NgayDat;
-                    viewModel.ChiTietPhieuMuonList = chiTietPhieuMuonList;
+                        NgayDat = parsedNgayDat;
+                    }
                 }
+            }
 
-                if (trangThai == "Sẵn sàng")
-                {
-                    // Trả về tất cả các mục
-                    viewModel.DongThietBiList = displayList;
-                }
+            // Lấy danh sách đồng thiết bị từ cơ sở dữ liệu
+            IQueryable<Dongthietbi> dongthietbiQuery = _dataContext.Dongthietbis.Include(x => x.Thietbis);
 
+            // Lọc theo từ khóa tìm kiếm nếu có
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                dongthietbiQuery = dongthietbiQuery.Where(x => x.Tendongtb.Contains(searchString));
+            }
 
+            // Lọc theo ngày đặt nếu có NgayDat được chỉ định
+            if (NgayDat != null)
+            {
+                // Lọc ra các mã thiết bị đã được mượn vào ngày đó
+                List<string> maThietBiDaMuon = _dataContext.Chitietphieumuons
+                    .Where(ct => ct.MapmNavigation.Ngaymuon.Date == NgayDat.Value.Date)
+                    .Select(ct => ct.Matb.ToString())
+                    .ToList();
+
+                // Loại bỏ các thiết bị đã được mượn khỏi danh sách đồng thiết bị
+                dongthietbiQuery = dongthietbiQuery.Where(x => !x.Thietbis.Any(y => maThietBiDaMuon.Contains(y.Matb.ToString())));
+            }
+
+            // Lấy danh sách đồng thiết bị sau khi đã lọc
+            List<Dongthietbi> displayList = dongthietbiQuery.ToList();
+
+            // Kiểm tra trạng thái để trả về danh sách đồng thiết bị phù hợp
+            if (trangThai == "Sẵn sàng")
+            {
+                // Trả về tất cả các mục
+                viewModel.DongThietBiList = displayList;
+            }
+            else
+            {
+                // Giới hạn số lượng đồng thiết bị hiển thị (ví dụ: 4)
+                viewModel.DongThietBiList = displayList.Take(4).ToList();
+            }
+
+            viewModel.NgayDat = NgayDat; // Gán ngày đặt vào ViewModel
+
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest" )
+            {
+                // Trả về partial view khi là request AJAX
                 return PartialView("_PartialShowProduct", viewModel);
             }
 
+            // Trả về view chính khi là request không phải AJAX
             return View(viewModel);
         }
 
