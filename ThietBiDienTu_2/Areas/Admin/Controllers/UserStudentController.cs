@@ -169,6 +169,39 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             }
             else
             {
+                
+                Taikhoan tkTemp = new Taikhoan
+                {
+                    Matk = -1,
+                    Matkhau = "123456",
+                    Loaitk =0 
+                };
+                _context.Taikhoans.Add(tkTemp);
+
+
+                Sinhvien svTemp = new Sinhvien
+                {
+                    Masv = -1,
+                    Tensv = "123",
+                    Ngaysinh = DateTime.Now,
+                    Gioitinh = "Nam",
+                    Email = "abc.com",
+                    Sdt = "112",
+                    Makhoa = stu_acc.sv.Makhoa,
+                    Manganh = stu_acc.sv.Manganh,
+                };
+                _context.Sinhviens.Add(svTemp);
+                _context.SaveChanges();
+
+                List<Phieumuon> pmSv = _context.Phieumuons.Where(x => x.Masv == stu_acc.acc.Matk).ToList();
+                for(int i = 0; i < pmSv.Count(); ++i)
+                {
+                    pmSv[i].Masv = svTemp.Masv;
+                }
+
+                _context.Phieumuons.UpdateRange(pmSv);
+                _context.SaveChanges();
+
                 //Update method doesn't track the change of the primary key 
                 //So need to remove then add new one
                 Taikhoan acc = _context.Taikhoans.FirstOrDefault(x => x.Matk == stu_acc.acc.Matk);
@@ -186,6 +219,19 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                 _context.Taikhoans.Add(stu_acc.acc);
                 _context.Sinhviens.Add(stu_acc.sv);
                 _context.SaveChanges();
+
+                for (int i = 0; i < pmSv.Count(); ++i)
+                {
+                    pmSv[i].Masv = stu_acc.sv.Masv;
+                }
+
+                _context.Phieumuons.UpdateRange(pmSv);
+                _context.SaveChanges();
+
+                _context.Sinhviens.Remove(svTemp);
+                _context.Taikhoans.Remove(tkTemp);
+                _context.SaveChanges();
+
                 TempData["Action"] = "Cập nhật thành công";
                 return RedirectToAction("Index");
             }

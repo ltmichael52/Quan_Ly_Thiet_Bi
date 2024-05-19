@@ -26,20 +26,16 @@
 
         $('#SelectAnother').change(function () {
             var selectedValue = $(this).val();
-            if (selectedValue) {
                 selectAnother = selectedValue;
                 getToController();
-            }
 
         });
 
 
         $('#BorrowFrom').change(function () {
             var selectedValue = $(this).val();
-            if (selectedValue) {
                 borrowFrom = selectedValue;
                 getToController();
-            }
         });
 
         // $('#BorrowFrom').siblings('button[type="button"][aria-label="Clear"]').on("click", function () {

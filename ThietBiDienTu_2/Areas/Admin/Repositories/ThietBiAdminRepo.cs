@@ -106,7 +106,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
                                                         Tentb = x.MadongtbNavigation.Tendongtb,
                                                         TenKho = x.MapNavigation.Tenphong,
                                                         Makho = x.Map,
-                                                        CheckFix = false
+                                                        CheckFix = false,
                                                     }).ToList();
 
             return tbFix;
