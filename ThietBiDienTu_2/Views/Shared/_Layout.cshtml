@@ -9,9 +9,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="Phần mềm quản lý thiết bị">
-    <meta name="author" content="Powered By G1">
-    <meta name="keyword" content="Cho các trường đại học">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="apple-touch-icon" sizes="57x57" href="@Url.Content("~/LayoutAdmin/dist/assets/favicon/apple-icon-57x57.png")">
@@ -60,7 +60,6 @@
     <link href="@Url.Content("~/LayoutAdmin/dist/css/examples.css")" rel="stylesheet">
 
 </head>
-
 <body>
     <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
         <div class="sidebar-brand d-none d-md-flex">
@@ -90,7 +89,7 @@
             </li>
 
             <li class="nav-group">
-                <a class="nav-link" asp-action="Index" asp-controller="Histroy"> 
+                <a class="nav-link" asp-action="Index" asp-controller="Histroy">
                     <svg class="nav-icon">
                         <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-notes")"></use>
                     </svg> Lịch sử phiếu mượn
@@ -130,11 +129,10 @@
                             </a>
                         </div>
                     </li>
-
                 </ul>
-                
+                @RenderSection("naviheader",required:false)
             </div>
-            @RenderSection("naviheader",required:false)
+
         </header>
         <div class="body flex-grow-1 px-3">
             <div class="container-lg">
@@ -159,8 +157,7 @@
     <script src='~/calendar-20/calendar-20/fullcalendar/packages/timegrid/main.js'></script>
     <script src='~/calendar-20/calendar-20/fullcalendar/packages/list/main.js'></script>
 
-
+    <script src="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/coreui/js/coreui.bundle.min.js")"></script>
+    <script src="@Url.Content("~/LayoutAdmin/dist/vendors/simplebar/js/simplebar.min.js")"></script>
 </body>
 </html>
-
-
