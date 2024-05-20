@@ -153,15 +153,15 @@ namespace ThietBiDienTu_2.Controllers
         }
         public IActionResult Details()
         {
-            List<CartItemModel> cartItems = /*HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ??*/ new List<CartItemModel>(); // neu co du lieu thi hien thi con khong se tao moi 1 list 
+            List<CartItemModel> cartItems = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>(); // neu co du lieu thi hien thi con khong se tao moi 1 list 
             CartItemViewModel cartVM = new()
             {
                 CartItems = cartItems,
-                Sv = _dataContext.Sinhviens.Find(/*HttpContext.Session.GetInt32("UserName")*/485),
+                Sv = _dataContext.Sinhviens.Find(HttpContext.Session.GetInt32("UserName")),
                 Phieumuon = new Phieumuon()
                 {
                     Ngaylap = DateTime.Now,
-                    Ngaymuon = /*DateTime.Parse(HttpContext.Session.GetString("NgayDat")) */DateTime.Now,
+                    Ngaymuon = DateTime.Parse(HttpContext.Session.GetString("NgayDat")) /*DateTime.Now*/,
 
                 }
 

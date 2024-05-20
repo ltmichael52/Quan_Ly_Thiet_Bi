@@ -235,7 +235,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                     BorrowCart.Add(dongtbAmount);
 
                 }
-                HttpContext.Session.SetJson("BorrowCart", BorrowCart);
+                contextAcc.HttpContext.Session.SetJson("BorrowCart", BorrowCart);
             }
             List<DongTbAndAmount> dongtbAmountList = countDongTbAndAmount(Ngaymuon);
 

@@ -60,6 +60,7 @@
     <link href="@Url.Content("~/LayoutAdmin/dist/css/examples.css")" rel="stylesheet">
 </head>
 <body>
+    @{HttpContextAccessor.HttpContext.Session.SetString("UserName2", "test");}
     <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
         <div class="sidebar-brand d-none d-md-flex">
             <h4 class="card-title text-white">QUẢN LÝ THIẾT BỊ</h4>

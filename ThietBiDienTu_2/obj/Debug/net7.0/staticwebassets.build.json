@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "08tH1tXCTVIR41BcjUfuS6Jl3I+of/snbThPw8J/elk=",
+  "Hash": "v9aC7VFxCK5BcIBEP+axCUcoSOjJBE+DnBEgF2QqO8w=",
   "Source": "ThietBiDienTu_2",
   "BasePath": "_content/ThietBiDienTu_2",
   "Mode": "Default",
@@ -9894,6 +9894,57 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\03b0d2e6-7aab-43ab-8015-b8d5395ee352-download (1).jpg",
+      "SourceId": "ThietBiDienTu_2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
+      "BasePath": "_content/ThietBiDienTu_2",
+      "RelativePath": "images/03b0d2e6-7aab-43ab-8015-b8d5395ee352-download (1).jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\03b0d2e6-7aab-43ab-8015-b8d5395ee352-download (1).jpg"
+    },
+    {
+      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\03d7bfcb-9d38-468d-ab6a-41e1ee3f74b9-Screenshot 2023-12-17 195956.png",
+      "SourceId": "ThietBiDienTu_2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
+      "BasePath": "_content/ThietBiDienTu_2",
+      "RelativePath": "images/03d7bfcb-9d38-468d-ab6a-41e1ee3f74b9-Screenshot 2023-12-17 195956.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\03d7bfcb-9d38-468d-ab6a-41e1ee3f74b9-Screenshot 2023-12-17 195956.png"
+    },
+    {
+      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\0f566f67-5626-4a39-8eea-142c7fe5284b-download (5).jpg",
+      "SourceId": "ThietBiDienTu_2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
+      "BasePath": "_content/ThietBiDienTu_2",
+      "RelativePath": "images/0f566f67-5626-4a39-8eea-142c7fe5284b-download (5).jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\0f566f67-5626-4a39-8eea-142c7fe5284b-download (5).jpg"
+    },
+    {
       "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\1.jpg",
       "SourceId": "ThietBiDienTu_2",
       "SourceType": "Discovered",
@@ -9909,6 +9960,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\1.jpg"
+    },
+    {
+      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\15e8a611-f081-4497-8d25-bfda0b49a76e-download.jpg",
+      "SourceId": "ThietBiDienTu_2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
+      "BasePath": "_content/ThietBiDienTu_2",
+      "RelativePath": "images/15e8a611-f081-4497-8d25-bfda0b49a76e-download.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\15e8a611-f081-4497-8d25-bfda0b49a76e-download.jpg"
     },
     {
       "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\1acad73a-f826-4254-a015-14ecf202fdbd-download (1).jpg",
@@ -10081,6 +10149,23 @@
       "OriginalItemSpec": "wwwroot\\images\\38a09eb5-decd-48d3-a190-796101aa0f73-Loaprov40.jpg"
     },
     {
+      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\431fb62c-4087-40ad-9fba-3ad7d49a0124-download (7).jpg",
+      "SourceId": "ThietBiDienTu_2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
+      "BasePath": "_content/ThietBiDienTu_2",
+      "RelativePath": "images/431fb62c-4087-40ad-9fba-3ad7d49a0124-download (7).jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\431fb62c-4087-40ad-9fba-3ad7d49a0124-download (7).jpg"
+    },
+    {
       "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\43d76324-662f-4a6d-96a9-88c49b765e3a-4c90e6bd.jpg",
       "SourceId": "ThietBiDienTu_2",
       "SourceType": "Discovered",
@@ -10113,6 +10198,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\48388d07-372f-4b15-af87-5c20a7b146b9-1b182bd1-050a-4971-b918-0b1b104cdf28_z5304760437730_4f252cc2e1e5eadcc749338613289e26.jpg"
+    },
+    {
+      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\523657e6-42d4-45cb-b6a6-7fe4141f273e-download (8).jpg",
+      "SourceId": "ThietBiDienTu_2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
+      "BasePath": "_content/ThietBiDienTu_2",
+      "RelativePath": "images/523657e6-42d4-45cb-b6a6-7fe4141f273e-download (8).jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\523657e6-42d4-45cb-b6a6-7fe4141f273e-download (8).jpg"
     },
     {
       "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\53563532-21ae-4b02-9647-4dcb01de33ff-560b90766bb5c4eb9da4.jpg",
@@ -10149,6 +10251,23 @@
       "OriginalItemSpec": "wwwroot\\images\\62bd27ea-486a-4ccf-bfd2-a62ff458ea17-TIVI.jpg"
     },
     {
+      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\6ac1aa5c-cc11-4d48-a5ec-b985d351c8cc-download (10).jpg",
+      "SourceId": "ThietBiDienTu_2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
+      "BasePath": "_content/ThietBiDienTu_2",
+      "RelativePath": "images/6ac1aa5c-cc11-4d48-a5ec-b985d351c8cc-download (10).jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\6ac1aa5c-cc11-4d48-a5ec-b985d351c8cc-download (10).jpg"
+    },
+    {
       "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\6d4b34d0-2381-485e-8e6c-9a9adca8919e-4c90e6bd.jpg",
       "SourceId": "ThietBiDienTu_2",
       "SourceType": "Discovered",
@@ -10164,23 +10283,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\6d4b34d0-2381-485e-8e6c-9a9adca8919e-4c90e6bd.jpg"
-    },
-    {
-      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\74d96fb8-08bc-4189-8830-5e9c5f66ce27-85844507-5c23-4d48-9999-874f4cdd7c59_95c544e4-00bf-4f77-ae04-920c2a9604fb_886e73bf-7bef-4df5-9233-544b25798bd0_46d1eb79-a1d0-4cd0-b03f-b0ea0c3af149.jpg",
-      "SourceId": "ThietBiDienTu_2",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
-      "BasePath": "_content/ThietBiDienTu_2",
-      "RelativePath": "images/74d96fb8-08bc-4189-8830-5e9c5f66ce27-85844507-5c23-4d48-9999-874f4cdd7c59_95c544e4-00bf-4f77-ae04-920c2a9604fb_886e73bf-7bef-4df5-9233-544b25798bd0_46d1eb79-a1d0-4cd0-b03f-b0ea0c3af149.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\74d96fb8-08bc-4189-8830-5e9c5f66ce27-85844507-5c23-4d48-9999-874f4cdd7c59_95c544e4-00bf-4f77-ae04-920c2a9604fb_886e73bf-7bef-4df5-9233-544b25798bd0_46d1eb79-a1d0-4cd0-b03f-b0ea0c3af149.jpg"
     },
     {
       "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\76bacfe2-146e-4404-93b7-c1999e617648-download (1).jpg",
@@ -10200,12 +10302,12 @@
       "OriginalItemSpec": "wwwroot\\images\\76bacfe2-146e-4404-93b7-c1999e617648-download (1).jpg"
     },
     {
-      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\7cc59cb9-7dc2-482b-ae3a-ec572b186502-AddColor.png",
+      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\7710dbf0-7dd8-40db-8218-d2079480e04b-download (7).jpg",
       "SourceId": "ThietBiDienTu_2",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
       "BasePath": "_content/ThietBiDienTu_2",
-      "RelativePath": "images/7cc59cb9-7dc2-482b-ae3a-ec572b186502-AddColor.png",
+      "RelativePath": "images/7710dbf0-7dd8-40db-8218-d2079480e04b-download (7).jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -10214,7 +10316,41 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\7cc59cb9-7dc2-482b-ae3a-ec572b186502-AddColor.png"
+      "OriginalItemSpec": "wwwroot\\images\\7710dbf0-7dd8-40db-8218-d2079480e04b-download (7).jpg"
+    },
+    {
+      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\82261d1c-55ad-4267-8d60-684ac9159dbe-download (4).jpg",
+      "SourceId": "ThietBiDienTu_2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
+      "BasePath": "_content/ThietBiDienTu_2",
+      "RelativePath": "images/82261d1c-55ad-4267-8d60-684ac9159dbe-download (4).jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\82261d1c-55ad-4267-8d60-684ac9159dbe-download (4).jpg"
+    },
+    {
+      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\95778fc8-92bf-4a27-8d0d-deb4fd1f2d7f-download (2).jpg",
+      "SourceId": "ThietBiDienTu_2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
+      "BasePath": "_content/ThietBiDienTu_2",
+      "RelativePath": "images/95778fc8-92bf-4a27-8d0d-deb4fd1f2d7f-download (2).jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\95778fc8-92bf-4a27-8d0d-deb4fd1f2d7f-download (2).jpg"
     },
     {
       "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\a2b59c44-d978-4488-bf9f-ced800da0d31-68113c29-6fb8-4cca-b337-6ef9e1cbe99a.jpg",
@@ -10234,6 +10370,23 @@
       "OriginalItemSpec": "wwwroot\\images\\a2b59c44-d978-4488-bf9f-ced800da0d31-68113c29-6fb8-4cca-b337-6ef9e1cbe99a.jpg"
     },
     {
+      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\a2ca8792-4670-466b-a130-f4c66eb50505-download (11).jpg",
+      "SourceId": "ThietBiDienTu_2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
+      "BasePath": "_content/ThietBiDienTu_2",
+      "RelativePath": "images/a2ca8792-4670-466b-a130-f4c66eb50505-download (11).jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\a2ca8792-4670-466b-a130-f4c66eb50505-download (11).jpg"
+    },
+    {
       "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\a6db2321-25ec-48b3-949f-cf4b7fdefd17-4c90e6bd.jpg",
       "SourceId": "ThietBiDienTu_2",
       "SourceType": "Discovered",
@@ -10249,6 +10402,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\a6db2321-25ec-48b3-949f-cf4b7fdefd17-4c90e6bd.jpg"
+    },
+    {
+      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\a7d3f152-9488-4e99-9449-abb9b3c54758-download (6).jpg",
+      "SourceId": "ThietBiDienTu_2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
+      "BasePath": "_content/ThietBiDienTu_2",
+      "RelativePath": "images/a7d3f152-9488-4e99-9449-abb9b3c54758-download (6).jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\a7d3f152-9488-4e99-9449-abb9b3c54758-download (6).jpg"
     },
     {
       "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\a83734b8-213c-43e1-a78f-0ede379f6f84-Loaprov40.jpg",
@@ -10285,6 +10455,23 @@
       "OriginalItemSpec": "wwwroot\\images\\aa864e60-4fd1-45f3-a215-8835307faafd-3ebf7bdc-94b8-43ad-8d3f-1ddcc81f556a_z5304760404111_2832627c9471a74f1630c58a07866974.jpg"
     },
     {
+      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\acb6d9d7-bfa9-4bea-bafc-10fb6c95279b-download (9).jpg",
+      "SourceId": "ThietBiDienTu_2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
+      "BasePath": "_content/ThietBiDienTu_2",
+      "RelativePath": "images/acb6d9d7-bfa9-4bea-bafc-10fb6c95279b-download (9).jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\acb6d9d7-bfa9-4bea-bafc-10fb6c95279b-download (9).jpg"
+    },
+    {
       "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\b80148b4-a02e-4b0f-96f5-40211b99d1c4-dellKB612_BanPhim.jpg",
       "SourceId": "ThietBiDienTu_2",
       "SourceType": "Discovered",
@@ -10319,6 +10506,23 @@
       "OriginalItemSpec": "wwwroot\\images\\b9cdd42f-e7c2-4eb6-9c98-4530b2153cbb-3ebf7bdc-94b8-43ad-8d3f-1ddcc81f556a_z5304760404111_2832627c9471a74f1630c58a07866974.jpg"
     },
     {
+      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\bb959f7d-b06c-425a-993d-eb47e8ea9acb-download (3).jpg",
+      "SourceId": "ThietBiDienTu_2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
+      "BasePath": "_content/ThietBiDienTu_2",
+      "RelativePath": "images/bb959f7d-b06c-425a-993d-eb47e8ea9acb-download (3).jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\bb959f7d-b06c-425a-993d-eb47e8ea9acb-download (3).jpg"
+    },
+    {
       "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\bfe5a06e-e5c2-4b66-8370-3e72b3aa5a1c-maychieuViewSonic.jpg",
       "SourceId": "ThietBiDienTu_2",
       "SourceType": "Discovered",
@@ -10351,23 +10555,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\c6193b11-b400-41ad-a552-4c2ac6553f92-ManHinhApple20Inch.jpg"
-    },
-    {
-      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\ca25afa9-8758-4e67-a947-f751e2c66011-e309311c-5437-4cd0-9c87-636e61e87329_2a5f1129-c7c0-47e8-9d49-4dd39d993fbc_abd78516-d585-4306-91dd-85e9fb76641b_30dd4eb6-53a1-41fd-b2b9-f943db9ddf2d.jpg",
-      "SourceId": "ThietBiDienTu_2",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
-      "BasePath": "_content/ThietBiDienTu_2",
-      "RelativePath": "images/ca25afa9-8758-4e67-a947-f751e2c66011-e309311c-5437-4cd0-9c87-636e61e87329_2a5f1129-c7c0-47e8-9d49-4dd39d993fbc_abd78516-d585-4306-91dd-85e9fb76641b_30dd4eb6-53a1-41fd-b2b9-f943db9ddf2d.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\ca25afa9-8758-4e67-a947-f751e2c66011-e309311c-5437-4cd0-9c87-636e61e87329_2a5f1129-c7c0-47e8-9d49-4dd39d993fbc_abd78516-d585-4306-91dd-85e9fb76641b_30dd4eb6-53a1-41fd-b2b9-f943db9ddf2d.jpg"
     },
     {
       "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\cd9042e8-be11-489f-b830-fabcb1914620-68113c29-6fb8-4cca-b337-6ef9e1cbe99a.jpg",
@@ -10419,6 +10606,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\d55650f4-c017-4f76-acaa-02df02909471-3ebf7bdc-94b8-43ad-8d3f-1ddcc81f556a_z5304760404111_2832627c9471a74f1630c58a07866974.jpg"
+    },
+    {
+      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\d64297b2-11af-432f-8b31-36636161dce0-Screenshot 2023-12-21 093859.png",
+      "SourceId": "ThietBiDienTu_2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
+      "BasePath": "_content/ThietBiDienTu_2",
+      "RelativePath": "images/d64297b2-11af-432f-8b31-36636161dce0-Screenshot 2023-12-21 093859.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\d64297b2-11af-432f-8b31-36636161dce0-Screenshot 2023-12-21 093859.png"
     },
     {
       "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\dd4790c9-0a6d-4cba-8b19-e02975574489-maychieuViewSonic.jpg",
@@ -10538,23 +10742,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\f51d59b3-5caf-49b1-b069-332bfc8c4587-TIVI.jpg"
-    },
-    {
-      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\f585b123-53e2-45f2-b420-1bf5aed2f049-EditBanner.png",
-      "SourceId": "ThietBiDienTu_2",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
-      "BasePath": "_content/ThietBiDienTu_2",
-      "RelativePath": "images/f585b123-53e2-45f2-b420-1bf5aed2f049-EditBanner.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\f585b123-53e2-45f2-b420-1bf5aed2f049-EditBanner.png"
     },
     {
       "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\micBest.jpg",
