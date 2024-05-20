@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.CodeAnalysis.FlowAnalysis;
 using System.Diagnostics;
 using System.Drawing.Printing;
+using System.Globalization;
 using System.Linq;
 using ThietBiDienTu_2.Areas.Admin.InterfaceRepositories;
 using ThietBiDienTu_2.Areas.Admin.Repositories;
@@ -253,7 +254,8 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
         public IActionResult AddQuantity(int madongtb)
         {
             List<DongTbAndAmount> BorrowCart = HttpContext.Session.GetJson<List<DongTbAndAmount>>("BorrowCart") ?? new List<DongTbAndAmount>();
-            DateTime Ngaymuon = DateTime.Parse(HttpContext.Session.GetString("NgaymuonPm"));
+            string NgaymuonString = HttpContext.Session.GetString("NgaymuonPm");
+            DateTime Ngaymuon = DateTime.ParseExact(NgaymuonString, "dd-MM-yyyy", CultureInfo.InvariantCulture);
             List<DongTbAndAmount> dongtbAmountList = countDongTbAndAmount(Ngaymuon);
 
             DongTbAndAmount dongtbAmount = dongtbAmountList.FirstOrDefault(x => x.madongtb == madongtb);
@@ -279,7 +281,8 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
         public IActionResult MinusQuantity(int madongtb)
         {
             List<DongTbAndAmount> BorrowCart = HttpContext.Session.GetJson<List<DongTbAndAmount>>("BorrowCart") ?? new List<DongTbAndAmount>();
-            DateTime Ngaymuon = DateTime.Parse(HttpContext.Session.GetString("NgaymuonPm"));
+            string NgaymuonString = HttpContext.Session.GetString("NgaymuonPm");
+            DateTime Ngaymuon = DateTime.ParseExact(NgaymuonString, "dd-MM-yyyy", CultureInfo.InvariantCulture);
 
             DongTbAndAmount dongtbAmount = BorrowCart.FirstOrDefault(x => x.madongtb == madongtb);
             dongtbAmount.amount -= 1;
@@ -307,7 +310,8 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
         public IActionResult DeleteQuantity(int madongtb)
         {
             List<DongTbAndAmount> BorrowCart = HttpContext.Session.GetJson<List<DongTbAndAmount>>("BorrowCart") ?? new List<DongTbAndAmount>();
-            DateTime Ngaymuon = DateTime.Parse(HttpContext.Session.GetString("NgaymuonPm"));
+            string NgaymuonString = HttpContext.Session.GetString("NgaymuonPm");
+            DateTime Ngaymuon = DateTime.ParseExact(NgaymuonString, "dd-MM-yyyy", CultureInfo.InvariantCulture);
 
             BorrowCart.Remove(BorrowCart.FirstOrDefault(x => x.madongtb == madongtb));
             if (BorrowCart.Count == 0)
@@ -375,12 +379,13 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 
         public void checkNgayMuonSame(DateTime Ngaymuon)
         {
-            DateTime NgayMuonOld = DateTime.Parse(HttpContext.Session.GetString("NgaymuonPm") ?? "2004-11-01");
+            string NgaymuonSession = HttpContext.Session.GetString("NgaymuonPm") ?? "01-11-2004";
+            DateTime NgayMuonOld = DateTime.ParseExact(NgaymuonSession, "dd-MM-yyyy", CultureInfo.InvariantCulture);
             if (Ngaymuon != NgayMuonOld)
             {
                 if(Ngaymuon.Year < 2010)
                 {
-                    HttpContext.Session.SetString("NgaymuonPm", "2004-11-01");
+                    HttpContext.Session.SetString("NgaymuonPm", "01-11-2004");
                 }
                 else
                 {
