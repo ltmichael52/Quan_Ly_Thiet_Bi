@@ -202,7 +202,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             {
                 check = 1;
             }
-            if (ThietBiView.MaDongTb !=0)
+            if (ThietBiView.MaDongTb !=0 && oldSeri == "")
             {
                 if (Dongtb.CountSlFullOrNot(ThietBiView.MaDongTb))
                 {

@@ -161,7 +161,7 @@ namespace ThietBiDienTu_2.Controllers
                 Phieumuon = new Phieumuon()
                 {
                     Ngaylap = DateTime.Now,
-                    Ngaymuon = DateTime.Parse(HttpContext.Session.GetString("NgayDat")) /*DateTime.Now*/,
+                    Ngaymuon = /*DateTime.Parse(HttpContext.Session.GetString("NgayDat")) */DateTime.Now,
 
                 }
 
