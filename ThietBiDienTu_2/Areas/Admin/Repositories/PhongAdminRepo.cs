@@ -50,9 +50,9 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
             return _toolDbContext.Thietbis.Any(tb => tb.Map == id);
         }
 
-        public object GetDevicesInPhong(string phongId)
+        public List<Phong> GetPhongListByCoso(string macs)
         {
-            throw new NotImplementedException();
+            return _toolDbContext.Phongs.Where(x => x.Macs.ToString() == macs).ToList();
         }
     }
 }

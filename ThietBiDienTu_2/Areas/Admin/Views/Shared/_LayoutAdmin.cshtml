@@ -88,7 +88,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" onclick="getUrl()">
+                        <a class="nav-link" asp-action="ThietBiList" asp-controller="ThietBi">
                             <svg class="nav-icon">
                                 <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-laptop")"></use>
                             </svg>Thiết bị trong phòng
@@ -258,18 +258,7 @@
     <!-- CoreUI and necessary plugins-->
     <script src="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/coreui/js/coreui.bundle.min.js")"></script>
     <script src="@Url.Content("~/LayoutAdmin/dist/vendors/simplebar/js/simplebar.min.js")"></script>
-    <script>
-        var searchStringThietBi = encodeURIComponent(localStorage.getItem('savedsearchStringThietBi'));
-        var coso = encodeURIComponent(localStorage.getItem('savedCoso'));
-        var phong = encodeURIComponent(localStorage.getItem('savedPhong'));
-        var loaiphong = encodeURIComponent(localStorage.getItem('savedLoaiPhong'));
-        var trangthai = encodeURIComponent(localStorage.getItem('savedTrangthai'));
-
-        var urlA = "/Admin/ThietBi/ThietBiList?searchStringThietBi=" + searchStringThietBi + "&Coso=" + coso + "&Phong=" + phong + "&LoaiPhong=" + loaiphong + "&Trangthai=" + trangthai;;
-
-        function getUrl() {
-            window.location.href = urlA;
-        }
+   
     </script>
     <script src="~/calendar-20/calendar-20/js/main.js"></script>
     <script src="~/js/scripts.js"></script>

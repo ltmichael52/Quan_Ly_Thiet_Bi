@@ -19,8 +19,9 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
     {
         ICoSoAdmin coso; IPhongAdmin pRepo; IDongThietBiAdmin Dongtb;
         IThietBiAdmin thietbi; IPhieuMuonAdmin pmRepo; IPhieuSuaAdmin psRepo;
+        IHttpContextAccessor contextAccess;
         public ThietBiController(ICoSoAdmin CS, IPhongAdmin p, IDongThietBiAdmin _dongtb,
-            IThietBiAdmin tb, IPhieuMuonAdmin pmRepo,IPhieuSuaAdmin psRepo)
+            IThietBiAdmin tb, IPhieuMuonAdmin pmRepo,IPhieuSuaAdmin psRepo,IHttpContextAccessor contextAccessor)
         {
             coso = CS;
             pRepo = p;
@@ -28,6 +29,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             thietbi = tb;
             this.pmRepo = pmRepo;
             this.psRepo = psRepo;
+            this.contextAccess = contextAccessor;
         }
 
         public IActionResult ThietBiList(int? page, string? searchStringThietBi, string? Coso, string? Phong, string? LoaiPhong, string? Trangthai)
@@ -83,15 +85,20 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             }
             dataList = dataList.OrderByDescending(x => x.Matb).ToList();
             CreateSelectData();
-            Debug.Write("Phong: ", Phong);
-            Debug.Write("Coso: ", Coso);
-            Debug.Write("Trang thai: ", Trangthai);
-            Debug.Write("Loai phong: ", LoaiPhong);
-            //ThietbiList = ThietbiList.OrderBy(x => x.Tensv);
             ThietBiView = new PagedList<ThietBiViewAdmin>(dataList, pageNumber, pageSize);
+
+            if (IsAjaxRequest())
+            {
+                return PartialView("PartialViewTBList", ThietBiView);
+            }
+            //ThietbiList = ThietbiList.OrderBy(x => x.Tensv);
             return View(ThietBiView);
         }
-
+        private bool IsAjaxRequest()
+        {
+            var request = contextAccess.HttpContext.Request;
+            return request.Headers["X-Requested-With"] == "XMLHttpRequest";
+        }
         public IActionResult CreateThietBi()
         {
             CreateSelectData();
@@ -99,7 +106,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateThietBi(ThietBiViewAdmin ThietBiView,string? searchStringThietBi1,string? Coso1,string? Phong1,string? Loaiphong1,string? Trangthai1)
+        public IActionResult CreateThietBi(ThietBiViewAdmin ThietBiView)
         {
             
             CreateSelectData();
@@ -118,7 +125,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             };
             thietbi.AddTB(tb);
 
-            return RedirectToAction("ThietBiList", new {searchStringThietBi = searchStringThietBi1,Coso=Coso1,Phong=Phong1, LoaiPhong = Loaiphong1, Trangthai = Trangthai1});
+            return RedirectToAction("ThietBiList");
         }
 
         public IActionResult UpdateThietBi(int Id)
@@ -144,7 +151,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult UpdateThietBi(ThietBiViewAdmin ThietBiView,string oldSeri, string? searchStringThietBi1, string? Coso1, string? Phong1, string? Loaiphong1, string? Trangthai1)
+        public IActionResult UpdateThietBi(ThietBiViewAdmin ThietBiView,string oldSeri)
         {
             
             CreateSelectData();
@@ -154,13 +161,12 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                 return View(ThietBiView);
             }
             TempData["Action"] = "Cập nhật thành công";
-            Debug.WriteLine("search string: ", searchStringThietBi1);
             
             thietbi.UpdateTB(ThietBiView);
-            return RedirectToAction("ThietBiList", new { searchStringThietBi = searchStringThietBi1, Coso = Coso1, Phong = Phong1, LoaiPhong = Loaiphong1, Trangthai = Trangthai1 }) ;
+            return RedirectToAction("ThietBiList") ;
         }
 
-        public IActionResult DeleteThietBi(int id, string? searchStringThietBi1, string? Coso1, string? Phong1, string? Loaiphong1, string? Trangthai1)
+        public IActionResult DeleteThietBi(int id)
         {
             if(psRepo.TbHasPhieuSua(id) || pmRepo.TbHasPhieuMuon(id))
             {
@@ -170,7 +176,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             {
                 thietbi.DeleteTB(id);
             }
-            return RedirectToAction("ThietBiList", new { searchStringThietBi = searchStringThietBi1, Coso = Coso1, Phong = Phong1, LoaiPhong = Loaiphong1, Trangthai = Trangthai1 });
+            return RedirectToAction("ThietBiList");
         }
 
         public int CheckValid(ThietBiViewAdmin ThietBiView,string oldSeri= "")
@@ -212,6 +218,53 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             }
             
             return check;
+        }
+
+        public IActionResult getPhongList(string macs)
+        {
+            List<Phong> roomList = new List<Phong>();
+            if (macs == "all")
+            {
+                roomList = pRepo.GetPhongList();
+            }
+            else
+            {
+                roomList = pRepo.GetPhongListByCoso(macs);
+            }
+            List<SelectListItem> phongListItem = roomList.Select(p => new SelectListItem
+            {
+                Value = p.Map.ToString(),
+                Text = p.Map.ToString() + "-" + p.Tenphong ,
+            }).ToList();
+
+            return Json(phongListItem);
+        }
+
+        public IActionResult getLoaiPhongList(string map)
+        {
+            List<SelectListItem> loaiphongListItem = new List<SelectListItem>();
+            if (map == "all")
+            {
+                List<Phong> roomList = pRepo.GetPhongList();
+                List<string> stringLoaiPhong = roomList.Select(p => p.Loaiphong).Distinct().ToList();
+                loaiphongListItem = stringLoaiPhong.Select(p => new SelectListItem
+                {
+                    Value = p,
+                    Text = p
+                }).ToList();
+                
+            }
+            else
+            {
+                Phong phong = pRepo.FindPhong(map);
+                loaiphongListItem.Add(new SelectListItem
+                {
+                    Value = phong.Loaiphong,
+                    Text = phong.Loaiphong
+                });
+            }
+            
+            return Json(loaiphongListItem);
         }
 
         public void CreateSelectData()
