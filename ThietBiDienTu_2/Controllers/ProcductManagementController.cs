@@ -96,6 +96,7 @@ namespace ThietBiDienTu_2.Controllers
             return View(viewModel);
         }
 
+
         bool IsAjaxRequest()
         {
             var request = contextAcc.HttpContext.Request;

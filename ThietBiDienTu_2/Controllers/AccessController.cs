@@ -71,5 +71,7 @@ namespace ThietBiDienTu_2.Controllers
             HttpContext.Session.Remove("UserName");
             return RedirectToAction("Login", "Access");
         }
+
+
     }
 }

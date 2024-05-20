@@ -100,7 +100,7 @@
             getToFilter();
         });
 
-        $('.page').click(function () {
+        $('.page-link').click(function () {
             pageView = $(this).attr('value');
             getToFilter();
         });
@@ -164,7 +164,7 @@
                         </svg>
                     </a>
 
-                    <a onclick="getUrlDelete('@ctthietbi.Matb')" class="btn btn-danger btn-sm rounded">
+                    <a onclick="if (confirm('Xác nhận xóa thiết bị này?') == true) {location.href='@Url.Action("DeleteThietBi", "ThietBi", new { id = ctthietbi.Matb })'}" class="btn btn-danger btn-sm rounded">
                         <svg class="icon icon-lg">
                             <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
                         </svg>

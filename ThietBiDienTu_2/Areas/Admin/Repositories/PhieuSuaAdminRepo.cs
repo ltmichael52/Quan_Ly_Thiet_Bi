@@ -15,7 +15,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
 
         public bool TbHasPhieuSua(int matb)
         {
-            return context.Chitietphieusuas.FirstOrDefault(x => x.Matb == matb) == null;
+            return context.Chitietphieusuas.FirstOrDefault(x => x.Matb == matb) != null;
         }
 
         public List<Phieusua> GetAllPs()
@@ -107,11 +107,28 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
                 ctps.Mota = tb.Mota;
                 if(ctps.Ngayhoanthanh.HasValue ==false && tb.CheckFix == true) {
                     ctps.Ngayhoanthanh = today;
+                    
+                }
+                if(tb.CheckFix == false)
+                {
+                    ctps.Ngayhoanthanh = null;
                 }
                 context.Chitietphieusuas.Update(ctps);
+                context.SaveChanges();
 
+                Thietbi tbUpdate = context.Thietbis.FirstOrDefault(x => x.Matb == tb.Matb);
+                if (tb.CheckFix == true)
+                {
+                    tbUpdate.Trangthai = "Sẵn sàng";
+
+                }
+                else if(tb.CheckFix == false)
+                {
+                    tbUpdate.Trangthai = "Đang sửa";
+                }
+                context.Thietbis.Update(tbUpdate);
+                context.SaveChanges();
             }
-            context.SaveChanges();
         }
     }
 }

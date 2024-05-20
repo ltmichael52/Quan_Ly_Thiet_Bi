@@ -270,7 +270,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
 
         public bool TbHasPhieuMuon(int matb)
         {
-            return context.Chitietphieumuons.FirstOrDefault(x => x.Matb == matb) == null;
+            return context.Chitietphieumuons.FirstOrDefault(x => x.Matb == matb) != null;
         }
 
         public void CheckPmToday()

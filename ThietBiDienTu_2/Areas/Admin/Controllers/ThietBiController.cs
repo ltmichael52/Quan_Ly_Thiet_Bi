@@ -168,12 +168,13 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 
         public IActionResult DeleteThietBi(int id)
         {
-            if(psRepo.TbHasPhieuSua(id) || pmRepo.TbHasPhieuMuon(id))
+            if(psRepo.TbHasPhieuSua(id)==true || pmRepo.TbHasPhieuMuon(id)==true)
             {
                 TempData["Fail"] = "Thiết bị không thể xóa";
             }
             else
             {
+                TempData["Action"] = "Thiết bị đã được xóa";
                 thietbi.DeleteTB(id);
             }
             return RedirectToAction("ThietBiList");

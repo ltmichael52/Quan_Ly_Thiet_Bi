@@ -38,53 +38,93 @@ namespace ThietBiDienTu_2.Controllers
         public IActionResult Add(int id)
         {
             Dongthietbi dongthietbi = _dataContext.Dongthietbis.FirstOrDefault(x => x.Madongtb == id);
+            string sessionNgayDat = HttpContext.Session.GetString("NgayDat");
+            DateTime NgayDat = DateTime.ParseExact(sessionNgayDat, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+
+            var viewModel = new HomeViewModel();
+            viewModel.DongThietBiList = checkQuantity(id).Take(4).ToList();
+            viewModel.NgayDat = NgayDat;
 
             List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
-
             CartItemModel cartItem = cart.FirstOrDefault(c => c.Madongtb == id);
-            //sử dụng phương thức LINQ FirstOrDefault. Phương thức này sẽ trả về phần tử đầu tiên trong danh sách thỏa mãn điều kiện, hoặc null nếu không có phần tử nào thỏa mãn.
-            if (cartItem == null) // trong trường hợp == nulll thì tạo 1 cart mới còn ngược lại thì nếu có tồn tại thì tăng nó +1
+
+            int soluongkho = viewModel.DongThietBiList.FirstOrDefault(x => x.Madongtb == dongthietbi.Madongtb).Thietbis.Count();
+
+            if (cart.FirstOrDefault(x => x.Madongtb == dongthietbi.Madongtb).Soluong >= soluongkho)
             {
-                cart.Add(new CartItemModel(dongthietbi));
+                ViewBag.FailAdd = "Chỉ còn " + soluongkho + " thiết bị";
+                if (soluongkho > 0)
+                {
+                    cartItem.Soluong = soluongkho;
+                }
+                else
+                {
+                    cart.Remove(cartItem);
+                }
             }
             else
             {
-                cartItem.Soluong += 1;
-            }
-
-            HttpContext.Session.SetJson("Cart", cart);
-
-            var viewModel = new HomeViewModel();
-            DateTime NgayDat = DateTime.Now;
-            string sessionNgayDat = HttpContext.Session.GetString("NgayDat");
-            if (!string.IsNullOrEmpty(sessionNgayDat))
-            {
-                // Chuyển đổi session NgayDat từ chuỗi thành DateTime
-                if (DateTime.TryParseExact(sessionNgayDat, "dd-MM-yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime parsedNgayDat))
+                if (cartItem == null)
                 {
-                    NgayDat = parsedNgayDat;
+                    cart.Add(new CartItemModel(dongthietbi));
+                    ViewBag.Notification = "Thiết bị đã được thêm vào phiếu mượn thành công!";
+                }
+                else
+                {
+                    cartItem.Soluong += 1;
+                    ViewBag.Notification = "Số lượng thiết bị trong phiếu mượn đã được tăng lên!";
                 }
             }
-            IQueryable<Dongthietbi> dongthietbiQuery = _dataContext.Dongthietbis.Include(x => x.Thietbis);
+
+            return PartialView("_PartialShowProduct", viewModel);
+        }
+
+        public List<Dongthietbi> checkQuantity(int id)
+        {
+            Dongthietbi dongthietbi = _dataContext.Dongthietbis.FirstOrDefault(x => x.Madongtb == id);
+            string sessionNgayDat = HttpContext.Session.GetString("NgayDat");
+            DateTime NgayDat = DateTime.ParseExact(sessionNgayDat, "dd-MM-yyyy", CultureInfo.InvariantCulture);
 
             List<string> maThietBiDaMuon = _dataContext.Chitietphieumuons
                     .Where(ct => ct.MapmNavigation.Ngaymuon.Date == NgayDat.Date)
                     .Select(ct => ct.Matb.ToString())
                     .ToList();
 
-            // Loại bỏ các thiết bị đã được mượn khỏi danh sách đồng thiết bị
-            dongthietbiQuery = dongthietbiQuery.Where(x => !x.Thietbis.Any(y => maThietBiDaMuon.Contains(y.Matb.ToString())));
+            List<Dongthietbi> displayList = _dataContext.Dongthietbis.Include(x => x.Thietbis)
+                                            .Where(x => !x.Thietbis.Any(y => maThietBiDaMuon.Contains(y.Matb.ToString()))).ToList();
 
-            List<Dongthietbi> displayList = dongthietbiQuery.ToList();
-            viewModel.DongThietBiList = displayList.Take(4).ToList();
-            viewModel.NgayDat = NgayDat; // Gán ngày đặt vào ViewModel
-            return PartialView("_PartialShowProduct", viewModel);
+            List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
+
+            foreach(CartItemModel item in cart)
+            {
+                displayList.FirstOrDefault(x=>x.Madongtb == item.Madongtb).Soluong -= item.Soluong;
+            }
+
+          
+            HttpContext.Session.SetJson("Cart", cart);
+
+            return displayList;
         }
         public IActionResult Decrease(int id)
         {
             List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart");
-            CartItemModel cartItem = cart.Where(c => c.Madongtb == id).FirstOrDefault();
-            if (cartItem != null)
+            CartItemModel cartItem = cart.FirstOrDefault(c => c.Madongtb == id);
+            Dongthietbi dongthietbi = checkQuantity(id).FirstOrDefault(x => x.Madongtb == id);
+            int availableQuantity = dongthietbi.Soluong;
+
+            if (cartItem.Soluong - 1 > availableQuantity)
+            {
+                TempData[$"Message_{id}"] = "Thiết bị chỉ còn " + availableQuantity + " số lượng";
+                if (availableQuantity > 0)
+                {
+                    cartItem.Soluong = availableQuantity;
+                }
+                else
+                {
+                    cart.Remove(cartItem);
+                }
+            }
+            else
             {
                 if (cartItem.Soluong > 1)
                 {
@@ -94,14 +134,16 @@ namespace ThietBiDienTu_2.Controllers
                 {
                     cart.RemoveAll(p => p.Madongtb == id);
                 }
-                if (cart.Count == 0)
-                {
-                    HttpContext.Session.Remove("Cart");
-                }
-                else
-                {
-                    HttpContext.Session.SetJson("Cart", cart);
-                }
+            }
+
+
+            if (cart.Count == 0)
+            {
+                HttpContext.Session.Remove("Cart");
+            }
+            else
+            {
+                HttpContext.Session.SetJson("Cart", cart);
             }
             return RedirectToAction("Index");
         }
@@ -110,24 +152,35 @@ namespace ThietBiDienTu_2.Controllers
         {
             List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart");
             CartItemModel cartItem = cart.FirstOrDefault(c => c.Madongtb == id);
+            Dongthietbi dongthietbi = checkQuantity(id).FirstOrDefault(x => x.Madongtb == id);
+            int availableQuantity = dongthietbi.Soluong;
 
-            if (cartItem != null)
+            if (cartItem.Soluong >= availableQuantity)
             {
-                var availableQuantity = _dataContext.Thietbis
-                    .Count(x => x.Madongtb == id && x.Trangthai == "Sẵn sàng");
-
-                if (cartItem.Soluong >= availableQuantity)
+                // Lưu thông báo vượt quá số lượng "Sẵn sàng" vào TempData của sản phẩm
+                TempData[$"Message_{id}"] = "Thiết bị chỉ còn " + availableQuantity + " số lượng";
+                if (availableQuantity > 0)
                 {
-                    // Lưu thông báo vượt quá số lượng "Sẵn sàng" vào TempData của sản phẩm
-                    TempData[$"Message_{id}"] = "Sản phẩm vượt quá số lượng sẵn có.";
+                    cartItem.Soluong = availableQuantity;
+                }
+                else
+                {
+                    cart.Remove(cartItem);
+                }
+            }
+            else
+            {
+                if (cartItem == null)
+                {
+                    cart.Add(new CartItemModel(dongthietbi));
                 }
                 else
                 {
                     cartItem.Soluong++;
-                    HttpContext.Session.SetJson("Cart", cart);
                 }
             }
 
+            HttpContext.Session.SetJson("Cart", cart);
             return RedirectToAction("Index");
         }
 

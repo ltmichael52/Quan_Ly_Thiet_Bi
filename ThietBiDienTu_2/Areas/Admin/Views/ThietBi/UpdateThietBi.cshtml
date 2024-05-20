@@ -15,7 +15,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/Admin/HomeAdmin/Index">Home</a></li>
-                <li class="breadcrumb-item"><a class="linktag" style="cursor:pointer" onclick="getUrl()">Thiết bị trong phòng</a></li>
+                <li class="breadcrumb-item"><a class="linktag" style="cursor:pointer" asp-action="ThietBiList" asp-controller="ThietBi">Thiết bị trong phòng</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Cập nhật thiết bị trong phòng</li>
             </ol>
         </nav>
@@ -126,7 +126,7 @@
 <script>
     
     $(document).ready(function () {
-        if ($('#StateProduct').val() == "Đang mượn") {
+        if ($('#StateProduct').val() == "Đang mượn" || $('#StateProduct').val() == "Đang sửa") {
             console.log("Get in here borrow");
             $('#StateProduct').prop('disabled', true);
             $('#roomSelect').prop('disabled', true);
@@ -192,30 +192,6 @@
     }
             
     });
-    var searchStringThietBi = encodeURIComponent(localStorage.getItem('savedsearchStringThietBi'));
-    var coso = encodeURIComponent(localStorage.getItem('savedCoso'));
-    var phong = encodeURIComponent(localStorage.getItem('savedPhong'));
-    var loaiphong = encodeURIComponent(localStorage.getItem('savedLoaiPhong'));
-    var trangthai = encodeURIComponent(localStorage.getItem('savedTrangthai'));
-    var oldSeri = encodeURIComponent('@ViewBag.oldSeri');
-    var tenLoai = encodeURIComponent('@ViewBag.TenLoaiTB');
-
-    // Construct the relative URL starting from the action within the Admin area
-    var url = "/Admin/ThietBi/UpdateThietBi?oldSeri=" + oldSeri + "&searchStringThietBi1=" + searchStringThietBi + " &Coso1=" + coso + "&Phong1=" + phong + "&Loaiphong1=" + loaiphong + "&Trangthai1=" + trangthai;
-
-    var urlA = "/Admin/ThietBi/ThietBiList?searchStringThietBi=" + searchStringThietBi + "&Coso=" + coso + "&Phong=" + phong + "&LoaiPhong=" + loaiphong + "&Trangthai=" + trangthai;
-    document.getElementById('updateForm').addEventListener('submit', function (event) {
-        event.preventDefault();
-        // Set the form action to the constructed URL
-        this.action = url;
-        console.log("Url: ", url);
-        // Submit the form
-         this.submit();
-    });
-
-    function getUrl(){
-        window.location.href = urlA;
-    }
 
     function setStart() {
         var branchId = document.getElementById('branchSelect').value;
