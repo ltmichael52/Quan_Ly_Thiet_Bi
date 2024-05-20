@@ -8,7 +8,7 @@
         max-weight: 80px;
     }
 </style>
-<script>
+@* <script>
     $(document).ready(function () {
         function GetSavedNgayDat() {
             var savedNgayDat = '@(HttpContextAccessor.HttpContext.Session.GetString("NgayDat") ?? "")';
@@ -25,7 +25,7 @@
         var ngaymuonInput = '@(HttpContextAccessor.HttpContext.Session.GetString("NgayDat") ?? "")';
         $('#ngaymuonInput').val(ngaymuonInput);
     });
-</script>
+</script> *@
     <form asp-action="Details" asp-controller="Cart" method="post" enctype="multipart/form-data">
         <div class="container py-5">
             <div class="row d-flex justify-content-center my-4">
@@ -58,9 +58,8 @@
                                     </div>
                                     <div class="infor-customer">
                                         <label asp-for="@Model.Phieumuon.Ngaymuon">Ngày mượn:</label>
-                                        <input disabled id="ngaymuonInput">
-                                        <input hidden asp-for="@Model.Phieumuon.Ngaymuon">
-                                        <input asp-for="@Model.Phieumuon.Ngaymuon" type="datetime" hidden>
+                                        @* <input disabled id="ngaymuonInput"> *@
+                                        <input asp-for="@Model.Phieumuon.Ngaymuon" type="date" disabled>
                                     </div>
                                     <div class="infor-customer">
                                         <label asp-for="@Model.Phieumuon.Ngaylap">Ngày lập:</label>

@@ -313,37 +313,34 @@
             }
             else
             {
-                @for (int i = 0; i < Model.ctpmView.Count; ++i)
-                {
-                    <input asp-for="@Model.ctpmView[i].Madongtb" hidden />
-                    <table class="table table-striped ">
-                        <thead class="text-center">
-                            <tr class="text-center">
-                                <th>STT</th>
-                                <th>Ảnh</th>
-                                <th>Tên thiết bị</th>
-                                <th>Số lượng</th>
+                <table class="table table-striped ">
+                    <thead class="text-center">
+                        <tr class="text-center">
+                            <th>STT</th>
+                            <th>Ảnh</th>
+                            <th>Tên thiết bị</th>
+                            <th>Số lượng</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        @{
+                            int a = 0;
+                        }
+                        @for (int i=0;i<Model.ctpmView.Count();++i)
+                        {
+                            <input asp-for="@Model.ctpmView[i].Madongtb" hidden />
+                            <tr>
+                                <td>@(++a)</td>
+                                <td class="text-center">
+                                    <img src="@Url.Content("~/images/" + Model.ctpmView[i].Hinhanh)" class="card-image-top thumbnail-image" />
+                                </td>
+                                <td>@Model.ctpmView[i].Tendongthietbi</td>
+                                <td>@Model.ctpmView[i].Soluong</td>
                             </tr>
-                        </thead>
-                        <tbody class="text-center">
-                            @{
-                                int a = 0;
-                            }
-                            @foreach (var ctpm in Model.ctpmView)
-                            {
-                                <tr>
-                                    <td>@(++a)</td>
-                                    <td class="text-center">
-                                        <img src="@Url.Content("~/images/" + ctpm.Hinhanh)" class="card-image-top thumbnail-image" />
-                                    </td>
-                                    <td>@ctpm.Tendongthietbi</td>
-                                    <td>@ctpm.Soluong</td>
-                                </tr>
 
-                            }
-                        </tbody>
-                    </table>
-                }
+                        }
+                    </tbody>
+                </table>
             }
         }
         <div class="row">

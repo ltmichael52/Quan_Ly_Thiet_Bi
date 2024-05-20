@@ -177,7 +177,8 @@ namespace ThietBiDienTu_2.Controllers
             {
                 // Lấy dữ liệu từ form
                 string lyDoMuon = cartVM.Phieumuon.Lydomuon;
-                DateTime ngayMuon = DateTime.Parse(HttpContext.Session.GetString("NgayDat"));
+                string ngayDatString = HttpContext.Session.GetString("NgayDat");
+                DateTime ngayMuon = DateTime.ParseExact(ngayDatString, "dd-MM-yyyy", CultureInfo.InvariantCulture);
                 int maSv = HttpContext.Session.GetInt32("UserName") ?? 0;
 
                 // Bắt đầu giao dịch
