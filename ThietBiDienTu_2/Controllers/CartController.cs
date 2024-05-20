@@ -48,16 +48,16 @@ namespace ThietBiDienTu_2.Controllers
             List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
             CartItemModel cartItem = cart.FirstOrDefault(c => c.Madongtb == id);
 
-            int soluongkho = viewModel.DongThietBiList.FirstOrDefault(x => x.Madongtb == dongthietbi.Madongtb).Thietbis.Count();
+            int soluongkho = viewModel.DongThietBiList.FirstOrDefault(x => x.Madongtb == dongthietbi.Madongtb).Soluong;
 
-            if (cart.FirstOrDefault(x => x.Madongtb == dongthietbi.Madongtb).Soluong >= soluongkho)
+            if ((cartItem == null ? 0 : cartItem.Soluong) >= soluongkho)
             {
                 ViewBag.FailAdd = "Chỉ còn " + soluongkho + " thiết bị";
                 if (soluongkho > 0)
                 {
                     cartItem.Soluong = soluongkho;
                 }
-                else
+                else if(cartItem != null)
                 {
                     cart.Remove(cartItem);
                 }
@@ -75,7 +75,13 @@ namespace ThietBiDienTu_2.Controllers
                     ViewBag.Notification = "Số lượng thiết bị trong phiếu mượn đã được tăng lên!";
                 }
             }
+            foreach (CartItemModel item in cart)
+            {
 
+                viewModel.DongThietBiList.FirstOrDefault(x => x.Madongtb == item.Madongtb).Soluong -= item.Soluong;
+
+            }
+            HttpContext.Session.SetJson("Cart", cart);
             viewModel.DongThietBiList = viewModel.DongThietBiList.Take(4).ToList();
             return PartialView("_PartialShowProduct", viewModel);
         }
@@ -91,18 +97,21 @@ namespace ThietBiDienTu_2.Controllers
                     .Select(ct => ct.Matb.ToString())
                     .ToList();
 
-            List<Dongthietbi> displayList = _dataContext.Dongthietbis.Include(x => x.Thietbis)
-                                            .Where(x => !x.Thietbis.Any(y => maThietBiDaMuon.Contains(y.Matb.ToString()))).ToList();
+            List<Dongthietbi> displayList = _dataContext.Dongthietbis.Select(x => new Dongthietbi
+            {
+                Madongtb= x.Madongtb,
+                Mota = x.Mota,
+                Soluong = _dataContext.Thietbis.Where(y => y.Madongtb == x.Madongtb && y.Trangthai == "Sẵn sàng" && !maThietBiDaMuon.Contains(y.Matb.ToString())).Count(),
+                Hinhanh = x.Hinhanh,
+                Tendongtb = x.Tendongtb,
+            }).ToList();
 
             List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
 
-            foreach(CartItemModel item in cart)
-            {
-                displayList.FirstOrDefault(x=>x.Madongtb == item.Madongtb).Soluong -= item.Soluong;
-            }
+            
 
-          
-            HttpContext.Session.SetJson("Cart", cart);
+
+
 
             return displayList;
         }
@@ -111,7 +120,7 @@ namespace ThietBiDienTu_2.Controllers
             List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart");
             CartItemModel cartItem = cart.FirstOrDefault(c => c.Madongtb == id);
             Dongthietbi dongthietbi = checkQuantity(id).FirstOrDefault(x => x.Madongtb == id);
-            int availableQuantity = dongthietbi.Soluong;
+            int availableQuantity = dongthietbi.Thietbis.Count();
 
             if (cartItem.Soluong - 1 > availableQuantity)
             {
@@ -136,7 +145,7 @@ namespace ThietBiDienTu_2.Controllers
                     cart.RemoveAll(p => p.Madongtb == id);
                 }
             }
-                
+            HttpContext.Session.SetJson("Cart", cart);
 
             return RedirectToAction("Index");
         }
@@ -146,7 +155,7 @@ namespace ThietBiDienTu_2.Controllers
             List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart");
             CartItemModel cartItem = cart.FirstOrDefault(c => c.Madongtb == id);
             Dongthietbi dongthietbi = checkQuantity(id).FirstOrDefault(x => x.Madongtb == id);
-            int availableQuantity = dongthietbi.Soluong;
+            int availableQuantity = dongthietbi.Thietbis.Count();
 
             if (cartItem.Soluong >= availableQuantity)
             {

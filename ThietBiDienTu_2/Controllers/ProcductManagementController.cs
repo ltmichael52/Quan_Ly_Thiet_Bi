@@ -8,6 +8,7 @@ using System.Linq;
 using ThietBiDienTu_2.Models;
 using ThietBiDienTu_2.Models.Authentication;
 using ThietBiDienTu_2.Models.ViewModels;
+using ThietBiDienTu_2.Repository;
 
 namespace ThietBiDienTu_2.Controllers
 {
@@ -47,16 +48,8 @@ namespace ThietBiDienTu_2.Controllers
                 }
             }
 
-            // Lấy danh sách đồng thiết bị từ cơ sở dữ liệu
-            IQueryable<Dongthietbi> dongthietbiQuery = _dataContext.Dongthietbis.Include(x => x.Thietbis);
+            List<Dongthietbi> displayList = new List<Dongthietbi>();
 
-            // Lọc theo từ khóa tìm kiếm nếu có
-            if (!string.IsNullOrEmpty(searchString))
-            {
-                dongthietbiQuery = dongthietbiQuery.Where(x => x.Tendongtb.Contains(searchString));
-            }
-
-            // Lọc theo ngày đặt nếu có NgayDat được chỉ định
             if (NgayDat != null)
             {
                 // Lọc ra các mã thiết bị đã được mượn vào ngày đó
@@ -66,11 +59,20 @@ namespace ThietBiDienTu_2.Controllers
                     .ToList();
 
                 // Loại bỏ các thiết bị đã được mượn khỏi danh sách đồng thiết bị
-                dongthietbiQuery = dongthietbiQuery.Where(x => !x.Thietbis.Any(y => maThietBiDaMuon.Contains(y.Matb.ToString())));
+                displayList = _dataContext.Dongthietbis.Select(x => new Dongthietbi
+                {
+                    Madongtb = x.Madongtb,
+                    Mota = x.Mota,
+                    Soluong = _dataContext.Thietbis.Where(y => y.Madongtb == x.Madongtb && y.Trangthai == "Sẵn sàng" && !maThietBiDaMuon.Contains(y.Matb.ToString())).Count(),
+                    Hinhanh = x.Hinhanh,
+                    Tendongtb = x.Tendongtb,
+                }).ToList();
             }
 
-            // Lấy danh sách đồng thiết bị sau khi đã lọc
-            List<Dongthietbi> displayList = dongthietbiQuery.ToList();
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                displayList = displayList.Where(x => x.Tendongtb.Contains(searchString)).ToList();
+            }
 
             // Kiểm tra trạng thái để trả về danh sách đồng thiết bị phù hợp
             if (trangThai == "Sẵn sàng")
@@ -85,6 +87,13 @@ namespace ThietBiDienTu_2.Controllers
             }
 
             viewModel.NgayDat = NgayDat; // Gán ngày đặt vào ViewModel
+            List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
+            foreach (CartItemModel item in cart)
+            {
+
+                viewModel.DongThietBiList.FirstOrDefault(x => x.Madongtb == item.Madongtb).Soluong -= item.Soluong;
+
+            }
 
             if (Request.Headers["X-Requested-With"] == "XMLHttpRequest" )
             {
@@ -95,7 +104,6 @@ namespace ThietBiDienTu_2.Controllers
             // Trả về view chính khi là request không phải AJAX
             return View(viewModel);
         }
-
 
         bool IsAjaxRequest()
         {
