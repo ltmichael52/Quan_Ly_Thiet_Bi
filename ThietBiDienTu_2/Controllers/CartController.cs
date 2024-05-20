@@ -42,7 +42,7 @@ namespace ThietBiDienTu_2.Controllers
             DateTime NgayDat = DateTime.ParseExact(sessionNgayDat, "dd-MM-yyyy", CultureInfo.InvariantCulture);
 
             var viewModel = new HomeViewModel();
-            viewModel.DongThietBiList = checkQuantity(id).Take(4).ToList();
+            viewModel.DongThietBiList = checkQuantity(id).ToList();
             viewModel.NgayDat = NgayDat;
 
             List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
@@ -76,6 +76,7 @@ namespace ThietBiDienTu_2.Controllers
                 }
             }
 
+            viewModel.DongThietBiList = viewModel.DongThietBiList.Take(4).ToList();
             return PartialView("_PartialShowProduct", viewModel);
         }
 
@@ -135,16 +136,8 @@ namespace ThietBiDienTu_2.Controllers
                     cart.RemoveAll(p => p.Madongtb == id);
                 }
             }
+                
 
-
-            if (cart.Count == 0)
-            {
-                HttpContext.Session.Remove("Cart");
-            }
-            else
-            {
-                HttpContext.Session.SetJson("Cart", cart);
-            }
             return RedirectToAction("Index");
         }
 
