@@ -5,7 +5,31 @@
     var studentName = ViewBag.StudentName as string;
 }
 
-<h1 class="text-center">"Xin chào @studentName"</h1>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            $("#notification").fadeOut("slow");
+        }, 5000); // 5 giây
+    });
+</script>
+<style>
+    .notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #fff;
+        padding: 10px 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+    }
+
+        .notification p {
+            color: black; /* Màu đen cho dòng chữ */
+        }
+</style>
 
 <!DOCTYPE html>
 <html>
@@ -17,41 +41,44 @@
 <body>
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-4 mb-3">
-                <a href="@Url.Action("Index", "Cart")" class="card-link">
-                    <div class="card bg-primary">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Phiếu mượn thiết bị</h5>
-                            <p class="card-text text-white"></p>
-                            <p class="card-text text-white"><strong>Số lượng: @ViewBag.TotalQuantity </strong></p>
-                        </div>
+        <div id="notification" class="notification">
+            <p>Xin chào <span id="username">@studentName</span>!</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <a href="@Url.Action("Index", "Cart")" class="card-link">
+                <div class="card bg-primary">
+                    <div class="card-body">
+                        <h5 class="card-title text-white">Phiếu mượn thiết bị</h5>
+                        <p class="card-text text-white"></p>
+                        <p class="card-text text-white"><strong>Số lượng: @ViewBag.TotalQuantity </strong></p>
                     </div>
-                </a>
-            </div>
+                </div>
+            </a>
+        </div>
 
-            <div class="col-md-4 mb-3">
-                <a href="@Url.Action("Index", "Histroy")" class="card-link">
-                    <div class="card bg-primary">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Tổng số phiếu mượn chưa duyệt</h5>
-                            <p class="card-text text-white"></p>
-                            <p class="card-text text-white"><strong>Số lượng: @ViewBag.CDCount</strong></p>
-                        </div>
+        <div class="col-md-4 mb-3">
+            <a href="@Url.Action("Index", "Histroy")" class="card-link">
+                <div class="card bg-primary">
+                    <div class="card-body">
+                        <h5 class="card-title text-white">Tổng số phiếu mượn chưa duyệt</h5>
+                        <p class="card-text text-white"></p>
+                        <p class="card-text text-white"><strong>Số lượng: @ViewBag.CDCount</strong></p>
                     </div>
-                </a>
-            </div>
-            <div class="col-md-4 md-3">
-                <a href="@Url.Action("Index", "Histroy")" class="card-link">
-                    <div class="card bg-primary">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Tổng số phiếu mượn chưa trả</h5>
-                            <p class="card-text text-white"></p>
-                            <p class="card-text text-white"><strong>Số lượng: @ViewBag.CTCount</strong></p>
-                        </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 md-3">
+            <a href="@Url.Action("DanhsachPhieuMuon", "PhieuMuonAdmin")" class="card-link">
+                <div class="card bg-primary">
+                    <div class="card-body">
+                        <h5 class="card-title text-white">Tổng số phiếu mượn chưa trả</h5>
+                        <p class="card-text text-white"></p>
+                        <p class="card-text text-white"><strong>Số lượng: @ViewBag.CTCount</strong></p>
                     </div>
-                </a>
-            </div>
+                </div>
+            </a>
         </div>
     </div>
 </body>

@@ -93,7 +93,29 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 
             return Json(data); // Trả về dữ liệu JSON
         }
+        public IActionResult GetChartSuaData()
+        {
+            var repairCosts = _context.Phieusuas
+                .Where(ps => ps.Trangthai == 1 && ps.Tongchiphi.HasValue) // Chỉ lấy những phiếu đã sửa và có chi phí
+                .GroupBy(ps => new { ps.Ngaylap.Year, ps.Ngaylap.Month })
+                .Select(g => new
+                {
+                    Year = g.Key.Year,
+                    Month = g.Key.Month,
+                    Cost = g.Sum(ps => ps.Tongchiphi ?? 0)
+                })
+                .OrderBy(rc => rc.Year)
+                .ThenBy(rc => rc.Month)
+                .ToList();
 
+            var data = new
+            {
+                Labels = repairCosts.Select(rc => $"{rc.Month}/{rc.Year}").ToList(),
+                Costs = repairCosts.Select(rc => rc.Cost).ToList()
+            };
+
+            return Json(data);
+        }
 
     }
 }

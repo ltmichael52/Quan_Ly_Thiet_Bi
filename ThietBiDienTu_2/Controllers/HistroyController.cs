@@ -22,15 +22,39 @@ public class HistroyController : Controller
         this.contextAcc = contextAcc;
     }
 
-    public IActionResult Index(int? page, string trangThai)
+    public IActionResult Index(int? page, string? trangThai, DateTime? from, DateTime? to, string? searchMapm)
     {
-        int pageSize = 10; // Số lượng mục trong mỗi trang
+        int pageSize = 1; // Số lượng mục trong mỗi trang
         int pageNumber = page ?? 1; // Trang mặc định
         // Lấy mã số sinh viên từ Session
         int masv = HttpContext.Session.GetInt32("UserName") ?? 0;
 
         // Lọc danh sách phiếu mượn chỉ hiển thị của sinh viên hiện tại
         var phieuMuonList = _dataContext.Phieumuons.Where(x => x.Masv == masv).OrderBy(x=> x.Trangthai).ThenByDescending(x => x.Mapm).ToList();
+
+        if (from.HasValue)
+        {
+            phieuMuonList = phieuMuonList.Where(x => x.Ngaymuon >= from).ToList();
+        }
+        if (to.HasValue)
+        {
+
+            phieuMuonList = phieuMuonList.Where(x => x.Ngaymuon.Date <= to.Value.Date).ToList();
+        }
+
+        if (!string.IsNullOrEmpty(trangThai) && trangThai != "-1")
+        {
+            phieuMuonList = phieuMuonList.Where(x => x.Trangthai.ToString() == trangThai).ToList();
+            ViewBag.trangThai = trangThai;
+        }
+        // Lọc theo mã phiếu mượn
+        if (!string.IsNullOrEmpty(searchMapm))
+        {
+            phieuMuonList = phieuMuonList.Where(x => x.Masv.ToString().Contains(searchMapm)
+                                || x.Mapm.ToString().Contains(searchMapm)).ToList();
+            ViewBag.searchMapm = searchMapm;
+        }
+
 
         // Chuyển đổi danh sách thành IEnumerable trước khi sử dụng ToPagedList()
         var pagedList = phieuMuonList.Select(x => new Phieumuon
@@ -53,7 +77,12 @@ public class HistroyController : Controller
             pagedList.ElementAt(i).MasvNavigation.ManganhNavigation = _dataContext.Nganhs.FirstOrDefault(x => pagedList.ElementAt(i).MasvNavigation.Manganh == x.Manganh);
         }
 
-        return View(pagedList.ToPagedList(pageNumber, pageSize));
+        if (IsAjaxRequest())
+        {
+            PagedList<Phieumuon>  pm = new PagedList<Phieumuon>(phieuMuonList, pageNumber, pageSize);
+            return PartialView("PartialViewPhieuMuon", pm);
+        }
+            return View(pagedList.ToPagedList(pageNumber, pageSize));
     }
 
     [HttpGet]
