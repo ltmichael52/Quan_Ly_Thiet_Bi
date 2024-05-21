@@ -66,7 +66,7 @@ namespace ThietBiDienTu_2.Controllers
                 {
                     Dongthietbi dongtb = displayList.FirstOrDefault(x => x.Madongtb == item.Madongtb);
                     dongtb.Soluong -= item.Soluong;
-                    if (dongtb.Soluong < 0)
+                    if (dongtb.Soluong <= 0)
                     {
                         displayList.Remove(dongtb);
                     }
@@ -129,9 +129,9 @@ namespace ThietBiDienTu_2.Controllers
             {
                 Dongthietbi dongtb = displayList.FirstOrDefault(x => x.Madongtb == item.Madongtb);
                 dongtb.Soluong -= item.Soluong;
-                if(dongtb.Soluong < 0)
+                if(dongtb.Soluong <= 0)
                 {
-                    viewModel.DongThietBiList.Remove(dongtb);
+                    displayList.Remove(dongtb);
                 }
             }
 

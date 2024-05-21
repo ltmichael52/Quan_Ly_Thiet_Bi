@@ -9616,6 +9616,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\6ac1aa5c-cc11-4d48-a5ec-b985d351c8cc-download (10).jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\6c2f84a5-485c-4b7f-86bf-a1d9e093b7de-CreateShoesDetail.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>ThietBiDienTu_2</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ThietBiDienTu_2</BasePath>
+      <RelativePath>images/6c2f84a5-485c-4b7f-86bf-a1d9e093b7de-CreateShoesDetail.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\6c2f84a5-485c-4b7f-86bf-a1d9e093b7de-CreateShoesDetail.png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\6d4b34d0-2381-485e-8e6c-9a9adca8919e-4c90e6bd.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>ThietBiDienTu_2</SourceId>

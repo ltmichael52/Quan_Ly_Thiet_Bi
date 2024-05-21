@@ -20,10 +20,13 @@
     }
 </style>
 <script>
-    var alertViewModel = '@TempData["Notifications"]';
-    if (alertViewModel != "") {
-        alert("Một số thiết bị đã được người khác đặt trước");
-    }
+    $(document).ready(function () {
+        var alertViewModel = '@TempData["Notifications"]';
+        if (alertViewModel != "") {
+            alert("Một số thiết bị đã được người khác đặt trước");
+        }
+    });
+    
 </script>
 @* <script>
     $(document).ready(function () {

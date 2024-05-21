@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "v9aC7VFxCK5BcIBEP+axCUcoSOjJBE+DnBEgF2QqO8w=",
+  "Hash": "9Gtk/4EJ/CMvp1tAs+X7tEJ3hPCElmBql4e1KW2mvKI=",
   "Source": "ThietBiDienTu_2",
   "BasePath": "_content/ThietBiDienTu_2",
   "Mode": "Default",
@@ -10266,6 +10266,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\6ac1aa5c-cc11-4d48-a5ec-b985d351c8cc-download (10).jpg"
+    },
+    {
+      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\6c2f84a5-485c-4b7f-86bf-a1d9e093b7de-CreateShoesDetail.png",
+      "SourceId": "ThietBiDienTu_2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
+      "BasePath": "_content/ThietBiDienTu_2",
+      "RelativePath": "images/6c2f84a5-485c-4b7f-86bf-a1d9e093b7de-CreateShoesDetail.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\6c2f84a5-485c-4b7f-86bf-a1d9e093b7de-CreateShoesDetail.png"
     },
     {
       "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\6d4b34d0-2381-485e-8e6c-9a9adca8919e-4c90e6bd.jpg",
