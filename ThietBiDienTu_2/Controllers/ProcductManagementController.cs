@@ -68,6 +68,18 @@ namespace ThietBiDienTu_2.Controllers
                     Tendongtb = x.Tendongtb,
                 }).ToList();
             }
+            
+            viewModel.NgayDat = NgayDat; // Gán ngày đặt vào ViewModel
+            List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
+            foreach (CartItemModel item in cart)
+            {
+                Dongthietbi dongtb = viewModel.DongThietBiList.FirstOrDefault(x => x.Madongtb == item.Madongtb);
+                dongtb.Soluong -= item.Soluong;
+                if(dongtb.Soluong < 0)
+                {
+                    viewModel.DongThietBiList.Remove(dongtb);
+                }
+            }
 
             if (!string.IsNullOrEmpty(searchString))
             {
@@ -85,16 +97,6 @@ namespace ThietBiDienTu_2.Controllers
                 // Giới hạn số lượng đồng thiết bị hiển thị (ví dụ: 4)
                 viewModel.DongThietBiList = displayList.Take(4).ToList();
             }
-
-            viewModel.NgayDat = NgayDat; // Gán ngày đặt vào ViewModel
-            List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
-            foreach (CartItemModel item in cart)
-            {
-
-                viewModel.DongThietBiList.FirstOrDefault(x => x.Madongtb == item.Madongtb).Soluong -= item.Soluong;
-
-            }
-
             if (Request.Headers["X-Requested-With"] == "XMLHttpRequest" )
             {
                 // Trả về partial view khi là request AJAX

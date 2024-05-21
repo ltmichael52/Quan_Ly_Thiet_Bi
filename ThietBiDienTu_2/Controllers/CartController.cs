@@ -77,9 +77,12 @@ namespace ThietBiDienTu_2.Controllers
             }
             foreach (CartItemModel item in cart)
             {
-
-                viewModel.DongThietBiList.FirstOrDefault(x => x.Madongtb == item.Madongtb).Soluong -= item.Soluong;
-
+                Dongthietbi dongtb = viewModel.DongThietBiList.FirstOrDefault(x => x.Madongtb == item.Madongtb);
+                dongtb.Soluong -= item.Soluong;
+                if (dongtb.Soluong < 0)
+                {
+                    viewModel.DongThietBiList.Remove(dongtb);
+                }
             }
             HttpContext.Session.SetJson("Cart", cart);
             viewModel.DongThietBiList = viewModel.DongThietBiList.Take(4).ToList();
@@ -108,11 +111,6 @@ namespace ThietBiDienTu_2.Controllers
 
             List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
 
-            
-
-
-
-
             return displayList;
         }
         public IActionResult Decrease(int id)
@@ -120,7 +118,7 @@ namespace ThietBiDienTu_2.Controllers
             List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart");
             CartItemModel cartItem = cart.FirstOrDefault(c => c.Madongtb == id);
             Dongthietbi dongthietbi = checkQuantity(id).FirstOrDefault(x => x.Madongtb == id);
-            int availableQuantity = dongthietbi.Thietbis.Count();
+            int availableQuantity = dongthietbi.Soluong;
 
             if (cartItem.Soluong - 1 > availableQuantity)
             {
@@ -155,7 +153,7 @@ namespace ThietBiDienTu_2.Controllers
             List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart");
             CartItemModel cartItem = cart.FirstOrDefault(c => c.Madongtb == id);
             Dongthietbi dongthietbi = checkQuantity(id).FirstOrDefault(x => x.Madongtb == id);
-            int availableQuantity = dongthietbi.Thietbis.Count();
+            int availableQuantity = dongthietbi.Soluong;
 
             if (cartItem.Soluong >= availableQuantity)
             {
@@ -186,7 +184,6 @@ namespace ThietBiDienTu_2.Controllers
             return RedirectToAction("Index");
         }
 
-
         public IActionResult Delete(int Madongtb)
         {
             List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart");
@@ -208,6 +205,10 @@ namespace ThietBiDienTu_2.Controllers
         }
         public IActionResult Details()
         {
+            if (CheckQuantityAll() == false)
+            {
+                return RedirectToAction("Index");
+            }
             List<CartItemModel> cartItems = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>(); // neu co du lieu thi hien thi con khong se tao moi 1 list 
             string ngayDatString = HttpContext.Session.GetString("NgayDat");
             CartItemViewModel cartVM = new()
@@ -225,9 +226,69 @@ namespace ThietBiDienTu_2.Controllers
             return View(cartVM);
         }
 
+        public bool CheckQuantityAll()
+        {
+            string sessionNgayDat = HttpContext.Session.GetString("NgayDat");
+            DateTime NgayDat = DateTime.ParseExact(sessionNgayDat, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+
+            List<string> maThietBiDaMuon = _dataContext.Chitietphieumuons
+                    .Where(ct => ct.MapmNavigation.Ngaymuon.Date == NgayDat.Date)
+                    .Select(ct => ct.Matb.ToString())
+                    .ToList();
+
+            List<Dongthietbi> displayList = _dataContext.Dongthietbis.Select(x => new Dongthietbi
+            {
+                Madongtb = x.Madongtb,
+                Mota = x.Mota,
+                Soluong = _dataContext.Thietbis.Where(y => y.Madongtb == x.Madongtb && y.Trangthai == "Sẵn sàng" && !maThietBiDaMuon.Contains(y.Matb.ToString())).Count(),
+                Hinhanh = x.Hinhanh,
+                Tendongtb = x.Tendongtb,
+            }).ToList();
+
+            List<CartItemModel> cartItems = HttpContext.Session.GetJson<List<CartItemModel>>("Cart");
+            bool overAmount = false;
+
+            int count = cartItems.Count() - 1;
+            for (int i= count; i > 0;--i)
+            {
+                Dongthietbi dongtb = displayList.FirstOrDefault(x => x.Madongtb == cartItems[i].Madongtb);
+                if (cartItems[i].Soluong > dongtb.Soluong)
+                {
+                    overAmount = true;
+                    if (dongtb.Soluong == 0)
+                    {
+                        cartItems.RemoveAt(i);
+                    }
+                    else
+                    {
+                        cartItems[i].Soluong = dongtb.Soluong;
+                    }
+                }
+            }
+
+            if (cartItems.Count() == 0)
+            {
+                HttpContext.Session.Remove("Cart");
+                //Trog giỏ hết thiết bị
+                ViewBag.Notifications = "Tất cả thiết bị đã được người khác đặt trước";
+                return false;
+            }
+            else if(overAmount == true)
+            {
+                HttpContext.Session.SetJson("Cart", cartItems);
+                ViewBag.Notifications = "Một số thiết bị đã được người khác đặt trước";
+            }
+
+            return true;
+        }
+
         [HttpPost]
         public IActionResult Details(CartItemViewModel cartVM)
         {
+            if (CheckQuantityAll() == false)
+            {
+                return RedirectToAction("Index");
+            }
             if (cartVM.Phieumuon.Lydomuon != null) // Kiểm tra xem dữ liệu gửi lên có hợp lệ không
             {
                 // Lấy dữ liệu từ form
