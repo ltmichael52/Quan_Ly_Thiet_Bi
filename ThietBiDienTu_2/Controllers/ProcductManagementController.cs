@@ -73,7 +73,7 @@ namespace ThietBiDienTu_2.Controllers
             List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
             foreach (CartItemModel item in cart)
             {
-                Dongthietbi dongtb = viewModel.DongThietBiList.FirstOrDefault(x => x.Madongtb == item.Madongtb);
+                Dongthietbi dongtb = displayList.FirstOrDefault(x => x.Madongtb == item.Madongtb);
                 dongtb.Soluong -= item.Soluong;
                 if(dongtb.Soluong < 0)
                 {
