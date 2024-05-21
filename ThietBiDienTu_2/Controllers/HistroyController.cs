@@ -24,7 +24,7 @@ public class HistroyController : Controller
 
     public IActionResult Index(int? page, string? trangThai, DateTime? from, DateTime? to, string? searchMapm)
     {
-        int pageSize = 1; // Số lượng mục trong mỗi trang
+        int pageSize = 10; // Số lượng mục trong mỗi trang
         int pageNumber = page ?? 1; // Trang mặc định
         // Lấy mã số sinh viên từ Session
         int masv = HttpContext.Session.GetInt32("UserName") ?? 0;
