@@ -54,6 +54,7 @@
 
         function getToController() {
             var ngaydat1 = $('#NgayDat').val();
+            console.log("Get to ajax");
             $.ajax({
                 url: '/ProcductManagement/Index',
                 type: 'GET',
@@ -63,6 +64,7 @@
                     trangThai: null
                 },
                 success: function (response) {
+                    console.log("Get to ajax");
                     $('#productShow').html(response);
                     if (ngaydat1) {
                         $('#productShow').css('display', 'block');

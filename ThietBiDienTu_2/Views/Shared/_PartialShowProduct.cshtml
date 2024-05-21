@@ -50,7 +50,7 @@
                 int counter = 0;
                 foreach (var item in Model.DongThietBiList)
                 {
-                            @if (item.Thietbis.Count <= 0)
+                            @if (item.Soluong <= 0)
                     {
                         continue;
                     }
@@ -63,7 +63,7 @@
                                         <div class="text-center">
                                             <!-- Product name-->
                                             <h5 class="fw-bolder">@item.Tendongtb</h5>
-                                            <p>Trạng thái: @item.Mota</p>
+                                            <p>@item.Mota</p>
                                         </div>
                                     </div>
                                     <!-- Product actions-->
