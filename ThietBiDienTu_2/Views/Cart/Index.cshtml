@@ -1,11 +1,18 @@
 ﻿@using ThietBiDienTu_2.Models.ViewModels
 @model CartItemViewModel
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="~/css/style.css">
-</head>
-<body>
+<script>
+    var alertViewModel = '@TempData["FailAdd"]';
+    if (alertViewModel != "") {
+        alert("Thiết bị không đủ số lượng");
+    }
+
+    var alertViewModelNoti = '@TempData["Notifications"]';
+    if (alertViewModelNoti != "") {
+        alert("Tất cả thiết bị đã được người khác đặt");
+    }
+</script>
+
+
     @section naviheader {
         <div class="header-divider"></div>
         <div class="container-fluid">
@@ -17,7 +24,7 @@
             </nav>
         </div>
     }
-    <div class="container py-5">
+    <div class="container">
         <div class="row d-flex justify-content-center my-4">
             <div class="col-md-8">
                 <div class="card mb-4">
@@ -159,8 +166,4 @@
             }
         </div>
     </div>
-
-</body>
-
-</html>
 

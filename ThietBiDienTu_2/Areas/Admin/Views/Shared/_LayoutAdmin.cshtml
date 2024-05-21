@@ -147,7 +147,7 @@
                 </li>
             }
 
-            <li class="nav-group">
+            @* <li class="nav-group">
                 <a class="nav-link nav-group-toggle" href="#">
                     <svg class="nav-icon">
                         <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-chart")"></use>
@@ -169,7 +169,7 @@
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li> *@
             @if (HttpContextAccessor.HttpContext.Session.GetInt32("TypeAccount") == 2)
             {
                 <li class="nav-group">

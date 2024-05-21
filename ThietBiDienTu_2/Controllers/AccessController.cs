@@ -14,7 +14,7 @@ namespace ThietBiDienTu_2.Controllers
 
         public IActionResult Login()
         {
-            
+           
             if (HttpContext.Session.GetInt32("UserName") == null)
             {
                 return View();
@@ -37,6 +37,7 @@ namespace ThietBiDienTu_2.Controllers
         [HttpPost]
         public IActionResult Login(Taikhoan user)
         {
+            
             if (HttpContext.Session.GetInt32("UserName") == null)
             {
                 var u = _context.Taikhoans

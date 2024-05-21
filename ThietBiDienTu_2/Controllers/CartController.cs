@@ -35,7 +35,7 @@ namespace ThietBiDienTu_2.Controllers
         }
 
 
-        public IActionResult Add(int id)
+        public IActionResult Add(int id,string? searchString,string trangThai)
         {
             Dongthietbi dongthietbi = _dataContext.Dongthietbis.FirstOrDefault(x => x.Madongtb == id);
             string sessionNgayDat = HttpContext.Session.GetString("NgayDat");
@@ -52,7 +52,7 @@ namespace ThietBiDienTu_2.Controllers
 
             if ((cartItem == null ? 0 : cartItem.Soluong) >= soluongkho)
             {
-                ViewBag.FailAdd = "Chỉ còn " + soluongkho + " thiết bị";
+                ViewBag.FailAdd = "true";
                 if (soluongkho > 0)
                 {
                     cartItem.Soluong = soluongkho;
@@ -67,12 +67,12 @@ namespace ThietBiDienTu_2.Controllers
                 if (cartItem == null)
                 {
                     cart.Add(new CartItemModel(dongthietbi));
-                    ViewBag.Notification = "Thiết bị đã được thêm vào phiếu mượn thành công!";
+                    ViewBag.Notification = "true";
                 }
                 else
                 {
                     cartItem.Soluong += 1;
-                    ViewBag.Notification = "Số lượng thiết bị trong phiếu mượn đã được tăng lên!";
+                    ViewBag.Notification = "true";
                 }
             }
             foreach (CartItemModel item in cart)
@@ -84,8 +84,23 @@ namespace ThietBiDienTu_2.Controllers
                     viewModel.DongThietBiList.Remove(dongtb);
                 }
             }
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                viewModel.DongThietBiList = viewModel.DongThietBiList.Where(x => x.Tendongtb.ToLower().Contains(searchString.ToLower())).ToList();
+            }
+
             HttpContext.Session.SetJson("Cart", cart);
-            viewModel.DongThietBiList = viewModel.DongThietBiList.Take(4).ToList();
+            if (trangThai == "Sẵn sàng")
+            {
+                // Trả về tất cả các mục
+                ViewBag.XemThem = "Sẵn sàng";
+            }
+            else
+            {
+                // Giới hạn số lượng đồng thiết bị hiển thị (ví dụ: 4)
+                viewModel.DongThietBiList = viewModel.DongThietBiList.Take(4).ToList();
+            }
             return PartialView("_PartialShowProduct", viewModel);
         }
 
@@ -122,7 +137,8 @@ namespace ThietBiDienTu_2.Controllers
 
             if (cartItem.Soluong - 1 > availableQuantity)
             {
-                TempData[$"Message_{id}"] = "Thiết bị chỉ còn " + availableQuantity + " số lượng";
+                //TempData[$"Message_{id}"] = "Thiết bị chỉ còn " + availableQuantity + " số lượng";
+                TempData["FailAdd"] = "true";
                 if (availableQuantity > 0)
                 {
                     cartItem.Soluong = availableQuantity;
@@ -158,7 +174,8 @@ namespace ThietBiDienTu_2.Controllers
             if (cartItem.Soluong >= availableQuantity)
             {
                 // Lưu thông báo vượt quá số lượng "Sẵn sàng" vào TempData của sản phẩm
-                TempData[$"Message_{id}"] = "Thiết bị chỉ còn " + availableQuantity + " số lượng";
+                //TempData[$"Message_{id}"] = "Thiết bị chỉ còn " + availableQuantity + " số lượng";
+                TempData["FailAdd"] = "true";
                 if (availableQuantity > 0)
                 {
                     cartItem.Soluong = availableQuantity;
@@ -270,13 +287,13 @@ namespace ThietBiDienTu_2.Controllers
             {
                 HttpContext.Session.Remove("Cart");
                 //Trog giỏ hết thiết bị
-                ViewBag.Notifications = "Tất cả thiết bị đã được người khác đặt trước";
+                TempData["Notifications"] = "true";
                 return false;
             }
             else if(overAmount == true)
             {
                 HttpContext.Session.SetJson("Cart", cartItems);
-                ViewBag.Notifications = "Một số thiết bị đã được người khác đặt trước";
+                TempData["Notifications"] = "true";
             }
 
             return true;
