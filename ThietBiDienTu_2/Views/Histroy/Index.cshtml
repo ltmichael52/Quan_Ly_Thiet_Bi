@@ -23,7 +23,21 @@
     // }
 
 }
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            console.log("here");
+            $('.notify').css("display", "none");
+        }, 10000);
+    });
+</script>
 
+@if (TempData["Notifications"] != null)
+{
+    <div class="alert alert-success notify">
+        <strong>Thành công!</strong> Phiếu mượn vừa tạo có mã : @TempData["Notifications"]
+    </div>
+}
 @section searchArea {
     <div style="width:85%" class="d-none d-md-flex align-items-center mb-2">
         <div class="input-group" style="width:35%">

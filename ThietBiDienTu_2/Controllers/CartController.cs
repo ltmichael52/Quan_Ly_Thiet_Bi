@@ -265,8 +265,8 @@ namespace ThietBiDienTu_2.Controllers
             List<CartItemModel> cartItems = HttpContext.Session.GetJson<List<CartItemModel>>("Cart");
             bool overAmount = false;
 
-            int count = cartItems.Count() - 1;
-            for (int i= count; i > 0;--i)
+            int count = cartItems.Count()-1;
+            for (int i= count; i >= 0;--i)
             {
                 Dongthietbi dongtb = displayList.FirstOrDefault(x => x.Madongtb == cartItems[i].Madongtb);
                 if (cartItems[i].Soluong > dongtb.Soluong)
@@ -392,6 +392,7 @@ namespace ThietBiDienTu_2.Controllers
                         // Hoàn thành giao dịch
                         transaction.Commit();
 
+                        TempData["Notifications"] = maPhieuMuon;
                         // Sau khi lưu thành công, bạn có thể thực hiện các hành động khác ở đây, ví dụ: redirect đến trang thành công, hiển thị thông báo, v.v.
                         return RedirectToAction("Index", "Histroy");
                     }
