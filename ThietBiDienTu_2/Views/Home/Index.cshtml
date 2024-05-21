@@ -29,6 +29,9 @@
         .notification p {
             color: black; /* Màu đen cho dòng chữ */
         }
+        .maxH{
+           /*  height:128px; */
+        }
 </style>
 
 <!DOCTYPE html>
@@ -46,10 +49,10 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4 mb-3">
+        <div class="col-md-4 mb-3 ">
             <a href="@Url.Action("Index", "Cart")" class="card-link">
                 <div class="card bg-primary">
-                    <div class="card-body">
+                    <div class="card-body maxH">
                         <h5 class="card-title text-white">Phiếu mượn thiết bị</h5>
                         <p class="card-text text-white"></p>
                         <p class="card-text text-white"><strong>Số lượng: @ViewBag.TotalQuantity </strong></p>
@@ -58,7 +61,7 @@
             </a>
         </div>
 
-        <div class="col-md-4 mb-3">
+        <div class="col-md-4 mb-3 ">
             <a href="@Url.Action("Index", "Histroy")" class="card-link">
                 <div class="card bg-primary">
                     <div class="card-body">
@@ -69,7 +72,7 @@
                 </div>
             </a>
         </div>
-        <div class="col-md-4 md-3">
+        <div class="col-md-4 md-3  ">
             <a href="@Url.Action("DanhsachPhieuMuon", "PhieuMuonAdmin")" class="card-link">
                 <div class="card bg-primary">
                     <div class="card-body">

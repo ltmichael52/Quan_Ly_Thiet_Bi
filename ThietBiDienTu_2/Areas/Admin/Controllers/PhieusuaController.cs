@@ -5,12 +5,14 @@ using Microsoft.Build.ObjectModelRemoting;
 using ThietBiDienTu_2.Areas.Admin.InterfaceRepositories;
 using ThietBiDienTu_2.Areas.Admin.ViewModels;
 using ThietBiDienTu_2.Models;
+using ThietBiDienTu_2.Models.Authentication;
 using ThietBiDienTu_2.Repository;
 using X.PagedList;
 
 namespace ThietBiDienTu_2.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [AuthenticationM_S]
     public class PhieusuaController : Controller
     {
         IPhieuSuaAdmin psRepo; IThietBiAdmin tbRepo; IHttpContextAccessor contextAcc;

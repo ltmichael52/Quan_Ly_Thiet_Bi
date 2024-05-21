@@ -18,6 +18,7 @@ using X.PagedList;
 namespace ThietBiDienTu_2.Areas.Admin.Controllers
 {
     [Area("admin")]
+    [AuthenticationM_S]
     public class PhieuMuonAdminController : Controller
     {
         IPhieuMuonAdmin pMAdmin; IHttpContextAccessor contextAcc; IKhoa kRepo;INhanVien nvRepo;

@@ -10,7 +10,11 @@
 
 
 
-
+<style>
+    .maxH{
+       /*  height: 192px; */
+    }
+</style>
     <div class="container">
         <input type="hidden" value="ViewBag.Counts" id="CountItem" />
         <div class="row">
@@ -18,7 +22,7 @@
             <div class="col-md-4 mb-3">
                 <a href="@Url.Action("DanhsachPhieuMuon", "PhieuMuonAdmin")" class="card-link">
                     <div class="card bg-success">
-                        <div class="card-body">
+                    <div class="card-body maxH">
                             <h5 class="card-title text-white">Tổng số phiếu hôm nay</h5>
                             <p class="card-text text-white">Hôm nay: @ViewBag.Today</p>
                             <p class="card-text text-white">Bao gồm tất cả phiếu trong hôm nay</p>
@@ -30,7 +34,7 @@
                 
             <div class="col-md-4 mb-3">
                 <a href="@Url.Action("DanhsachPhieuMuon", "PhieuMuonAdmin", new { Trangthai = 0 })" class="card-link">
-                    <div class="card bg-success">
+                <div class="card bg-success maxH">
                         <div class="card-body">
                             <h5 class="card-title text-white">Tổng phiếu mượn chưa duyệt</h5>
                             <p class="card-text text-white">Hôm nay: @ViewBag.Today</p>
@@ -44,7 +48,7 @@
             <div class="col-md-4 mb-3">
                 <a href="@Url.Action("DanhsachPhieuMuon", "PhieuMuonAdmin", new { trangthai = 1 })" class="card-link">
                     <div class="card bg-success">
-                        <div class="card-body">
+                    <div class="card-body maxH">
                             <h5 class="card-title text-white">Tổng phiếu mượn chưa trả</h5>
                             <p class="card-text text-white">Hôm nay: @ViewBag.Today</p>
                             <p class="card-text text-white">Gồm các phiếu chưa trả của các ngày</p>
@@ -56,7 +60,7 @@
             <div class="col-md-4 mb-3">
                 <a href="@Url.Action("ThietBiList", "ThietBi", new { trangthai = "Đang hư" })" class="card-link">
                     <div class="card bg-success">
-                        <div class="card-body">
+                    <div class="card-body maxH">
                             <h5 class="card-title text-white">Tổng số thiết bị hư</h5>
                             <p class="card-text text-white">Hôm nay: @ViewBag.Today</p>
                             <p class="card-text text-white">Quản lý các thiết bị hư</p>
@@ -69,7 +73,7 @@
             <div class="col-md-4 mb-3">
                 <a href="@Url.Action("DanhsachPhieusua", "Phieusua", new { trangthai = "Chưa trả" })" class="card-link">
                     <div class="card bg-success">
-                        <div class="card-body">
+                    <div class="card-body maxH">
                             <h5 class="card-title text-white">Số phiếu sửa chưa hoàn thành</h5>
                             <p class="card-text text-white">Hôm nay: @ViewBag.Today</p>
                             <p class="card-text text-white">Gồm các phiếu sửa chưa sửa xog</p>
@@ -84,7 +88,7 @@
             <div class="col-md-4 mb-3">
                 <a href="@Url.Action("ThietBiList", "ThietBi")" class="card-link">
                     <div class="card bg-success">
-                        <div class="card-body">
+                    <div class="card-body maxH">
                             <h5 class="card-title text-white">Quản lý thiết bị</h5>
                             <p class="card-text text-white">Hôm nay: @ViewBag.Today</p>
                             <p class="card-text text-white">Quản lý các thiết bị của Trường SIU</p>
@@ -97,7 +101,7 @@
             <div class="col-md-4 mb-3">
                 <a href="@Url.Action("Index", "DongThietBi")" class="card-link">
                     <div class="card bg-success">
-                        <div class="card-body">
+                    <div class="card-body maxH">
                             <h5 class="card-title text-white">Quản lý dòng thiết bị</h5>
                             <p class="card-text text-white">Hôm nay: @ViewBag.Today</p>
                             <p class="card-text text-white">Quản lý các dòng thiết bị của Trường SIU</p>
@@ -116,7 +120,7 @@
                 <div class="col-md-4 mb-3">
                     <a href="@Url.Action("Index", "UserEmployee")" class="card-link">
                         <div class="card bg-success">
-                            <div class="card-body">
+                        <div class="card-body maxH">
                                 <h5 class="card-title text-white">Quản lý nhân viên</h5>
                                 <p class="card-text text-white">Hôm nay: @ViewBag.Today</p>
                                 <p class="card-text text-white">Quản lý nhân viên của Trường SIU</p>
@@ -129,7 +133,7 @@
                 <div class="col-md-4 mb-3">
                     <a href="@Url.Action("Index", "UserStudent")" class="card-link">
                         <div class="card bg-success">
-                            <div class="card-body">
+                        <div class="card-body maxH">
                                 <h5 class="card-title text-white">Quản lý sinh viên</h5>
                                 <p class="card-text text-white">Hôm nay: @ViewBag.Today</p>
                                 <p class="card-text text-white">Quản lý sinh viên của Trường SIU</p>

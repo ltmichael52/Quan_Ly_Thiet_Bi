@@ -2,12 +2,14 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ThietBiDienTu_2.Models;
+using ThietBiDienTu_2.Models.Authentication;
 using X.PagedList;
 
 namespace ThietBiDienTu_2.Areas.Admin.Controllers
 {
     [Area("admin")]
     [Route("admin/[controller]/[action]")]
+    [AuthenticationManager]
     public class NganhController : Controller
     {
         private readonly IHttpContextAccessor contextAccess;

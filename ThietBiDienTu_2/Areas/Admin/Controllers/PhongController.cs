@@ -13,7 +13,7 @@ using ThietBiDienTu_2.Models.Authentication;
 namespace ThietBiDienTu_2.Areas.Admin.Controllers
 {
     [Area("admin")]
-    [AuthenticationM_S]
+    [AuthenticationManager]
     public class PhongController : Controller
     {
         private readonly ICoSoAdmin csRepo;
