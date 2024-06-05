@@ -42,6 +42,11 @@
                 }
             });
         }
+
+        setTimeout(function () {
+            console.log("here");
+            $('.notify').css("display", "none");
+        }, 10000);
     });
 
 </script>
@@ -59,13 +64,13 @@
 
 @if (TempData["Action"] != null)
 {
-    <div class="alert alert-success" id="notify">
+    <div class="alert alert-success notify">
         <strong>Success!</strong> @TempData["Action"]
     </div>
 }
 @if (TempData["ErrorMessage"] != null)
 {
-    <div class="alert alert-danger" id="notify">
+    <div class="alert alert-danger notify">
         <strong>Error!</strong> @TempData["ErrorMessage"]
     </div>
 }

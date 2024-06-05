@@ -17,7 +17,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             _context = context;
             this.pmRepo = pmRepo;
         }
-        [AuthenticationM_S]
+        
         public IActionResult Index()
         {
 
@@ -58,7 +58,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             int thietbihuCount = _context.Thietbis.Count(p => p.Trangthai == "Đang hư");
             ViewBag.ThietBiHuCount = thietbihuCount;
 
-            int chuasuaCount = _context.Phieusuas.Count(p => p.Trangthai == 1);
+            int chuasuaCount = _context.Phieusuas.Count(p => p.Trangthai == 0);
             ViewBag.ChuaSuaCount = chuasuaCount; 
 
             return View();

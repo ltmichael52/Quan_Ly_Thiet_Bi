@@ -19,16 +19,19 @@ namespace ThietBiDienTu_2.Controllers
             List<CartItemModel> cartItems = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
 
             // Gọi phương thức tính tổng số lượng từ CartItemModel
-            //int totalQuantity = CartItemModel.CalculateTotalQuantity(cartItems);
-            //ViewBag.TotalQuantity = totalQuantity;
-            int masv = HttpContext.Session.GetInt32("UserName") ??0;
+            int masv = HttpContext.Session.GetInt32("UserName") ?? 0;
+            var student = _context.Sinhviens.FirstOrDefault(s => s.Masv == masv);
+            DateTime today = DateTime.Now;
+            int amountToday = _context.Phieumuons.Count(x => x.Ngaymuon == today.Date && x.Masv == masv);
+            ViewBag.todayCount = amountToday;
+
+            
             int chuatraCount = _context.Phieumuons.Count(p => p.Trangthai == 1 && p.Masv ==masv);
             ViewBag.CTCount = chuatraCount;
 
             int chuaduyetCount = _context.Phieumuons.Count(p => p.Trangthai == 0 && p.Masv == masv);
             ViewBag.CDCount = chuaduyetCount;
 
-            var student = _context.Sinhviens.FirstOrDefault(s => s.Masv == masv);
             string studentName = student != null ? student.Tensv : "Sinh viên";
 
             // Store the student's name in ViewBag

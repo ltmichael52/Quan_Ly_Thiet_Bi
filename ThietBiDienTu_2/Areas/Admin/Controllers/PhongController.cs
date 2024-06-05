@@ -9,11 +9,11 @@ using ThietBiDienTu_2.Areas.Admin.InterfaceRepositories;
 using Microsoft.AspNetCore.Http;
 using X.PagedList;
 using ThietBiDienTu_2.Models.Authentication;
+using System.Data.OleDb;
 
 namespace ThietBiDienTu_2.Areas.Admin.Controllers
 {
     [Area("admin")]
-    [AuthenticationManager]
     public class PhongController : Controller
     {
         private readonly ICoSoAdmin csRepo;
@@ -47,7 +47,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
         }
 
         // GET: Phongs
-        public async Task<IActionResult> Index(string? searchStringController, string? filterLoaiphongController, string? filterCosoController, int? page)
+        public  IActionResult Index(string? searchStringController, string? filterLoaiphongController, string? filterCosoController, int? page)
         {
             GetData();
 
@@ -97,33 +97,61 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
         // POST: Phongs/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Map,Macs,Tenphong,Loaiphong")] Phong phong)
+        public IActionResult Create(Phong phong)
         {
-
+            if (Check(phong) == false)
+            {
+                GetData();
+                return View(phong);
+            }
+            
             phongRepo.Add(phong);
             TempData["Action"] = "Tạo thành công";
             return RedirectToAction(nameof(Index));
 
-            GetData();
-            return View(phong);
         }
 
+        public bool Check(Phong phong,string oldMap="")
+        {
+            bool check = true;
+            bool checkExist = phongRepo.CheckPhongExist(phong.Map,oldMap);
+            if (checkExist)
+            {
+                ModelState.AddModelError("Map", "Mã phòng đã tồn tại");
+                check = false;
+            }
+            if (phong.Map == null || phong.Map == "")
+            {
+                check = false;
+            }
+            if (phong.Tenphong == null || phong.Map == "")
+            {
+                check = false;
+            }
+            if (phong.Loaiphong == null || phong.Loaiphong == "")
+            {
+                check = false;
+            }
+            if (phong.Macs == null || phong.Macs == 0)
+            {
+                check = false;
+            }
+            if (phong.Loaiphong == "Kho" && phong.Douutien == null)
+            {
+                ModelState.AddModelError("Douutien", "Vui lòng chọn độ ưu tiên");
+                check = false;
+            }
 
+            return check;
+        }
 
         // GET: Phongs/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        public  IActionResult Edit(string id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+       
 
             var phong = phongRepo.FindPhong(id);
-            if (phong == null)
-            {
-                return NotFound();
-            }
-
+            ViewBag.oldMap = id;
             GetData();
             return View(phong);
         }
@@ -131,58 +159,23 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
         // POST: Phongs/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Map,Macs,Tenphong,Loaiphong,Douutien")] Phong phong)
+        public IActionResult Edit(string oldMap, [Bind("Map,Macs,Tenphong,Loaiphong,Douutien")] Phong phong)
         {
-            if (id != phong.Map)
+            if(Check(phong,oldMap) == false)
             {
-                return NotFound();
+                ViewBag.oldMap = oldMap;
+                GetData();
+                return View(phong);
             }
+            phongRepo.Update(phong,oldMap);
+            TempData["Action"] = "Chỉnh sửa thành công";
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    phongRepo.Update(phong);
-                    TempData["Action"] = "Chỉnh sửa thành công";
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!PhongExists(phong.Map))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            GetData();
-            return View(phong);
+            return RedirectToAction(nameof(Index));
+            
         }
 
         // GET: Phongs/Delete/5
-        public async Task<IActionResult> Delete(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var phong = phongRepo.FindPhong(id);
-            if (phong == null)
-            {
-                return NotFound();
-            }
-
-            return View(phong);
-        }
-
-        // POST: Phongs/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public  IActionResult DeleteConfirmed(string id)
         {
             var phong = phongRepo.FindPhong(id);
 
@@ -197,7 +190,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                     return RedirectToAction(nameof(Index));
                 }
 
-                phongRepo.Delete(phong);
+                phongRepo.Delete(id);
                 TempData["Action"] = "Xóa thành công";
                 return RedirectToAction(nameof(Index));
             }
@@ -209,10 +202,6 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             }
         }
 
-        private bool PhongExists(string id)
-        {
-            return phongRepo.FindPhong(id) == null;
-
-        }
+        
     }
 }

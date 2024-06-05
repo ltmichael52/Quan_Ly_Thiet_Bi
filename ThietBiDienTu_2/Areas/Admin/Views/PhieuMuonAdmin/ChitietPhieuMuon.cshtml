@@ -14,6 +14,19 @@
         </nav>
     </div>
 }
+<script>
+    $(document).ready(function () {
+        var error = '@ViewBag.error';
+        if (error != "") {
+            $('#exampleModal').modal('show');
+        }
+
+        $('.tuchoiShow').click(function () {
+            $('.spanTuchoi').text("");
+        });
+    });
+   
+</script>
 <form  asp-action="ChitietPhieuMuon" asp-controller="PhieuMuonAdmin" method="post">
     <input asp-for="Mapm" value="@Model.Mapm" hidden />
     <div class="card">
@@ -41,40 +54,13 @@
                                 Đồng ý
                             </button>
 
-                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">
+                            <button type="button" class="btn btn-warning btn-sm tuchoiShow" data-toggle="modal" data-target="#exampleModal">
                                 <svg class="icon icon-lg">
                                     <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-x-circle")"></use>
                                 </svg>
                                 Từ chối
                             </button>
 
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Xác nhận từ chối?</h5>
-
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <select class="form-control" asp-for="@Model.LydoTuChoi">
-                                                <option value="0">Chọn lý do từ chối </option>
-                                                <option value="Dấu hiệu spam">Spam</option>
-                                                <option value="Khác">Khác</option>
-                                            </select>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                                            <button type="submit" asp-route-trangthai="4" class="btn btn-primary">Xác nhận</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
                         </div>
                     </div>
                 }
@@ -145,7 +131,7 @@
                                 Đồng ý
                             </button>
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">
+                            <button type="button" class="btn btn-warning btn-sm tuchoiShow" data-toggle="modal" data-target="#exampleModal">
                                 <svg class="icon icon-lg">
                                     <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-x-circle")"></use>
                                 </svg>
@@ -165,11 +151,11 @@
                                         </div>
                                         <div class="modal-body">
                                             <select class="form-control" asp-for="@Model.LydoTuChoi">
-                                                <option value="0">Chọn lý do từ chối </option>
+                                                <option value="">Chọn lý do từ chối </option>
                                                 <option value="Dấu hiệu spam">Spam</option>
                                                 <option value="Khác">Khác</option>
                                             </select>
-
+                                            <span asp-validation-for="@Model.LydoTuChoi" class="text-danger spanTuchoi"></span>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>

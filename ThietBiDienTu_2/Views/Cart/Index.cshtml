@@ -2,17 +2,16 @@
 @model CartItemViewModel
 <script>
     $(document).ready(function () {
-        var alertViewModel = '@TempData["FailAdd"]';
-        if (alertViewModel != "") {
-            alert("Thiết bị không đủ số lượng");
-        }
 
         var alertViewModelNoti = '@TempData["Notifications"]';
         if (alertViewModelNoti != "") {
             alert("Tất cả thiết bị đã được người khác đặt");
         }
     });
-    
+    var alertViewModel = '@TempData["FailAdd"]';
+    if (alertViewModel != "") {
+        alert("Thiết bị không đủ số lượng");
+    }
 </script>
 
 

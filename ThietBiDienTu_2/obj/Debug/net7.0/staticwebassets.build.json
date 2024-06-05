@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9Gtk/4EJ/CMvp1tAs+X7tEJ3hPCElmBql4e1KW2mvKI=",
+  "Hash": "TBCsJ+YM7tkzL91XwiR9Lw1y0Ad3RikT8LEnzmrBejE=",
   "Source": "ThietBiDienTu_2",
   "BasePath": "_content/ThietBiDienTu_2",
   "Mode": "Default",
@@ -10487,6 +10487,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\acb6d9d7-bfa9-4bea-bafc-10fb6c95279b-download (9).jpg"
+    },
+    {
+      "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\b01988a5-4459-4de7-91b3-0aaa61942fb6-1d2834bf-c4fb-4aac-b78a-cbe40b8c6c7a.jpg",
+      "SourceId": "ThietBiDienTu_2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\",
+      "BasePath": "_content/ThietBiDienTu_2",
+      "RelativePath": "images/b01988a5-4459-4de7-91b3-0aaa61942fb6-1d2834bf-c4fb-4aac-b78a-cbe40b8c6c7a.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\b01988a5-4459-4de7-91b3-0aaa61942fb6-1d2834bf-c4fb-4aac-b78a-cbe40b8c6c7a.jpg"
     },
     {
       "Identity": "D:\\Uni\\KTPM\\ThietBiDienTu_2\\ThietBiDienTu_2\\wwwroot\\images\\b80148b4-a02e-4b0f-96f5-40211b99d1c4-dellKB612_BanPhim.jpg",

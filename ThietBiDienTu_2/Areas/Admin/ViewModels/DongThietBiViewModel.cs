@@ -20,6 +20,12 @@ namespace ThietBiDienTu_2.Areas.Admin.ViewModels
 
         public int SoLuongHu { get; set; }
 
+        public int SoluongMuon {  get; set; }
+
+        public int SoluongSua {  get; set; }
+
+        public int SoluongTL {  get; set; }
+
         public bool NeedsMoreDevices { get; set; }
 
         public string? Mota { get; set; }

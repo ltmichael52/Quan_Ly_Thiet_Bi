@@ -55,6 +55,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                 TrangThai = x.Trangthai
             }).ToList();
 
+      
 
             if (!string.IsNullOrEmpty(searchStringThietBi))
             {
@@ -81,7 +82,9 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             if (!string.IsNullOrEmpty(Trangthai) && Trangthai != "all")
             {
                 dataList = dataList.Where(x => x.TrangThai == Trangthai).ToList();
-                
+                ViewBag.State = Trangthai;
+
+
             }
             dataList = dataList.OrderByDescending(x => x.Matb).ToList();
             CreateSelectData();
@@ -184,7 +187,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
         {
             int check = 0;
             var ExistingCtsp = thietbi.CheckSeriExist(ThietBiView.Seri,ThietBiView.MaDongTb,oldSeri);
-     
+
             if (ExistingCtsp != null)
             {
                 ModelState.AddModelError("Seri", "Seri của thiết bị này đã tồn tại");

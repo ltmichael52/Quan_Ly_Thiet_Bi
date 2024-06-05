@@ -57,7 +57,7 @@
                    
                         <div class="form-group mb-2">
                             <label asp-for="@Model.MaDongTb" class="mb-2"><strong>Tên dòng thiết bị<span class="text-danger"> *</span></strong></label>
-                        <select asp-for="@Model.MaDongTb" id="tbSelect" class="form-control" required="required">
+                        <select asp-for="@Model.MaDongTb" id="tbSelect" class="form-control" >
                                 <option value="">Chọn tên dòng thiết bị</option>
                                 @foreach (SelectListItem items in ViewBag.DongTbList)
                                 {
@@ -104,7 +104,6 @@
                                 <div class="form-group mb-2">
                                     <label asp-for="@Model.TrangThai" class="mb-2"><strong>Trạng thái</strong></label>
                                     <input asp-for="@Model.TrangThai" class="form-control" readonly id="StateProduct" style="background-color:#E8E8E8"/>
-                                    <span asp-validation-for="@Model.TrangThai" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="col-md-6" style="width:60%">
@@ -130,139 +129,33 @@
 <div class="footer"></div>
 
 <script>
-    @*
-    var searchString9 = encodeURIComponent(localStorage.getItem('savedsearchString'));
-    var coso9 = encodeURIComponent(localStorage.getItem('savedCoso'));
-    var phong9 = encodeURIComponent(localStorage.getItem('savedPhong'));
-    var loaiphong9 = encodeURIComponent(localStorage.getItem('savedLoaiPhong'));
-    var trangthai9 = encodeURIComponent(localStorage.getItem('savedTrangthai'));
-
-    // Construct the relative URL starting from the action within the Admin area
-    var url = "/Admin/ThietBi/CreateThietBi?searchString1=" + searchString9 + "&Coso1=" + coso9 + "&Phong1=" + phong9 + "&Loaiphong1=" + loaiphong9 + "&Trangthai1=" + trangthai9;
-
-    var urlA = "/Admin/ThietBi/ThietBiList?page=1&searchString=" + searchString9 + "&Coso=" + coso9 + "&Phong=" + phong9 + "&LoaiPhong=" + loaiphong9 + "&Trangthai=" + trangthai9;
-    console.log("Url :", url);
-    console.log("Url A: ", urlA);
-    function getUrl() {
-        window.location.href = urlA;
-    }
-    function storeData() {
-        const image = document.getElementById('imgProduct').src;
-        console.log("Images :", image);
-        const thietbi = document.getElementById('tbSelect').value;
-        const coso = document.getElementById('branchSelect').value;
-        const phong = document.getElementById('roomSelect').value;
-        const seri = document.getElementById('SeriInput').value;
-        const loaiTB = document.getElementById('roomType').value;
-        const stateProduct = document.getElementById('StateProduct').value;
-
-        localStorage.setItem('savedTBCreate', thietbi);
-        localStorage.setItem('savedCosoCreate', coso);
-        localStorage.setItem('savedPhongCreate', phong);
-        localStorage.setItem('savedSeriCreate', seri);
-        localStorage.setItem('savedImgCreate', image);
-        localStorage.setItem('savedLoaiTBCreate', loaiTB);
-        localStorage.setItem('savedTrangThaiCreate', stateProduct);
-    }
-
-    function setData() {
-        const savedImg = localStorage.getItem('savedImgCreate');
-        const savedTB = localStorage.getItem('savedTBCreate');
-        const savedCoso = localStorage.getItem('savedCosoCreate');
-        const savedPhong = localStorage.getItem('savedPhongCreate');
-        const savedSeri = localStorage.getItem('savedSeriCreate');
-        const savedLoaiTB = localStorage.getItem('savedLoaiTBCreate');
-        const savedTrangThai = localStorage.getItem('savedTrangThaiCreate');
-
-        if (savedLoaiTB != null && savedLoaiTB != "all") {
-            document.getElementById('roomType').value = savedLoaiTB;
-
-        }
-        if (savedTrangThai != null && savedTrangThai != "") {
-            document.getElementById('StateProduct').value = savedTrangThai;
-
-        }
-
-        if (savedImg != null && savedTB != "") {
-            document.getElementById('imgProduct').src = savedImg;
-            var splitResult = savedImg.split("/");
-            var substring = splitResult[splitResult.length - 1];
-            substring = "~/images/" + substring;
-            document.getElementById('linkImage').value = substring;
-
-        }
-
-        if (savedTB != null && savedTB != "all") {
-            document.getElementById('tbSelect').value = savedTB;
-        }
-
-        if (savedCoso != null && savedCoso != "all") {
-            document.getElementById('branchSelect').value = savedCoso;
-            roomSelect = document.getElementById('roomSelect');
-
-            //clear all option
-
-            while (roomSelect.options.length > 1) {
-                roomSelect.remove(1);
-            }
-
-            //C# is in server side, Javascript is in client side
-            //Show cannot use branch id in C# so using text
-    @foreach (SelectListItem items in ViewBag.PhongList)
-    {
-        <text>
-
-                                var roomBranchId = "@items.Text.Split(',')[1]";
-                if (roomBranchId === savedCoso) {
-                    roomSelect.options.add(new Option("@items.Text.Split(',')[0]", "@items.Value", false));
-                    //false mean not selected by default
-                }
-        </text>
-        //Switch razor syntax and generate js code dynamically for each room
-    }
-            }
-
-        if (savedPhong != null && savedPhong != "all") {
-            document.getElementById('roomSelect').value = savedPhong;
-        }
-        if (savedSeri != null) {
-            document.getElementById('SeriInput').value = savedSeri;
-        }
-    }
-    
-    document.getElementById('createForm').addEventListener('submit', function (event) {
-        event.preventDefault();
-        storeData();
-        this.action = url;
-        // Submit the form
-        this.submit();
-    });
-    *@
-
-    @*"@Url.Content("~/images/"+@items.Hinhanh)"
-
-        Have to use aboe instead of "~/images/@items.Hinhanh" don't know why
-        *@
-
-        document.getElementById('tbSelect').addEventListener('change', function () {
-            var MaDongTb = this.value;
-            var imageProduct = document.getElementById('imgProduct');
-            var linkImage = document.getElementById('linkImage');
-
+   
+    function changeImage(){
+                     var MaDongTb = $('#tbSelect').val();
+                var imageProduct = document.getElementById('imgProduct');
+                var linkImage = document.getElementById('linkImage');
+                if(MaDongTb != ""){
     @foreach (var items in ViewBag.DongTbFull)
     {
         <text>
-                                                      if (@items.Madongtb == MaDongTb) {
-                    imageProduct.src = "@Url.Content("~/images/"+@items.Hinhanh)";
-                    linkImage.value = "~/images/@items.Hinhanh";
-                }
+                                                              if (@items.Madongtb == MaDongTb) {
+                            imageProduct.src = "@Url.Content("~/images/"+@items.Hinhanh)";
+                            linkImage.value = "~/images/@items.Hinhanh";
+                        }
         </text>
     }
-            if(MaDongTb==0){
-                imageProduct.src = "@Url.Content("~/images/no_images.jpg")";
-                linkImage.value = "~/images/no_images.jpg";
+                }
+                else{
+                    imageProduct.src = "@Url.Content("~/images/no_images.jpg")";
+                    linkImage.value = "~/images/no_images.jpg";
+                }
             }
-               // storeData();
+        $(document).ready(function(){
+           
+            changeImage();
+        });
+        document.getElementById('tbSelect').addEventListener('change', function () {
+            changeImage();
         });
 
     document.getElementById('roomSelect').addEventListener('change', function () {
@@ -289,9 +182,7 @@
                 roomType.value = "";
                 stateProduct.value = "";
             }
-            //storeData();
     });
-
 
     document.getElementById('branchSelect').addEventListener('change', function () {
         var branchId = this.value;
@@ -321,12 +212,6 @@
             roomType.value = "";
             stateProduct.value = "";
         }
-            //storeData();
     });
-
-    window.onload = function () {
-        //setData();
-    }
-
 
 </script>

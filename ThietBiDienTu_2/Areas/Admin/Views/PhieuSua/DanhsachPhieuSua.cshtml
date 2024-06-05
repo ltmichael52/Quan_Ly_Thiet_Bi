@@ -42,13 +42,65 @@
 }
 <script>
     $(document).ready(function () {
-        
+        var viewState = '@ViewBag.viewState';
+        if (viewState != "") {
+            $('#SelectState').val(viewState);
+        }
         setTimeout(function () {
             console.log("here");
             $('.notify').css("display", "none");
         }, 10000);
+
+        var searchStringView = $('#searchString_2').val();
+        var trangthaiView = $('#SelectState').val();
+        var ngaylaptuView = $('#CreateFrom').val();
+        var ngaylapdenView = $('#CreateTo').val();
+
+        $('#searchString_2').change(function () {
+            searchStringView = $(this).val();
+            getToFilter();
+        });
+
+        $('#btnSearch_2').click(function () {
+            searchStringView = $('#searchString_2').val();
+            getToFilter();
+        });
+
+        $('#SelectState').change(function () {
+            trangthaiView = $(this).val();
+            getToFilter();
+        });
+
+        $('#CreateFrom').change(function () {
+            ngaylaptuView = $(this).val();
+            getToFilter();
+        });
+
+        $('#CreateTo').change(function () {
+            ngaylapdenView = $(this).val();
+            getToFilter();
+        });
+
+        function getToFilter() {
+            $.ajax({
+                url: '/admin/Phieusua/DanhsachPhieuSua',
+                type: 'Get',
+                data: {
+                    page: 1,
+                    searchString: searchStringView,
+                    trangthai: trangthaiView,
+                    NgaylapTu: ngaylaptuView,
+                    NgaylapDen: ngaylapdenView
+                },
+                success: function (response) {
+                    $('#partialDs').html(response);
+                }
+            });
+        }
     });
 </script>
+
+
 @if (TempData["AlertMessage"] != null)
 {
     <div class="alert alert-success notify">

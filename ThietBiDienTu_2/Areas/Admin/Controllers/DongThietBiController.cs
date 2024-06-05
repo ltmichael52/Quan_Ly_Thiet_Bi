@@ -43,6 +43,9 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                 int soLuongHoatDong = dongthietbi.Thietbis.Count(t => t.Trangthai == "Hoạt động");
                 int soLuongHu = dongthietbi.Thietbis.Count(t => t.Trangthai == "Hư");
                 int soLuongTonKho = dongthietbi.Thietbis.Count(t => t.Trangthai == "Sẵn sàng");
+				int soluongSua = dongthietbi.Thietbis.Count(t => t.Trangthai == "Đang sửa");
+				int soluongMuon = dongthietbi.Thietbis.Count(t => t.Trangthai == "Đang mượn");
+				int soluongTL = dongthietbi.Thietbis.Count(t => t.Trangthai == "Thanh lý");
 
                 var dongThietBiViewModel = new DongThietBiViewModel
                 {
@@ -54,7 +57,10 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                     SoLuongHoatDong = soLuongHoatDong,
                     SoLuongHu = soLuongHu,
                     SoLuongTonKho = soLuongTonKho,
-                    NeedsMoreDevices = dongthietbi.Soluong > (soLuongHoatDong + soLuongHu + soLuongTonKho) // Calculate the need for more devices
+					SoluongMuon = soluongMuon,
+					SoluongSua = soluongSua,
+					SoluongTL = soluongTL,
+                    NeedsMoreDevices = dongthietbi.Soluong > (soLuongHoatDong + soLuongHu + soLuongTonKho+soluongMuon+soluongSua+soluongTL) // Calculate the need for more devices
                 };
 
                 dongthietbiList.Add(dongThietBiViewModel);

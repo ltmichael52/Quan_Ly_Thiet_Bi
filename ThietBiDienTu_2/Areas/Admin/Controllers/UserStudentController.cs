@@ -50,7 +50,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             {
            
                 svList = svList.Where(x =>
-                    x.Tensv != null && x.Tensv.ToLower().Contains(searchStringController.ToLower()) 
+                    x.Tensv != null && (x.Tensv.ToLower().Contains(searchStringController.ToLower()) || x.Masv.ToString().Contains(searchStringController)) 
                 ); 
                 ViewBag.searchStringController = searchStringController;
             }

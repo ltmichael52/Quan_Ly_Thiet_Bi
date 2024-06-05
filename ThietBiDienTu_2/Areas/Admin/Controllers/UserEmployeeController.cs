@@ -39,7 +39,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 
             if (!string.IsNullOrEmpty(searchString))
             {
-                query = query.Where(emp => emp.Tennv.ToLower().Contains(searchString.ToLower()));
+                query = query.Where(emp => emp.Tennv.ToLower().Contains(searchString.ToLower()) || emp.Manv.ToString().Contains(searchString));
             }
 
             var nv = query.OrderBy(emp => emp.Tennv).ToPagedList(pageNumber, pageSize);

@@ -14,7 +14,6 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
     public class PhieuMuonAdminRepo : IPhieuMuonAdmin
     {
         ToolDbContext context;
-        public static int checkPm = 0;
         public PhieuMuonAdminRepo(ToolDbContext _context)
         {
             context = _context;
@@ -63,6 +62,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
                 Trangthai =pm.Trangthai,
                 Lydomuon = pm.Lydomuon,
                 LydoTuChoi = pm.LydoTuChoi,
+                LydoHuy = pm.LydoHuy,
                 Ngaylap = pm.Ngaylap,
                 Ngaymuon = pm.Ngaymuon
             };
@@ -123,6 +123,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
 
         public void DuyetPm(int trangthai, PhieuMuonViewModel pmView)
         {
+           
             Phieumuon pm = context.Phieumuons.Find(pmView.Mapm);
             List<Thietbi> tbUpdate = new List<Thietbi>();
             pm.Trangthai = trangthai;       
@@ -186,6 +187,8 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
 
             context.Phieumuons.Update(pm);
             context.SaveChanges();
+
+            CheckPmToday();
         }
         public List<int> AllStatePhieuMuonToday()
         {
@@ -275,19 +278,15 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
 
         public void CheckPmToday()
         {
-            if(checkPm == 0)
+            DateTime today = DateTime.Now.Date;
+            List<Phieumuon> pmList = context.Phieumuons.Where(x => x.Ngaymuon < today && x.Trangthai == 2).ToList();
+            int count = pmList.Count();
+            for (int i = 0; i < count; ++i)
             {
-                DateTime today = DateTime.Now.Date;
-                List<Phieumuon> pmList = context.Phieumuons.Where(x => x.Ngaymuon < today && x.Trangthai == 2).ToList();
-                int count = pmList.Count();
-                for(int i =0;i< count;++i)
-                {
-                    pmList[i].Trangthai = 6;
-                }
-                context.Phieumuons.UpdateRange(pmList);
-                context.SaveChanges();
-                ++checkPm;    
+                pmList[i].Trangthai = 6;
             }
+            context.Phieumuons.UpdateRange(pmList);
+            context.SaveChanges();
 
         }
     }

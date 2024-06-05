@@ -34,6 +34,7 @@ public class HistroyController : Controller
 
         if (from.HasValue)
         {
+            ViewBag.fromDate = from;
             phieuMuonList = phieuMuonList.Where(x => x.Ngaymuon >= from).ToList();
         }
         if (to.HasValue)

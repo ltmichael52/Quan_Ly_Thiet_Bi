@@ -9,7 +9,7 @@ public partial class Coso
 
     public string Tencs { get; set; } = null!;
 
-    public string? Diachi { get; set; }
+    public string Diachi { get; set; }
 
     public virtual ICollection<Phong> Phongs { get; set; } = new List<Phong>();
 }

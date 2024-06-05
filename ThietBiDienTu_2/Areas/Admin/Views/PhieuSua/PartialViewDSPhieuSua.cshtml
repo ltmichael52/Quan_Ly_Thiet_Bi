@@ -9,30 +9,6 @@
         var ngaylaptuView = $('#CreateFrom').val();
         var ngaylapdenView = $('#CreateTo').val();
 
-        $('#searchString_2').change(function () {
-            searchStringView = $(this).val();
-            getToFilter();
-        });
-
-        $('#btnSearch_2').click(function () {
-            searchStringView = $('#searchString_2').val();
-            getToFilter();
-        });
-
-        $('#SelectState').change(function () {
-            trangthaiView = $(this).val();
-            getToFilter();
-        });
-
-        $('#CreateFrom').change(function () {
-            ngaylaptuView = $(this).val();
-            getToFilter();
-        });
-
-        $('#CreateTo').change(function () {
-            ngaylapdenView = $(this).val();
-            getToFilter();
-        });
 
         $('.page-link').click(function () {
             pageView = $(this).attr('value');

@@ -25,7 +25,7 @@
                 @{
                     foreach (SelectListItem item in ViewBag.CoSoList)
                     {
-                                                                    <option value="@item.Value">@item.Text</option>
+                                                                        <option value="@item.Value">@item.Text</option>
                     }
                 }
             </select>
@@ -36,7 +36,7 @@
                 @{
                     foreach (SelectListItem item in ViewBag.PhongList)
                     {
-                                                                    <option value="@item.Value">@item.Text.Split(',')[0]</option>
+                                                                        <option value="@item.Value">@item.Text.Split(',')[0]</option>
                         //data-branch="@item.Text.Split(',')[1]"
                     }
                 }
@@ -46,7 +46,7 @@
                 @{
                     foreach (SelectListItem item in ViewBag.roomType)
                     {
-                                                        <option value="@item.Value">@item.Text</option>
+                                                            <option value="@item.Value">@item.Text</option>
                         //data-branch="@item.Text.Split(',')[1]"
                     }
                 }
@@ -57,7 +57,7 @@
                 @{
                     foreach (SelectListItem item in ViewBag.stateSelect)
                     {
-                                                            <option value="@item.Value">@item.Text</option>
+                                                                <option value="@item.Value">@item.Text</option>
                         //data-branch="@item.Text.Split(',')[1]"
                     }
                 }
@@ -125,11 +125,130 @@
 
 <script>
     $(document).ready(function () {
+        var viewBagState = '@ViewBag.State';
+        if (viewBagState != "") {
+            $('#stateSelect').val("Đang hư");
+        }
         setTimeout(function () {
             console.log("here");
             $('.notify').css("display", "none");
         }, 10000);
+
+        var searchStringView = $('#searchStringThietBi').val();
+        var cosoView = $('#branchSelect').val();
+        var phongView = $('#roomSelect').val();
+        var loaiPhongView = $('#LoaiSelect').val();
+        var trangthaiView = $('#stateSelect').val();
+
+        $('#searchStringThietBi').change(function () {
+            searchStringView = $(this).val();
+            getToFilter();
+        });
+
+        $('#searchButtonTb').click(function () {
+            searchStringView = $('#searchStringThietBi').val();
+            getToFilter();
+        });
+
+        $('#branchSelect').change(function () {
+
+            cosoView = $(this).val();
+            $.ajax({
+                url: '/Admin/ThietBi/getPhongList',
+                type: 'GET',
+                data: {
+                    macs: cosoView,
+                },
+                success: function (response) {
+                    var roomSelect = $('#roomSelect');
+                    roomSelect.empty();
+                    roomSelect.append('<option value="all">Phòng</option>');
+                    $.each(response, function (index, item) {
+                        roomSelect.append($('<option>', {
+                            value: item.value,
+                            text: item.text
+                        }));
+                    });
+                }
+            });
+            phongView = "all";
+
+            $.ajax({
+                url: '/Admin/ThietBi/getLoaiPhongList',
+                type: 'GET',
+                data: {
+                    map: phongView,
+                },
+                success: function (response) {
+                    var loaiSelect = $('#LoaiSelect');
+                    loaiSelect.empty();
+                    loaiSelect.append('<option value="all">Loại phòng</option>');
+                    $.each(response, function (index, item) {
+                        loaiSelect.append($('<option>', {
+                            value: item.value,
+                            text: item.text
+                        }));
+                    });
+                }
+            });
+            loaiPhongView = "all";
+
+            getToFilter();
+        });
+
+        $('#roomSelect').change(function () {
+            phongView = $(this).val();
+
+            $.ajax({
+                url: '/Admin/ThietBi/getLoaiPhongList',
+                type: 'GET',
+                data: {
+                    map: phongView,
+                },
+                success: function (response) {
+                    var loaiSelect = $('#LoaiSelect');
+                    loaiSelect.empty();
+                    loaiSelect.append('<option value="all">Loại phòng</option>');
+                    $.each(response, function (index, item) {
+                        loaiSelect.append($('<option>', {
+                            value: item.value,
+                            text: item.text
+                        }));
+                    });
+                }
+            });
+
+            getToFilter();
+        });
+
+        $('#LoaiSelect').change(function () {
+            loaiPhongView = $(this).val();
+            getToFilter();
+        });
+
+        $('#stateSelect').change(function () {
+            trangthaiView = $(this).val();
+            getToFilter();
+        });
+
+
+        function getToFilter() {
+            $.ajax({
+                url: '/Admin/ThietBi/ThietBiList',
+                type: 'GET',
+                data: {
+                    page: 1,
+                    searchStringThietBi: searchStringView,
+                    Coso: cosoView,
+                    Phong: phongView,
+                    LoaiPhong: loaiPhongView,
+                    Trangthai: trangthaiView
+                },
+                success: function (response) {
+                    $('#partialList').html(response);
+                }
+            });
+        }
     });
-    
     
 </script>

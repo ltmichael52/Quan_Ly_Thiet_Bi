@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Drawing.Printing;
 using ThietBiDienTu_2.Areas.Admin.InterfaceRepositories;
 using ThietBiDienTu_2.Models;
 using ThietBiDienTu_2.Models.Authentication;
@@ -8,7 +9,6 @@ using X.PagedList;
 namespace ThietBiDienTu_2.Areas.Admin.Controllers
 {
     [Area("admin")]
-    [AuthenticationManager]
     public class CosoController : Controller
     {
         private readonly ICoSoAdmin csRepo;
@@ -20,20 +20,19 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
         }
 
         // GET: Cosos
-        public async Task<IActionResult> Index(string? searchString, int? page)
+        public IActionResult Index(string? searchString, int? page)
         {
 
-            var cosos = _context.Cosos.AsQueryable();
+            var cosos = _context.Cosos.OrderByDescending(x=>x.Macs).AsQueryable();
 
             if (!string.IsNullOrEmpty(searchString))
             {
                 cosos = cosos.Where(x => x.Tencs.ToLower().Contains(searchString.ToLower()));
-                ViewBag.searchString = searchString;
             }
 
             int pageSize = 5;
             int pageNumber = (page ?? 1);
-            var pagedCosos = await cosos.ToPagedListAsync(pageNumber, pageSize);
+            var pagedCosos = cosos.ToPagedList(pageNumber, pageSize);
 
             if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
             {
@@ -50,83 +49,46 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
         }
 
 
-        // GET: Cosos/Create
-        public IActionResult Create()
+        public IActionResult Create(string tencs, string diachi)
         {
-            return View();
-        }
-
-        // POST: Cosos/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Tencs,Diachi")] Coso coso)
-        {
-            if (ModelState.IsValid)
+            Coso cs = new Coso
             {
-                _context.Add(coso);
-                TempData["AlertMessage"] = "Đã tạo cơ sở thành công";
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(coso);
-        }
+                Tencs = tencs,
+                Diachi = diachi
+            };
+            _context.Add(cs);
+            _context.SaveChanges();
 
-        [HttpPost]
-        public IActionResult Search(string? searchString)
-        {
-            var cosos = _context.Cosos.Where(c => c.Tencs.ToLower().Contains(searchString.ToLower())).ToList();
-            return PartialView("PartialViewCoSo", cosos);
+            var cosos = _context.Cosos.OrderByDescending(x => x.Macs).AsQueryable();
+            PagedList<Coso> pagedCosos = new PagedList<Coso>(cosos, 1, 5);
+            return PartialView("PartialViewCoSo", pagedCosos);
         }
-
 
         // GET: Cosos/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var coso = await _context.Cosos.FindAsync(id);
-            if (coso == null)
-            {
-                return NotFound();
-            }
-            return View(coso);
+            Coso coso =_context.Cosos.FirstOrDefault(x=>x.Macs == id);
+            return Json(coso);
         }
 
         // POST: Cosos/Edit/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Macs,Tencs,Diachi")] Coso coso)
+        public IActionResult Edit(int macs,string tencs,string diachi,string? searchString,int? page)
         {
-            if (id != coso.Macs)
-            {
-                return NotFound();
-            }
 
-            if (ModelState.IsValid)
+            Coso coso = _context.Cosos.FirstOrDefault(x => x.Macs == macs);
+            coso.Tencs = tencs;
+            coso.Diachi = diachi;
+            _context.Update(coso);
+             _context.SaveChanges();
+
+            List<Coso> cosos = _context.Cosos.OrderByDescending(x => x.Macs).ToList();
+            if (!string.IsNullOrEmpty(searchString))
             {
-                try
-                {
-                    _context.Update(coso);
-                    TempData["AlertMessage"] = "Đã chỉnh sửa cơ sở thành công";
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!CosoExists(coso.Macs))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                cosos = cosos.Where(x => x.Tencs.ToLower().Contains(searchString.ToLower())).ToList();
             }
-            return View(coso);
+            PagedList<Coso> pagedCosos = new PagedList<Coso>(cosos, page ?? 1, 5);
+            return PartialView("PartialViewCoSo", pagedCosos);
         }
 
         private bool CosoExists(int macs)
@@ -143,7 +105,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 
             if (hasRooms)
             {
-                TempData["AlertMessage"] = "Cơ sở này đã có phòng";
+                TempData["ErrorMessage"] = "Thất bại! Cơ sở này đang có phòng";
                 return RedirectToAction("Index");
             }
 

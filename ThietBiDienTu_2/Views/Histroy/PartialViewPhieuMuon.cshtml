@@ -7,37 +7,6 @@
         var borrowFrom = $('#BorrowFrom').val();
         var borrowTo = $('#BorrowTo').val();
 
-        $('#btnSearch_2').click(function () {
-            console.log("search button");
-            searchMapmAjax = $('#searchString_2').val();
-            getToController();
-        });
-
-        $('#searchString_2').change(function () {
-            console.log("Search input");
-            searchMapmAjax = $('#searchString_2').val();
-            getToController();
-        });
-
-        $('#SelectAnother').change(function () {
-            console.log("Search state");
-            trangThaiAjax = $('#SelectAnother').val();
-            getToController();
-
-        });
-
-        $('#BorrowFrom').change(function () {
-            console.log("Search from");
-            borrowFrom = $('#BorrowFrom').val();
-            getToController();
-        });
-
-        $('#BorrowTo').change(function () {
-            console.log("Search to");
-            borrowTo = $('#BorrowTo').val();
-                getToController();
-        });
-
         $('.page-link').click(function () {
             pageNumber = $(this).attr('value');
             getToController();

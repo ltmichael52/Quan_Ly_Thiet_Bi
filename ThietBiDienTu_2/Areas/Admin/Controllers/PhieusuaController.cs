@@ -38,6 +38,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             if(trangthai > -1)
             {
                 psList = psList.Where(x => x.Trangthai == trangthai).ToList();
+                ViewBag.viewState = trangthai;
             }
             if (NgaylapTu.HasValue)
             {
@@ -462,7 +463,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             }
             else
             {
-                TempData["AlertMessageFail"] = "Có thiết bị đang hoạt động hoặc đã thanh lý";
+                TempData["AlertMessageFail"] = "Phiếu sửa đã hoàn thành không thể xóa";
             }
             return RedirectToAction("DanhsachPhieuSua");
         }

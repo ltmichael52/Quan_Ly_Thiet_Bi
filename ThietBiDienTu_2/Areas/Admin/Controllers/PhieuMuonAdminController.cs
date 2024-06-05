@@ -82,7 +82,10 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
                     return PartialView("_PartialTableAnother",pm);
                 }
             }
-            
+            if(indexPartial == 1)
+            {
+                ViewBag.indexPartial = 1;
+            }
             return View(pmList);
         }
 
@@ -99,6 +102,13 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
         {
          
             pm.Manv = HttpContext.Session.GetInt32("UserName") ?? 0;
+            if(trangthai == 4 && pm.LydoTuChoi == null)
+            {
+                PhieuMuonViewModel pmReturn = pMAdmin.GetPhieumuonViewById(pm.Mapm);
+                ViewBag.error = true;
+                ModelState.AddModelError("LydoTuChoi", "Vui lòng chọn lý do từ chối");
+                return View(pmReturn);
+            }
 			pMAdmin.DuyetPm(trangthai, pm);
             TempData["Duyet"] = "Duyệt thành công";
             return RedirectToAction("DanhsachPhieuMuon");

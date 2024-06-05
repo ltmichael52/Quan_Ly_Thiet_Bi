@@ -23,14 +23,7 @@
     // }
 
 }
-<script>
-    $(document).ready(function () {
-        setTimeout(function () {
-            console.log("here");
-            $('.notify').css("display", "none");
-        }, 10000);
-    });
-</script>
+
 
 @if (TempData["Notifications"] != null)
 {
@@ -99,3 +92,85 @@
 </div>
 
 <div class="footer"></div>
+<script>
+    $(document).ready(function () {
+        var searchMapmAjax = $('#searchString_2').val();
+        var trangThaiAjax = $('#SelectAnother').val();
+        var borrowFrom = $('#BorrowFrom').val();
+        var borrowTo = $('#BorrowTo').val();
+
+        $('#btnSearch_2').click(function () {
+            console.log("search button");
+            searchMapmAjax = $('#searchString_2').val();
+            getToController();
+        });
+
+        $('#searchString_2').change(function () {
+            console.log("Search input");
+            searchMapmAjax = $('#searchString_2').val();
+            getToController();
+        });
+
+        $('#SelectAnother').change(function () {
+            console.log("Search state");
+            trangThaiAjax = $('#SelectAnother').val();
+            getToController();
+
+        });
+
+        $('#BorrowFrom').change(function () {
+            console.log("Search from");
+            borrowFrom = $('#BorrowFrom').val();
+            getToController();
+        });
+
+        $('#BorrowTo').change(function () {
+            console.log("Search to");
+            borrowTo = $('#BorrowTo').val();
+            getToController();
+        });
+
+        function getToController() {
+            $.ajax({
+                url: '/Histroy/Index',
+                type: 'GET',
+                data: {
+                    searchMapm: searchMapmAjax,
+                    trangThai: trangThaiAjax,
+                    from: borrowFrom,
+                    to: borrowTo,
+                    page: 1
+                },
+                success: function (response) {
+                    console.log("Success");
+                    $('#PartialViewPhieuMuon').html(response);
+                },
+                error: function () {
+                    console.log("fail");
+                }
+            });
+        }
+        var stateView = '@ViewBag.trangthai';
+        if (stateView != "") {
+            $('#SelectAnother').val(stateView);
+        }
+
+        var fromView = '@ViewBag.fromDate';
+        if (fromView != "") {
+            console.log("view bag 2: " + fromView.toString("yyyy-MM-dd"));
+            console.log("view bag 3: " + fromView.toString('yyyy-MM-dd'));
+            var date = new Date(fromView.split(' ')[0]);
+            console.log("view bag 4: " + date);
+            console.log("view bag 4: " + date.getFullYear());
+            var formattedDate = date.getFullYear() + '-' +
+                ('0' + (date.getMonth() + 1)).slice(-2) + '-' + ('0' + date.getDate()).slice(-2);
+            console.log("formatted: " + formattedDate);
+            $('#BorrowFrom').val(formattedDate);
+        }
+        setTimeout(function () {
+            console.log("here");
+            $('.notify').css("display", "none");
+        }, 10000);
+    });
+
+</script>

@@ -35,7 +35,7 @@
                         searchStringController: searchStringAjax,
                         filterKhoa: filterKhoaAjax,
                         filterNganh: filterNganhAjax,
-                        pageNumber: pageNumber
+                        pageNumber: 1
                     },
                     success: function (response) {
                         $('#PartialViewSv').html(response);
@@ -49,7 +49,6 @@
             if (e.which === 13) { // Kiểm tra xem phím được nhấn có phải là Enter không
                 var string = $(this).val();
                 searchStringAjax = string;
-                pageNumber = null;
                 getToController();
                 return false; // Ngăn chặn hành động mặc định của phím Enter trong trường nhập
             }
@@ -87,7 +86,7 @@
         <div class="input-group" style="width:100%">
             <!-- Search bar -->
             <input style="width:30%" name="searchStringSv" id="searchString"
-                   type="search" placeholder="Tìm tên sinh viên" class="form-control rounded" aria-label="Search">
+                   type="search" placeholder="Tìm tên/mã sinh viên" class="form-control rounded" aria-label="Search">
 
             <!-- Nút tìm kiếm -->
             <button type="button" class="btn btn-info rounded" id="Searchbutton">

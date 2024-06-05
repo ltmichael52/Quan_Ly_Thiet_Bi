@@ -8,8 +8,6 @@ using X.PagedList;
 namespace ThietBiDienTu_2.Areas.Admin.Controllers
 {
     [Area("admin")]
-    [Route("admin/[controller]/[action]")]
-    [AuthenticationManager]
     public class NganhController : Controller
     {
         private readonly IHttpContextAccessor contextAccess;
@@ -26,11 +24,10 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             var nganhs = string.IsNullOrEmpty(searchString)
                 ? _context.Nganhs.ToList()
                 : _context.Nganhs.Where(n => n.Tennganh.Contains(searchString)).ToList();
-            ViewBag.searchString = searchString;
             int pageSize = 5;
             int pageNumber = (page ?? 1);
 
-            var pagedNganhs = nganhs.ToPagedList(pageNumber, pageSize);
+            var pagedNganhs = nganhs.OrderByDescending(x=>x.Manganh).ToPagedList(pageNumber, pageSize);
             if (IsAjaxRequest())
             {
                 return PartialView("PartialViewNganh", pagedNganhs);
@@ -43,16 +40,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             var request = contextAccess.HttpContext.Request;
             return request.Headers["X-Requested-With"] == "XMLHttpRequest";
         }
-        [HttpPost]
-        public async Task<IActionResult> Search(string? searchString)
-        {
-            var nganhs = string.IsNullOrEmpty(searchString)
-                ? await _context.Nganhs.ToListAsync()
-                : await _context.Nganhs.Where(n => n.Tennganh.Contains(searchString)).ToListAsync();
-
-            return PartialView("PartialViewNganh", nganhs);
-        }
-
+        
         public IActionResult Details(int id)
         {
             var nganh = _context.Nganhs.FirstOrDefault(m => m.Manganh == id);
@@ -64,76 +52,58 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             return View(nganh);
         }
         // NganhController
-        public IActionResult Create()
-        {
-            return View();
-        }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Tennganh")] Nganh nganh)
+        public IActionResult Create(string tenNganh)
         {
-            if (ModelState.IsValid)
+
+            Nganh nganh = new Nganh
             {
-                _context.Add(nganh);
-                _context.SaveChanges();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(nganh);
+                Tennganh = tenNganh
+            };
+            _context.Nganhs.Add(nganh);
+            _context.SaveChanges();
+            List<Nganh> nganhList = _context.Nganhs.OrderByDescending(x => x.Manganh).ToList();
+            PagedList<Nganh> nganhPage = new PagedList<Nganh>(nganhList, 1, 5);
+            return PartialView("PartialViewNganh",nganhPage);
         }
 
         public IActionResult Edit(int id)
         {
-            var nganh = _context.Nganhs.Find(id);
-            if (nganh == null)
-            {
-                return NotFound();
-            }
-            return View(nganh);
+            Nganh nganh = _context.Nganhs.FirstOrDefault(x=>x.Manganh==id);
+            
+            return Json(nganh);
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("Manganh, TenNganh")] Nganh nganh)
+        public IActionResult Edit(int manganh,string tennganh,string? searchString,int? page)
         {
-            if (id != nganh.Manganh)
-            {
-                return NotFound();
-            }
 
-            if (ModelState.IsValid)
+            Nganh nganh = _context.Nganhs.FirstOrDefault(x => x.Manganh == manganh);
+            nganh.Tennganh = tennganh;
+            _context.Nganhs.Update(nganh);
+            _context.SaveChanges();
+
+            List<Nganh> nganhList = _context.Nganhs.OrderByDescending(x => x.Manganh).ToList();
+            if (!string.IsNullOrEmpty(searchString))
             {
-                try
-                {
-                    _context.Update(nganh);
-                    _context.SaveChanges();
-                    TempData["SuccessMessage"] = "Đã cập nhật ngành thành công";
-                    return RedirectToAction(nameof(Index));
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!NganhExists(nganh.Manganh))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                nganhList = nganhList.Where(x => x.Tennganh.ToLower().Contains(searchString.ToLower())).ToList();
             }
-            return View(nganh);
+            PagedList<Nganh> nganhPage = new PagedList<Nganh>(nganhList, page??1, 5);
+            return PartialView("PartialViewNganh", nganhPage);
         }
 
         public IActionResult Delete(int id)
         {
             var nganh = _context.Nganhs.Find(id);
-            if (nganh == null)
+            bool hasSv = _context.Sinhviens.Any(x => x.Manganh == id);
+            if (hasSv)
             {
-                return NotFound();
+                TempData["ErrorMessage"] = "Thất bại! Ngành hiện đang có sinh viên";
+                return RedirectToAction(nameof(Index));
             }
 
             _context.Nganhs.Remove(nganh);
+            TempData["Action"] = "Xóa thành công";
             _context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }

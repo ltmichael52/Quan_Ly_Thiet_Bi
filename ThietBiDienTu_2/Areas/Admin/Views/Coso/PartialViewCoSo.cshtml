@@ -3,10 +3,11 @@
 
 <script>
     $(document).ready(function () {
-        var pageNumber = null;
-        var searchStringAjax = '@ViewBag.searchString';
+        var pageNumber = '@Model.PageNumber';
+        var searchStringAjax = $('#searchString').val();
 
         $('.page-link').click(function () {
+            console.log("Test page");
             pageNumber = $(this).attr('value');
             getToController();
         });
@@ -21,12 +22,94 @@
                     page: pageNumber
                 },
                 success: function (response) {
-                    $('#PartialViewPhong').html(response);
+                    $('#PartialViewCoSo').html(response);
                 },
                 error: function () {
                     console.log("fail");
                 }
             });
+        }
+        $('.openUpdateCs').click(function () {
+            var macsView = $(this).attr('value');
+            $.ajax({
+                url: '/admin/Coso/Edit',
+                type: 'GET',
+                data: {
+                    id : macsView
+                },
+                success: function (response) {
+                    console.log("response: " + response);
+                    console.table(response);
+                    console.log("dia chi: " + response.diachi);
+                    $('#tencsUpdate').val(response.tencs);
+                    $('#diachiUpdate').val(response.diachi);
+                    $('#macsUpdate').val(response.macs);
+
+                    $('#tencsSpanUpdate').text("");
+                    $('#diachiSpanUpdate').text("");
+                }
+            });
+        });
+
+        $('#btnCsUpdate').click(function () {
+            console.log("get in click update");
+            var check = true;
+            var diachiCreate = $('#diachiUpdate').val();
+            if (diachiCreate == "") {
+                $('#diachiSpanUpdate').text("Vui lòng nhập địa chỉ cơ sở");
+                check = false;
+            }
+
+            var tencsCreate = $('#tencsUpdate').val();
+            if (tencsCreate == "") {
+                $('#tencsSpanUpdate').text("Vui lòng nhập tên cơ sở");
+                check = false;
+            }
+            if (check) {
+                var macsView = $('#macsUpdate').val();
+                $.ajax({
+                    url: '/admin/Coso/Edit',
+                    type: 'POST',
+                    data: {
+                        macs : macsView,
+                        tencs: tencsCreate,
+                        diachi: diachiCreate,
+                        searchString : searchStringAjax,
+                        page: pageNumber
+                    },
+                    success: function (response) {
+                        console.log("console: " + response);
+                        $('#PartialViewCoSo').html(response);
+                        console.log("test");
+                        closeModalPopup();
+                        $('#notifySuccess').text("Đã cập nhật cơ sở thành công");
+                        $('#notifySuccess').css("display", "block");
+                        setTimeout(function () {
+                            console.log("here");
+                            $('.notify').css("display", "none");
+                        }, 10000);
+                    }
+                });
+            }
+
+        });
+
+        function closeModalPopup() {
+            $('#exampleModalUpdate').removeClass('show');
+            $('#exampleModalUpdate').attr('aria-hidden', 'true');
+            $('#exampleModalUpdate').removeAttr('aria-modal');
+            $('#exampleModalUpdate').css({
+                'display': 'none',
+                'padding-right': ''
+            });
+            $('.modal-backdrop').remove();
+            console.log("Get to close modal popup");
+            $('body').removeClass('modal-open');
+            $('body').css({
+                'padding-right': ''
+            });
+
+
         }
     });
 </script>
@@ -51,11 +134,11 @@
                 <td>@coso.Tencs</td>
                 <td>@coso.Diachi</td>
                 <td>
-                    <a class="btn btn-info btn-sm rounded" href="@Url.Action("Edit", "Coso", new { id = coso.Macs })">
+                    <button value="@coso.Macs" type="button" class="btn btn-info btn-sm rounded openUpdateCs" data-toggle="modal" data-target="#exampleModalUpdate">
                         <svg class="icon icon-lg">
                             <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-pen")"></use>
                         </svg>
-                    </a>
+                    </button>
                     <a onclick="if (confirm('Xác nhận xóa cơ sở?') == true) {location.href='/admin/Coso/Delete/@coso.Macs'}" class="btn btn-danger btn-sm rounded">
                         <svg class="icon icon-lg">
                             <use xlink:href="@Url.Content("~/LayoutAdmin/dist/vendors/_coreui/icons/svg/free.svg#cil-trash")"></use>
@@ -65,7 +148,39 @@
             </tr>
         }
     </tbody>
-</table>0.
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cập nhật cơ sở</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <input hidden id="macsUpdate"/>
+                <div class="form-group">
+                    <label class="control-label"><strong>Tên cơ sở<span class="text-danger"> *</span></strong></label>
+                    <input class="form-control" id="tencsUpdate" placeholder="Elliot"/>
+                    <span class="text-danger" id="tencsSpanUpdate"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label"><strong>Địa chỉ<span class="text-danger"> *</span></strong></label>
+                    <input class="form-control" id="diachiUpdate" placeholder="2A PhamVanDong"/>
+                    <span class="text-danger" id="diachiSpanUpdate"></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnCsUpdate" class="btn btn-primary">Cập nhật</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <nav>
     <ul class="pagination justify-content-center">
         <!-- First Page -->

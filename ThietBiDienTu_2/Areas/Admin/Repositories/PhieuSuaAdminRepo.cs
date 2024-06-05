@@ -60,7 +60,7 @@ namespace ThietBiDienTu_2.Areas.Admin.Repositories
         {
             Phieusua ps = context.Phieusuas.FirstOrDefault(x => x.Maps == maps);
             ps.Chitietphieusuas = context.Chitietphieusuas.Where(x => x.Maps == maps).Include(x => x.MatbNavigation).ToList();
-            if(ps.Chitietphieusuas.Any(x=>x.MatbNavigation.Trangthai != "Sẵn sàng" && x.MatbNavigation.Trangthai != "Đang hư" && x.MatbNavigation.Trangthai != "Đang sửa"))
+            if(ps.Chitietphieusuas.All(x=>x.Ngayhoanthanh!=null))
             {
                 //Because when delete all the device change again to "Dang hu"
                 return false;

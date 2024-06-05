@@ -167,7 +167,7 @@
                                 <tr class="text-center">
                                     <td>@a</td>
                                     <td>@Model.ctpmView.ElementAt(i).Seri[j]</td>
-                                    <td>@Model.ctpmView.ElementAt(i).TenKho</td>
+                                    <td>@Model.ctpmView.ElementAt(i).TenKho[j]</td>
                                     <td>@(Model.ctpmView.ElementAt(i).Ngaytra[j].Year > 2010 ? Model.ctpmView.ElementAt(i).Ngaytra[j] : "")</td>
                                     <td>
                                         <input asp-for="@Model.ctpmView.ElementAt(i).check[j]"
@@ -196,7 +196,7 @@
                                     <tr class="text-center">
                                         <td>@a</td>
                                         <td>@Model.ctpmView.ElementAt(i).Seri[j]</td>
-                                        <td>@Model.ctpmView.ElementAt(i).TenKho</td>
+                                        <td>@Model.ctpmView.ElementAt(i).TenKho[j]</td>
                                     </tr>
                                 }
                             </tbody>

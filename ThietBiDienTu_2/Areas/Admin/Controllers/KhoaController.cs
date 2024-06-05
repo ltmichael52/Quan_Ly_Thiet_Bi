@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ThietBiDienTu_2.Areas.Admin.InterfaceRepositories;
 using ThietBiDienTu_2.Models;
 using ThietBiDienTu_2.Models.Authentication;
 using X.PagedList;
@@ -8,7 +9,6 @@ using X.PagedList;
 namespace ThietBiDienTu_2.Areas.Admin.Controllers
 {
     [Area("admin")]
-    [AuthenticationManager]
     public class KhoaController : Controller
     {
         private readonly ToolDbContext _context;
@@ -25,9 +25,8 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
             var pageNumber = page ?? 1;
             var pageSize = 5;
             var khoas = string.IsNullOrEmpty(searchString)
-          ? await _context.Khoas.ToPagedListAsync(pageNumber, pageSize)
+          ? await _context.Khoas.OrderByDescending(x => x.Makhoa).ToPagedListAsync(pageNumber, pageSize)
           : await _context.Khoas.Where(k => k.Tenkhoa.Contains(searchString)).ToPagedListAsync(pageNumber, pageSize);
-            ViewBag.searchString = searchString;
 
 
             if (IsAjaxRequest())
@@ -53,89 +52,55 @@ namespace ThietBiDienTu_2.Areas.Admin.Controllers
 
             return View(khoa);
         }
-        [HttpPost]
-        public IActionResult Search(string searchString)
+
+        public IActionResult Create(string tenKhoa)
         {
-            var khoas = _context.Khoas.Where(k => k.Tenkhoa.Contains(searchString)).ToList();
-            if (IsAjaxRequest())
+
+            Khoa khoa = new Khoa
             {
-                return PartialView("PartialViewKhoa", khoas);
-            }
-            return View(khoas);
-        }
+                Tenkhoa = tenKhoa.ToUpper()
+            };
+            _context.Add(khoa);
+            _context.SaveChanges();
 
-
-
-
-        // KhoaController
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Tenkhoa")] Khoa khoa)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(khoa);
-                TempData["Action"] = "Tạo thành công";
-                _context.SaveChanges();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(khoa);
+            List<Khoa> khoas = _context.Khoas.OrderByDescending(x => x.Makhoa).ToList();
+            PagedList<Khoa> pagedKhoas = new PagedList<Khoa>(khoas, 1, 5);
+            return PartialView("PartialViewKhoa", pagedKhoas);
         }
 
         public IActionResult Edit(int id)
         {
-            var khoa = _context.Khoas.Find(id);
-            if (khoa == null)
-            {
-                return NotFound();
-            }
-            return View(khoa);
+            Khoa khoa = _context.Khoas.FirstOrDefault(x=>x.Makhoa == id);
+            return Json(khoa);
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("Makhoa,Tenkhoa")] Khoa khoa)
+        public IActionResult Edit(int makhoa,string tenkhoa,string? searchString,int? page)
         {
-            if (id != khoa.Makhoa)
-            {
-                return NotFound();
-            }
+            Khoa khoa = _context.Khoas.FirstOrDefault(x => x.Makhoa == makhoa);
+            khoa.Tenkhoa = tenkhoa.ToUpper();
 
-            if (ModelState.IsValid)
+            _context.Update(khoa);
+            _context.SaveChanges();
+
+            List<Khoa> khoas = _context.Khoas.OrderByDescending(x => x.Makhoa).ToList();
+            if (!string.IsNullOrEmpty(searchString))
             {
-                try
-                {
-                    _context.Update(khoa);
-                    TempData["Action"] = "Chỉnh sửa thành công";
-                    _context.SaveChanges();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!KhoaExists(khoa.Makhoa))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                khoas = khoas.Where(x => x.Tenkhoa.ToUpper().Contains(searchString.ToUpper())).ToList();
             }
-            return View(khoa);
+            PagedList<Khoa> pagedKhoas = new PagedList<Khoa>(khoas, page ?? 1, 5);
+            return PartialView("PartialViewKhoa", pagedKhoas);
+
         }
 
         public IActionResult Delete(int id)
         {
             var khoa = _context.Khoas.Find(id);
-            if (khoa == null)
+            bool hasSv = _context.Sinhviens.Any(x => x.Makhoa == id);
+            if(hasSv)
             {
-                return NotFound();
+                TempData["ErrorMessage"] = "Thất bại! Khóa hiện đang có sinh viên";
+                return RedirectToAction(nameof(Index));
             }
 
             _context.Khoas.Remove(khoa);

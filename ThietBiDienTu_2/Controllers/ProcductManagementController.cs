@@ -60,7 +60,7 @@ namespace ThietBiDienTu_2.Controllers
                     Soluong = _dataContext.Thietbis.Where(y => y.Madongtb == x.Madongtb && y.Trangthai == "Sẵn sàng" && !maThietBiDaMuon.Contains(y.Matb.ToString())).Count(),
                     Hinhanh = x.Hinhanh,
                     Tendongtb = x.Tendongtb,
-                }).ToList();
+                }).Where(x=>x.Soluong>0).ToList();
                 List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
                 foreach (CartItemModel item in cart)
                 {
@@ -120,7 +120,7 @@ namespace ThietBiDienTu_2.Controllers
                     Soluong = _dataContext.Thietbis.Where(y => y.Madongtb == x.Madongtb && y.Trangthai == "Sẵn sàng" && !maThietBiDaMuon.Contains(y.Matb.ToString())).Count(),
                     Hinhanh = x.Hinhanh,
                     Tendongtb = x.Tendongtb,
-                }).ToList();
+                }).Where(x=>x.Soluong>0).ToList();
             }
             
             viewModel.NgayDat = NgayDat; // Gán ngày đặt vào ViewModel

@@ -75,6 +75,9 @@ namespace ThietBiDienTu_2.Controllers
                     ViewBag.Notification = "true";
                 }
             }
+            HttpContext.Session.SetJson("Cart", cart);
+
+
             foreach (CartItemModel item in cart)
             {
                 Dongthietbi dongtb = viewModel.DongThietBiList.FirstOrDefault(x => x.Madongtb == item.Madongtb);
@@ -84,13 +87,11 @@ namespace ThietBiDienTu_2.Controllers
                     viewModel.DongThietBiList.Remove(dongtb);
                 }
             }
-
+            viewModel.DongThietBiList = viewModel.DongThietBiList.Where(x => x.Soluong > 0).ToList();
             if (!string.IsNullOrEmpty(searchString))
             {
                 viewModel.DongThietBiList = viewModel.DongThietBiList.Where(x => x.Tendongtb.ToLower().Contains(searchString.ToLower())).ToList();
             }
-
-            HttpContext.Session.SetJson("Cart", cart);
             if (trangThai == "Sẵn sàng")
             {
                 // Trả về tất cả các mục
@@ -306,12 +307,12 @@ namespace ThietBiDienTu_2.Controllers
             {
                 return RedirectToAction("Index");
             }
+            string ngayDatString = HttpContext.Session.GetString("NgayDat");
+            DateTime ngayMuon = DateTime.ParseExact(ngayDatString, "dd-MM-yyyy", CultureInfo.InvariantCulture);
             if (cartVM.Phieumuon.Lydomuon != null) // Kiểm tra xem dữ liệu gửi lên có hợp lệ không
             {
                 // Lấy dữ liệu từ form
                 string lyDoMuon = cartVM.Phieumuon.Lydomuon;
-                string ngayDatString = HttpContext.Session.GetString("NgayDat");
-                DateTime ngayMuon = DateTime.ParseExact(ngayDatString, "dd-MM-yyyy", CultureInfo.InvariantCulture);
                 int maSv = HttpContext.Session.GetInt32("UserName") ?? 0;
 
                 // Bắt đầu giao dịch
@@ -414,8 +415,13 @@ namespace ThietBiDienTu_2.Controllers
                 {
                     CartItems = cartItems,
                     Sv = _dataContext.Sinhviens.Find(HttpContext.Session.GetInt32("UserName")),
+                    Phieumuon = new Phieumuon
+                    {
+                        Ngaymuon = ngayMuon,
+                        Ngaylap = DateTime.Now.Date
+                    }
                 };
-
+                ModelState.AddModelError("Phieumuon.Lydomuon", "Vui lòng điền lý do mượn");
                 return View(cartVM);
             }
         }

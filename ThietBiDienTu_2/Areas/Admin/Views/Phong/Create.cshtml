@@ -16,7 +16,7 @@
         $('#Loaiphong').change(function () {
             var selectedValue = $(this).val();
 
-            if (selectedValue === 'kho') {
+            if (selectedValue === 'Kho') {
                 $('#Douutien').parent().show();
             } else {
                 $('#Douutien').parent().hide();
@@ -24,7 +24,7 @@
         });
 
         // Khởi tạo trạng thái ban đầu cho Độ ưu tiên
-        if ($('#Loaiphong').val() !== 'kho') {
+        if ($('#Loaiphong').val() !== 'Kho') {
             $('#Douutien').parent().hide();
         }
     });
@@ -39,40 +39,44 @@
             <div class="bs-stepper-content">
                 <form asp-action="Create">
                     <div class="row">
-                        <div class="col-md-6" style="width:40%">
+                        <div class="col-md-6" >
                             <div class="form-group mb-2">
                                 <label asp-for="Map" class="control-label">Mã phòng</label>
-                                <input asp-for="Map" class="form-control" required="required" />
+                                <input asp-for="Map" class="form-control"/>
+                                <span asp-validation-for="Map" class="text-danger"></span>
                             </div>
                         </div>
-                        <div class="col-md-6" style="width:40%">
+                        <div class="col-md-6" >
                             <div class="form-group mb-2">
                                 <label asp-for="Macs" class="control-label">Tên cơ sở</label>
                                 <select asp-for="Macs" asp-items="@ViewBag.Coso" class="form-control">
                                     <option value="">Chọn cơ sở</option>
                                 </select>
+                                <span asp-validation-for="Macs" class="text-danger"></span>
                             </div>
                         </div>
 
                     </div>
                     <div class="row">
-                        <div class="col-md-6" style="width:40%">
+                        <div class="col-md-6" >
                             <div class="form-group">
                                 <label asp-for="Tenphong" class="control-label">Tên phòng</label>
-                                <input asp-for="Tenphong" class="form-control" required="required" />
+                                <input asp-for="Tenphong" class="form-control" />
+                                <span asp-validation-for="Tenphong" class="text-danger"></span>
                             </div>
                         </div>
-                        <div class="col-md-6" style="width:40%">
+                        <div class="col-md-6" >
                             <div class="form-group">
                                 <label asp-for="Loaiphong" class="control-label">Loại phòng</label>
                                 <select asp-for="Loaiphong" asp-items="@ViewBag.RoomTypes" class="form-control">
                                     <option value="">Chọn loại phòng</option>
                                 </select>
+                                <span asp-validation-for="Loaiphong" class="text-danger"></span>
                             </div>
                         </div>
 
                     </div>
-                    <div class="form-group mb-2" style="width:38%">
+                    <div class="form-group mb-2">
                         <label asp-for="Douutien" class="control-label">Độ ưu tiên</label>
                         <select asp-for="Douutien" id="Douutien" class="form-control">
                             <option value="">Chọn độ ưu tiên</option>
@@ -81,6 +85,7 @@
                                 <option value="@i">@i</option>
                             }
                         </select>
+                        <span asp-validation-for="Douutien" class="text-danger"></span>
                     </div>
 
 

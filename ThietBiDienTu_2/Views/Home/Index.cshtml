@@ -30,7 +30,7 @@
             color: black; /* Màu đen cho dòng chữ */
         }
         .maxH{
-           /*  height:128px; */
+            height:128px;
         }
 </style>
 
@@ -50,19 +50,19 @@
     </div>
     <div class="row">
         <div class="col-md-4 mb-3 ">
-            <a href="@Url.Action("Index", "Cart")" class="card-link">
+            <a href="@Url.Action("Index", "Histroy",new{from=DateTime.Now.Date})" class="card-link">
                 <div class="card bg-primary">
-                    <div class="card-body maxH">
-                        <h5 class="card-title text-white">Phiếu mượn thiết bị</h5>
+                    <div class="card-body">
+                        <h5 class="card-title text-white">Phiếu mượn hôm nay</h5>
                         <p class="card-text text-white"></p>
-                        <p class="card-text text-white"><strong>Số lượng: @ViewBag.TotalQuantity </strong></p>
+                        <p class="card-text text-white"><strong>Số lượng: @ViewBag.todayCount </strong></p>
                     </div>
                 </div>
             </a>
         </div>
 
         <div class="col-md-4 mb-3 ">
-            <a href="@Url.Action("Index", "Histroy")" class="card-link">
+            <a href="@Url.Action("Index", "Histroy",new{trangThai=0})" class="card-link">
                 <div class="card bg-primary">
                     <div class="card-body">
                         <h5 class="card-title text-white">Tổng số phiếu mượn chưa duyệt</h5>
@@ -73,7 +73,7 @@
             </a>
         </div>
         <div class="col-md-4 md-3  ">
-            <a href="@Url.Action("DanhsachPhieuMuon", "PhieuMuonAdmin")" class="card-link">
+            <a href="@Url.Action("Index", "Histroy",new{trangthai=1})" class="card-link">
                 <div class="card bg-primary">
                     <div class="card-body">
                         <h5 class="card-title text-white">Tổng số phiếu mượn chưa trả</h5>
