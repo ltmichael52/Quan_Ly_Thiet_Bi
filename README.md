@@ -1,4 +1,4 @@
-Phần mềm giải quyết các vấn đề sau:
+Website giải quyết các vấn đề sau:
 + Cho biết thiết bị đang ở phòng nào? Số lượng từng cái bao nhiêu?
 + Xử lý việc mượn và trả thiết bị của sinh viên
 + Ghi nhận lại chi phí sửa thiết bị khi hư
