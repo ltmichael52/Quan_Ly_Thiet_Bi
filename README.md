@@ -1,15 +1,15 @@
-#Website giải quyết các vấn đề sau:
+## Website giải quyết các vấn đề sau:
 + Cho biết thiết bị đang ở phòng nào, trạng thái ra sao? Số lượng từng cái bao nhiêu?
 + Xử lý việc mượn và trả thiết bị của sinh viên
 + Ghi nhận lại chi phí sửa thiết bị khi hư
 + Ghi nhận người dùng phần mềm
 
 YT cách set up và giải thích : https://youtu.be/l6-YIbyMRnQ
-##Demo intro:
+## Demo intro:
 
 https://github.com/ltmichael52/Quan_Ly_Thiet_Bi/assets/101556054/63629a4b-0b20-4818-a7f9-d74310398e50
 
-##Bảng thành viên:
+## Bảng thành viên:
 
 | STT | Tên thành viên   | Mã sinh viên | Nhiệm vụ                                                                                                                           |
 | --- | ---------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
