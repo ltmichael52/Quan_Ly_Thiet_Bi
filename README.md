@@ -7,7 +7,8 @@
 YT cách set up và giải thích : https://youtu.be/l6-YIbyMRnQ
 ## Demo intro:
 
-https://github.com/ltmichael52/Quan_Ly_Thiet_Bi/assets/101556054/63629a4b-0b20-4818-a7f9-d74310398e50
+https://github.com/ltmichael52/Quan_Ly_Thiet_Bi/assets/101556054/712c22f9-27d9-4fd2-abe2-ca64374acdaa
+
 
 ## Bảng thành viên:
 
