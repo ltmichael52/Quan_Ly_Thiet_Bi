@@ -4,6 +4,9 @@ Website giải quyết các vấn đề sau:
 + Ghi nhận lại chi phí sửa thiết bị khi hư
 + Ghi nhận người dùng phần mềm
 
+https://github.com/ltmichael52/Quan_Ly_Thiet_Bi/assets/101556054/63629a4b-0b20-4818-a7f9-d74310398e50
+
+
 | STT | Tên thành viên   | Mã sinh viên | Nhiệm vụ                                                                                                                              |
 | --- | ---------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
 | 1   | Lê Tấn Phát | 81012202485  | - Đăng nhập, phân quyền, người dùng, <br> - Phiếu mượn - sửa, thiết bị trong phòng <br> - Tổng hợp code   |
